@@ -7897,13 +7897,13 @@
     },
     {
       "path": "logs/lzttt1111/2026-09-20/codex__01a07fa1-8af3-7950-bb03-d2118978909d.jsonl",
-      "size": 536868,
-      "sha256": "cbe36df7605adece42c978bb7e9f3f61c75a453825aa14047f72337937cc86eb"
+      "size": 1494238,
+      "sha256": "c6e9c23424a3fdb1fbb58bf23ef7a65fadf7a2d763e8ac2ce76ab581412f3c68"
     },
     {
       "path": "logs/lzttt1111/manifest.json",
-      "size": 3606,
-      "sha256": "c84852540a6da66b583b9adb4c07d841d44f161397510c75a8ddd6acf5aca280"
+      "size": 3651,
+      "sha256": "cb93c7904f84b15bd38cff795e0770a212344c1572fb2b0c00a654cc989c1516"
     }
   ],
   "validation": "current source hashes; new ten real images 270 scores and old ten saved replay complete; existing reference population retained"

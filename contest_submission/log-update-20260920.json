@@ -1,0 +1,20 @@
+{
+  "session_id": "01a07fa1-8af3-7950-bb03-d2118978909d",
+  "previous_event_count": 14393,
+  "new_event_count": 14948,
+  "added_events": 555,
+  "last_event_at_utc": "2026-09-20T09:31:42.204Z",
+  "existing_prefix_semantically_unchanged": true,
+  "source_snapshot_sha256": "47013e0fcd5b86e9134cfd8d32022f4acf5f46c6bf71d4b39f1a3ae25b848553",
+  "new_redacted_strings": 6,
+  "new_date_partitions": [
+    "2026-09-20"
+  ],
+  "source_events_added_without_renumbering": true,
+  "excluded": "internal reasoning/images; credential-bearing strings redacted by same exporter policy",
+  "validation": "official_validate_log_passed",
+  "validated_files": 85,
+  "validated_total_events": 146970,
+  "snapshot_cutoff_beijing": "2026-09-20 17:31:42",
+  "log_body_diff": "555 additions, 0 deletions"
+}
