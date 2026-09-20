@@ -1,0 +1,10 @@
+# Observed WSL Python 3.10 environment; not a cross-platform lockfile.
+# CUDA/cuDNN system libraries are also required for CUDAExecutionProvider.
+fastapi==0.139.0
+uvicorn==0.51.0
+numpy==2.2.6
+Pillow==12.3.0
+opencv-python-headless==5.0.0.93
+onnxruntime-gpu==1.23.2
+httpx==0.28.1
+mediapipe==0.10.35

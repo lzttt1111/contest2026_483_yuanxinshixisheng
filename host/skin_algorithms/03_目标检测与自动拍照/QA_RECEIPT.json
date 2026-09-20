@@ -1,0 +1,43 @@
+{
+  "schema": "aisia_target_capture_qa_v1",
+  "validated_at": "2026-09-15",
+  "software_version": "0.0.1",
+  "status": "PC_DELIVERY_VALIDATED_RK3576_NOT_DEPLOYED",
+  "source_integrity": {
+    "original_package_manifest_files": 98,
+    "original_package_failures": 0,
+    "current_source_inventory_matches": 78,
+    "current_source_inventory_changed": 0,
+    "pc_source_matches": 41,
+    "rk3568_reference_matches": 37
+  },
+  "environment": {
+    "os": "WSL2 Ubuntu 22.04 x86_64",
+    "uv": "0.11.27",
+    "python": "3.10.20",
+    "lock_packages": 50,
+    "lock_check": "PASS",
+    "sync": "PASS: frozen CPU group in /tmp/aisia-target-capture-20260915-env",
+    "delivery_virtualenv_included": false
+  },
+  "tests": [
+    {"name": "python_unit_regressions", "result": "PASS", "count": 13, "seconds": 0.472},
+    {"name": "real_model_api_smoke", "result": "PASS", "models_loaded": 5, "provider": "CPUExecutionProvider", "fixture": "generated blank JPEG plus invalid JPEG"},
+    {"name": "angle_display_js", "result": "PASS", "detail": "101 inference results -> 3 display updates at 1000ms; invalid clears immediately", "runtime": "Windows Node"},
+    {"name": "business_source_absolute_path_scan", "result": "PASS", "matches": 0},
+    {"name": "package_integrity", "result": "PASS", "manifest_files": 111, "sha256_verified": 110, "models_verified": 7}
+  ],
+  "warnings": [
+    "FastAPI TestClient emitted an upstream httpx deprecation warning; tests passed.",
+    "CPU smoke warns that CUDAExecutionProvider is unavailable, then truthfully reports CPUExecutionProvider.",
+    "RK3568 historical conversion tools contain documented developer-path defaults and external SDK/cache assumptions; they are reference-only and not imported by the PC runtime."
+  ],
+  "not_run": [
+    "CUDA/GPU runtime acceptance",
+    "authorized real-face browser capture on this assembled directory",
+    "positive old-instrument image accuracy batch",
+    "RK3576 conversion or NPU execution",
+    "camera/gimbal/openvela hardware integration",
+    "30-minute RK3576 stability test"
+  ]
+}

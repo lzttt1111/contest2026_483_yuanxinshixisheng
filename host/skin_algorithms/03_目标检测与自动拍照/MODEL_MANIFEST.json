@@ -1,0 +1,13 @@
+{
+  "schema": "aisia_target_capture_models_v1",
+  "software_version": "0.0.1",
+  "models": [
+    {"path": "pc_demo/models/device/model.onnx", "size": 35994066, "sha256": "218e922d784795901bd5e165e11755898f6c29c4a5724715862aa8cdf1919a8c", "role": "V5 REAL-ONLY YOLOX-S device detector", "runtime": "ONNX Runtime", "status": "active_pc"},
+    {"path": "pc_demo/models/contact/model.onnx", "size": 4713440, "sha256": "e4d9deba2eb3aaa9ec143045de305f7be38480124ac3ef577ac5e0eec122dae1", "role": "V5 MobileNetV3-Small contact-point estimator", "runtime": "ONNX Runtime", "status": "active_pc"},
+    {"path": "pc_demo/models/face_detection_yunet.onnx", "size": 232589, "sha256": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4", "role": "YuNet face detector", "runtime": "OpenCV DNN", "status": "active_pc"},
+    {"path": "pc_demo/models/head_pose_fsanet_1x1.onnx", "size": 964897, "sha256": "120fa107a2dd3be78c21c3a73a0db980590643a5372893e8878094898262f213", "role": "FSA-Net yaw/pitch/roll estimator", "runtime": "ONNX Runtime", "status": "active_pc"},
+    {"path": "pc_demo/models/face_landmarker.task", "size": 3758596, "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff", "role": "MediaPipe 468-landmark face-region geometry", "runtime": "MediaPipe Tasks", "status": "active_pc"},
+    {"path": "rk3568_reference/artifacts/onnx/device_yolox_s_v5_raw_opset12.onnx", "size": 35771075, "sha256": "30e1782cd50c1ebb9e760ebf033ad4126db0a1f21fa7f7a507b91bfc22357375", "role": "raw three-head device export for RKNN conversion", "runtime": "conversion input", "status": "rk3568_reference_only"},
+    {"path": "rk3568_reference/artifacts/onnx/contact_mobilenet_v3_small_v5_opset12.onnx", "size": 4718804, "sha256": "c8bb6a3f6893629385760c2d69d30da96ae665e09f3875e95f3e937028892c96", "role": "contact export for RKNN conversion", "runtime": "conversion input", "status": "rk3568_reference_only"}
+  ]
+}

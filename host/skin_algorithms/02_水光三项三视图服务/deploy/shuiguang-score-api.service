@@ -1,0 +1,17 @@
+[Unit]
+Description=DermaVision Shuiguang Three-Item API
+After=network-online.target shuiguang-score-worker.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dermavision
+Group=dermavision
+WorkingDirectory=/opt/dermavision/shuiguang-three
+EnvironmentFile=/etc/dermavision/shuiguang.env
+ExecStart=/opt/dermavision/shuiguang-three/.venv/bin/uvicorn cloud_three.api:app --host 0.0.0.0 --port 8893
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

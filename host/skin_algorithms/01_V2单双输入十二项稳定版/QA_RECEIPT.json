@@ -1,0 +1,40 @@
+{
+  "schema": "dermavision_v2_submission_qa_v1",
+  "package": "V2单双输入十二项稳定版",
+  "validated_at": "2026-09-15",
+  "status": "SOURCE_AND_DEPENDENCY_VALIDATED",
+  "packaging": {
+    "format": "uncompressed_directory",
+    "virtualenv_included": false,
+    "runtime_outputs_included": false,
+    "credentials_included": false
+  },
+  "dependencies": {
+    "lock_status": "passed",
+    "packages": 117,
+    "contract_version": "0.2.0.dev1",
+    "contract_source": "vendor/aisia-contracts"
+  },
+  "validation": {
+    "package_integrity": "passed",
+    "worker_summary_routing": {
+      "passed": 9,
+      "failed": 0
+    },
+    "gpu_rerun_for_packaging": false,
+    "public_worker_contract_migration": "passed",
+    "docx_metadata_scrub": {
+      "files": 4,
+      "paragraph_table_section_equal": true,
+      "media_sha_equal": true,
+      "creator_fields_blank": true,
+      "custom_properties_removed": true,
+      "render_status": "unavailable: bundled LibreOffice not present"
+    }
+  },
+  "boundaries": {
+    "hardware_and_production_deployment_not_claimed": true,
+    "external_backend_not_included": true,
+    "redis_database_and_storage_not_included": true
+  }
+}

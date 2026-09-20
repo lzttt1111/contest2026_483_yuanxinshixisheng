@@ -1,0 +1,23 @@
+# =======================================================
+# DermaVision Celery Worker 部署
+# 用法: docker compose up -d
+# 只启动 Celery worker，连接宿主机 Redis（与 ai-skin-backend 共用同一 Redis）。
+# 配置全部来自 .env（CELERY_*/OSS_*），不在此覆盖。
+# network_mode: host — worker 直连宿主机网络访问 Redis。
+# =======================================================
+
+services:
+  worker:
+    build: .
+    container_name: dermavision-worker
+    network_mode: host
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    restart: unless-stopped
+    command: >-
+      celery -A src.worker worker
+      --loglevel=info
+      --queues=redness,spots,brown,texture,pores,purple
+      --concurrency=${CELERY_WORKER_CONCURRENCY:-6}

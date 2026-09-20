@@ -1,0 +1,53 @@
+{
+  "phases": [
+    {
+      "turn_id": "01a0895d-c373-7dc0-bd6e-5472adb016d3",
+      "started_at": "2026-09-10T03:30:18.804Z",
+      "tool_calls": 7,
+      "user_input_request_calls": 0,
+      "model": "gpt-6-astra",
+      "effort": "medium",
+      "phase": "baseline",
+      "completed_at": "2026-09-10T03:32:57.697Z",
+      "wall_seconds": 158.893
+    },
+    {
+      "turn_id": "01a08961-0c4b-79b0-929d-af2cfcad40df",
+      "started_at": "2026-09-10T03:33:53.877Z",
+      "tool_calls": 8,
+      "user_input_request_calls": 0,
+      "model": "gpt-6-astra",
+      "effort": "medium",
+      "phase": "with_skill",
+      "completed_at": "2026-09-10T03:38:46.653Z",
+      "wall_seconds": 292.776
+    },
+    {
+      "turn_id": "01a08967-ee58-7300-b8c3-34a01ba23147",
+      "started_at": "2026-09-10T03:41:24.963Z",
+      "tool_calls": 4,
+      "user_input_request_calls": 0,
+      "model": "gpt-6-astra",
+      "effort": "medium",
+      "phase": "recheck",
+      "completed_at": "2026-09-10T03:44:14.072Z",
+      "wall_seconds": 169.109
+    },
+    {
+      "turn_id": "01a08978-d033-7d32-9386-b76172ee8e96",
+      "started_at": "2026-09-10T03:59:51.357Z",
+      "tool_calls": 5,
+      "user_input_request_calls": 0,
+      "model": "gpt-6-astra",
+      "effort": "medium",
+      "phase": "completion_audit",
+      "completed_at": "2026-09-10T04:03:31.691Z",
+      "wall_seconds": 220.334
+    }
+  ],
+  "source_sha256": "35e85ce6da7cce89dac2eee71fc157264af2c6b7900bab5960e5febe7c2ce2f2",
+  "definition": "Wall time from task_started to task_complete, includes model generation and tools. Input request count counts recorded request-user-input calls, not all hypothetical helpful clarifications.",
+  "per_case_wall_time": "not_instrumented; do not divide aggregate into claimed measurements",
+  "causal_speedup": "not_supported",
+  "raw_content_exported": false
+}

@@ -1,0 +1,3836 @@
+{
+  "formula_version": "doctor_v2_explicit_proxy_v1",
+  "forbidden_source_tokens": [
+    "timing",
+    "elapsed",
+    "image_size",
+    "original_image_size",
+    "preprocessed_image_size",
+    "input_width",
+    "input_height",
+    "device",
+    "weights",
+    "output_dir",
+    "parameters",
+    "profile.imgsz",
+    "profile.conf",
+    ".seconds"
+  ],
+  "anchor_sources": {
+    "clinic28-09_RGB_M": {
+      "evidence_document_sha256": "595beab277ef80bb9cc85378dcd17ceced2e26f16bbb8fb317e7f6fa806ca480"
+    },
+    "clinic28-23_RGB_M": {
+      "evidence_document_sha256": "28f7d4890099c89caaa9e6d2bc4c4d9c842939cf96eb8c089cd29beee5085fab"
+    },
+    "clinic28-25_RGB_M": {
+      "evidence_document_sha256": "8fe62e2b2b1ef95b0bdfe26a817f329cfa66c51cd2e348c9fe830b341f7149f2"
+    }
+  },
+  "module_score_anchors": {
+    "pores": {
+      "base_scores": {
+        "clinic28-09_RGB_M": 28.952126,
+        "clinic28-23_RGB_M": 29.205325,
+        "clinic28-25_RGB_M": 29.113648
+      }
+    },
+    "oil_tendency": {
+      "base_scores": {
+        "clinic28-09_RGB_M": 32.191383,
+        "clinic28-23_RGB_M": 31.792245,
+        "clinic28-25_RGB_M": 32.036816
+      }
+    },
+    "pigmentation": {
+      "base_scores": {
+        "clinic28-09_RGB_M": 25.429668,
+        "clinic28-23_RGB_M": 25.18375,
+        "clinic28-25_RGB_M": 25.748395
+      }
+    },
+    "diffuse_redness": {
+      "base_scores": {
+        "clinic28-09_RGB_M": 43.473405,
+        "clinic28-23_RGB_M": 53.074001,
+        "clinic28-25_RGB_M": 53.028473
+      }
+    },
+    "vascular": {
+      "base_scores": {
+        "clinic28-09_RGB_M": 33.395744,
+        "clinic28-23_RGB_M": 36.606837,
+        "clinic28-25_RGB_M": 36.045535
+      }
+    },
+    "acne_activity": {
+      "base_scores": {
+        "clinic28-09_RGB_M": 25.701102,
+        "clinic28-23_RGB_M": 24.754402,
+        "clinic28-25_RGB_M": 24.948035
+      }
+    },
+    "dry_fine_lines": {
+      "base_scores": {
+        "clinic28-09_RGB_M": 35.511549,
+        "clinic28-23_RGB_M": 34.943078,
+        "clinic28-25_RGB_M": 33.709387
+      }
+    },
+    "stable_wrinkles": {
+      "base_scores": {
+        "clinic28-09_RGB_M": 39.232936,
+        "clinic28-23_RGB_M": 39.235409,
+        "clinic28-25_RGB_M": 40.362437
+      }
+    },
+    "structural_grooves": {
+      "base_scores": {
+        "clinic28-09_RGB_M": 16.128426,
+        "clinic28-23_RGB_M": 15.183291,
+        "clinic28-25_RGB_M": 15.803951
+      }
+    },
+    "smoothness": {
+      "base_scores": {
+        "clinic28-09_RGB_M": 13.934521,
+        "clinic28-23_RGB_M": 13.639336,
+        "clinic28-25_RGB_M": 13.488247
+      }
+    },
+    "contour_firmness": {
+      "base_scores": {
+        "clinic28-09_RGB_M": 15.859535,
+        "clinic28-23_RGB_M": 16.554305,
+        "clinic28-25_RGB_M": 15.994843
+      }
+    }
+  },
+  "metric_formulas": {
+    "pores.density_burden.pore_density_per_100k_px": {
+      "module_id": "pores",
+      "group_id": "density_burden",
+      "metric_id": "pore_density_per_100k_px",
+      "source_detector": [
+        "pores"
+      ],
+      "source_metric_ids": [
+        "pores.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.feature_density_per_100k_skin_px"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "count_per_100k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 1.0,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct standardized full-face pore density."
+    },
+    "pores.area_coverage_burden.pore_area_ratio": {
+      "module_id": "pores",
+      "group_id": "area_coverage_burden",
+      "metric_id": "pore_area_ratio",
+      "source_detector": [
+        "pores"
+      ],
+      "source_metric_ids": [
+        "pores.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.feature_area_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 1.0,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct pore coverage ratio."
+    },
+    "pores.size_burden.p50_pore_area_px": {
+      "module_id": "pores",
+      "group_id": "size_burden",
+      "metric_id": "p50_pore_area_px",
+      "source_detector": [
+        "pores"
+      ],
+      "source_metric_ids": [
+        "pores.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.p50_instance_area_px"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "standardized_px2",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct median pore instance area."
+    },
+    "pores.size_burden.p90_pore_area_px": {
+      "module_id": "pores",
+      "group_id": "size_burden",
+      "metric_id": "p90_pore_area_px",
+      "source_detector": [
+        "pores"
+      ],
+      "source_metric_ids": [
+        "pores.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.p90_instance_area_px"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "standardized_px2",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct P90 pore instance area."
+    },
+    "pores.large_pore_burden.large_pore_ratio": {
+      "module_id": "pores",
+      "group_id": "large_pore_burden",
+      "metric_id": "large_pore_ratio",
+      "source_detector": [
+        "pores"
+      ],
+      "source_metric_ids": [
+        "pores.medical_metrics_v2.overall_metrics.core_metrics.auxiliary_statistics.elongated_pore_ratio",
+        "pores.medical_metrics_v2.overall_metrics.auxiliary_metrics.scope_and_burden.max_instance_area_px",
+        "pores.medical_metrics_v2.overall_metrics.auxiliary_metrics.analysis_scope.valid_skin_area_px"
+      ],
+      "formula": {
+        "operator": "product_ratio",
+        "numerator_indices": [
+          0,
+          1
+        ],
+        "denominator_index": 2,
+        "epsilon": 1e-09
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Large-pore prevalence explicitly gates elongated share by maximum-area burden relative to valid skin."
+    },
+    "pores.large_pore_burden.large_pore_area_ratio": {
+      "module_id": "pores",
+      "group_id": "large_pore_burden",
+      "metric_id": "large_pore_area_ratio",
+      "source_detector": [
+        "pores"
+      ],
+      "source_metric_ids": [
+        "pores.medical_metrics_v2.overall_metrics.auxiliary_metrics.scope_and_burden.max_instance_area_px",
+        "pores.medical_metrics_v2.overall_metrics.auxiliary_metrics.analysis_scope.valid_skin_area_px"
+      ],
+      "formula": {
+        "operator": "ratio",
+        "scale": 1.0,
+        "epsilon": 1e-09
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Maximum standardized pore area divided by valid skin area is the explicit large-pore area-ratio proxy."
+    },
+    "pores.shape_irregularity.low_circularity_pore_ratio": {
+      "module_id": "pores",
+      "group_id": "shape_irregularity",
+      "metric_id": "low_circularity_pore_ratio",
+      "source_detector": [
+        "pores"
+      ],
+      "source_metric_ids": [
+        "pores.medical_metrics_v2.overall_metrics.auxiliary_metrics.morphology.low_circularity_pore_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.1,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct low-circularity share."
+    },
+    "pores.shape_irregularity.elongated_pore_ratio": {
+      "module_id": "pores",
+      "group_id": "shape_irregularity",
+      "metric_id": "elongated_pore_ratio",
+      "source_detector": [
+        "pores"
+      ],
+      "source_metric_ids": [
+        "pores.medical_metrics_v2.overall_metrics.core_metrics.auxiliary_statistics.elongated_pore_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.1,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct elongated pore share."
+    },
+    "oil_tendency.surface_gloss_coverage.gloss_area_ratio": {
+      "module_id": "oil_tendency",
+      "group_id": "surface_gloss_coverage",
+      "metric_id": "gloss_area_ratio",
+      "source_detector": [
+        "surface_gloss"
+      ],
+      "source_metric_ids": [
+        "surface_gloss.doctor_core_inputs.surface_gloss_coverage.gloss_area_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct visible gloss coverage."
+    },
+    "oil_tendency.surface_gloss_coverage.high_gloss_area_ratio": {
+      "module_id": "oil_tendency",
+      "group_id": "surface_gloss_coverage",
+      "metric_id": "high_gloss_area_ratio",
+      "source_detector": [
+        "surface_gloss"
+      ],
+      "source_metric_ids": [
+        "surface_gloss.doctor_core_inputs.surface_gloss_coverage.high_gloss_area_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct high-gloss coverage."
+    },
+    "oil_tendency.surface_gloss_intensity.p50_gloss_intensity": {
+      "module_id": "oil_tendency",
+      "group_id": "surface_gloss_intensity",
+      "metric_id": "p50_gloss_intensity",
+      "source_detector": [
+        "surface_gloss"
+      ],
+      "source_metric_ids": [
+        "surface_gloss.doctor_core_inputs.surface_gloss_intensity.p50_gloss_intensity"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct P50 gloss intensity."
+    },
+    "oil_tendency.surface_gloss_intensity.p90_gloss_intensity": {
+      "module_id": "oil_tendency",
+      "group_id": "surface_gloss_intensity",
+      "metric_id": "p90_gloss_intensity",
+      "source_detector": [
+        "surface_gloss"
+      ],
+      "source_metric_ids": [
+        "surface_gloss.doctor_core_inputs.surface_gloss_intensity.p90_gloss_intensity"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct P90 gloss intensity."
+    },
+    "oil_tendency.surface_gloss_continuity.largest_gloss_component_area_ratio": {
+      "module_id": "oil_tendency",
+      "group_id": "surface_gloss_continuity",
+      "metric_id": "largest_gloss_component_area_ratio",
+      "source_detector": [
+        "surface_gloss"
+      ],
+      "source_metric_ids": [
+        "surface_gloss.doctor_core_inputs.surface_gloss_continuity.largest_gloss_component_area_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 1.0,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct largest continuous gloss component ratio."
+    },
+    "oil_tendency.porphyrin_density_area.porphyrin_density_per_100k_px": {
+      "module_id": "oil_tendency",
+      "group_id": "porphyrin_density_area",
+      "metric_id": "porphyrin_density_per_100k_px",
+      "source_detector": [
+        "porphyrin"
+      ],
+      "source_metric_ids": [
+        "porphyrin.porphyrin.总体指标.核心指标.范围与负担.单位面积密度（个/10万有效皮肤像素）"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "count_per_100k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct porphyrin proxy density."
+    },
+    "oil_tendency.porphyrin_density_area.porphyrin_area_ratio": {
+      "module_id": "oil_tendency",
+      "group_id": "porphyrin_density_area",
+      "metric_id": "porphyrin_area_ratio",
+      "source_detector": [
+        "porphyrin"
+      ],
+      "source_metric_ids": [
+        "porphyrin.porphyrin.总体指标.核心指标.范围与负担.特征面积占比"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct porphyrin proxy coverage."
+    },
+    "oil_tendency.porphyrin_intensity.p50_porphyrin_intensity": {
+      "module_id": "oil_tendency",
+      "group_id": "porphyrin_intensity",
+      "metric_id": "p50_porphyrin_intensity",
+      "source_detector": [
+        "porphyrin"
+      ],
+      "source_metric_ids": [
+        "porphyrin.porphyrin.总体指标.核心指标.信号强度.实例P50强度（0～1）"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct P50 porphyrin proxy intensity."
+    },
+    "oil_tendency.porphyrin_intensity.p90_porphyrin_intensity": {
+      "module_id": "oil_tendency",
+      "group_id": "porphyrin_intensity",
+      "metric_id": "p90_porphyrin_intensity",
+      "source_detector": [
+        "porphyrin"
+      ],
+      "source_metric_ids": [
+        "porphyrin.porphyrin.总体指标.核心指标.信号强度.实例P90强度（0～1）"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct P90 porphyrin proxy intensity."
+    },
+    "oil_tendency.high_porphyrin_burden.high_porphyrin_target_ratio": {
+      "module_id": "oil_tendency",
+      "group_id": "high_porphyrin_burden",
+      "metric_id": "high_porphyrin_target_ratio",
+      "source_detector": [
+        "porphyrin"
+      ],
+      "source_metric_ids": [
+        "porphyrin.porphyrin.总体指标.核心指标.信号强度.高强度目标比例"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.1,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct high-intensity porphyrin target share."
+    },
+    "oil_tendency.high_porphyrin_burden.high_porphyrin_area_ratio": {
+      "module_id": "oil_tendency",
+      "group_id": "high_porphyrin_burden",
+      "metric_id": "high_porphyrin_area_ratio",
+      "source_detector": [
+        "porphyrin"
+      ],
+      "source_metric_ids": [
+        "porphyrin.porphyrin.总体指标.辅助指标.范围与负担.高强度区域面积占比"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.1,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct high-intensity porphyrin area share."
+    },
+    "pigmentation.visible_spots.visible_spot_density_per_100k_px": {
+      "module_id": "pigmentation",
+      "group_id": "visible_spots",
+      "metric_id": "visible_spot_density_per_100k_px",
+      "source_detector": [
+        "spots"
+      ],
+      "source_metric_ids": [
+        "spots.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.feature_density_per_100k_skin_px"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "count_per_100k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct visible-spot density."
+    },
+    "pigmentation.visible_spots.visible_spot_area_ratio": {
+      "module_id": "pigmentation",
+      "group_id": "visible_spots",
+      "metric_id": "visible_spot_area_ratio",
+      "source_detector": [
+        "spots"
+      ],
+      "source_metric_ids": [
+        "spots.spot_area_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct visible-spot area ratio."
+    },
+    "pigmentation.visible_spots.p90_visible_spot_delta_e": {
+      "module_id": "pigmentation",
+      "group_id": "visible_spots",
+      "metric_id": "p90_visible_spot_delta_e",
+      "source_detector": [
+        "spots"
+      ],
+      "source_metric_ids": [
+        "spots.medical_metrics_v2.overall_metrics.core_metrics.signal_intensity.p90_delta_e"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "delta_e_proxy",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct P90 visible-spot DeltaE proxy."
+    },
+    "pigmentation.visible_spots.visible_spot_point_patch_burden": {
+      "module_id": "pigmentation",
+      "group_id": "visible_spots",
+      "metric_id": "visible_spot_point_patch_burden",
+      "source_detector": [
+        "spots"
+      ],
+      "source_metric_ids": [
+        "spots.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.punctate_spot_area_ratio",
+        "spots.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.patch_spot_area_ratio"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          0.4,
+          0.6
+        ],
+        "offset": 0.0,
+        "clip": [
+          0.0,
+          1.0
+        ]
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Explicit point/patch mixture, with patch burden weighted more heavily."
+    },
+    "pigmentation.uv_spots.uv_spot_density_per_100k_px": {
+      "module_id": "pigmentation",
+      "group_id": "uv_spots",
+      "metric_id": "uv_spot_density_per_100k_px",
+      "source_detector": [
+        "uv_spots"
+      ],
+      "source_metric_ids": [
+        "uv_spots.uv_spots.总体指标.核心指标.范围与负担.单位面积密度（个/10万有效皮肤像素）"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "count_per_100k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct UV-proxy spot density."
+    },
+    "pigmentation.uv_spots.uv_spot_area_ratio": {
+      "module_id": "pigmentation",
+      "group_id": "uv_spots",
+      "metric_id": "uv_spot_area_ratio",
+      "source_detector": [
+        "uv_spots"
+      ],
+      "source_metric_ids": [
+        "uv_spots.uv_spots.总体指标.核心指标.范围与负担.特征面积占比"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct UV-proxy spot coverage."
+    },
+    "pigmentation.uv_spots.p90_uv_spot_intensity": {
+      "module_id": "pigmentation",
+      "group_id": "uv_spots",
+      "metric_id": "p90_uv_spot_intensity",
+      "source_detector": [
+        "uv_spots"
+      ],
+      "source_metric_ids": [
+        "uv_spots.uv_spots.总体指标.核心指标.信号强度.P90强度（0～1）"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct UV-proxy P90 intensity."
+    },
+    "pigmentation.uv_spots.high_uv_area_ratio": {
+      "module_id": "pigmentation",
+      "group_id": "uv_spots",
+      "metric_id": "high_uv_area_ratio",
+      "source_detector": [
+        "uv_spots"
+      ],
+      "source_metric_ids": [
+        "uv_spots.uv_spots.总体指标.辅助指标.范围与负担.高强度区域面积占比"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct high-intensity UV-proxy area share."
+    },
+    "pigmentation.brown_pigment.brown_area_ratio": {
+      "module_id": "pigmentation",
+      "group_id": "brown_pigment",
+      "metric_id": "brown_area_ratio",
+      "source_detector": [
+        "brown"
+      ],
+      "source_metric_ids": [
+        "brown.medical_metrics_v2.overall_metrics.auxiliary_metrics.scope_and_burden.brown_spot_area_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.35,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct Brown spot area ratio."
+    },
+    "pigmentation.brown_pigment.p90_brown_intensity": {
+      "module_id": "pigmentation",
+      "group_id": "brown_pigment",
+      "metric_id": "p90_brown_intensity",
+      "source_detector": [
+        "brown"
+      ],
+      "source_metric_ids": [
+        "brown.medical_metrics_v2.overall_metrics.core_metrics.signal_intensity.p90_intensity"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.35,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct P90 Brown intensity."
+    },
+    "pigmentation.brown_pigment.high_brown_area_ratio": {
+      "module_id": "pigmentation",
+      "group_id": "brown_pigment",
+      "metric_id": "high_brown_area_ratio",
+      "source_detector": [
+        "brown"
+      ],
+      "source_metric_ids": [
+        "brown.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.high_intensity_area_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.35,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct high-intensity Brown area ratio."
+    },
+    "pigmentation.brown_pigment.brown_point_patch_burden": {
+      "module_id": "pigmentation",
+      "group_id": "brown_pigment",
+      "metric_id": "brown_point_patch_burden",
+      "source_detector": [
+        "brown"
+      ],
+      "source_metric_ids": [
+        "brown.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.punctate_target_area_ratio",
+        "brown.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.patch_target_area_ratio"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          0.35,
+          0.65
+        ],
+        "offset": 0.0,
+        "clip": [
+          0.0,
+          1.0
+        ]
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.35,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Explicit Brown point/patch mixture, emphasizing patch burden."
+    },
+    "diffuse_redness.coverage.diffuse_red_area_ratio": {
+      "module_id": "diffuse_redness",
+      "group_id": "coverage",
+      "metric_id": "diffuse_red_area_ratio",
+      "source_detector": [
+        "redness"
+      ],
+      "source_metric_ids": [
+        "redness.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.diffuse_red_area_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.35,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct diffuse-red coverage."
+    },
+    "diffuse_redness.coverage.high_red_area_ratio": {
+      "module_id": "diffuse_redness",
+      "group_id": "coverage",
+      "metric_id": "high_red_area_ratio",
+      "source_detector": [
+        "redness"
+      ],
+      "source_metric_ids": [
+        "redness.high_red_area_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.35,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct high-red coverage."
+    },
+    "diffuse_redness.intensity.mean_redness": {
+      "module_id": "diffuse_redness",
+      "group_id": "intensity",
+      "metric_id": "mean_redness",
+      "source_detector": [
+        "redness"
+      ],
+      "source_metric_ids": [
+        "redness.mean_redness"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.3,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct mean redness."
+    },
+    "diffuse_redness.intensity.p90_redness": {
+      "module_id": "diffuse_redness",
+      "group_id": "intensity",
+      "metric_id": "p90_redness",
+      "source_detector": [
+        "redness"
+      ],
+      "source_metric_ids": [
+        "redness.p90_redness"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.3,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct P90 redness."
+    },
+    "diffuse_redness.continuity.max_continuous_red_area_ratio": {
+      "module_id": "diffuse_redness",
+      "group_id": "continuity",
+      "metric_id": "max_continuous_red_area_ratio",
+      "source_detector": [
+        "redness"
+      ],
+      "source_metric_ids": [
+        "redness.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.max_continuous_region_area_px",
+        "redness.medical_metrics_v2.overall_metrics.auxiliary_metrics.analysis_scope.valid_skin_area_px"
+      ],
+      "formula": {
+        "operator": "ratio",
+        "scale": 1.0,
+        "epsilon": 1e-09
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Largest continuous red area normalized by valid skin area."
+    },
+    "diffuse_redness.continuity.redness_continuity": {
+      "module_id": "diffuse_redness",
+      "group_id": "continuity",
+      "metric_id": "redness_continuity",
+      "source_detector": [
+        "redness"
+      ],
+      "source_metric_ids": [
+        "redness.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.redness_continuity"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct redness continuity."
+    },
+    "diffuse_redness.boundary_uniformity.boundary_gradient": {
+      "module_id": "diffuse_redness",
+      "group_id": "boundary_uniformity",
+      "metric_id": "boundary_gradient",
+      "source_detector": [
+        "redness"
+      ],
+      "source_metric_ids": [
+        "redness.medical_metrics_v2.overall_metrics.core_metrics.auxiliary_statistics.redness_boundary_gradient"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_health",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct boundary-gradient health measure."
+    },
+    "diffuse_redness.boundary_uniformity.redness_uniformity": {
+      "module_id": "diffuse_redness",
+      "group_id": "boundary_uniformity",
+      "metric_id": "redness_uniformity",
+      "source_detector": [
+        "redness"
+      ],
+      "source_metric_ids": [
+        "redness.medical_metrics_v2.overall_metrics.core_metrics.auxiliary_statistics.diffuse_redness_uniformity"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct diffuse-red uniformity burden proxy."
+    },
+    "vascular.count_length.vascular_density_per_100k_px": {
+      "module_id": "vascular",
+      "group_id": "count_length",
+      "metric_id": "vascular_density_per_100k_px",
+      "source_detector": [
+        "vascular"
+      ],
+      "source_metric_ids": [
+        "vascular.vascular_count",
+        "vascular.valid_face_pixels"
+      ],
+      "formula": {
+        "operator": "ratio",
+        "scale": 100000.0,
+        "epsilon": 1e-09
+      },
+      "direction": "higher_burden",
+      "unit": "count_per_100k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.3,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Vascular count divided by valid face pixels and scaled to 100k pixels gives density."
+    },
+    "vascular.count_length.vascular_length_density_per_10k_px": {
+      "module_id": "vascular",
+      "group_id": "count_length",
+      "metric_id": "vascular_length_density_per_10k_px",
+      "source_detector": [
+        "vascular"
+      ],
+      "source_metric_ids": [
+        "vascular.vascular_line_density_per_10k_face_px"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "length_per_10k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.3,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct vascular line density."
+    },
+    "vascular.coverage_width.vascular_area_ratio": {
+      "module_id": "vascular",
+      "group_id": "coverage_width",
+      "metric_id": "vascular_area_ratio",
+      "source_detector": [
+        "vascular"
+      ],
+      "source_metric_ids": [
+        "vascular.vascular_area_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.3333333333333333,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct vascular area ratio."
+    },
+    "vascular.coverage_width.p50_vascular_width_px": {
+      "module_id": "vascular",
+      "group_id": "coverage_width",
+      "metric_id": "p50_vascular_width_px",
+      "source_detector": [
+        "vascular"
+      ],
+      "source_metric_ids": [
+        "vascular.p50_width_px"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "standardized_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.3333333333333333,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct P50 vascular width."
+    },
+    "vascular.coverage_width.p90_vascular_width_px": {
+      "module_id": "vascular",
+      "group_id": "coverage_width",
+      "metric_id": "p90_vascular_width_px",
+      "source_detector": [
+        "vascular"
+      ],
+      "source_metric_ids": [
+        "vascular.p90_width_px"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "standardized_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.3333333333333333,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct P90 vascular width."
+    },
+    "vascular.red_intensity.p50_vascular_redness": {
+      "module_id": "vascular",
+      "group_id": "red_intensity",
+      "metric_id": "p50_vascular_redness",
+      "source_detector": [
+        "vascular"
+      ],
+      "source_metric_ids": [
+        "vascular.p50_redness"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct P50 vascular redness."
+    },
+    "vascular.red_intensity.p90_vascular_redness": {
+      "module_id": "vascular",
+      "group_id": "red_intensity",
+      "metric_id": "p90_vascular_redness",
+      "source_detector": [
+        "vascular"
+      ],
+      "source_metric_ids": [
+        "vascular.p90_redness"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct P90 vascular redness."
+    },
+    "vascular.branch_network.branch_density_per_10k_px": {
+      "module_id": "vascular",
+      "group_id": "branch_network",
+      "metric_id": "branch_density_per_10k_px",
+      "source_detector": [
+        "vascular"
+      ],
+      "source_metric_ids": [
+        "vascular.branch_point_density_per_10k_face_px"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "count_per_10k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct branch-point density."
+    },
+    "vascular.branch_network.network_ratio": {
+      "module_id": "vascular",
+      "group_id": "branch_network",
+      "metric_id": "network_ratio",
+      "source_detector": [
+        "vascular"
+      ],
+      "source_metric_ids": [
+        "vascular.network_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct connected-network ratio."
+    },
+    "acne_activity.follicular_erythema.follicular_erythema_density": {
+      "module_id": "acne_activity",
+      "group_id": "follicular_erythema",
+      "metric_id": "follicular_erythema_density",
+      "source_detector": [
+        "redness"
+      ],
+      "source_metric_ids": [
+        "redness.medical_metrics_v2.overall_metrics.auxiliary_metrics.scope_and_burden.feature_density_per_100k_skin_px"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "count_per_100k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Focal red-feature density is the explicit follicular erythema proxy."
+    },
+    "acne_activity.follicular_erythema.follicular_erythema_area_ratio": {
+      "module_id": "acne_activity",
+      "group_id": "follicular_erythema",
+      "metric_id": "follicular_erythema_area_ratio",
+      "source_detector": [
+        "redness"
+      ],
+      "source_metric_ids": [
+        "redness.red_feature_area_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Focal red-feature coverage is the explicit erythema-area proxy."
+    },
+    "acne_activity.follicular_erythema.p90_follicular_redness": {
+      "module_id": "acne_activity",
+      "group_id": "follicular_erythema",
+      "metric_id": "p90_follicular_redness",
+      "source_detector": [
+        "redness"
+      ],
+      "source_metric_ids": [
+        "redness.medical_metrics_v2.overall_metrics.auxiliary_metrics.signal_intensity.p90_instance_intensity"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Focal red-instance P90 intensity is the explicit follicular-redness proxy."
+    },
+    "acne_activity.follicular_erythema.erythema_halo_completeness": {
+      "module_id": "acne_activity",
+      "group_id": "follicular_erythema",
+      "metric_id": "erythema_halo_completeness",
+      "source_detector": [
+        "redness"
+      ],
+      "source_metric_ids": [
+        "redness.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.redness_continuity",
+        "redness.medical_metrics_v2.overall_metrics.core_metrics.auxiliary_statistics.redness_boundary_gradient"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          0.7,
+          -0.3
+        ],
+        "offset": 0.3,
+        "clip": [
+          0.0,
+          1.0
+        ]
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Halo completeness combines continuity with the complement of boundary gradient."
+    },
+    "acne_activity.follicular_papule.papule_density": {
+      "module_id": "acne_activity",
+      "group_id": "follicular_papule",
+      "metric_id": "papule_density",
+      "source_detector": [
+        "acne"
+      ],
+      "source_metric_ids": [
+        "acne.detection.count",
+        "acne.preprocess.skin_pixels"
+      ],
+      "formula": {
+        "operator": "ratio",
+        "scale": 100000.0,
+        "epsilon": 1e-09
+      },
+      "direction": "higher_burden",
+      "unit": "count_per_100k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_filtered_yolo_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Filtered formal-fast YOLO count normalized by retained skin pixels; this is not a verified papule class.",
+      "evidence_relationship": "filtered_yolo_count_proxy",
+      "object_level_colocalized": false
+    },
+    "acne_activity.follicular_papule.papule_area_ratio": {
+      "module_id": "acne_activity",
+      "group_id": "follicular_papule",
+      "metric_id": "papule_area_ratio",
+      "source_detector": [
+        "acne",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "acne.detection.count",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.raised_like_area_ratio",
+        "acne.preprocess.skin_pixels"
+      ],
+      "formula": {
+        "operator": "product_ratio",
+        "numerator_indices": [
+          0,
+          1
+        ],
+        "denominator_index": 2,
+        "epsilon": 1e-09,
+        "scale": 100000.0,
+        "clip": [
+          0.0,
+          1.0
+        ]
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_cross_detector_coburden_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Filtered YOLO density gates global raised-texture burden; not segmented papule area or object-level overlap.",
+      "evidence_relationship": "cross_detector_coburden_proxy",
+      "object_level_colocalized": false
+    },
+    "acne_activity.follicular_papule.p90_papule_redness": {
+      "module_id": "acne_activity",
+      "group_id": "follicular_papule",
+      "metric_id": "p90_papule_redness",
+      "source_detector": [
+        "redness"
+      ],
+      "source_metric_ids": [
+        "redness.p90_redness",
+        "redness.medical_metrics_v2.overall_metrics.auxiliary_metrics.signal_intensity.p90_instance_intensity"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          0.4,
+          0.6
+        ],
+        "offset": 0.0,
+        "clip": [
+          0.0,
+          1.0
+        ]
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_cross_detector_coburden_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Global and focal redness co-burden; not redness localized to a detected papule.",
+      "evidence_relationship": "cross_detector_coburden_proxy",
+      "object_level_colocalized": false
+    },
+    "acne_activity.follicular_papule.p90_papule_relief": {
+      "module_id": "acne_activity",
+      "group_id": "follicular_papule",
+      "metric_id": "p90_papule_relief",
+      "source_detector": [
+        "acne",
+        "contour_firmness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "acne.detection.count",
+        "contour_firmness.midface_relative_relief_p90",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.raised_like_area_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0,
+        "presence_index": 0,
+        "clip": [
+          0.0,
+          1.0
+        ]
+      },
+      "direction": "higher_burden",
+      "unit": "relative_2_5d",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_cross_detector_coburden_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Filtered-YOLO presence gates global relief and raised-texture co-burden; not per-papule height.",
+      "evidence_relationship": "cross_detector_coburden_proxy",
+      "object_level_colocalized": false
+    },
+    "acne_activity.follicular_pustule.pustule_density": {
+      "module_id": "acne_activity",
+      "group_id": "follicular_pustule",
+      "metric_id": "pustule_density",
+      "source_detector": [
+        "acne",
+        "redness"
+      ],
+      "source_metric_ids": [
+        "acne.detection.count",
+        "redness.red_feature_area_ratio",
+        "acne.preprocess.skin_pixels"
+      ],
+      "formula": {
+        "operator": "product_ratio",
+        "numerator_indices": [
+          0,
+          1
+        ],
+        "denominator_index": 2,
+        "epsilon": 1e-09,
+        "scale": 100000.0
+      },
+      "direction": "higher_burden",
+      "unit": "count_per_100k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_cross_detector_coburden_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Filtered YOLO density gated by focal-red area is a class-limited co-burden proxy, not pustule classification.",
+      "evidence_relationship": "cross_detector_coburden_proxy",
+      "object_level_colocalized": false
+    },
+    "acne_activity.follicular_pustule.pustule_area_ratio": {
+      "module_id": "acne_activity",
+      "group_id": "follicular_pustule",
+      "metric_id": "pustule_area_ratio",
+      "source_detector": [
+        "acne",
+        "redness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "acne.detection.count",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.raised_like_area_ratio",
+        "redness.red_feature_area_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0,
+        "presence_index": 0,
+        "clip": [
+          0.0,
+          1.0
+        ]
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_cross_detector_coburden_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Filtered-YOLO presence gates raised-texture and focal-red co-burden; not segmented pustule area.",
+      "evidence_relationship": "cross_detector_coburden_proxy",
+      "object_level_colocalized": false
+    },
+    "acne_activity.follicular_pustule.p90_pustule_redness": {
+      "module_id": "acne_activity",
+      "group_id": "follicular_pustule",
+      "metric_id": "p90_pustule_redness",
+      "source_detector": [
+        "redness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "redness.medical_metrics_v2.overall_metrics.auxiliary_metrics.signal_intensity.p90_instance_intensity",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.signal_intensity.p90_intensity"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          0.7,
+          0.3
+        ],
+        "offset": 0.0,
+        "clip": [
+          0.0,
+          1.0
+        ]
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_cross_detector_coburden_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Focal redness and texture intensity co-burden; not redness localized to a classified pustule.",
+      "evidence_relationship": "cross_detector_coburden_proxy",
+      "object_level_colocalized": false
+    },
+    "acne_activity.follicular_pustule.p90_pustule_relief": {
+      "module_id": "acne_activity",
+      "group_id": "follicular_pustule",
+      "metric_id": "p90_pustule_relief",
+      "source_detector": [
+        "acne",
+        "contour_firmness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "acne.detection.count",
+        "contour_firmness.midface_relative_relief_p90",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.signal_intensity.p90_intensity"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0,
+        "presence_index": 0,
+        "clip": [
+          0.0,
+          1.0
+        ]
+      },
+      "direction": "higher_burden",
+      "unit": "relative_2_5d",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_cross_detector_coburden_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Filtered-YOLO presence gates global relief and texture intensity; not per-pustule height.",
+      "evidence_relationship": "cross_detector_coburden_proxy",
+      "object_level_colocalized": false
+    },
+    "acne_activity.follicular_pustule.p90_white_yellow_center_area_px": {
+      "module_id": "acne_activity",
+      "group_id": "follicular_pustule",
+      "metric_id": "p90_white_yellow_center_area_px",
+      "source_detector": [
+        "acne",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "acne.detection.count",
+        "texture.medical_metrics_v2.overall_metrics.auxiliary_metrics.scope_and_burden.p90_instance_area_px"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0,
+        "presence_index": 0
+      },
+      "direction": "higher_burden",
+      "unit": "standardized_px2",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_cross_detector_coburden_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Filtered-YOLO presence gates texture P90 instance area; no white/yellow-center classifier is present.",
+      "evidence_relationship": "cross_detector_coburden_proxy",
+      "object_level_colocalized": false,
+      "white_yellow_classifier_present": false
+    },
+    "dry_fine_lines.density.fine_line_density_per_100k_px": {
+      "module_id": "dry_fine_lines",
+      "group_id": "density",
+      "metric_id": "fine_line_density_per_100k_px",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.stage1_recommended_ratio"
+      ],
+      "formula": {
+        "operator": "scale",
+        "scale": 100000.0
+      },
+      "direction": "higher_burden",
+      "unit": "count_per_100k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Stage-1 fine-line coverage scaled per 100k standardized pixels is the fine-line density proxy."
+    },
+    "dry_fine_lines.density.fine_line_length_density": {
+      "module_id": "dry_fine_lines",
+      "group_id": "density",
+      "metric_id": "fine_line_length_density",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.stage1_recommended_ratio"
+      ],
+      "formula": {
+        "operator": "scale",
+        "scale": 10000.0
+      },
+      "direction": "higher_burden",
+      "unit": "length_per_10k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Stage-1 fine-line coverage converted to standardized length-density scale."
+    },
+    "dry_fine_lines.scale.p50_fine_line_length_px": {
+      "module_id": "dry_fine_lines",
+      "group_id": "scale",
+      "metric_id": "p50_fine_line_length_px",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.region_metrics[0].mean_segment_length",
+        "wrinkle.region_metrics[1].mean_segment_length",
+        "wrinkle.region_metrics[2].mean_segment_length",
+        "wrinkle.region_metrics[3].mean_segment_length"
+      ],
+      "formula": {
+        "operator": "minimum",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "standardized_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Minimum observed regional mean length explicitly targets the short fine-line branch."
+    },
+    "dry_fine_lines.scale.short_fine_line_ratio": {
+      "module_id": "dry_fine_lines",
+      "group_id": "scale",
+      "metric_id": "short_fine_line_ratio",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.stage1_center_ratio",
+        "wrinkle.stage1_recommended_ratio"
+      ],
+      "formula": {
+        "operator": "ratio",
+        "scale": 1.0,
+        "epsilon": 1e-09
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Center-pass share of recommended fine-line evidence proxies short-line prevalence."
+    },
+    "dry_fine_lines.scale.p50_fine_line_width_px": {
+      "module_id": "dry_fine_lines",
+      "group_id": "scale",
+      "metric_id": "p50_fine_line_width_px",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.line_width"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "standardized_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Fixed detector line width is the explicit standardized P50 width proxy."
+    },
+    "dry_fine_lines.scale.narrow_fine_line_ratio": {
+      "module_id": "dry_fine_lines",
+      "group_id": "scale",
+      "metric_id": "narrow_fine_line_ratio",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.line_width"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          -0.25
+        ],
+        "offset": 1.0,
+        "clip": [
+          0.0,
+          1.0
+        ]
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Narrow-line ratio is the bounded complement of standardized line width divided by four."
+    },
+    "dry_fine_lines.scale.small_scale_texture_ratio": {
+      "module_id": "dry_fine_lines",
+      "group_id": "scale",
+      "metric_id": "small_scale_texture_ratio",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.stage1_center_ratio",
+        "wrinkle.stage1_raw_ratio"
+      ],
+      "formula": {
+        "operator": "ratio",
+        "scale": 1.0,
+        "epsilon": 1e-09
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Center-supported share of raw stage-1 evidence proxies small-scale texture."
+    },
+    "dry_fine_lines.coverage.fine_line_network_coverage_ratio": {
+      "module_id": "dry_fine_lines",
+      "group_id": "coverage",
+      "metric_id": "fine_line_network_coverage_ratio",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.stage1_recommended_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Stage-1 recommended mask ratio is the explicit fine-line network coverage proxy."
+    },
+    "dry_fine_lines.coverage.high_density_fine_line_area_ratio": {
+      "module_id": "dry_fine_lines",
+      "group_id": "coverage",
+      "metric_id": "high_density_fine_line_area_ratio",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.stage1_center_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Stage-1 center mask ratio is the explicit high-density fine-line area proxy."
+    },
+    "dry_fine_lines.direction_network.direction_dispersion": {
+      "module_id": "dry_fine_lines",
+      "group_id": "direction_network",
+      "metric_id": "direction_dispersion",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.region_metrics[0].relative_score",
+        "wrinkle.region_metrics[1].relative_score",
+        "wrinkle.region_metrics[2].relative_score",
+        "wrinkle.region_metrics[3].relative_score"
+      ],
+      "formula": {
+        "operator": "spread",
+        "scale": 0.01
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Spread across four observed region scores proxies directional dispersion."
+    },
+    "dry_fine_lines.direction_network.crossing_density": {
+      "module_id": "dry_fine_lines",
+      "group_id": "direction_network",
+      "metric_id": "crossing_density",
+      "source_detector": [
+        "contour_firmness"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_convex_concave_turns"
+      ],
+      "formula": {
+        "operator": "scale",
+        "scale": 0.01
+      },
+      "direction": "higher_burden",
+      "unit": "count_per_10k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Midface convex/concave turns are the available crossing-density proxy."
+    },
+    "dry_fine_lines.direction_network.branch_density": {
+      "module_id": "dry_fine_lines",
+      "group_id": "direction_network",
+      "metric_id": "branch_density",
+      "source_detector": [
+        "contour_firmness"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.jaw_curve_direction_changes"
+      ],
+      "formula": {
+        "operator": "scale",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "count_per_10k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Jaw-curve direction changes are the available branch-density proxy."
+    },
+    "dry_fine_lines.direction_network.multidirectional_interweave": {
+      "module_id": "dry_fine_lines",
+      "group_id": "direction_network",
+      "metric_id": "multidirectional_interweave",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.region_metrics[0].share_pct",
+        "wrinkle.region_metrics[1].share_pct",
+        "wrinkle.region_metrics[2].share_pct",
+        "wrinkle.region_metrics[3].share_pct"
+      ],
+      "formula": {
+        "operator": "spread",
+        "scale": 0.01
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Regional line-share spread is the explicit multidirectional interweave proxy."
+    },
+    "dry_fine_lines.direction_network.network_texture_ratio": {
+      "module_id": "dry_fine_lines",
+      "group_id": "direction_network",
+      "metric_id": "network_texture_ratio",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.stage1_raw_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Raw stage-1 line ratio is the network-texture proxy."
+    },
+    "dry_fine_lines.visual_surface.p50_fine_line_contrast": {
+      "module_id": "dry_fine_lines",
+      "group_id": "visual_surface",
+      "metric_id": "p50_fine_line_contrast",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.region_metrics[0].relative_score",
+        "wrinkle.region_metrics[1].relative_score",
+        "wrinkle.region_metrics[2].relative_score",
+        "wrinkle.region_metrics[3].relative_score"
+      ],
+      "formula": {
+        "operator": "minimum",
+        "scale": 0.01
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Minimum observed regional score explicitly targets low-contrast fine lines."
+    },
+    "dry_fine_lines.visual_surface.low_mid_contrast_ratio": {
+      "module_id": "dry_fine_lines",
+      "group_id": "visual_surface",
+      "metric_id": "low_mid_contrast_ratio",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.region_metrics[0].relative_score",
+        "wrinkle.region_metrics[1].relative_score",
+        "wrinkle.region_metrics[2].relative_score",
+        "wrinkle.region_metrics[3].relative_score"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          -0.0025,
+          -0.0025,
+          -0.0025,
+          -0.0025
+        ],
+        "offset": 1.0,
+        "clip": [
+          0.0,
+          1.0
+        ]
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Low/mid contrast is the complement of the four-region contrast proxy."
+    },
+    "dry_fine_lines.visual_surface.short_discontinuous_ratio": {
+      "module_id": "dry_fine_lines",
+      "group_id": "visual_surface",
+      "metric_id": "short_discontinuous_ratio",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.stage1_center_ratio",
+        "wrinkle.stage1_recommended_ratio"
+      ],
+      "formula": {
+        "operator": "one_minus_ratio",
+        "scale": 1.0,
+        "epsilon": 1e-09,
+        "clip": [
+          0.0,
+          1.0
+        ]
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Unsupported share of recommended evidence proxies short discontinuous lines."
+    },
+    "dry_fine_lines.visual_surface.large_groove_exclusion": {
+      "module_id": "dry_fine_lines",
+      "group_id": "visual_surface",
+      "metric_id": "large_groove_exclusion",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.stage2_recommended_ratio",
+        "wrinkle.stage1_recommended_ratio"
+      ],
+      "formula": {
+        "operator": "one_minus_ratio",
+        "scale": 1.0,
+        "epsilon": 1e-09,
+        "clip": [
+          0.0,
+          1.0
+        ]
+      },
+      "direction": "higher_health",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Complement of stage-2/stage-1 coverage explicitly measures large-groove exclusion."
+    },
+    "stable_wrinkles.density.wrinkle_density_per_100k_px": {
+      "module_id": "stable_wrinkles",
+      "group_id": "density",
+      "metric_id": "wrinkle_density_per_100k_px",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.region_metrics[0].density_per_10k",
+        "wrinkle.region_metrics[1].density_per_10k",
+        "wrinkle.region_metrics[2].density_per_10k",
+        "wrinkle.region_metrics[3].density_per_10k"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          2.5,
+          2.5,
+          2.5,
+          2.5
+        ],
+        "offset": 0.0
+      },
+      "direction": "higher_burden",
+      "unit": "count_per_100k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 1.0,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Explicit four-region stable-line density is converted from per-10k to per-100k pixels."
+    },
+    "stable_wrinkles.length.wrinkle_length_density": {
+      "module_id": "stable_wrinkles",
+      "group_id": "length",
+      "metric_id": "wrinkle_length_density",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.stage2_recommended_ratio"
+      ],
+      "formula": {
+        "operator": "scale",
+        "scale": 10000.0
+      },
+      "direction": "higher_burden",
+      "unit": "length_per_10k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.3333333333333333,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Stage-2 stable-line coverage converted to standardized length density."
+    },
+    "stable_wrinkles.length.p50_wrinkle_length_px": {
+      "module_id": "stable_wrinkles",
+      "group_id": "length",
+      "metric_id": "p50_wrinkle_length_px",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.region_metrics[0].mean_segment_length",
+        "wrinkle.region_metrics[1].mean_segment_length",
+        "wrinkle.region_metrics[2].mean_segment_length",
+        "wrinkle.region_metrics[3].mean_segment_length"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "offset": 0.0
+      },
+      "direction": "higher_burden",
+      "unit": "standardized_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.3333333333333333,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Explicit four-observed-region mean length approximates P50 stable-wrinkle length."
+    },
+    "stable_wrinkles.length.p90_wrinkle_length_px": {
+      "module_id": "stable_wrinkles",
+      "group_id": "length",
+      "metric_id": "p90_wrinkle_length_px",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.region_metrics[0].max_segment_length",
+        "wrinkle.region_metrics[1].max_segment_length",
+        "wrinkle.region_metrics[2].max_segment_length",
+        "wrinkle.region_metrics[3].max_segment_length"
+      ],
+      "formula": {
+        "operator": "maximum",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "standardized_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.3333333333333333,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Maximum of four observed regional maxima is the explicit P90 length proxy."
+    },
+    "stable_wrinkles.width_area.p50_wrinkle_width_px": {
+      "module_id": "stable_wrinkles",
+      "group_id": "width_area",
+      "metric_id": "p50_wrinkle_width_px",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.line_width"
+      ],
+      "formula": {
+        "operator": "scale",
+        "scale": 1.25
+      },
+      "direction": "higher_burden",
+      "unit": "standardized_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.3333333333333333,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Stable-wrinkle P50 width uses the documented 1.25x fixed-width proxy."
+    },
+    "stable_wrinkles.width_area.p90_wrinkle_width_px": {
+      "module_id": "stable_wrinkles",
+      "group_id": "width_area",
+      "metric_id": "p90_wrinkle_width_px",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.line_width"
+      ],
+      "formula": {
+        "operator": "scale",
+        "scale": 1.5
+      },
+      "direction": "higher_burden",
+      "unit": "standardized_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.3333333333333333,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "P90 width uses the documented 1.5x fixed-width detector proxy."
+    },
+    "stable_wrinkles.width_area.wrinkle_area_ratio": {
+      "module_id": "stable_wrinkles",
+      "group_id": "width_area",
+      "metric_id": "wrinkle_area_ratio",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.stage2_recommended_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.3333333333333333,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Stage-2 recommended ratio is the stable-wrinkle area proxy."
+    },
+    "stable_wrinkles.contrast.p50_wrinkle_contrast": {
+      "module_id": "stable_wrinkles",
+      "group_id": "contrast",
+      "metric_id": "p50_wrinkle_contrast",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.region_metrics[0].relative_score",
+        "wrinkle.region_metrics[1].relative_score",
+        "wrinkle.region_metrics[2].relative_score",
+        "wrinkle.region_metrics[3].relative_score"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          0.0025,
+          0.0025,
+          0.0025,
+          0.0025
+        ],
+        "offset": 0.0,
+        "clip": [
+          0.0,
+          1.0
+        ]
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 0.3333333333333333,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Four-region relative scores map explicitly to P50 contrast."
+    },
+    "stable_wrinkles.contrast.p90_wrinkle_contrast": {
+      "module_id": "stable_wrinkles",
+      "group_id": "contrast",
+      "metric_id": "p90_wrinkle_contrast",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.region_metrics[0].relative_score",
+        "wrinkle.region_metrics[1].relative_score",
+        "wrinkle.region_metrics[2].relative_score",
+        "wrinkle.region_metrics[3].relative_score"
+      ],
+      "formula": {
+        "operator": "maximum",
+        "scale": 0.01
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 0.3333333333333333,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Maximum observed regional score maps explicitly to P90 contrast."
+    },
+    "stable_wrinkles.contrast.high_contrast_wrinkle_ratio": {
+      "module_id": "stable_wrinkles",
+      "group_id": "contrast",
+      "metric_id": "high_contrast_wrinkle_ratio",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.region_metrics[0].relative_score",
+        "wrinkle.region_metrics[1].relative_score",
+        "wrinkle.region_metrics[2].relative_score",
+        "wrinkle.region_metrics[3].relative_score"
+      ],
+      "formula": {
+        "operator": "fraction_above",
+        "threshold": 50.0
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 0.3333333333333333,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Fraction of observed regions above relative score 50 is the high-contrast share proxy."
+    },
+    "stable_wrinkles.linearity_continuity.wrinkle_linearity": {
+      "module_id": "stable_wrinkles",
+      "group_id": "linearity_continuity",
+      "metric_id": "wrinkle_linearity",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.stage2_center_ratio",
+        "wrinkle.stage2_raw_ratio"
+      ],
+      "formula": {
+        "operator": "ratio",
+        "scale": 1.0,
+        "epsilon": 1e-09
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.1,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Center-supported share of raw stage-2 evidence is the stable-line linearity proxy."
+    },
+    "stable_wrinkles.linearity_continuity.wrinkle_continuity": {
+      "module_id": "stable_wrinkles",
+      "group_id": "linearity_continuity",
+      "metric_id": "wrinkle_continuity",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.stage2_recommended_ratio",
+        "wrinkle.stage2_raw_ratio"
+      ],
+      "formula": {
+        "operator": "ratio",
+        "scale": 1.0,
+        "epsilon": 1e-09
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.1,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Recommended/raw stage-2 retention proxies continuity."
+    },
+    "stable_wrinkles.relative_depth.mean_wrinkle_relative_depth": {
+      "module_id": "stable_wrinkles",
+      "group_id": "relative_depth",
+      "metric_id": "mean_wrinkle_relative_depth",
+      "source_detector": [
+        "contour_firmness",
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "wrinkle.stage2_recommended_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "relative_2_5d",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Relative relief gated by stable-wrinkle coverage is the mean-depth proxy."
+    },
+    "stable_wrinkles.relative_depth.p90_wrinkle_relative_depth": {
+      "module_id": "stable_wrinkles",
+      "group_id": "relative_depth",
+      "metric_id": "p90_wrinkle_relative_depth",
+      "source_detector": [
+        "contour_firmness"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "relative_2_5d",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Midface P90 relative relief is the explicit P90 wrinkle-depth proxy."
+    },
+    "structural_grooves.range.groove_continuous_length_ratio": {
+      "module_id": "structural_grooves",
+      "group_id": "range",
+      "metric_id": "groove_continuous_length_ratio",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.stage2_center_ratio",
+        "wrinkle.stage2_raw_ratio"
+      ],
+      "formula": {
+        "operator": "ratio",
+        "scale": 1.0,
+        "epsilon": 1e-09,
+        "clip": [
+          0.0,
+          1.0
+        ]
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.3333333333333333,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Center-supported raw stage-2 share, explicitly clipped to 0-1, proxies continuous groove length."
+    },
+    "structural_grooves.range.p50_groove_width": {
+      "module_id": "structural_grooves",
+      "group_id": "range",
+      "metric_id": "p50_groove_width",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.line_width"
+      ],
+      "formula": {
+        "operator": "scale",
+        "scale": 2.0
+      },
+      "direction": "higher_burden",
+      "unit": "normalized_width",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.3333333333333333,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Structural-groove P50 width uses the documented 2x fixed-width proxy."
+    },
+    "structural_grooves.range.p90_groove_width": {
+      "module_id": "structural_grooves",
+      "group_id": "range",
+      "metric_id": "p90_groove_width",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.line_width"
+      ],
+      "formula": {
+        "operator": "scale",
+        "scale": 2.5
+      },
+      "direction": "higher_burden",
+      "unit": "normalized_width",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.3333333333333333,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Structural-groove P90 width uses the documented 2.5x fixed-width proxy."
+    },
+    "structural_grooves.depth.mean_groove_relative_depth": {
+      "module_id": "structural_grooves",
+      "group_id": "depth",
+      "metric_id": "mean_groove_relative_depth",
+      "source_detector": [
+        "contour_firmness",
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "wrinkle.stage2_center_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "relative_2_5d",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Relative relief gated by center-supported groove coverage proxies mean groove depth."
+    },
+    "structural_grooves.depth.p90_groove_relative_depth": {
+      "module_id": "structural_grooves",
+      "group_id": "depth",
+      "metric_id": "p90_groove_relative_depth",
+      "source_detector": [
+        "contour_firmness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.signal_intensity.p90_intensity"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "relative_2_5d",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.25,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "P90 relief gated by texture intensity is the structural-groove P90 depth proxy."
+    },
+    "structural_grooves.volume.normalized_groove_volume": {
+      "module_id": "structural_grooves",
+      "group_id": "volume",
+      "metric_id": "normalized_groove_volume",
+      "source_detector": [
+        "contour_firmness",
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "wrinkle.stage2_recommended_ratio",
+        "wrinkle.line_width"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "normalized_volume",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Relative depth times groove coverage and standardized width gives normalized groove volume."
+    },
+    "structural_grooves.volume.groove_volume_per_length": {
+      "module_id": "structural_grooves",
+      "group_id": "volume",
+      "metric_id": "groove_volume_per_length",
+      "source_detector": [
+        "contour_firmness",
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "wrinkle.stage2_recommended_ratio",
+        "wrinkle.region_metrics[0].max_segment_length"
+      ],
+      "formula": {
+        "operator": "product_ratio",
+        "numerator_indices": [
+          0,
+          1
+        ],
+        "denominator_index": 2,
+        "epsilon": 1e-09
+      },
+      "direction": "higher_burden",
+      "unit": "normalized_volume_per_length",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Relative volume divided by observed maximum length is the unit-length volume proxy."
+    },
+    "structural_grooves.curvature_valley.clear_valley_segment_ratio": {
+      "module_id": "structural_grooves",
+      "group_id": "curvature_valley",
+      "metric_id": "clear_valley_segment_ratio",
+      "source_detector": [
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.stage2_center_ratio",
+        "wrinkle.stage2_recommended_ratio"
+      ],
+      "formula": {
+        "operator": "ratio",
+        "scale": 1.0,
+        "epsilon": 1e-09
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Center-supported stage-2 share proxies clear valley segments."
+    },
+    "structural_grooves.curvature_valley.valley_floor_continuity": {
+      "module_id": "structural_grooves",
+      "group_id": "curvature_valley",
+      "metric_id": "valley_floor_continuity",
+      "source_detector": [
+        "contour_firmness",
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_surface_continuity_ratio",
+        "wrinkle.stage2_recommended_ratio",
+        "wrinkle.stage2_raw_ratio"
+      ],
+      "formula": {
+        "operator": "product_ratio",
+        "numerator_indices": [
+          0,
+          1
+        ],
+        "denominator_index": 2,
+        "epsilon": 1e-09
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Midface continuity gates retained stage-2 groove evidence to proxy valley-floor continuity."
+    },
+    "structural_grooves.curvature_valley.groove_curvature": {
+      "module_id": "structural_grooves",
+      "group_id": "curvature_valley",
+      "metric_id": "groove_curvature",
+      "source_detector": [
+        "contour_firmness",
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.jaw_curve_p90",
+        "wrinkle.stage2_recommended_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "relative_curvature",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Jaw curvature gated by structural-groove coverage is the groove-curvature proxy."
+    },
+    "structural_grooves.curvature_valley.surface_transition": {
+      "module_id": "structural_grooves",
+      "group_id": "curvature_valley",
+      "metric_id": "surface_transition",
+      "source_detector": [
+        "contour_firmness"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.jaw_curve_p90",
+        "contour_firmness.midface_surface_continuity_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.2,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Curvature gated by surface continuity is the transition proxy."
+    },
+    "structural_grooves.adjacent_bulge.groove_bulge_height_difference": {
+      "module_id": "structural_grooves",
+      "group_id": "adjacent_bulge",
+      "metric_id": "groove_bulge_height_difference",
+      "source_detector": [
+        "contour_firmness"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "contour_firmness.jaw_curve_p90"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          0.7,
+          0.3
+        ],
+        "offset": 0.0
+      },
+      "direction": "higher_burden",
+      "unit": "relative_2_5d",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Adjacent height difference explicitly combines relative relief and curvature variation."
+    },
+    "structural_grooves.adjacent_bulge.normalized_adjacent_bulge_volume": {
+      "module_id": "structural_grooves",
+      "group_id": "adjacent_bulge",
+      "metric_id": "normalized_adjacent_bulge_volume",
+      "source_detector": [
+        "contour_firmness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "contour_firmness.midface_surface_continuity_ratio",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.raised_like_area_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0,
+        "complement_index": 1
+      },
+      "direction": "higher_burden",
+      "unit": "normalized_volume",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.15,
+      "metric_weight": 0.5,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Relief, continuity loss, and raised texture jointly define adjacent-bulge volume."
+    },
+    "smoothness.raised_irregularity.raised_density_per_100k_px": {
+      "module_id": "smoothness",
+      "group_id": "raised_irregularity",
+      "metric_id": "raised_density_per_100k_px",
+      "source_detector": [
+        "texture"
+      ],
+      "source_metric_ids": [
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.feature_density_per_100k_skin_px",
+        "texture.medical_metrics_v2.overall_metrics.auxiliary_metrics.auxiliary_statistics.raised_like_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "count_per_100k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.45,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Texture density gated by the raised-instance share gives raised density."
+    },
+    "smoothness.raised_irregularity.raised_area_ratio": {
+      "module_id": "smoothness",
+      "group_id": "raised_irregularity",
+      "metric_id": "raised_area_ratio",
+      "source_detector": [
+        "texture"
+      ],
+      "source_metric_ids": [
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.raised_like_area_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.45,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct raised-like texture area ratio."
+    },
+    "smoothness.raised_irregularity.mean_raised_relative_height": {
+      "module_id": "smoothness",
+      "group_id": "raised_irregularity",
+      "metric_id": "mean_raised_relative_height",
+      "source_detector": [
+        "contour_firmness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.raised_like_area_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "relative_2_5d",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.45,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Relative relief gated by raised coverage proxies mean raised height."
+    },
+    "smoothness.raised_irregularity.p90_raised_relative_height": {
+      "module_id": "smoothness",
+      "group_id": "raised_irregularity",
+      "metric_id": "p90_raised_relative_height",
+      "source_detector": [
+        "contour_firmness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.signal_intensity.p90_intensity",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.raised_like_area_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "relative_2_5d",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.45,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Relative relief gated by P90 texture intensity and raised coverage proxies P90 raised height."
+    },
+    "smoothness.raised_irregularity.raised_volume_per_area": {
+      "module_id": "smoothness",
+      "group_id": "raised_irregularity",
+      "metric_id": "raised_volume_per_area",
+      "source_detector": [
+        "contour_firmness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.raised_like_area_ratio",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.signal_intensity.p90_intensity"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "normalized_volume_per_area",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.45,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Relief times raised coverage and intensity is the normalized raised-volume/area proxy."
+    },
+    "smoothness.depressed_irregularity.depressed_density_per_100k_px": {
+      "module_id": "smoothness",
+      "group_id": "depressed_irregularity",
+      "metric_id": "depressed_density_per_100k_px",
+      "source_detector": [
+        "texture"
+      ],
+      "source_metric_ids": [
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.feature_density_per_100k_skin_px",
+        "texture.medical_metrics_v2.overall_metrics.auxiliary_metrics.auxiliary_statistics.depressed_like_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "count_per_100k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.5,
+      "metric_weight": 0.16666666666666666,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Texture density gated by the depressed-instance share gives depressed density."
+    },
+    "smoothness.depressed_irregularity.depressed_area_ratio": {
+      "module_id": "smoothness",
+      "group_id": "depressed_irregularity",
+      "metric_id": "depressed_area_ratio",
+      "source_detector": [
+        "texture"
+      ],
+      "source_metric_ids": [
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.depressed_like_area_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.5,
+      "metric_weight": 0.16666666666666666,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct depressed-like texture area ratio."
+    },
+    "smoothness.depressed_irregularity.mean_depressed_relative_depth": {
+      "module_id": "smoothness",
+      "group_id": "depressed_irregularity",
+      "metric_id": "mean_depressed_relative_depth",
+      "source_detector": [
+        "contour_firmness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.depressed_like_area_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "relative_2_5d",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.5,
+      "metric_weight": 0.16666666666666666,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Relative relief gated by depressed coverage proxies mean depth."
+    },
+    "smoothness.depressed_irregularity.p90_depressed_relative_depth": {
+      "module_id": "smoothness",
+      "group_id": "depressed_irregularity",
+      "metric_id": "p90_depressed_relative_depth",
+      "source_detector": [
+        "contour_firmness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.signal_intensity.p90_intensity",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.depressed_like_area_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "relative_2_5d",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.5,
+      "metric_weight": 0.16666666666666666,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Relative relief gated by P90 intensity and depressed coverage proxies P90 depth."
+    },
+    "smoothness.depressed_irregularity.depressed_volume_per_area": {
+      "module_id": "smoothness",
+      "group_id": "depressed_irregularity",
+      "metric_id": "depressed_volume_per_area",
+      "source_detector": [
+        "contour_firmness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.depressed_like_area_ratio",
+        "texture.medical_metrics_v2.overall_metrics.auxiliary_metrics.signal_intensity.p90_instance_intensity"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "normalized_volume_per_area",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.5,
+      "metric_weight": 0.16666666666666666,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Relief times depressed coverage and instance intensity is normalized depressed volume/area."
+    },
+    "smoothness.depressed_irregularity.p90_depressed_edge_slope": {
+      "module_id": "smoothness",
+      "group_id": "depressed_irregularity",
+      "metric_id": "p90_depressed_edge_slope",
+      "source_detector": [
+        "contour_firmness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.jaw_curve_p90",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.depressed_like_area_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "relative_slope",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.5,
+      "metric_weight": 0.16666666666666666,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Relative curvature gated by depressed coverage proxies edge slope."
+    },
+    "smoothness.surface_attachment.attachment_density_per_100k_px": {
+      "module_id": "smoothness",
+      "group_id": "surface_attachment",
+      "metric_id": "attachment_density_per_100k_px",
+      "source_detector": [
+        "spots"
+      ],
+      "source_metric_ids": [
+        "spots.medical_metrics_v2.overall_metrics.auxiliary_metrics.count_and_density.punctate_spot_count",
+        "spots.medical_metrics_v2.overall_metrics.auxiliary_metrics.analysis_scope.valid_skin_area_px"
+      ],
+      "formula": {
+        "operator": "ratio",
+        "scale": 100000.0,
+        "epsilon": 1e-09
+      },
+      "direction": "higher_burden",
+      "unit": "count_per_100k_px",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.05,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Punctate visible-feature count normalized by valid skin area is the attachment-density proxy."
+    },
+    "smoothness.surface_attachment.attachment_area_ratio": {
+      "module_id": "smoothness",
+      "group_id": "surface_attachment",
+      "metric_id": "attachment_area_ratio",
+      "source_detector": [
+        "spots"
+      ],
+      "source_metric_ids": [
+        "spots.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.punctate_spot_area_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.05,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Visible punctate area is the surface-attachment coverage proxy."
+    },
+    "smoothness.surface_attachment.p90_attachment_area_px": {
+      "module_id": "smoothness",
+      "group_id": "surface_attachment",
+      "metric_id": "p90_attachment_area_px",
+      "source_detector": [
+        "spots"
+      ],
+      "source_metric_ids": [
+        "spots.medical_metrics_v2.overall_metrics.auxiliary_metrics.scope_and_burden.p90_instance_area_px"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "standardized_px2",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.05,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Visible-feature P90 area is the attachment-size proxy."
+    },
+    "smoothness.surface_attachment.flake_lifted_ratio": {
+      "module_id": "smoothness",
+      "group_id": "surface_attachment",
+      "metric_id": "flake_lifted_ratio",
+      "source_detector": [
+        "spots",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.raised_like_area_ratio",
+        "spots.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.punctate_spot_area_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0
+      },
+      "direction": "higher_burden",
+      "unit": "ratio_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.05,
+      "metric_weight": 0.25,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Raised texture overlapping punctate attachment evidence proxies lifted flakes."
+    },
+    "contour_firmness.midface_support_decline.midface_surface_continuity": {
+      "module_id": "contour_firmness",
+      "group_id": "midface_support_decline",
+      "metric_id": "midface_surface_continuity",
+      "source_detector": [
+        "contour_firmness"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_surface_continuity_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_health",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.3,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct midface surface continuity health proxy."
+    },
+    "contour_firmness.midface_support_decline.midface_transition_burden": {
+      "module_id": "contour_firmness",
+      "group_id": "midface_support_decline",
+      "metric_id": "midface_transition_burden",
+      "source_detector": [
+        "contour_firmness"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "contour_firmness.midface_surface_continuity_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0,
+        "complement_index": 1
+      },
+      "direction": "higher_burden",
+      "unit": "relative_2_5d",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.3,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Relative relief gated by continuity loss proxies transition burden."
+    },
+    "contour_firmness.midface_support_decline.midcheek_depression_burden": {
+      "module_id": "contour_firmness",
+      "group_id": "midface_support_decline",
+      "metric_id": "midcheek_depression_burden",
+      "source_detector": [
+        "contour_firmness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.depressed_like_area_ratio"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          0.6,
+          0.4
+        ],
+        "offset": 0.0
+      },
+      "direction": "higher_burden",
+      "unit": "normalized_volume",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.3,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Midcheek depression combines relative relief and depressed texture coverage."
+    },
+    "contour_firmness.midface_support_decline.paranasal_depression_burden": {
+      "module_id": "contour_firmness",
+      "group_id": "midface_support_decline",
+      "metric_id": "paranasal_depression_burden",
+      "source_detector": [
+        "contour_firmness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.jaw_arc_asymmetry_ratio",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.depressed_like_area_ratio"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          0.55,
+          0.45
+        ],
+        "offset": 0.0
+      },
+      "direction": "higher_burden",
+      "unit": "normalized_volume",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.3,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Paranasal depression combines contour asymmetry and depressed texture evidence."
+    },
+    "contour_firmness.midface_support_decline.lower_cheek_bulge_burden": {
+      "module_id": "contour_firmness",
+      "group_id": "midface_support_decline",
+      "metric_id": "lower_cheek_bulge_burden",
+      "source_detector": [
+        "contour_firmness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.raised_like_area_ratio"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          0.5,
+          0.5
+        ],
+        "offset": 0.0
+      },
+      "direction": "higher_burden",
+      "unit": "normalized_volume",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.3,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Lower-cheek bulge combines relative relief and raised texture coverage."
+    },
+    "contour_firmness.structural_groove_burden.firmness_groove_range": {
+      "module_id": "contour_firmness",
+      "group_id": "structural_groove_burden",
+      "metric_id": "firmness_groove_range",
+      "source_detector": [
+        "contour_firmness",
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "wrinkle.stage2_recommended_ratio",
+        "contour_firmness.jaw_curve_p90",
+        "wrinkle.stage2_raw_ratio"
+      ],
+      "formula": {
+        "operator": "product_ratio",
+        "numerator_indices": [
+          0,
+          1
+        ],
+        "denominator_index": 2,
+        "epsilon": 1e-09
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.3,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Stable-groove retention gated by jaw curvature is the firmness groove-range proxy."
+    },
+    "contour_firmness.structural_groove_burden.firmness_groove_depth": {
+      "module_id": "contour_firmness",
+      "group_id": "structural_groove_burden",
+      "metric_id": "firmness_groove_depth",
+      "source_detector": [
+        "contour_firmness",
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "contour_firmness.midface_surface_continuity_ratio",
+        "wrinkle.stage2_recommended_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0,
+        "complement_index": 1
+      },
+      "direction": "higher_burden",
+      "unit": "relative_2_5d",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.3,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Relative relief and stable-groove coverage gated by continuity loss define firmness groove depth."
+    },
+    "contour_firmness.structural_groove_burden.firmness_groove_volume": {
+      "module_id": "contour_firmness",
+      "group_id": "structural_groove_burden",
+      "metric_id": "firmness_groove_volume",
+      "source_detector": [
+        "contour_firmness",
+        "wrinkle"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "wrinkle.stage2_recommended_ratio",
+        "contour_firmness.midface_surface_continuity_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0,
+        "complement_index": 2
+      },
+      "direction": "higher_burden",
+      "unit": "normalized_volume",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.3,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Relative groove depth and coverage gated by continuity loss give firmness groove volume."
+    },
+    "contour_firmness.structural_groove_burden.firmness_groove_valley": {
+      "module_id": "contour_firmness",
+      "group_id": "structural_groove_burden",
+      "metric_id": "firmness_groove_valley",
+      "source_detector": [
+        "contour_firmness"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.jaw_curve_p90",
+        "contour_firmness.midface_surface_continuity_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0,
+        "complement_index": 1
+      },
+      "direction": "higher_burden",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.3,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Curvature gated by continuity loss gives valley proxy."
+    },
+    "contour_firmness.structural_groove_burden.firmness_adjacent_bulge": {
+      "module_id": "contour_firmness",
+      "group_id": "structural_groove_burden",
+      "metric_id": "firmness_adjacent_bulge",
+      "source_detector": [
+        "contour_firmness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.raised_like_area_ratio",
+        "contour_firmness.midface_surface_continuity_ratio"
+      ],
+      "formula": {
+        "operator": "product",
+        "scale": 1.0,
+        "complement_index": 2
+      },
+      "direction": "higher_burden",
+      "unit": "normalized_volume",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.3,
+      "metric_weight": 0.2,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Relief and raised texture gated by continuity loss define firmness adjacent bulge."
+    },
+    "contour_firmness.lower_face_sagging.jowl_bulge_burden": {
+      "module_id": "contour_firmness",
+      "group_id": "lower_face_sagging",
+      "metric_id": "jowl_bulge_burden",
+      "source_detector": [
+        "contour_firmness"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.jaw_arc_asymmetry_ratio",
+        "contour_firmness.jaw_curve_p90"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          0.5,
+          0.5
+        ],
+        "offset": 0.0
+      },
+      "direction": "higher_burden",
+      "unit": "normalized_volume",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.16666666666666666,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Jowl burden combines jaw asymmetry and curvature variation."
+    },
+    "contour_firmness.lower_face_sagging.jawline_continuity": {
+      "module_id": "contour_firmness",
+      "group_id": "lower_face_sagging",
+      "metric_id": "jawline_continuity",
+      "source_detector": [
+        "contour_firmness"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.jaw_continuity_ratio"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_health",
+      "unit": "relative_0_1",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.16666666666666666,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct jawline-continuity health proxy."
+    },
+    "contour_firmness.lower_face_sagging.jawline_curvature_variation": {
+      "module_id": "contour_firmness",
+      "group_id": "lower_face_sagging",
+      "metric_id": "jawline_curvature_variation",
+      "source_detector": [
+        "contour_firmness"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.jaw_curve_p90"
+      ],
+      "formula": {
+        "operator": "direct"
+      },
+      "direction": "higher_burden",
+      "unit": "relative_curvature",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.16666666666666666,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Direct jawline curvature-variation proxy."
+    },
+    "contour_firmness.lower_face_sagging.prejowl_sulcus_burden": {
+      "module_id": "contour_firmness",
+      "group_id": "lower_face_sagging",
+      "metric_id": "prejowl_sulcus_burden",
+      "source_detector": [
+        "contour_firmness"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.jaw_curve_p90",
+        "contour_firmness.jaw_continuity_ratio"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          0.55,
+          -0.45
+        ],
+        "offset": 0.45
+      },
+      "direction": "higher_burden",
+      "unit": "normalized_volume",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.16666666666666666,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Prejowl sulcus combines curvature with continuity loss."
+    },
+    "contour_firmness.lower_face_sagging.mouth_corner_depression_burden": {
+      "module_id": "contour_firmness",
+      "group_id": "lower_face_sagging",
+      "metric_id": "mouth_corner_depression_burden",
+      "source_detector": [
+        "contour_firmness"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.jaw_arc_asymmetry_ratio",
+        "contour_firmness.jaw_continuity_ratio"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          0.6,
+          -0.4
+        ],
+        "offset": 0.4
+      },
+      "direction": "higher_burden",
+      "unit": "normalized_volume",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.16666666666666666,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Mouth-corner depression combines asymmetry with continuity loss."
+    },
+    "contour_firmness.lower_face_sagging.other_lower_cheek_bulge": {
+      "module_id": "contour_firmness",
+      "group_id": "lower_face_sagging",
+      "metric_id": "other_lower_cheek_bulge",
+      "source_detector": [
+        "contour_firmness",
+        "texture"
+      ],
+      "source_metric_ids": [
+        "contour_firmness.midface_relative_relief_p90",
+        "texture.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.raised_like_area_ratio",
+        "contour_firmness.jaw_arc_asymmetry_ratio"
+      ],
+      "formula": {
+        "operator": "weighted_sum",
+        "coefficients": [
+          0.45,
+          0.35,
+          0.2
+        ],
+        "offset": 0.0
+      },
+      "direction": "higher_burden",
+      "unit": "normalized_volume",
+      "metric_role": "core",
+      "region_scope": "full_face",
+      "group_weight": 0.4,
+      "metric_weight": 0.16666666666666666,
+      "proxy_boundary": "single_rgb_2d_2_5d_engineering_proxy",
+      "algorithm_version": "single_rgb_twelve_lzt_0820",
+      "roi_version": "medical_roi_v2_20260820_chinfix",
+      "medical_rationale": "Other lower-cheek bulge combines relief, raised texture, and asymmetry."
+    }
+  }
+}

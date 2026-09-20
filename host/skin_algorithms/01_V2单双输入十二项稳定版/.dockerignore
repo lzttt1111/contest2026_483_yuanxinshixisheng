@@ -1,0 +1,46 @@
+# DermaVision Docker 构建忽略文件
+# 减少构建上下文体积，加速镜像构建
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+services/*/.venv/
+
+# 环境文件
+.env
+services/*/.env
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# 输出结果（运行时生成，不需要打入镜像）
+output/
+test-output/
+output-test*/
+data/uploads/
+calibration/runs/
+
+# 本地归档和 Windows 下载附加文件
+归档文件夹/
+*:Zone.Identifier
+
+# 测试图片（可选保留，按需注释此行）
+data/raw_images/
+data/test_images/
+data/preprocessed_images/
+
+# Docker 自身
+Dockerfile
+.dockerignore
+
+# 文档（不需要打入镜像）
+docs/
+*.md

@@ -1,0 +1,324 @@
+{
+  "passed": true,
+  "count": 12,
+  "cases": [
+    {
+      "name": "mirror_correct",
+      "passed": true,
+      "evidence": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "captured": {
+            "left": 2
+          },
+          "complete": true,
+          "trace": [
+            {
+              "frame": 0,
+              "accepted": true
+            },
+            {
+              "frame": 1,
+              "accepted": true
+            },
+            {
+              "frame": 2,
+              "accepted": true
+            }
+          ],
+          "capture_revision": 0
+        }
+      }
+    },
+    {
+      "name": "mirror_wrong_does_not_capture_expected_side",
+      "passed": true,
+      "evidence": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "captured": {},
+          "complete": false,
+          "trace": [
+            {
+              "frame": 0,
+              "accepted": false
+            },
+            {
+              "frame": 1,
+              "accepted": false
+            },
+            {
+              "frame": 2,
+              "accepted": false
+            }
+          ],
+          "capture_revision": 0
+        }
+      }
+    },
+    {
+      "name": "retake_recaptures_new_frame",
+      "passed": true,
+      "evidence": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "captured": {
+            "front": 5
+          },
+          "complete": true,
+          "trace": [
+            {
+              "frame": 0,
+              "accepted": true
+            },
+            {
+              "frame": 1,
+              "accepted": true
+            },
+            {
+              "frame": 2,
+              "accepted": true
+            },
+            {
+              "frame": 3,
+              "accepted": true
+            },
+            {
+              "frame": 4,
+              "accepted": true
+            },
+            {
+              "frame": 5,
+              "accepted": true
+            }
+          ],
+          "capture_revision": 5
+        }
+      }
+    },
+    {
+      "name": "retake_invalidates_previous_result",
+      "passed": true,
+      "evidence": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "stale_revision",
+            "detail": {
+              "current": 5,
+              "result": 4
+            }
+          }
+        ],
+        "metrics": {
+          "contracts_checked": 2,
+          "point_transfer_allowed": false,
+          "requires_live_verification": true
+        }
+      }
+    },
+    {
+      "name": "face_switch_breaks_stability",
+      "passed": true,
+      "evidence": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "face_changed",
+            "detail": 1
+          }
+        ],
+        "metrics": {
+          "captured": {},
+          "complete": false,
+          "trace": [
+            {
+              "frame": 0,
+              "accepted": true
+            },
+            {
+              "frame": 1,
+              "accepted": false
+            },
+            {
+              "frame": 2,
+              "accepted": true
+            }
+          ],
+          "capture_revision": 0
+        }
+      }
+    },
+    {
+      "name": "gap_breaks_stability",
+      "passed": true,
+      "evidence": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "captured": {},
+          "complete": false,
+          "trace": [
+            {
+              "frame": 0,
+              "accepted": true
+            },
+            {
+              "frame": 1,
+              "accepted": true
+            },
+            {
+              "frame": 2,
+              "accepted": true
+            }
+          ],
+          "capture_revision": 0
+        }
+      }
+    },
+    {
+      "name": "inflated_denominator_detected",
+      "passed": true,
+      "evidence": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "expanded_denominator",
+            "detail": {
+              "declared": 100,
+              "observed": 50
+            }
+          }
+        ],
+        "metrics": {
+          "count": 4,
+          "coverage": 0.2,
+          "density_per_100k_pixels": 4000.0,
+          "p50": 2.5,
+          "p90": 3.7
+        }
+      }
+    },
+    {
+      "name": "do_not_average_percentiles",
+      "passed": true,
+      "evidence": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "quantile_mismatch",
+            "detail": {
+              "field": "p90",
+              "declared": 46.1,
+              "recomputed": 70.90000000000002
+            }
+          }
+        ],
+        "metrics": {
+          "count": 4,
+          "coverage": 0.2,
+          "density_per_100k_pixels": 4000.0,
+          "p50": 2.5,
+          "p90": 70.90000000000002
+        }
+      }
+    },
+    {
+      "name": "letterbox_inverse",
+      "passed": true,
+      "evidence": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "max_abs": 9.999999999998899e-05,
+          "rmse": 9.999999999998899e-05,
+          "provider": "CPU",
+          "numeric_comparison_valid": true,
+          "coordinate_parity": {
+            "restored_points": [
+              [
+                10.0,
+                20.0
+              ]
+            ],
+            "max_error_pixels": 0.0,
+            "passed": true
+          }
+        }
+      }
+    },
+    {
+      "name": "wrong_padding_detected",
+      "passed": true,
+      "evidence": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "coordinate_parity_failed",
+            "detail": {
+              "restored_points": [
+                [
+                  10.0,
+                  40.0
+                ]
+              ],
+              "max_error_pixels": 20.0,
+              "passed": false
+            }
+          }
+        ],
+        "metrics": {
+          "max_abs": 9.999999999998899e-05,
+          "rmse": 9.999999999998899e-05,
+          "provider": "CPU",
+          "numeric_comparison_valid": true,
+          "coordinate_parity": {
+            "restored_points": [
+              [
+                10.0,
+                40.0
+              ]
+            ],
+            "max_error_pixels": 20.0,
+            "passed": false
+          }
+        }
+      }
+    },
+    {
+      "name": "inverse_then_mirror",
+      "passed": true,
+      "evidence": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "max_abs": 9.999999999998899e-05,
+          "rmse": 9.999999999998899e-05,
+          "provider": "CPU",
+          "numeric_comparison_valid": true,
+          "coordinate_parity": {
+            "restored_points": [
+              [
+                89.0,
+                20.0
+              ]
+            ],
+            "max_error_pixels": 0.0,
+            "passed": true
+          }
+        }
+      }
+    },
+    {
+      "name": "zero_scale_rejected",
+      "passed": true,
+      "evidence": {
+        "ValueError": true
+      }
+    }
+  ],
+  "source_projects_loaded": false
+}

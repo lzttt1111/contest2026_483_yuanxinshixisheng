@@ -1,0 +1,639 @@
+{
+  "passed": true,
+  "count": 37,
+  "results": [
+    {
+      "name": "source_frameNone",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "nonempty frame identity required"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "source_frame''",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "nonempty frame identity required"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "source_frameTrue",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "boolean frame identity not allowed"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "target_frameNone",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "nonempty frame identity required"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "target_frame''",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "nonempty frame identity required"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "target_frameTrue",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "boolean frame identity not allowed"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "source_clockNone",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "nonempty clock identity required"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "source_clock''",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "nonempty clock identity required"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "source_clockTrue",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "nonempty clock identity required"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "target_clockNone",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "nonempty clock identity required"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "target_clock''",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "nonempty clock identity required"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "target_clockTrue",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "nonempty clock identity required"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "empty contract",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "nonempty field list required"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "null layout",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "unsupported tensor layout"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "null color",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "unsupported tensor color"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "empty provider",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "nonempty provider required"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "unit ''",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "unsupported or missing unit"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "unit None",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "unsupported or missing unit"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "unit 'unknown'",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "unsupported or missing unit"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "cm2 without scale",
+      "passed": true,
+      "expected": "fail",
+      "output": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "missing_physical_scale",
+            "detail": "cm2"
+          }
+        ],
+        "metrics": {
+          "count": 4,
+          "coverage": 0.2,
+          "density_per_100k_pixels": 4000.0,
+          "p50": 2.5,
+          "p90": 3.7
+        }
+      },
+      "exit_code": 1
+    },
+    {
+      "name": "cm2 with scale",
+      "passed": true,
+      "expected": "pass",
+      "output": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "count": 4,
+          "coverage": 0.2,
+          "density_per_100k_pixels": 4000.0,
+          "p50": 2.5,
+          "p90": 3.7
+        }
+      },
+      "exit_code": 0
+    },
+    {
+      "name": "status 'runnning'",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "unknown job status"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "status None",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "unknown job status"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "status ''",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "unknown job status"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "mask_edited",
+      "passed": true,
+      "expected": "fail",
+      "output": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "human_edit_overwrite",
+            "detail": "a"
+          }
+        ],
+        "metrics": {
+          "records": 2,
+          "protected_ids": [
+            "a",
+            "b"
+          ],
+          "safe_rerun_ids": []
+        }
+      },
+      "exit_code": 1
+    },
+    {
+      "name": "human_edited",
+      "passed": true,
+      "expected": "fail",
+      "output": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "human_edit_overwrite",
+            "detail": "a"
+          }
+        ],
+        "metrics": {
+          "records": 2,
+          "protected_ids": [
+            "a",
+            "b"
+          ],
+          "safe_rerun_ids": []
+        }
+      },
+      "exit_code": 1
+    },
+    {
+      "name": "protected",
+      "passed": true,
+      "expected": "fail",
+      "output": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "human_edit_overwrite",
+            "detail": "a"
+          }
+        ],
+        "metrics": {
+          "records": 2,
+          "protected_ids": [
+            "a",
+            "b"
+          ],
+          "safe_rerun_ids": []
+        }
+      },
+      "exit_code": 1
+    },
+    {
+      "name": "empty id",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "nonempty record identity required"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "null requirement",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "requirement object and needs list required"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "string needs",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "requirement object and needs list required"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "string available",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "list required: available"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "list slots",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "config and nonempty slots objects required"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "overflow subtraction",
+      "passed": true,
+      "expected": "invalid_input",
+      "output": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "difference exceeds finite numeric range"
+          }
+        ],
+        "metrics": {}
+      },
+      "exit_code": 2
+    },
+    {
+      "name": "stable rmse",
+      "passed": true,
+      "expected": "fail",
+      "output": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "numeric_parity_failed",
+            "detail": 1e+200
+          }
+        ],
+        "metrics": {
+          "max_abs": 1e+200,
+          "rmse": 1e+200,
+          "provider": "CPU",
+          "numeric_comparison_valid": true
+        }
+      },
+      "exit_code": 1
+    },
+    {
+      "name": "stable interpolation",
+      "passed": true,
+      "expected": "pass",
+      "output": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "count": 2,
+          "coverage": 0.2,
+          "density_per_100k_pixels": 2000.0,
+          "p50": 0.0,
+          "p90": 8.000000000000001e+307
+        }
+      },
+      "exit_code": 0
+    },
+    {
+      "name": "wrong binding",
+      "passed": true,
+      "expected": "fail",
+      "output": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "artifact_hash_mismatch",
+            "detail": "evidence.txt"
+          }
+        ],
+        "metrics": {
+          "artifact_hashes": {
+            "evidence.txt": "7e763a1494590abd85d922007a7a2a156128d5054117cd0e902b2e447c1abded"
+          },
+          "files_checked": 1,
+          "binding_verified": false
+        }
+      },
+      "exit_code": 1
+    },
+    {
+      "name": "correct binding",
+      "passed": true,
+      "expected": "pass",
+      "output": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "artifact_hashes": {
+            "evidence.txt": "7e763a1494590abd85d922007a7a2a156128d5054117cd0e902b2e447c1abded"
+          },
+          "files_checked": 1,
+          "binding_verified": true
+        }
+      },
+      "exit_code": 0
+    }
+  ]
+}

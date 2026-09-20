@@ -1,0 +1,8 @@
+{
+  "version": "legacy-water-score-fallback-current-demo-v1",
+  "purpose": "temporary deployment fallback for regions without matching BiSeNet reference; replace after new reference calibration",
+  "source": "examples/current_demo/result.json",
+  "pores": {"score": 57, "severity": "中度", "regions": [{"region":"forehead","score":57,"severity":"中度"},{"region":"nose","score":61,"severity":"轻度"},{"region":"left_nasal","score":61,"severity":"轻度"},{"region":"right_nasal","score":57,"severity":"中度"},{"region":"left_inner_cheek","score":68,"severity":"轻度"},{"region":"right_inner_cheek","score":59,"severity":"中度"},{"region":"left_outer_cheek","score":79,"severity":"轻度"},{"region":"right_outer_cheek","score":54,"severity":"中度"},{"region":"chin","score":67,"severity":"轻度"}]},
+  "spots": {"score": null,"severity": null,"regions": []},
+  "surface_gloss": {"score": 72,"severity":"轻度","regions":[{"region":"forehead","score":72,"severity":"轻度"},{"region":"nose","score":70,"severity":"轻度"},{"region":"left_nasal","score":77,"severity":"轻度"},{"region":"right_nasal","score":76,"severity":"轻度"},{"region":"left_zygoma","score":74,"severity":"轻度"},{"region":"right_zygoma","score":100,"severity":"未见明显"},{"region":"left_cheek","score":100,"severity":"未见明显"},{"region":"right_cheek","score":100,"severity":"未见明显"},{"region":"chin","score":100,"severity":"未见明显"}]}
+}

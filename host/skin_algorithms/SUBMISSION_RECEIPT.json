@@ -1,0 +1,42 @@
+{
+  "schema": "dermavision_public_submission_v1",
+  "name": "DermaVision智能皮肤检测与图像采集系统",
+  "created_at": "2026-09-15",
+  "format": "uncompressed_directory",
+  "public_submission_sanitized": true,
+  "components": [
+    {
+      "path": "01_V2单双输入十二项稳定版",
+      "version": "v2-submission-20260915",
+      "status": "validated"
+    },
+    {
+      "path": "02_水光三项三视图服务",
+      "version": "0.1.0",
+      "status": "validated"
+    },
+    {
+      "path": "03_目标检测与自动拍照",
+      "version": "0.0.1",
+      "status": "PC_VALIDATED_RK3576_PENDING",
+      "manifest_files": 110
+    }
+  ],
+  "included": [
+    "source_code",
+    "models",
+    "scoring_assets",
+    "dependency_locks",
+    "technical_documents",
+    "integrity_manifests"
+  ],
+  "excluded": [
+    "virtual_environments",
+    "runtime_caches",
+    "personal_images",
+    "credentials",
+    "internal_work_logs",
+    "private_repository_coordinates"
+  ],
+  "deployment_claimed": false
+}

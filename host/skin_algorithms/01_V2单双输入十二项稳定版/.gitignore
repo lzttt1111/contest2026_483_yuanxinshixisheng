@@ -1,0 +1,44 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+!00_runtime_assets/vendor_skin/pyz/**/*.pyc
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv/
+venv/
+services/*/.venv/
+services/*/.env
+
+# 输出结果（运行时生成）
+output/
+test-output/
+output-test*/
+data/uploads/
+/validation/
+/output_fast_candidate_20260724/
+
+# 环境配置（含敏感信息）
+.env
+
+# IDE
+.vscode/
+.idea/
+.pytest_cache/
+.ruff_cache/
+
+# 九项参考分布与评分标定运行产物
+calibration/runs/
+calibration/*.parquet
+calibration/score_profile.json
+calibration/profiles/*.json
+calibration/profiles/*.sqlite3
+
+# 本地研发归档（不进入生产发布）
+归档文件夹/
+
+# Windows 下载附加数据流侧车文件
+*:Zone.Identifier

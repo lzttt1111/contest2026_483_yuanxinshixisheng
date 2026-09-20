@@ -1,0 +1,2024 @@
+{
+  "list_version": "scoring_input_field_list_v2",
+  "schema": "dermavision_scoring_input_field_list_v1",
+  "addressing": "detector.metrics.<relpath> (registry _pool language)",
+  "generation_notes": "Generated from the 20260912 evidence matrix plus phase-a api_inventory. registry fields derive from the 137 explicit formulas; word extras cover the acne/wrinkle 2D readers and the institution wide-table projection. V0.1.1 instance-count reads scoring_features[detector].instance_count. vascular.p50_redness/p90_redness are the current engine keys; the historical wide-table p50_redness_response/p90_redness_response are registered as institution aliases only (fallback_paths), never double-written.",
+  "formula_registry_sha256": "9ac2d51db8239679318d791f55f3519a69996596f489153a3779db983e059c27",
+  "formula_registry_version": "doctor_v2_explicit_proxy_v1",
+  "word_profile_sha256": "a6933505ae50384612d28ed9b3cd788d5112566049bbcf8622f7bdb406a894ea",
+  "word_profile_id": "word_population_reference_1000",
+  "generated_from": {
+    "matrix_doc": "docs/十二项评分输入字段证据矩阵_20260912.md",
+    "api_inventory": ".opencode-overall-summary/phase-a/api_inventory.json",
+    "formula_registry": "calibration/v2_explicit_formula_registry_v1.json",
+    "word_profile": "00_runtime_assets/scoring_word_provisional/word_population_reference_1000.json"
+  },
+  "quality_inputs": [
+    "scoring_input.quality.input_quality_gate.status",
+    "scoring_input.quality.input_quality_gate.reason_codes",
+    "scoring_input.quality.status",
+    "scoring_input.quality.quality_status",
+    "scoring_input.quality.quality_flags"
+  ],
+  "v011_supplementary": [
+    {
+      "path": "pores.instance_count",
+      "evidence_form": null,
+      "consumers": [
+        "word-v011"
+      ],
+      "required": false,
+      "note": "v011/scoring.py:99-102 minimum_instances gate"
+    },
+    {
+      "path": "spots.instance_count",
+      "evidence_form": null,
+      "consumers": [
+        "word-v011"
+      ],
+      "required": false,
+      "note": "v011/scoring.py:99-102 minimum_instances gate"
+    },
+    {
+      "path": "brown.instance_count",
+      "evidence_form": null,
+      "consumers": [
+        "word-v011"
+      ],
+      "required": false,
+      "note": "v011/scoring.py:99-102 minimum_instances gate"
+    },
+    {
+      "path": "texture.instance_count",
+      "evidence_form": null,
+      "consumers": [
+        "word-v011"
+      ],
+      "required": false,
+      "note": "v011/scoring.py:99-102 minimum_instances gate"
+    },
+    {
+      "path": "redness.instance_count",
+      "evidence_form": null,
+      "consumers": [
+        "word-v011"
+      ],
+      "required": false,
+      "note": "v011/scoring.py:99-102 minimum_instances gate"
+    }
+  ],
+  "module_word_bindings": {
+    "10": {
+      "module_id": "smoothness",
+      "strategy": "legacy_v011",
+      "detectors": [
+        "texture",
+        "contour_firmness",
+        "spots"
+      ]
+    },
+    "11": {
+      "module_id": "contour_firmness",
+      "strategy": "population_profile",
+      "detectors": [
+        "contour_firmness",
+        "wrinkle",
+        "texture"
+      ]
+    },
+    "01": {
+      "module_id": "pores",
+      "strategy": "legacy_v011",
+      "detectors": [
+        "pores"
+      ]
+    },
+    "02": {
+      "module_id": "oil_tendency",
+      "strategy": "population_profile",
+      "detectors": [
+        "surface_gloss",
+        "porphyrin"
+      ]
+    },
+    "03": {
+      "module_id": "pigmentation",
+      "strategy": "legacy_v011",
+      "detectors": [
+        "spots",
+        "uv_spots",
+        "brown"
+      ]
+    },
+    "04": {
+      "module_id": "diffuse_redness",
+      "strategy": "legacy_v011",
+      "detectors": [
+        "redness"
+      ]
+    },
+    "05": {
+      "module_id": "vascular",
+      "strategy": "population_profile",
+      "detectors": [
+        "vascular"
+      ]
+    },
+    "06": {
+      "module_id": "acne_activity",
+      "strategy": "acne_2d",
+      "detectors": [
+        "acne",
+        "redness",
+        "texture",
+        "contour_firmness",
+        "porphyrin"
+      ]
+    },
+    "07": {
+      "module_id": "dry_fine_lines",
+      "strategy": "population_profile",
+      "detectors": [
+        "wrinkle",
+        "contour_firmness"
+      ]
+    },
+    "08": {
+      "module_id": "stable_wrinkles",
+      "strategy": "wrinkle_2d",
+      "detectors": [
+        "wrinkle",
+        "contour_firmness"
+      ]
+    },
+    "09": {
+      "module_id": "structural_grooves",
+      "strategy": "wrinkle_2d",
+      "detectors": [
+        "wrinkle",
+        "contour_firmness",
+        "texture"
+      ]
+    }
+  },
+  "algorithms": {
+    "redness": {
+      "detectors": [
+        "redness"
+      ],
+      "required_field_count": 13,
+      "fields": [
+        {
+          "path": "redness.metrics.high_red_area_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "redness.metrics.mean_redness",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "redness.metrics.medical_metrics_v2.overall_metrics.auxiliary_metrics.analysis_scope.valid_skin_area_px",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "redness.metrics.medical_metrics_v2.overall_metrics.auxiliary_metrics.scope_and_burden.feature_density_per_100k_skin_px",
+          "unit": [
+            "count_per_100k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "redness.metrics.medical_metrics_v2.overall_metrics.auxiliary_metrics.signal_intensity.p90_instance_intensity",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "redness.metrics.medical_metrics_v2.overall_metrics.core_metrics.auxiliary_statistics.diffuse_redness_uniformity",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "redness.metrics.medical_metrics_v2.overall_metrics.core_metrics.auxiliary_statistics.redness_boundary_gradient",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "redness.metrics.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.diffuse_red_area_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "redness.metrics.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.max_continuous_region_area_px",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "redness.metrics.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.redness_continuity",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "redness.metrics.p90_redness",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "redness.metrics.red_feature_area_ratio",
+          "unit": [
+            "count_per_100k_px",
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "redness.metrics.runtime_summary",
+          "unit": [
+            "existing_local_numeric_summary"
+          ],
+          "consumers": [
+            "word-v011"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": true,
+          "profile_scope": "institution"
+        }
+      ]
+    },
+    "spots": {
+      "detectors": [
+        "spots"
+      ],
+      "required_field_count": 8,
+      "fields": [
+        {
+          "path": "spots.metrics.medical_metrics_v2.overall_metrics.auxiliary_metrics.analysis_scope.valid_skin_area_px",
+          "unit": [
+            "count_per_100k_px"
+          ],
+          "consumers": [
+            "proxy"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "spots.metrics.medical_metrics_v2.overall_metrics.auxiliary_metrics.count_and_density.punctate_spot_count",
+          "unit": [
+            "count_per_100k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "spots.metrics.medical_metrics_v2.overall_metrics.auxiliary_metrics.scope_and_burden.p90_instance_area_px",
+          "unit": [
+            "standardized_px2"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": true
+        },
+        {
+          "path": "spots.metrics.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.feature_density_per_100k_skin_px",
+          "unit": [
+            "count_per_100k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "spots.metrics.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.patch_spot_area_ratio",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "spots.metrics.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.punctate_spot_area_ratio",
+          "unit": [
+            "ratio_0_1",
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "spots.metrics.medical_metrics_v2.overall_metrics.core_metrics.signal_intensity.p90_delta_e",
+          "unit": [
+            "delta_e_proxy"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": true
+        },
+        {
+          "path": "spots.metrics.spot_area_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        }
+      ]
+    },
+    "brown": {
+      "detectors": [
+        "brown"
+      ],
+      "required_field_count": 5,
+      "fields": [
+        {
+          "path": "brown.metrics.medical_metrics_v2.overall_metrics.auxiliary_metrics.scope_and_burden.brown_spot_area_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "brown.metrics.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.high_intensity_area_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "brown.metrics.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.patch_target_area_ratio",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "brown.metrics.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.punctate_target_area_ratio",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "brown.metrics.medical_metrics_v2.overall_metrics.core_metrics.signal_intensity.p90_intensity",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        }
+      ]
+    },
+    "texture": {
+      "detectors": [
+        "texture"
+      ],
+      "required_field_count": 8,
+      "fields": [
+        {
+          "path": "texture.metrics.medical_metrics_v2.overall_metrics.auxiliary_metrics.auxiliary_statistics.depressed_like_ratio",
+          "unit": [
+            "count_per_100k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011",
+            "word-pop"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "texture.metrics.medical_metrics_v2.overall_metrics.auxiliary_metrics.auxiliary_statistics.raised_like_ratio",
+          "unit": [
+            "count_per_100k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011",
+            "word-pop"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "texture.metrics.medical_metrics_v2.overall_metrics.auxiliary_metrics.scope_and_burden.p90_instance_area_px",
+          "unit": [
+            "standardized_px2"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011",
+            "word-pop"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "texture.metrics.medical_metrics_v2.overall_metrics.auxiliary_metrics.signal_intensity.p90_instance_intensity",
+          "unit": [
+            "normalized_volume_per_area"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011",
+            "word-pop"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "texture.metrics.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.depressed_like_area_ratio",
+          "unit": [
+            "normalized_volume",
+            "normalized_volume_per_area",
+            "ratio_0_1",
+            "relative_2_5d",
+            "relative_slope"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011",
+            "word-pop"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "texture.metrics.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.feature_density_per_100k_skin_px",
+          "unit": [
+            "count_per_100k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011",
+            "word-pop"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "texture.metrics.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.raised_like_area_ratio",
+          "unit": [
+            "normalized_volume",
+            "normalized_volume_per_area",
+            "ratio_0_1",
+            "relative_2_5d"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011",
+            "word-pop"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "texture.metrics.medical_metrics_v2.overall_metrics.core_metrics.signal_intensity.p90_intensity",
+          "unit": [
+            "normalized_volume_per_area",
+            "relative_0_1",
+            "relative_2_5d"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011",
+            "word-pop"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        }
+      ]
+    },
+    "pores": {
+      "detectors": [
+        "pores"
+      ],
+      "required_field_count": 8,
+      "fields": [
+        {
+          "path": "pores.metrics.medical_metrics_v2.overall_metrics.auxiliary_metrics.analysis_scope.valid_skin_area_px",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "pores.metrics.medical_metrics_v2.overall_metrics.auxiliary_metrics.morphology.low_circularity_pore_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": true
+        },
+        {
+          "path": "pores.metrics.medical_metrics_v2.overall_metrics.auxiliary_metrics.scope_and_burden.max_instance_area_px",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "pores.metrics.medical_metrics_v2.overall_metrics.core_metrics.auxiliary_statistics.elongated_pore_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": true
+        },
+        {
+          "path": "pores.metrics.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.feature_area_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "pores.metrics.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.feature_density_per_100k_skin_px",
+          "unit": [
+            "count_per_100k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "pores.metrics.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.p50_instance_area_px",
+          "unit": [
+            "standardized_px2"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": true
+        },
+        {
+          "path": "pores.metrics.medical_metrics_v2.overall_metrics.core_metrics.scope_and_burden.p90_instance_area_px",
+          "unit": [
+            "standardized_px2"
+          ],
+          "consumers": [
+            "proxy",
+            "word-v011"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": true
+        }
+      ]
+    },
+    "purple": {
+      "detectors": [
+        "uv_spots",
+        "porphyrin"
+      ],
+      "required_field_count": 10,
+      "fields": [
+        {
+          "path": "uv_spots.metrics.uv_spots.总体指标.核心指标.信号强度.P90强度（0～1）",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "uv_spots.metrics.uv_spots.总体指标.核心指标.范围与负担.单位面积密度（个/10万有效皮肤像素）",
+          "unit": [
+            "count_per_100k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "uv_spots.metrics.uv_spots.总体指标.核心指标.范围与负担.特征面积占比",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "uv_spots.metrics.uv_spots.总体指标.辅助指标.范围与负担.高强度区域面积占比",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "porphyrin.metrics.porphyrin.总体指标.核心指标.信号强度.实例P50强度（0～1）",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "porphyrin.metrics.porphyrin.总体指标.核心指标.信号强度.实例P90强度（0～1）",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "porphyrin.metrics.porphyrin.总体指标.核心指标.信号强度.高强度目标比例",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "porphyrin.metrics.porphyrin.总体指标.核心指标.范围与负担.单位面积密度（个/10万有效皮肤像素）",
+          "unit": [
+            "count_per_100k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "porphyrin.metrics.porphyrin.总体指标.核心指标.范围与负担.特征面积占比",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "porphyrin.metrics.porphyrin.总体指标.辅助指标.范围与负担.高强度区域面积占比",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "porphyrin.metrics.overall_metrics.core_metrics.count_and_density.feature_count",
+          "unit": [
+            "count"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false,
+          "profile_scope": "institution"
+        },
+        {
+          "path": "porphyrin.metrics.overall_metrics.core_metrics.scope_and_morphology.feature_area_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false,
+          "profile_scope": "institution"
+        },
+        {
+          "path": "porphyrin.metrics.overall_metrics.core_metrics.signal_intensity.p50_intensity",
+          "unit": [
+            "intensity_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false,
+          "profile_scope": "institution"
+        },
+        {
+          "path": "porphyrin.metrics.overall_metrics.core_metrics.signal_intensity.p90_intensity",
+          "unit": [
+            "intensity_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false,
+          "profile_scope": "institution"
+        },
+        {
+          "path": "porphyrin.metrics.overall_metrics.auxiliary_metrics.analysis_scope.valid_skin_area_px",
+          "unit": [
+            "px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false,
+          "profile_scope": "institution"
+        }
+      ]
+    },
+    "acne": {
+      "detectors": [
+        "acne"
+      ],
+      "required_field_count": 2,
+      "fields": [
+        {
+          "path": "acne.metrics.detection.count",
+          "unit": [
+            "count_per_100k_px",
+            "ratio_0_1",
+            "relative_2_5d",
+            "standardized_px2"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-acne2d"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": true
+        },
+        {
+          "path": "acne.metrics.preprocess.skin_pixels",
+          "unit": [
+            "count_per_100k_px",
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-acne2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "acne.metrics.detection.detections[].box_area",
+          "unit": [
+            "px"
+          ],
+          "consumers": [
+            "word-acne2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false
+        },
+        {
+          "path": "acne.metrics.detection.detections[].confidence",
+          "unit": [
+            "0_1"
+          ],
+          "consumers": [
+            "word-acne2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false
+        },
+        {
+          "path": "acne.public_metrics.overall_metrics.auxiliary_metrics.analysis_scope.valid_skin_area_px",
+          "unit": [
+            "px"
+          ],
+          "consumers": [
+            "word-acne2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false
+        }
+      ]
+    },
+    "wrinkle": {
+      "detectors": [
+        "wrinkle"
+      ],
+      "required_field_count": 28,
+      "fields": [
+        {
+          "path": "wrinkle.metrics.line_width",
+          "unit": [
+            "normalized_volume",
+            "normalized_width",
+            "ratio_0_1",
+            "standardized_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[0].density_per_10k",
+          "unit": [
+            "count_per_100k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[0].max_segment_length",
+          "unit": [
+            "normalized_volume_per_length",
+            "standardized_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[0].mean_segment_length",
+          "unit": [
+            "standardized_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[0].relative_score",
+          "unit": [
+            "ratio_0_1",
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[0].share_pct",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[1].density_per_10k",
+          "unit": [
+            "count_per_100k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[1].max_segment_length",
+          "unit": [
+            "standardized_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[1].mean_segment_length",
+          "unit": [
+            "standardized_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[1].relative_score",
+          "unit": [
+            "ratio_0_1",
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[1].share_pct",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[2].density_per_10k",
+          "unit": [
+            "count_per_100k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[2].max_segment_length",
+          "unit": [
+            "standardized_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[2].mean_segment_length",
+          "unit": [
+            "standardized_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[2].relative_score",
+          "unit": [
+            "ratio_0_1",
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[2].share_pct",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[3].density_per_10k",
+          "unit": [
+            "count_per_100k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[3].max_segment_length",
+          "unit": [
+            "standardized_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[3].mean_segment_length",
+          "unit": [
+            "standardized_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[3].relative_score",
+          "unit": [
+            "ratio_0_1",
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[3].share_pct",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.stage1_center_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.stage1_raw_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.stage1_recommended_ratio",
+          "unit": [
+            "count_per_100k_px",
+            "length_per_10k_px",
+            "ratio_0_1",
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.stage2_center_ratio",
+          "unit": [
+            "ratio_0_1",
+            "relative_0_1",
+            "relative_2_5d"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.stage2_raw_ratio",
+          "unit": [
+            "ratio_0_1",
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.stage2_recommended_ratio",
+          "unit": [
+            "length_per_10k_px",
+            "normalized_volume",
+            "normalized_volume_per_length",
+            "ratio_0_1",
+            "relative_0_1",
+            "relative_2_5d",
+            "relative_curvature"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[].analysis_region",
+          "unit": [
+            "name"
+          ],
+          "consumers": [
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[].region_name",
+          "unit": [
+            "name"
+          ],
+          "consumers": [
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics",
+          "unit": [
+            "list"
+          ],
+          "consumers": [
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[].core_metrics.scope_and_morphology.total_wrinkle_length_px",
+          "unit": [
+            "px"
+          ],
+          "consumers": [
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false,
+          "fallback_paths": [
+            "wrinkle.metrics.region_metrics[].wrinkle_pixels"
+          ]
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[].auxiliary_metrics.count_and_density.wrinkle_segment_count",
+          "unit": [
+            "count"
+          ],
+          "consumers": [
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false,
+          "fallback_paths": [
+            "wrinkle.metrics.region_metrics[].segment_count"
+          ]
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[].auxiliary_metrics.scope_and_morphology.max_segment_length_px",
+          "unit": [
+            "px"
+          ],
+          "consumers": [
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false,
+          "fallback_paths": [
+            "wrinkle.metrics.region_metrics[].max_segment_length"
+          ]
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[].wrinkle_pixels",
+          "unit": [
+            "px"
+          ],
+          "consumers": [
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[].segment_count",
+          "unit": [
+            "count"
+          ],
+          "consumers": [
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false
+        },
+        {
+          "path": "wrinkle.metrics.region_metrics[].max_segment_length",
+          "unit": [
+            "px"
+          ],
+          "consumers": [
+            "word-wrinkle2d"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false
+        }
+      ]
+    },
+    "surface_gloss": {
+      "detectors": [
+        "surface_gloss"
+      ],
+      "required_field_count": 5,
+      "fields": [
+        {
+          "path": "surface_gloss.metrics.doctor_core_inputs.surface_gloss_continuity.largest_gloss_component_area_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "surface_gloss.metrics.doctor_core_inputs.surface_gloss_coverage.gloss_area_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "surface_gloss.metrics.doctor_core_inputs.surface_gloss_coverage.high_gloss_area_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "surface_gloss.metrics.doctor_core_inputs.surface_gloss_intensity.p50_gloss_intensity",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "surface_gloss.metrics.doctor_core_inputs.surface_gloss_intensity.p90_gloss_intensity",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "surface_gloss.metrics.overall_metrics.core_metrics.scope_and_morphology.gloss_area_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false,
+          "profile_scope": "institution",
+          "fallback_paths": [
+            "surface_gloss.metrics.doctor_core_inputs.surface_gloss_coverage.gloss_area_ratio"
+          ]
+        },
+        {
+          "path": "surface_gloss.metrics.overall_metrics.core_metrics.scope_and_morphology.high_gloss_area_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false,
+          "profile_scope": "institution",
+          "fallback_paths": [
+            "surface_gloss.metrics.doctor_core_inputs.surface_gloss_coverage.high_gloss_area_ratio"
+          ]
+        },
+        {
+          "path": "surface_gloss.metrics.overall_metrics.core_metrics.signal_intensity.p50_gloss_intensity",
+          "unit": [
+            "intensity_0_1"
+          ],
+          "consumers": [
+            "word-inst"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": false,
+          "profile_scope": "institution",
+          "fallback_paths": [
+            "surface_gloss.metrics.doctor_core_inputs.surface_gloss_intensity.p50_gloss_intensity"
+          ]
+        },
+        {
+          "path": "surface_gloss.metrics.overall_metrics.core_metrics.signal_intensity.p90_gloss_intensity",
+          "unit": [
+            "intensity_0_1"
+          ],
+          "consumers": [
+            "word-inst"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": false,
+          "profile_scope": "institution",
+          "fallback_paths": [
+            "surface_gloss.metrics.doctor_core_inputs.surface_gloss_intensity.p90_gloss_intensity"
+          ]
+        }
+      ]
+    },
+    "vascular": {
+      "detectors": [
+        "vascular"
+      ],
+      "required_field_count": 10,
+      "fields": [
+        {
+          "path": "vascular.metrics.branch_point_density_per_10k_face_px",
+          "unit": [
+            "count_per_10k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "vascular.metrics.network_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "vascular.metrics.p50_redness",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "vascular.metrics.p50_width_px",
+          "unit": [
+            "standardized_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "vascular.metrics.p90_redness",
+          "unit": [
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "vascular.metrics.p90_width_px",
+          "unit": [
+            "standardized_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "vascular.metrics.valid_face_pixels",
+          "unit": [
+            "count_per_100k_px"
+          ],
+          "consumers": [
+            "proxy"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "vascular.metrics.vascular_area_ratio",
+          "unit": [
+            "ratio_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "vascular.metrics.vascular_count",
+          "unit": [
+            "count_per_100k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "vascular.metrics.vascular_line_density_per_10k_face_px",
+          "unit": [
+            "length_per_10k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "vascular.metrics.overall_metrics.core_metrics.count_and_density.vascular_count",
+          "unit": [
+            "count"
+          ],
+          "consumers": [
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false,
+          "profile_scope": "institution",
+          "fallback_paths": [
+            "vascular.metrics.vascular_count"
+          ]
+        },
+        {
+          "path": "vascular.metrics.overall_metrics.core_metrics.count_and_density.branch_point_count",
+          "unit": [
+            "count"
+          ],
+          "consumers": [
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false,
+          "profile_scope": "institution",
+          "fallback_paths": [
+            "vascular.metrics.branch_point_density_per_10k_face_px"
+          ]
+        },
+        {
+          "path": "vascular.metrics.overall_metrics.core_metrics.scope_and_morphology.vascular_total_length_px",
+          "unit": [
+            "px"
+          ],
+          "consumers": [
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false,
+          "profile_scope": "institution",
+          "fallback_paths": [
+            "vascular.metrics.vascular_line_density_per_10k_face_px"
+          ]
+        },
+        {
+          "path": "vascular.metrics.overall_metrics.core_metrics.signal_intensity.p50_redness_response",
+          "unit": [
+            "engine"
+          ],
+          "consumers": [
+            "word-inst"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": false,
+          "profile_scope": "institution",
+          "fallback_paths": [
+            "vascular.metrics.p50_redness"
+          ]
+        },
+        {
+          "path": "vascular.metrics.overall_metrics.core_metrics.signal_intensity.p90_redness_response",
+          "unit": [
+            "engine"
+          ],
+          "consumers": [
+            "word-inst"
+          ],
+          "zero_semantics": "legitimate_zero",
+          "required": false,
+          "profile_scope": "institution",
+          "fallback_paths": [
+            "vascular.metrics.p90_redness"
+          ]
+        },
+        {
+          "path": "vascular.metrics.overall_metrics.auxiliary_metrics.analysis_scope.valid_skin_area_px",
+          "unit": [
+            "px"
+          ],
+          "consumers": [
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false,
+          "profile_scope": "institution",
+          "fallback_paths": [
+            "vascular.metrics.valid_face_pixels"
+          ]
+        }
+      ]
+    },
+    "contour_firmness": {
+      "detectors": [
+        "contour_firmness"
+      ],
+      "required_field_count": 7,
+      "fields": [
+        {
+          "path": "contour_firmness.metrics.jaw_arc_asymmetry_ratio",
+          "unit": [
+            "normalized_volume"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "contour_firmness.metrics.jaw_continuity_ratio",
+          "unit": [
+            "normalized_volume",
+            "relative_0_1"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "contour_firmness.metrics.jaw_curve_direction_changes",
+          "unit": [
+            "count_per_10k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "contour_firmness.metrics.jaw_curve_p90",
+          "unit": [
+            "normalized_volume",
+            "relative_0_1",
+            "relative_2_5d",
+            "relative_curvature",
+            "relative_slope"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "contour_firmness.metrics.midface_convex_concave_turns",
+          "unit": [
+            "count_per_10k_px"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "contour_firmness.metrics.midface_relative_relief_p90",
+          "unit": [
+            "normalized_volume",
+            "normalized_volume_per_area",
+            "normalized_volume_per_length",
+            "relative_2_5d"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "contour_firmness.metrics.midface_surface_continuity_ratio",
+          "unit": [
+            "normalized_volume",
+            "relative_0_1",
+            "relative_2_5d"
+          ],
+          "consumers": [
+            "proxy",
+            "word-pop",
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": true,
+          "profile_scope": "consumer"
+        },
+        {
+          "path": "contour_firmness.metrics.中面部曲面连续性",
+          "unit": [
+            "0_1"
+          ],
+          "consumers": [
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false,
+          "profile_scope": "institution",
+          "fallback_paths": [
+            "contour_firmness.metrics.midface_surface_continuity_ratio"
+          ]
+        },
+        {
+          "path": "contour_firmness.metrics.下颌缘连续性",
+          "unit": [
+            "0_1"
+          ],
+          "consumers": [
+            "word-inst"
+          ],
+          "zero_semantics": "non_negative",
+          "required": false,
+          "profile_scope": "institution",
+          "fallback_paths": [
+            "contour_firmness.metrics.jaw_continuity_ratio"
+          ]
+        }
+      ]
+    }
+  },
+  "revision_note": "Preserve v1 unchanged. v2 scopes consumer-only shapes and retains the existing local institution redness runtime summary; scoring formulas and population references are unchanged."
+}

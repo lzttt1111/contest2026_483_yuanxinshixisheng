@@ -1,0 +1,11 @@
+{
+  "http_submit": 202,
+  "http_query": 200,
+  "queue_id": "1ece99bd-2466-49f1-a5f2-db50f1d3b24c",
+  "result_matches_real_example": true,
+  "scope": "local_diagnostic_only",
+  "http_409_guards": {
+    "score-jobs": "SCORING_REFERENCE_NOT_READY",
+    "jobs": "LEGACY_TASK_DISABLED"
+  }
+}

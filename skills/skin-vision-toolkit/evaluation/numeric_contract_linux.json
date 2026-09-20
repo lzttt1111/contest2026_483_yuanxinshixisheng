@@ -1,0 +1,826 @@
+{
+  "passed": true,
+  "count": 52,
+  "cases": [
+    {
+      "id": "vision-metrics-calibration.physical_scale=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite number required: physical_scale"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-metrics-calibration.physical_scale=False",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite number required: physical_scale"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-metrics-calibration.physical_scale='1'",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite number required: physical_scale"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-metrics-calibration.physical_scale=nan",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "non-finite number"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-metrics-calibration.physical_scale=inf",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "non-finite number"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-metrics-calibration.physical_scale=-1",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "physical_scale must be positive"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-metrics-calibration.physical_scale=0",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "physical_scale must be positive"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-runtime-parity.max_abs_tolerance=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite numeric tolerance required"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-runtime-parity.max_abs_tolerance=False",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite numeric tolerance required"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-runtime-parity.max_abs_tolerance='1'",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite numeric tolerance required"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-runtime-parity.max_abs_tolerance=nan",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "non-finite number"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-runtime-parity.max_abs_tolerance=inf",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "non-finite number"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-runtime-parity.max_abs_tolerance=-1",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "negative tolerance"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.config.yaw_sign=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "yaw_sign must be integer -1 or 1, not boolean"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.config.yaw_sign=False",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "yaw_sign must be integer -1 or 1, not boolean"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.config.yaw_sign=1.0",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "yaw_sign must be integer -1 or 1, not boolean"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.config.yaw_sign='1'",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "yaw_sign must be integer -1 or 1, not boolean"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.config.yaw_sign=0",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "yaw_sign must be integer -1 or 1, not boolean"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.config.yaw_sign=2",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "yaw_sign must be integer -1 or 1, not boolean"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.config.yaw_tolerance=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite capture number required: yaw_tolerance"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.config.pitch_limit=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite capture number required: pitch_limit"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.config.roll_limit=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite capture number required: roll_limit"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.config.stable_ms=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite capture number required: stable_ms"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.config.max_gap_ms=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite capture number required: max_gap_ms"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.config.max_age_ms=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite capture number required: max_age_ms"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.config.slots.front=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite slot angle required"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.frames.0.t=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite frame number required: t"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.frames.0.age_ms=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite frame number required: age_ms"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.frames.0.yaw=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite frame number required: yaw"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.frames.0.raw_yaw=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite frame number required: raw_yaw"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.frames.0.pitch=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite frame number required: pitch"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "pose-guided-capture.frames.0.roll=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite frame number required: roll"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-metrics-calibration.declared_p50=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite number required: declared_p50"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-metrics-calibration.declared_p90=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite number required: declared_p90"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-metrics-calibration.declared_count=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "declared_count must be nonnegative integer"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-feature-engineering.min_retained_ratio=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite numeric retained ratio required"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-feature-engineering.instances.0.x=False",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "integer centroid required for this raster audit"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-data-review.records.0.revision=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "revision must be nonnegative integer"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-system-integration.current_revision=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "revision must be nonnegative integer"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-system-integration.result_revision=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "revision must be nonnegative integer"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-system-integration.source_frame=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "boolean frame identity not allowed"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-system-integration.target_frame=True",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "boolean frame identity not allowed"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "coordinate_bool_scale",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite number required: scale"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "coordinate_bool_tolerance_pixels",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite number required: tolerance_pixels"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "coordinate_bool_pad_xy",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite coordinate number required"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "coordinate_bool_model_points",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite coordinate number required"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "coordinate_bool_original_points",
+      "passed": true,
+      "exit_code": 2,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "finite coordinate number required"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "vision-metrics-calibration.physical_scale=0.1",
+      "passed": true,
+      "exit_code": 0,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "count": 4,
+          "coverage": 0.2,
+          "density_per_100k_pixels": 4000.0,
+          "p50": 2.5,
+          "p90": 3.7
+        }
+      }
+    },
+    {
+      "id": "vision-runtime-parity.max_abs_tolerance=0",
+      "passed": true,
+      "exit_code": 0,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "max_abs": 0.0,
+          "rmse": 0.0,
+          "provider": "CPU",
+          "numeric_comparison_valid": true
+        }
+      }
+    },
+    {
+      "id": "pose-guided-capture.config.yaw_sign=-1",
+      "passed": true,
+      "exit_code": 0,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "captured": {
+            "front": 2
+          },
+          "complete": true,
+          "trace": [
+            {
+              "frame": 0,
+              "accepted": true
+            },
+            {
+              "frame": 1,
+              "accepted": true
+            },
+            {
+              "frame": 2,
+              "accepted": true
+            }
+          ],
+          "capture_revision": 0
+        }
+      }
+    },
+    {
+      "id": "pose-guided-capture.config.yaw_sign=1",
+      "passed": true,
+      "exit_code": 0,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "captured": {
+            "front": 2
+          },
+          "complete": true,
+          "trace": [
+            {
+              "frame": 0,
+              "accepted": true
+            },
+            {
+              "frame": 1,
+              "accepted": true
+            },
+            {
+              "frame": 2,
+              "accepted": true
+            }
+          ],
+          "capture_revision": 0
+        }
+      }
+    },
+    {
+      "id": "publication_bool_equals_one",
+      "passed": true,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "projection_mismatch",
+            "detail": {
+              "source": "src.json",
+              "report": "dst.json"
+            }
+          }
+        ],
+        "metrics": {
+          "artifact_hashes": {},
+          "files_checked": 0
+        }
+      }
+    }
+  ],
+  "interpreter": "3.10.12",
+  "platform": "linux",
+  "cli_tested": true,
+  "production_inputs_used": false
+}

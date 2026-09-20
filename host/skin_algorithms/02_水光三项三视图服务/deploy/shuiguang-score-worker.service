@@ -1,0 +1,19 @@
+[Unit]
+Description=DermaVision Shuiguang Three-Item Celery Worker
+After=network-online.target redis-server.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dermavision
+Group=dermavision
+WorkingDirectory=/opt/dermavision/shuiguang-three
+EnvironmentFile=/etc/dermavision/shuiguang.env
+ExecStart=/opt/dermavision/shuiguang-three/.venv/bin/celery -A cloud_three.tasks:app worker --queues=shuiguang_scores --concurrency=1 --pool=solo --loglevel=INFO
+Restart=on-failure
+RestartSec=5
+TimeoutStartSec=180
+TimeoutStopSec=60
+
+[Install]
+WantedBy=multi-user.target

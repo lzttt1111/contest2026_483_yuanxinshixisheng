@@ -1,0 +1,56 @@
+{
+  "release_order": ["aisia-contracts@v0.2.0", "ai-skin-backend", "DermaVision"],
+  "task": "dermavision.analyze_image",
+  "arguments": ["task_id", "oss_key", "oss_result_prefix", "algorithms"],
+  "algorithms": {
+    "surface_gloss": {
+      "queue": "surface_gloss",
+      "schema_version": "1",
+      "frontend_name": "表面油光",
+      "metrics": {
+        "油光面积占比": {
+          "regions": ["总计", "额头", "左脸颊", "右脸颊", "鼻部", "下巴"],
+          "unit": "比例（0～1）"
+        },
+        "油光区域数量": {
+          "regions": ["总计", "额头", "左脸颊", "右脸颊", "鼻部", "下巴"],
+          "unit": "个"
+        }
+      }
+    },
+    "vascular": {
+      "queue": "vascular",
+      "schema_version": "1",
+      "frontend_name": "血管样结构",
+      "metrics": {
+        "血管样结构数量": {
+          "regions": ["总计", "额头", "左脸颊", "右脸颊", "鼻部", "下巴"],
+          "unit": "个"
+        },
+        "血管样结构总长度": {
+          "regions": ["总计", "额头", "左脸颊", "右脸颊", "鼻部", "下巴"],
+          "unit": "标准化图像像素"
+        }
+      }
+    },
+    "contour_firmness": {
+      "queue": "contour_firmness",
+      "schema_version": "1",
+      "frontend_name": "轮廓紧致度",
+      "metrics": {
+        "中面部曲面连续性": "相对代理值（0～1）",
+        "下颌缘连续性": "相对代理值（0～1）",
+        "左右轮廓差异": "相对代理值（0～1）"
+      }
+    }
+  },
+  "success_envelope": [
+    "record_id", "status", "schema_version", "meta_data", "raw_result", "debug_info"
+  ],
+  "raw_result": [
+    "overlay", "metrics", "medical_report_csv_v2",
+    "quality_score", "quality_status", "quality_flags", "scoring_input"
+  ],
+  "scoring_input": "新增三项 v1 信封新增可选 scoring_input（scoring_input_v1）；公开 metrics 严格不变。",
+  "compatibility": "原九项字段零删除、零改名、零改类型；新增 scoring_input 为可选加法字段"
+}

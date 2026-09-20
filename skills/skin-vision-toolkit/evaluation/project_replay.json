@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "source_alias": "existing_rgb_triplet/front/pores",
+  "source_hashes": {
+    "水光检测完整结果.json": "ce6ad76a012969c3f19a6822a68360ef71773aa22a6a6d3ba61a48645ce71cb9",
+    "02_front/pores/metrics.json": "75490615a22821cf56181ab1493808bbeca73145adae69c6eb90a1fc56c96193",
+    "02_front/pores/evidence.npz": "a2c19b9d0c64f6f8e35332d0993beabbc6d063d01c7dd29329d9a0cdd4cb4c1b"
+  },
+  "metrics": {
+    "status": "pass",
+    "findings": [],
+    "metrics": {
+      "count": 1525,
+      "coverage": 0.10327181995329915,
+      "density_per_100k_pixels": 420.91491722466645,
+      "p50": 15.0,
+      "p90": 48.0
+    }
+  },
+  "publication": {
+    "status": "pass",
+    "findings": [],
+    "metrics": {
+      "artifact_hashes": {
+        "source_hashes.json": "c1089436609f6e9cf3e399b0c8cbdae620fab8a279c8666503af6eedf99a43f0"
+      },
+      "files_checked": 1
+    }
+  },
+  "source_files_unchanged": true,
+  "inference_executed": false,
+  "numpy_used_for_saved_npz_only": true,
+  "limitation": "Checks cached quantities and projections; does not certify detector accuracy or physical skin measurements."
+}

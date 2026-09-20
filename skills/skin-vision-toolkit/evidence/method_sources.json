@@ -1,0 +1,126 @@
+{
+  "captured_at": "2026-09-10T03:27:34.039564+00:00",
+  "records": [
+    {
+      "skill": "vision-feature-engineering",
+      "source_alias": "skin",
+      "source_relative_path": "03_皮肤检测/01_旧VSCode对话/logs/zitengliu/2026-07-10/codex__019fd0c2-c4d9-7661-bc91-f7f4ce666495.jsonl",
+      "source_file_sha256": "7d51976cd2ffb0c6508382a092737ff1e45363f902cc5175c90db3c018cda2b0",
+      "session_id": "019fd0c2-c4d9-7661-bc91-f7f4ce666495",
+      "ts": "2026-07-13T03:16:51.082Z",
+      "seq": 1262,
+      "event_sha256": "064c31bee34103b4aa48f9622498c04374636921ec2698ed230eb7ecc61db935",
+      "evidence_type": "user_direct_request",
+      "summary": "See skill-specific project-case.md; full private source is not distributed."
+    },
+    {
+      "skill": "vision-batch-recovery",
+      "source_alias": "skin",
+      "source_relative_path": "03_皮肤检测/01_旧VSCode对话/logs/zitengliu/2026-07-10/codex__019fd0c2-c4d9-7661-bc91-f7f4ce666495.jsonl",
+      "source_file_sha256": "7d51976cd2ffb0c6508382a092737ff1e45363f902cc5175c90db3c018cda2b0",
+      "session_id": "019fd0c2-c4d9-7661-bc91-f7f4ce666495",
+      "ts": "2026-08-01T06:20:24.857Z",
+      "seq": 29299,
+      "event_sha256": "46e77b5cbfb987a99beb4318a661e59e13883bff70619bea0d6572a8c00b450f",
+      "evidence_type": "user_accepted_plan",
+      "summary": "See skill-specific project-case.md; full private source is not distributed."
+    },
+    {
+      "skill": "vision-spec-to-evidence",
+      "source_alias": "skin",
+      "source_relative_path": "03_皮肤检测/01_旧VSCode对话/logs/zitengliu/2026-07-10/codex__019fd0c2-c4d9-7661-bc91-f7f4ce666495.jsonl",
+      "source_file_sha256": "7d51976cd2ffb0c6508382a092737ff1e45363f902cc5175c90db3c018cda2b0",
+      "session_id": "019fd0c2-c4d9-7661-bc91-f7f4ce666495",
+      "ts": "2026-08-04T01:12:38.724Z",
+      "seq": 31527,
+      "event_sha256": "5864a787a4526eee68486cf04104ebe1851e45348be0c84d9afd04ec6448f073",
+      "evidence_type": "user_direct_request",
+      "summary": "See skill-specific project-case.md; full private source is not distributed."
+    },
+    {
+      "skill": "vision-metrics-calibration",
+      "source_alias": "skin",
+      "source_relative_path": "03_皮肤检测/01_旧VSCode对话/logs/zitengliu/2026-07-10/codex__019fd0c2-c4d9-7661-bc91-f7f4ce666495.jsonl",
+      "source_file_sha256": "7d51976cd2ffb0c6508382a092737ff1e45363f902cc5175c90db3c018cda2b0",
+      "session_id": "019fd0c2-c4d9-7661-bc91-f7f4ce666495",
+      "ts": "2026-08-07T08:14:18.822Z",
+      "seq": 41439,
+      "event_sha256": "6027bbf9890e69cce5239744ffdda8e550d974c590535850ca8059ff372e9503",
+      "evidence_type": "user_direct_request",
+      "summary": "See skill-specific project-case.md; full private source is not distributed."
+    },
+    {
+      "skill": "vision-result-publication",
+      "source_alias": "skin",
+      "source_relative_path": "03_皮肤检测/01_旧VSCode对话/logs/zitengliu/2026-07-10/codex__019fd0c2-c4d9-7661-bc91-f7f4ce666495.jsonl",
+      "source_file_sha256": "7d51976cd2ffb0c6508382a092737ff1e45363f902cc5175c90db3c018cda2b0",
+      "session_id": "019fd0c2-c4d9-7661-bc91-f7f4ce666495",
+      "ts": "2026-08-18T11:30:07.942Z",
+      "seq": 68110,
+      "event_sha256": "4732301eee7408a74f622723c422390530310ae7d89842b50b6be90dfa60da08",
+      "evidence_type": "user_accepted_plan",
+      "summary": "See skill-specific project-case.md; full private source is not distributed."
+    },
+    {
+      "skill": "vision-data-review",
+      "source_alias": "target",
+      "source_relative_path": "01_目标检测/01_模型研发与验证/logs/zitengliu/2026-07-14/codex__019f5e5c-d4d2-7383-94fd-820e40044e04.jsonl",
+      "source_file_sha256": "827e4629554e6dfca5103d56c1767a03fac7f18bf7afb0e682d26d1238b8ffc3",
+      "session_id": "019f5e5c-d4d2-7383-94fd-820e40044e04",
+      "ts": "2026-07-27T04:09:30.410Z",
+      "seq": 11841,
+      "event_sha256": "a2d1036d236707b08ebe863955bb499b1a98dce729394cfbda5c43712e1c43fb",
+      "evidence_type": "user_accepted_plan",
+      "summary": "See skill-specific project-case.md; full private source is not distributed."
+    },
+    {
+      "skill": "vision-system-integration",
+      "source_alias": "target",
+      "source_relative_path": "01_目标检测/01_模型研发与验证/logs/zitengliu/2026-07-14/codex__019f5e5c-d4d2-7383-94fd-820e40044e04.jsonl",
+      "source_file_sha256": "827e4629554e6dfca5103d56c1767a03fac7f18bf7afb0e682d26d1238b8ffc3",
+      "session_id": "019f5e5c-d4d2-7383-94fd-820e40044e04",
+      "ts": "2026-07-29T01:36:24.295Z",
+      "seq": 15893,
+      "event_sha256": "4f9ebd9f7211101fe7a4e2015e4bc1bdfa9b92d6e273bc0e971470237e3969c6",
+      "evidence_type": "user_accepted_plan",
+      "summary": "See skill-specific project-case.md; full private source is not distributed."
+    },
+    {
+      "skill": "vision-generalization",
+      "source_alias": "target",
+      "source_relative_path": "01_目标检测/01_模型研发与验证/logs/zitengliu/2026-07-14/codex__019f5e5c-d4d2-7383-94fd-820e40044e04.jsonl",
+      "source_file_sha256": "827e4629554e6dfca5103d56c1767a03fac7f18bf7afb0e682d26d1238b8ffc3",
+      "session_id": "019f5e5c-d4d2-7383-94fd-820e40044e04",
+      "ts": "2026-07-30T06:09:25.672Z",
+      "seq": 19406,
+      "event_sha256": "d1706d93f6e49fb189add31de6f949f417dd891f5e4a9ad234b2da74d2104d73",
+      "evidence_type": "user_direct_request",
+      "summary": "See skill-specific project-case.md; full private source is not distributed."
+    },
+    {
+      "skill": "pose-guided-capture",
+      "source_alias": "capture",
+      "source_relative_path": "02_角度检测与自动拍照/logs/zitengliu/2026-08-25/codex__01a037b0-40c4-7183-85aa-d1019c0672ae.jsonl",
+      "source_file_sha256": "83209e7a0fff059ea088d275d4bf572a91f157efe95810cfbcd9cca1017c1aab",
+      "session_id": "01a037b0-40c4-7183-85aa-d1019c0672ae",
+      "ts": "2026-08-25T07:27:09.001Z",
+      "seq": 298,
+      "event_sha256": "326b26e6b7485c2baa08905710cef418001851eb68e30c6116effb7cba8fa312",
+      "evidence_type": "user_accepted_plan",
+      "summary": "See skill-specific project-case.md; full private source is not distributed."
+    },
+    {
+      "skill": "vision-runtime-parity",
+      "source_alias": "capture",
+      "source_relative_path": "02_角度检测与自动拍照/logs/zitengliu/2026-08-25/codex__01a037b0-40c4-7183-85aa-d1019c0672ae.jsonl",
+      "source_file_sha256": "83209e7a0fff059ea088d275d4bf572a91f157efe95810cfbcd9cca1017c1aab",
+      "session_id": "01a037b0-40c4-7183-85aa-d1019c0672ae",
+      "ts": "2026-09-01T03:45:53.514Z",
+      "seq": 1035,
+      "event_sha256": "feed3444556ce3f0551ada2dedd091e0fc5abde3e2cf9699058c7d2a7669d896",
+      "evidence_type": "user_accepted_plan",
+      "summary": "See skill-specific project-case.md; full private source is not distributed."
+    }
+  ],
+  "not_proof_new_skill_used_historically": true
+}

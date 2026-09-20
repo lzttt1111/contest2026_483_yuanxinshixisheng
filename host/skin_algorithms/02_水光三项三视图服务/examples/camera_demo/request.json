@@ -1,0 +1,18 @@
+{
+  "task_id": "camera_demo_example",
+  "images": [
+    {
+      "image_id": "front",
+      "path": "front.jpg"
+    },
+    {
+      "image_id": "right",
+      "path": "right.jpg"
+    },
+    {
+      "image_id": "left",
+      "path": "left.jpg"
+    }
+  ],
+  "mirrored": false
+}

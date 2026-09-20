@@ -1,0 +1,62 @@
+{
+  "stage": "three_item_legacy_score_fallback",
+  "runtime_relative_path": "runtime/standalone_celery_arz3iplr",
+  "business_code_root": "vendor/v3",
+  "model_relative_path": "vendor/v3/models/face_parsing_resnet18.onnx",
+  "python_environment_external_permitted": true,
+  "transport": "filesystem_test_only",
+  "checks": [
+    {
+      "sample": "one",
+      "elapsed_including_queue": 55.13114502187818,
+      "timing": {
+        "mode": "resident_three_item",
+        "cold_start_seconds": 23.302308802958578,
+        "preprocessing": "bisenet_rgb_diagnostic_v1",
+        "task_seconds": 10.819203869905323,
+        "resident_reuse_index": 1,
+        "algorithms": [
+          "pores",
+          "spots",
+          "surface_gloss"
+        ],
+        "services": [
+          "dermavision"
+        ]
+      },
+      "structure_contract_verified": true,
+      "latest_bisenet_scores_used": true,
+      "legacy_fallback_non_null": true,
+      "default_mode_is_bisenet": true,
+      "package_model_sha_verified": true,
+      "idempotent": true,
+      "formal_legacy_fallback_enabled": true
+    },
+    {
+      "sample": "two",
+      "elapsed_including_queue": 28.034548001131043,
+      "timing": {
+        "mode": "resident_three_item",
+        "cold_start_seconds": 23.302308802958578,
+        "preprocessing": "bisenet_rgb_diagnostic_v1",
+        "task_seconds": 9.14840074093081,
+        "resident_reuse_index": 3,
+        "algorithms": [
+          "pores",
+          "spots",
+          "surface_gloss"
+        ],
+        "services": [
+          "dermavision"
+        ]
+      },
+      "structure_contract_verified": true,
+      "latest_bisenet_scores_used": true,
+      "legacy_fallback_non_null": true,
+      "default_mode_is_bisenet": true,
+      "package_model_sha_verified": true,
+      "idempotent": true,
+      "formal_legacy_fallback_enabled": true
+    }
+  ]
+}

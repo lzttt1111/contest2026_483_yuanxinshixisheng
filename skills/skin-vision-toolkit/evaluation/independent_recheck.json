@@ -1,0 +1,563 @@
+{
+  "source_event_timestamp": "2026-09-10T03:44:22.101Z",
+  "source_event_sha256": "5e922d7f30aec81ae350a113d49fd64a7ef91e6e86025adf3d7e739993ba1b90",
+  "author": "/root/independent_skill_validation",
+  "review": {
+    "phase": "recheck",
+    "model": "gpt-6-astra",
+    "effort": "medium",
+    "started_at": "2026-09-10 03:41:34 UTC",
+    "ended_at": "2026-09-10 03:42:26 UTC",
+    "summary": "R1–R5原问题均已消除；R6、R7通过明确快照合同边界得到处理。原30题没有核心行为退化，新增worker类型和假布尔探针均被拒绝。",
+    "method": {
+      "read": [
+        "10个当前check.py",
+        "5份相关contract.md",
+        "evaluation/prompts.json",
+        "tests/assets内题面引用的合成资产"
+      ],
+      "execution": "Python -B，sys.dont_write_bytecode=True，内存加载并调用check(data, root)，root限定tests/assets。",
+      "original_cases_executed": 30,
+      "additional_probes_executed": 13,
+      "files_written": 0,
+      "read_expected_or_primary_report": false,
+      "models_network_training_gpu_camera_deployment": false,
+      "exception_reporting": "下列direct_exception是实际check调用输出；cli_main_mapping依据已读取main异常处理逻辑，不冒称本轮实际调用了CLI main。"
+    },
+    "issue_rechecks": [
+      {
+        "id": "R1",
+        "resolved": true,
+        "reproduction": {
+          "base": "02-normal",
+          "changes": {
+            "rerun_ids": [
+              "unlisted"
+            ]
+          }
+        },
+        "actual_result": {
+          "status": "fail",
+          "findings": [
+            {
+              "code": "unknown_rerun_id",
+              "detail": "unlisted"
+            }
+          ],
+          "metrics": {
+            "records": 2,
+            "protected_ids": [
+              "a",
+              "b"
+            ],
+            "safe_rerun_ids": []
+          }
+        },
+        "judgment": "未知ID不再获得安全重跑建议。"
+      },
+      {
+        "id": "R2",
+        "resolved": true,
+        "reproduction": {
+          "base": "02-normal",
+          "delete": [
+            "records[0].human_confirmed"
+          ],
+          "changes": {
+            "rerun_ids": [
+              "a"
+            ]
+          }
+        },
+        "actual_result": {
+          "status": "fail",
+          "findings": [
+            {
+              "code": "unknown_review_state",
+              "detail": "a"
+            }
+          ],
+          "metrics": {
+            "records": 2,
+            "protected_ids": [
+              "b"
+            ],
+            "safe_rerun_ids": []
+          }
+        },
+        "judgment": "缺少人工确认状态不再被默认为可重跑，合同也明确要求显式布尔值。"
+      },
+      {
+        "id": "R3",
+        "resolved": true,
+        "reproduction": {
+          "base": "08-normal",
+          "changes": {
+            "jobs[0].committed": "false",
+            "jobs[0].artifacts_valid": "false"
+          }
+        },
+        "actual_result": {
+          "direct_exception": "ValueError",
+          "detail": "Boolean field required: committed",
+          "cli_main_mapping": "invalid_input"
+        },
+        "judgment": "假布尔输入在恢复计划生成前被拒绝，未产生skip建议。"
+      },
+      {
+        "id": "R4",
+        "resolved": true,
+        "reproduction": {
+          "base": "10-normal",
+          "changes": {
+            "producer_fields": [
+              "capture_id"
+            ]
+          }
+        },
+        "actual_result": {
+          "status": "fail",
+          "findings": [
+            {
+              "code": "missing_contract_fields",
+              "detail": [
+                "revision"
+              ]
+            }
+          ],
+          "metrics": {
+            "contracts_checked": 2,
+            "point_transfer_allowed": false,
+            "requires_live_verification": true
+          }
+        },
+        "judgment": "字段缺失与允许点迁移的结构化建议不再矛盾。"
+      },
+      {
+        "id": "R5",
+        "resolved": true,
+        "reproduction": {
+          "base": "01-normal",
+          "delete": [
+            "requirements[0].unit"
+          ]
+        },
+        "actual_result": {
+          "status": "fail",
+          "findings": [
+            {
+              "code": "missing_unit",
+              "detail": "spots"
+            }
+          ],
+          "metrics": {
+            "reuse_candidates": [
+              "existing"
+            ],
+            "requirements_checked": 1,
+            "recommendation": "collect_missing_evidence"
+          }
+        },
+        "judgment": "缺单位不再pass或给出复用后验证推荐，而明确要求补证据。"
+      },
+      {
+        "id": "R6",
+        "resolved": true,
+        "resolution_type": "明确合同边界及有限动态验证",
+        "contract_evidence": "source_clock/target_clock被明确为包含设备、进程或共享源及启动epoch的时钟域身份；样例monotonic仅为同一约定域短别名。文档明确字符串一致不证明实物同步。",
+        "reproduction": {
+          "base": "10-normal",
+          "changes": {
+            "source_clock": "device-a:boot1:monotonic",
+            "target_clock": "device-b:boot1:monotonic",
+            "clock_mapping_verified": false
+          }
+        },
+        "actual_result": {
+          "status": "fail",
+          "findings": [
+            {
+              "code": "clock_domain_mismatch",
+              "detail": {
+                "source": "device-a:boot1:monotonic",
+                "target": "device-b:boot1:monotonic"
+              }
+            }
+          ],
+          "metrics": {
+            "contracts_checked": 2,
+            "point_transfer_allowed": false,
+            "requires_live_verification": true
+          }
+        },
+        "judgment": "作为声明快照检查器，该边界说明充分；没有验证实际硬件时钟同步。"
+      },
+      {
+        "id": "R7",
+        "resolved": true,
+        "resolution_type": "明确合同边界",
+        "contract_evidence": "合同明确shape=[1,3]是抽象通道摘要，layout只是来源声明；真实完整NCHW张量需提供四维N/C/H/W及全部值，简化样例不能证明完整模型布局迁移。",
+        "actual_result": {
+          "case": "09-normal",
+          "status": "pass",
+          "max_abs": 9.999999999998899e-05,
+          "rmse": 9.999999999998897e-05,
+          "numeric_comparison_valid": true
+        },
+        "judgment": "样例原有语义歧义已被文档解释；通过仅限数值快照和声明比较，未验证模型图布局。"
+      }
+    ],
+    "additional_type_checks": [
+      {
+        "input_change": {
+          "base": "08-normal",
+          "workers": 1.5
+        },
+        "actual_result": {
+          "direct_exception": "ValueError",
+          "detail": "batch worker budgets must be positive integers",
+          "cli_main_mapping": "invalid_input"
+        },
+        "unsafe_advice_returned": false
+      },
+      {
+        "input_change": {
+          "base": "08-normal",
+          "workers": true
+        },
+        "actual_result": {
+          "direct_exception": "ValueError",
+          "detail": "batch worker budgets must be positive integers",
+          "cli_main_mapping": "invalid_input"
+        },
+        "unsafe_advice_returned": false
+      },
+      {
+        "input_change": {
+          "base": "08-normal",
+          "max_workers": 1.5
+        },
+        "actual_result": {
+          "direct_exception": "ValueError",
+          "detail": "batch worker budgets must be positive integers",
+          "cli_main_mapping": "invalid_input"
+        },
+        "unsafe_advice_returned": false
+      },
+      {
+        "input_change": {
+          "base": "08-normal",
+          "max_workers": true
+        },
+        "actual_result": {
+          "direct_exception": "ValueError",
+          "detail": "batch worker budgets must be positive integers",
+          "cli_main_mapping": "invalid_input"
+        },
+        "unsafe_advice_returned": false
+      },
+      {
+        "input_change": {
+          "base": "10-normal",
+          "target_frame": 12,
+          "registration_verified": "false"
+        },
+        "actual_result": {
+          "direct_exception": "ValueError",
+          "detail": "Boolean field required: registration_verified",
+          "cli_main_mapping": "invalid_input"
+        },
+        "unsafe_advice_returned": false
+      },
+      {
+        "input_change": {
+          "base": "10-normal",
+          "target_clock": "other-device",
+          "clock_mapping_verified": "false"
+        },
+        "actual_result": {
+          "direct_exception": "ValueError",
+          "detail": "Boolean field required: clock_mapping_verified",
+          "cli_main_mapping": "invalid_input"
+        },
+        "unsafe_advice_returned": false
+      },
+      {
+        "input_change": {
+          "base": "10-normal",
+          "point_overlay": "false"
+        },
+        "actual_result": {
+          "direct_exception": "ValueError",
+          "detail": "Boolean field required: point_overlay",
+          "cli_main_mapping": "invalid_input"
+        },
+        "unsafe_advice_returned": false
+      }
+    ],
+    "original_case_recheck": {
+      "counts": {
+        "pass": 10,
+        "fail": 10,
+        "not_applicable": 10
+      },
+      "regression_observed": false,
+      "results": [
+        {
+          "id": "01-normal",
+          "status": "pass",
+          "key_result": "existing；reuse_then_validate"
+        },
+        {
+          "id": "01-failure",
+          "status": "fail",
+          "finding_codes": [
+            "unsupported_measurement",
+            "missing_calibration",
+            "unknown_license"
+          ]
+        },
+        {
+          "id": "01-not_applicable",
+          "status": "not_applicable"
+        },
+        {
+          "id": "02-normal",
+          "status": "pass",
+          "protected_ids": [
+            "a",
+            "b"
+          ],
+          "safe_rerun_ids": []
+        },
+        {
+          "id": "02-failure",
+          "status": "fail",
+          "finding_codes": [
+            "negative_has_box",
+            "human_edit_overwrite",
+            "duplicate_id",
+            "duplicate_image",
+            "bbox_outside",
+            "unknown_review_state"
+          ],
+          "safe_rerun_ids": []
+        },
+        {
+          "id": "02-not_applicable",
+          "status": "not_applicable"
+        },
+        {
+          "id": "03-normal",
+          "status": "pass",
+          "splits": {
+            "train": 1,
+            "validation": 1,
+            "test": 1,
+            "reference": 0
+          }
+        },
+        {
+          "id": "03-failure",
+          "status": "fail",
+          "finding_codes": [
+            "subject_leakage",
+            "session_leakage",
+            "cluster_leakage",
+            "test_selection",
+            "calibration_leakage",
+            "synthetic_leakage"
+          ]
+        },
+        {
+          "id": "03-not_applicable",
+          "status": "not_applicable"
+        },
+        {
+          "id": "04-normal",
+          "status": "pass",
+          "captured": {
+            "front": 2
+          },
+          "complete": true
+        },
+        {
+          "id": "04-failure",
+          "status": "fail",
+          "finding_codes": [
+            "raw_pose_outside",
+            "stale_frame"
+          ],
+          "captured": {},
+          "complete": false
+        },
+        {
+          "id": "04-not_applicable",
+          "status": "not_applicable"
+        },
+        {
+          "id": "05-normal",
+          "status": "pass",
+          "valid_pixels": 4,
+          "support_pixels": 1,
+          "retained_ratio": 1.0,
+          "coverage": 0.25
+        },
+        {
+          "id": "05-failure",
+          "status": "fail",
+          "finding_codes": [
+            "reference_skin_removed",
+            "mask_outside_domain",
+            "instance_outside_domain"
+          ],
+          "retained_ratio": 0.25
+        },
+        {
+          "id": "05-not_applicable",
+          "status": "not_applicable"
+        },
+        {
+          "id": "06-normal",
+          "status": "pass",
+          "count": 4,
+          "coverage": 0.2,
+          "density_per_100k_pixels": 4000.0,
+          "p50": 2.5,
+          "p90": 3.7
+        },
+        {
+          "id": "06-failure",
+          "status": "fail",
+          "finding_codes": [
+            "invalid_denominator",
+            "support_outside_denominator",
+            "count_mismatch",
+            "unverified_cross_view_count",
+            "missing_physical_scale"
+          ],
+          "coverage": null,
+          "density_per_100k_pixels": null
+        },
+        {
+          "id": "06-not_applicable",
+          "status": "not_applicable"
+        },
+        {
+          "id": "07-normal",
+          "status": "pass",
+          "files_checked": 1,
+          "evidence_sha256": "7e763a1494590abd85d922007a7a2a156128d5054117cd0e902b2e447c1abded"
+        },
+        {
+          "id": "07-failure",
+          "status": "fail",
+          "finding_codes": [
+            "projection_mismatch",
+            "path_escape",
+            "unexpected_inference"
+          ]
+        },
+        {
+          "id": "07-not_applicable",
+          "status": "not_applicable"
+        },
+        {
+          "id": "08-normal",
+          "status": "pass",
+          "recovery_plan": [
+            {
+              "id": "a",
+              "action": "skip"
+            },
+            {
+              "id": "b",
+              "action": "retry_or_recompute"
+            }
+          ],
+          "preconditions": {
+            "b": [
+              "verify_previous_owner_stopped_or_lease_expired"
+            ]
+          }
+        },
+        {
+          "id": "08-failure",
+          "status": "fail",
+          "finding_codes": [
+            "resource_budget_exceeded",
+            "cache_identity_mismatch",
+            "incomplete_success"
+          ]
+        },
+        {
+          "id": "08-not_applicable",
+          "status": "not_applicable"
+        },
+        {
+          "id": "09-normal",
+          "status": "pass",
+          "max_abs": 9.999999999998899e-05,
+          "numeric_comparison_valid": true
+        },
+        {
+          "id": "09-failure",
+          "status": "fail",
+          "finding_codes": [
+            "tensor_contract_mismatch",
+            "numeric_parity_failed",
+            "provider_mismatch",
+            "calibration_leakage"
+          ],
+          "numeric_comparison_valid": false
+        },
+        {
+          "id": "09-not_applicable",
+          "status": "not_applicable"
+        },
+        {
+          "id": "10-normal",
+          "status": "pass",
+          "point_transfer_allowed": true,
+          "requires_live_verification": true
+        },
+        {
+          "id": "10-failure",
+          "status": "fail",
+          "finding_codes": [
+            "missing_contract_fields",
+            "stale_revision",
+            "unregistered_point_transfer",
+            "clock_domain_mismatch",
+            "state_document_conflict"
+          ],
+          "point_transfer_allowed": false,
+          "requires_live_verification": true
+        },
+        {
+          "id": "10-not_applicable",
+          "status": "not_applicable"
+        }
+      ],
+      "intentional_changes": [
+        "02-failure现在额外报告第二条记录缺人工确认状态。",
+        "08-normal现在输出running样本重试前的执行者或租约检查前提。",
+        "10项集成判断现在明确requires_live_verification=true。"
+      ]
+    },
+    "remaining_limitations": [
+      "本轮是R1–R7定向复核和原30题回归，不是所有畸形输入的穷尽测试。",
+      "部分合同统一描述缺必需字段为invalid_input，但R2和R5实际返回带明确问题的fail；安全建议已被阻止，属于非阻断性的状态文档精度问题。",
+      "check函数直接调用会抛出类型或缺项异常；调用方需像CLI main一样处理，不应假设任何输入都直接返回JSON。",
+      "时钟身份、配准真实性、人工标注状态和产物有效性仍依赖上游可信快照；检查器没有独立测量这些事实。",
+      "数值快照通过不能替代完整模型转换、真实provider、硬件或端到端验收。",
+      "没有写文件、调用模型或运行系统级副作用监控；无写入判断基于代码审查及本轮受限调用路径。"
+    ],
+    "release_recommendation": {
+      "decision": "可作为明确边界的离线Skill检查包交付",
+      "blocking_issues_remaining": [],
+      "scope": "R1–R7已在本轮范围内得到处理，原30题核心行为保持正确；不据此批准生产部署、实际批量任务、相机采集或完整视觉系统验收。",
+      "optional_followup": "后续可统一合同对fail与invalid_input的描述，不需要以此继续阻断本轮交付。"
+    }
+  }
+}

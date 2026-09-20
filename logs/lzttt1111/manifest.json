@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "team_id": "contest2026_483_yuanxinshixisheng",
+  "github_login": "lzttt1111",
+  "generator": "selected-historical-export-public-redaction-1",
+  "sessions": [
+    {
+      "session_id": "019f5e5c-d4d2-7383-94fd-820e40044e04",
+      "tool": "codex",
+      "started_at": "2026-07-14T02:02:52.032Z",
+      "last_event_at": "2026-08-31T03:45:31.541Z",
+      "event_count": 30594,
+      "file_path": "logs/lzttt1111/2026-07-14/codex__019f5e5c-d4d2-7383-94fd-820e40044e04.jsonl",
+      "collection_mode": "cli",
+      "health": "degraded",
+      "data_completeness_warning": "Existing selected historical exports, some inherited/partial; excludes reasoning/images. Credential-bearing strings redacted. Original attribution zitengliu corrected to user-requested GitHub login lzttt1111; original times, session IDs, seq retained."
+    },
+    {
+      "session_id": "01a08449-5850-7192-8199-ab6731c894f6",
+      "tool": "codex",
+      "started_at": "2026-08-31T03:29:30.547Z",
+      "last_event_at": "2026-09-09T05:38:30.108Z",
+      "event_count": 4060,
+      "file_path": "logs/lzttt1111/2026-08-31/codex__01a08449-5850-7192-8199-ab6731c894f6.jsonl",
+      "collection_mode": "cli",
+      "health": "degraded",
+      "data_completeness_warning": "Existing selected historical exports, some inherited/partial; excludes reasoning/images. Credential-bearing strings redacted. Original attribution zitengliu corrected to user-requested GitHub login lzttt1111; original times, session IDs, seq retained."
+    },
+    {
+      "session_id": "01a037b0-40c4-7183-85aa-d1019c0672ae",
+      "tool": "codex",
+      "started_at": "2026-08-25T06:51:37.620Z",
+      "last_event_at": "2026-09-01T11:41:44.747Z",
+      "event_count": 1189,
+      "file_path": "logs/lzttt1111/2026-08-25/codex__01a037b0-40c4-7183-85aa-d1019c0672ae.jsonl",
+      "collection_mode": "cli",
+      "health": "degraded",
+      "data_completeness_warning": "Existing selected historical exports, some inherited/partial; excludes reasoning/images. Credential-bearing strings redacted. Original attribution zitengliu corrected to user-requested GitHub login lzttt1111; original times, session IDs, seq retained."
+    },
+    {
+      "session_id": "019fd0c2-c4d9-7661-bc91-f7f4ce666495",
+      "tool": "codex",
+      "started_at": "2026-07-10T03:14:05.863Z",
+      "last_event_at": "2026-08-28T12:40:19.985Z",
+      "event_count": 96179,
+      "file_path": "logs/lzttt1111/2026-07-10/codex__019fd0c2-c4d9-7661-bc91-f7f4ce666495.jsonl",
+      "collection_mode": "cli",
+      "health": "degraded",
+      "data_completeness_warning": "Existing selected historical exports, some inherited/partial; excludes reasoning/images. Credential-bearing strings redacted. Original attribution zitengliu corrected to user-requested GitHub login lzttt1111; original times, session IDs, seq retained."
+    },
+    {
+      "session_id": "01a07fa1-8af3-7950-bb03-d2118978909d",
+      "tool": "codex",
+      "started_at": "2026-08-28T08:13:32.100Z",
+      "last_event_at": "2026-09-20T08:21:42.233Z",
+      "event_count": 14393,
+      "file_path": "logs/lzttt1111/2026-08-28/codex__01a07fa1-8af3-7950-bb03-d2118978909d.jsonl",
+      "collection_mode": "cli",
+      "health": "degraded",
+      "data_completeness_warning": "Existing selected historical exports, some inherited/partial; excludes reasoning/images. Credential-bearing strings redacted. Original attribution zitengliu corrected to user-requested GitHub login lzttt1111; original times, session IDs, seq retained."
+    }
+  ]
+}

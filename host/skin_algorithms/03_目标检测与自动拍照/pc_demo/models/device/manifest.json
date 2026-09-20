@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "model_id": "device-yolox-s-640-camera-active-v5-real-only",
+  "model_lineage": "V5",
+  "role": "device_detector",
+  "format": "onnx",
+  "quantization": "FP32",
+  "sha256": "218e922d784795901bd5e165e11755898f6c29c4a5724715862aa8cdf1919a8c",
+  "size_bytes": 35994066,
+  "artifact_path": "models/device/model.onnx",
+  "input": {"name": "images", "layout": "NCHW", "shape": [1, 3, 640, 640], "color_space": "BGR", "dtype": "float32"},
+  "outputs": [{"name": "detections", "format": "decoded_xywh_objectness_class_probability"}],
+  "preprocessing": {"letterbox": "top_left", "fill": 114, "scale": 1.0},
+  "postprocessing": {"confidence_threshold": 0.25, "nms_iou_threshold": 0.65, "max_boxes": 1},
+  "source": {
+    "source_worktree": ".worktrees/dev-zero-touch",
+    "base_commit": "96509609817fa0d9e7335746e08f67622a4efee7",
+    "checkpoint_sha256": "89dd527662a758a62856978e2638dcf4a38a7a3fb6de4e97c058ec652cb0c6b6",
+    "dataset_manifest_sha256": "95689fd35b0ce7709f177d21946ad85a01a9687197b980cf7b4376f504cd057a"
+  },
+  "license": "YOLOX Apache-2.0; project-trained weights",
+  "status": "CURRENT_BASELINE_CANDIDATE"
+}

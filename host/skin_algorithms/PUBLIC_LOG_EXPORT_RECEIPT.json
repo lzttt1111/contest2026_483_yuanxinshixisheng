@@ -1,0 +1,37 @@
+{
+  "source_scope": "five existing module log exports",
+  "sources": [
+    {
+      "module": "01_目标检测/01_模型研发与验证/logs/zitengliu/2026-07-14/codex__019f5e5c-d4d2-7383-94fd-820e40044e04.jsonl",
+      "source_sha256": "827e4629554e6dfca5103d56c1767a03fac7f18bf7afb0e682d26d1238b8ffc3",
+      "events": 30594
+    },
+    {
+      "module": "01_目标检测/02_交接部署与拍照整合/logs/zitengliu/2026-08-31/codex__01a08449-5850-7192-8199-ab6731c894f6.jsonl",
+      "source_sha256": "853b63775969bbae5292ad5bd87deba645b018f1b49f7f035aa52a470e944d5a",
+      "events": 4060
+    },
+    {
+      "module": "02_角度检测与自动拍照/logs/zitengliu/2026-08-25/codex__01a037b0-40c4-7183-85aa-d1019c0672ae.jsonl",
+      "source_sha256": "83209e7a0fff059ea088d275d4bf572a91f157efe95810cfbcd9cca1017c1aab",
+      "events": 1189
+    },
+    {
+      "module": "03_皮肤检测/01_旧VSCode对话/logs/zitengliu/2026-07-10/codex__019fd0c2-c4d9-7661-bc91-f7f4ce666495.jsonl",
+      "source_sha256": "7d51976cd2ffb0c6508382a092737ff1e45363f902cc5175c90db3c018cda2b0",
+      "events": 96179
+    },
+    {
+      "module": "03_皮肤检测/02_当前水光对话/logs/zitengliu/2026-08-28/codex__01a07fa1-8af3-7950-bb03-d2118978909d.jsonl",
+      "source_sha256": "c1b5754f1401a851fa007cfc5b119a076b3fcd0a62ec5bb9e1d569a68bb91410",
+      "events": 14393
+    }
+  ],
+  "redacted_strings": 696,
+  "attribution": {
+    "previous": "zitengliu",
+    "submission_login": "lzttt1111",
+    "basis": "same user explicitly selected lzttt1111 for GitHub submission"
+  },
+  "no_invented_events": true
+}

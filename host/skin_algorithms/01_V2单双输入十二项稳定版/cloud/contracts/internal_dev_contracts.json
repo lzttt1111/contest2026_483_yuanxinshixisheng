@@ -1,0 +1,414 @@
+{
+  "contract_version": "internal_dev_20260912_scoring_input_v1",
+  "capture_profiles": {
+    "routing_policy": "explicit_queue_only_never_pixel_inference",
+    "institution": {
+      "systemd_target": "dermavision-workers.target",
+      "queues": [
+        "redness",
+        "spots",
+        "brown",
+        "texture",
+        "pores",
+        "purple",
+        "acne_v2",
+        "wrinkle",
+        "surface_gloss",
+        "vascular",
+        "contour_firmness"
+      ]
+    },
+    "consumer": {
+      "systemd_target": "dermavision-consumer-workers.target",
+      "queues": [
+        "consumer_redness",
+        "consumer_spots",
+        "consumer_brown",
+        "consumer_texture",
+        "consumer_pores",
+        "consumer_purple",
+        "consumer_acne_v2",
+        "consumer_wrinkle",
+        "consumer_surface_gloss",
+        "consumer_vascular",
+        "consumer_contour_firmness"
+      ],
+      "arguments": [
+        "task_id",
+        "oss_key",
+        "oss_result_prefix",
+        "algorithms"
+      ],
+      "success_envelope": [
+        "record_id",
+        "status",
+        "schema_version",
+        "meta_data",
+        "raw_result",
+        "debug_info"
+      ],
+      "public_contract": "same_field_paths_and_types_as_institution",
+      "execution_mode": "single_algorithm_consumer",
+      "word_enabled": false,
+      "scoring_profile": "consumer_unavailable_v1"
+    }
+  },
+  "source_repositories": {
+    "dermavision": {
+      "repository": "aisia/dermavision",
+      "branch": "dev",
+      "commit": "04e0075decb27e18bdf1916ab812564608a8ea56",
+      "task": "dermavision.analyze_image",
+      "queues": [
+        "redness",
+        "spots",
+        "brown",
+        "texture",
+        "pores",
+        "purple",
+        "surface_gloss",
+        "vascular",
+        "contour_firmness"
+      ],
+      "arguments": [
+        "task_id",
+        "oss_key",
+        "oss_result_prefix",
+        "algorithms"
+      ],
+      "success_envelope": [
+        "record_id",
+        "status",
+        "schema_version",
+        "meta_data",
+        "raw_result",
+        "debug_info"
+      ],
+      "failure_envelope_required": [
+        "record_id",
+        "status",
+        "error_message"
+      ],
+      "meta_data": {
+        "version": "1"
+      },
+      "medical_v2_optional_raw_result_keys": [
+        "medical_metrics_v2",
+        "medical_report_csv_v2"
+      ],
+      "additive_extension_files": [
+        "AGENTS.md",
+        "src/worker.py",
+        "src/core/config.py",
+        ".env.example"
+      ],
+      "single_algorithm_raw_result": {
+        "redness": [
+          "overlay",
+          "metrics",
+          "quality_score",
+          "quality_status",
+          "quality_flags",
+          "red_areas_overlay",
+          "scoring_input"
+        ],
+        "spots": [
+          "overlay",
+          "metrics",
+          "quality_score",
+          "quality_status",
+          "quality_flags",
+          "scoring_input"
+        ],
+        "brown": [
+          "overlay",
+          "metrics",
+          "quality_score",
+          "quality_status",
+          "quality_flags",
+          "brown_spots_overlay",
+          "scoring_input"
+        ],
+        "texture": [
+          "overlay",
+          "metrics",
+          "quality_score",
+          "quality_status",
+          "quality_flags",
+          "scoring_input"
+        ],
+        "pores": [
+          "overlay",
+          "metrics",
+          "quality_score",
+          "quality_status",
+          "quality_flags",
+          "scoring_input"
+        ],
+        "purple": [
+          "uv_base",
+          "uv_spots_overlay",
+          "fluorescence_base",
+          "porphyrin_overlay",
+          "metrics",
+          "quality_score",
+          "quality_status",
+          "quality_flags",
+          "scoring_input"
+        ],
+        "surface_gloss": [
+          "overlay",
+          "metrics",
+          "medical_report_csv_v2",
+          "quality_score",
+          "quality_status",
+          "quality_flags",
+          "scoring_input"
+        ],
+        "vascular": [
+          "overlay",
+          "metrics",
+          "medical_report_csv_v2",
+          "quality_score",
+          "quality_status",
+          "quality_flags",
+          "scoring_input"
+        ],
+        "contour_firmness": [
+          "overlay",
+          "metrics",
+          "medical_report_csv_v2",
+          "quality_score",
+          "quality_status",
+          "quality_flags",
+          "scoring_input"
+        ]
+      },
+      "sha256": {
+        "AGENTS.md": "35f37dfaccf0a5979d440d69d830d459f8cc7648e97d46f5fd4b3ac19dd6c411",
+        "src/worker.py": "4c1d6208fdddfaa655bc5b89d492fb753ca02a622ee06d1ca3deb05c9e2b10e4",
+        "src/core/config.py": "171979db8a25f90cfe90612c77e6034866db118c48cddce69cf04e1e046bee8c",
+        ".env.example": "766481c3ed4b5a7f0dff35c50efa346be23c16a1211ceb9016cc9ae2bae56d24",
+        "pyproject.toml": "e7aae866f11469c22692498b66282d04af6b11d7aabf0c89d1f88ad3bcf07a2b",
+        "uv.lock": "e95eef700c107c95c0067876a0ed6f8c6739699f923875f28b96a9d53077b929",
+        "Dockerfile": "60c9733474735364456dbb528bf523e3d9e4ba229d9988b54bfd3b6a140bb65e"
+      },
+      "schema_versions": {
+        "redness": "3",
+        "spots": "3",
+        "brown": "3",
+        "texture": "3",
+        "pores": "3",
+        "purple": "2",
+        "surface_gloss": "1",
+        "vascular": "1",
+        "contour_firmness": "1"
+      }
+    },
+    "acne": {
+      "repository": "aisia/cuochuang-test",
+      "branch": "dev",
+      "commit": "2e953c794b42422710a5f7a8a925c6e024b3b9fb",
+      "task": "${SERVICE_NAME}.analyze_image",
+      "default_service_name": "acne-detection-worker",
+      "arguments": [
+        "task_id",
+        "oss_key",
+        "oss_result_prefix",
+        "algorithms"
+      ],
+      "success_envelope": [
+        "record_id",
+        "status",
+        "schema_version",
+        "meta_data",
+        "raw_result",
+        "debug_info"
+      ],
+      "failure_envelope_required": [
+        "record_id",
+        "status",
+        "error_message"
+      ],
+      "meta_data": {
+        "name": "acne",
+        "version": "1"
+      },
+      "medical_v2_optional_raw_result_keys": [
+        "medical_metrics_v2",
+        "medical_report_csv_v2"
+      ],
+      "additive_extension_files": [
+        "src/worker.py",
+        "src/display_outputs.py",
+        "src/clinical_quantification.py",
+        "src/core/config.py",
+        ".env.example"
+      ],
+      "raw_result_oss_keys": [
+        "acne_summary",
+        "acne_circles",
+        "acne_raw_boxes",
+        "acne_detections",
+        "acne_skin_mask",
+        "acne_forbidden_mask",
+        "acne_standardized",
+        "max_recall_heatmap",
+        "diffuse_erythema_heatmap",
+        "focal_candidate_heatmap",
+        "max_recall_circles",
+        "combined_candidate_circles",
+        "max_recall_debug",
+        "max_recall_json",
+        "original_yolo_circles",
+        "original_unsupervised_circles",
+        "original_combined_circles"
+      ],
+      "raw_result_structured_keys": [
+        "acne_presence",
+        "acne_count",
+        "region_counts",
+        "grading_status",
+        "grading_reason",
+        "detector_status",
+        "detector_reason",
+        "input_mode",
+        "detection_scope",
+        "量化结果"
+      ],
+      "v2_extension": {
+        "target": "acne_v2",
+        "task": "dermavision.analyze_image",
+        "queue": "acne_v2",
+        "arguments": [
+          "task_id",
+          "oss_key",
+          "oss_result_prefix",
+          "algorithms"
+        ],
+        "success_envelope": [
+          "record_id",
+          "status",
+          "schema_version",
+          "meta_data",
+          "raw_result",
+          "debug_info"
+        ],
+        "meta_data": {
+          "name": "acne",
+          "version": "2"
+        },
+        "raw_result_keys": [
+          "overlay",
+          "metrics",
+          "quality_score",
+          "quality_status",
+          "quality_flags",
+          "scoring_input"
+        ],
+        "metrics": {
+          "疑似痤疮数量": [
+            "总计",
+            "额头",
+            "左脸颊",
+            "右脸颊",
+            "鼻部",
+            "下巴"
+          ],
+          "痤疮严重程度等级": [
+            "等级",
+            "注释"
+          ]
+        },
+        "v1_contract_unchanged": true
+      },
+      "sha256": {
+        "AGENTS.md": "52a133119c73ad86d40b66ff12dd0381c2946a9358084a2c211f1855db2f3cb2",
+        "src/worker.py": "6637595b6e1a79d08b40f0ca0e79502cd04687c881c5bb49da900fdeaf97c32f",
+        "src/display_outputs.py": "87361d6ef6867194132f6ce4d92c00582d5c006134234a05bffc4b380b2cfef2",
+        "src/clinical_quantification.py": "57cd7aa8b8f507faca4e9becaec010d6501bfb036035a0d2a92649584e158834",
+        "src/core/config.py": "8af787beba04de1cfe1adf40707587944111069ce449b260dd4e30626ead9f7d",
+        ".env.example": "0baab2393ea579b23232ef873438a27aac4677a2017a0e5c0f58323fc4b05da8",
+        "pyproject.toml": "bec4bbfbe24c3be9d9900d0b92e8ee848cfbc6a05bf0223ea258c99215c3fb72",
+        "uv.lock": "46746ee4bd468d122deddd1a2d7b701389afa4b776387028b5ae15cdb70bf3f4",
+        "Dockerfile": "30830c1221c5634546ef5b516de1fd6cae379cd72e144126b335f56000a19f3c"
+      }
+    },
+    "wrinkle": {
+      "repository": "aisia/zhouwen-test",
+      "branch": "dev",
+      "commit": "5d3b91f1c98b9529832f541b35d20f152c80eca2",
+      "task": "${SERVICE_NAME}.analyze_image",
+      "default_service_name": "wrinkle",
+      "arguments": [
+        "task_id",
+        "oss_key",
+        "oss_result_prefix",
+        "algorithms"
+      ],
+      "success_envelope": [
+        "record_id",
+        "status",
+        "schema_version",
+        "meta_data",
+        "raw_result",
+        "debug_info"
+      ],
+      "failure_envelope_required": [
+        "record_id",
+        "status",
+        "error_message"
+      ],
+      "meta_data": {
+        "name": "wrinkle",
+        "version": "1"
+      },
+      "medical_v2_optional_raw_result_keys": [
+        "medical_metrics_v2",
+        "medical_report_csv_v2"
+      ],
+      "additive_extension_files": [
+        "src/worker.py",
+        "src/pipeline.py",
+        "src/clinical_quantification.py",
+        "src/core/config.py",
+        ".env.example"
+      ],
+      "raw_result_oss_keys": [
+        "analysis_face",
+        "preprocessed_face",
+        "stage1_candidates",
+        "vote_heatmap",
+        "stage2_overlay",
+        "stage2_centerline",
+        "face_filter_debug",
+        "texture_reference",
+        "comparison",
+        "region_overlay",
+        "region_tiles",
+        "region_metrics_csv",
+        "summary_json"
+      ],
+      "raw_result_structured_keys": [
+        "region_metrics",
+        "run_preset",
+        "device",
+        "successful_runs",
+        "failed_runs",
+        "region_analysis_status",
+        "scoring_input"
+      ],
+      "sha256": {
+        "AGENTS.md": "860e66fd0123ab21b6b9f3f9439859328ea04cfffcb74bdc00da412f436ca5df",
+        "src/worker.py": "828aad7f00544436c7392e088d81d491d3fcac0bbd19f92d2a15e535c1e871e5",
+        "src/pipeline.py": "dcb70b53f78504dc1560d9ba0ecb17f63665c4ec75256e7c417ad3a7df6d3b15",
+        "src/clinical_quantification.py": "e1db469442a2133c2c7351950990dd44359690afa65cb17405c56fcdf0208031",
+        "src/core/config.py": "aa8e76bc480fb823804487bcf8a7ab2d93898927c699b93a936f789f2db80fd3",
+        ".env.example": "8ee5736ff717bb29b1ade75158e34a4136992b1d79b46f82db68670e12e32d2b",
+        "pyproject.toml": "f05cb270427e7c46e0c34281e5d80ba8993faa83521c557befb8178514001588",
+        "uv.lock": "8c42e3755de721b3b1c21e66b574fbb64e7bdf7b60fc33174982d236f2e86241",
+        "Dockerfile": "a2f35504ea7c706a0239e73f9fadeb4e5cfe7637ac086942240532a6d6eea790"
+      }
+    }
+  }
+}

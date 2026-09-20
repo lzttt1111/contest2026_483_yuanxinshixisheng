@@ -1,0 +1,492 @@
+{
+  "schema_version": "shuiguang_cloud_v2",
+  "task_id": "current_front_complete_v3_20260914",
+  "status": "success",
+  "main_image_id": "image_02",
+  "views": {
+    "left": "image_03",
+    "front": "image_02",
+    "right": "image_01"
+  },
+  "results": {
+    "pores": {
+      "score": 57.0,
+      "severity": "中度",
+      "score_status": "available",
+      "score_reason": null,
+      "name": "毛孔",
+      "score_view": "front",
+      "score_direction": "higher_is_better",
+      "scoring_version": "V3.0.1/doctor-v3-roi-4/0e4e990ab1f122ed639eb2e53af642888a79593842e3e93bd92535c783a8fab0/8e27a91f193d6bb21587eb65c5d89003328da727152bcfe5951e788582095bdd",
+      "score_basis": "v3_visible_pores",
+      "total_count": {
+        "left": 538,
+        "front": 1525,
+        "right": 553
+      },
+      "regions": [
+        {
+          "left": null,
+          "front": 802,
+          "right": null,
+          "region": "forehead",
+          "name": "额部",
+          "primary_view": "front",
+          "primary_count": 802,
+          "supplementary_views": []
+        },
+        {
+          "left": 7,
+          "front": 210,
+          "right": 2,
+          "region": "nose",
+          "name": "鼻部",
+          "primary_view": "front",
+          "primary_count": 210,
+          "supplementary_views": [
+            "left",
+            "right"
+          ]
+        },
+        {
+          "left": null,
+          "front": 263,
+          "right": 551,
+          "region": "left_cheek",
+          "name": "左面颊",
+          "primary_view": "right",
+          "primary_count": 551,
+          "supplementary_views": [
+            "front"
+          ]
+        },
+        {
+          "left": 531,
+          "front": 250,
+          "right": null,
+          "region": "right_cheek",
+          "name": "右面颊",
+          "primary_view": "left",
+          "primary_count": 531,
+          "supplementary_views": [
+            "front"
+          ]
+        },
+        {
+          "left": null,
+          "front": 0,
+          "right": 0,
+          "region": "chin",
+          "name": "下巴",
+          "primary_view": "front",
+          "primary_count": 0,
+          "supplementary_views": []
+        }
+      ],
+      "unassigned_count": {
+        "left": 0,
+        "front": 0,
+        "right": 0
+      },
+      "regional_scores": {
+        "score_view": "front",
+        "score_direction": "higher_is_better",
+        "region_schema": "v3_native",
+        "region_side_convention": "image_left_right",
+        "scoring_version": "V3.0.1/doctor-v3-roi-4/0e4e990ab1f122ed639eb2e53af642888a79593842e3e93bd92535c783a8fab0/8e27a91f193d6bb21587eb65c5d89003328da727152bcfe5951e788582095bdd",
+        "items": [
+          {
+            "score": 57.0,
+            "severity": "中度",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "forehead",
+            "name": "额部"
+          },
+          {
+            "score": 61.0,
+            "severity": "轻度",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "nose",
+            "name": "鼻部"
+          },
+          {
+            "score": 61.0,
+            "severity": "轻度",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "left_nasal",
+            "name": "画面左鼻旁"
+          },
+          {
+            "score": 57.0,
+            "severity": "中度",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "right_nasal",
+            "name": "画面右鼻旁"
+          },
+          {
+            "score": 68.0,
+            "severity": "轻度",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "left_inner_cheek",
+            "name": "画面左内侧面颊"
+          },
+          {
+            "score": 59.0,
+            "severity": "中度",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "right_inner_cheek",
+            "name": "画面右内侧面颊"
+          },
+          {
+            "score": 79.0,
+            "severity": "轻度",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "left_outer_cheek",
+            "name": "画面左外侧面颊"
+          },
+          {
+            "score": 54.0,
+            "severity": "中度",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "right_outer_cheek",
+            "name": "画面右外侧面颊"
+          },
+          {
+            "score": 67.0,
+            "severity": "轻度",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "chin",
+            "name": "下巴"
+          }
+        ]
+      }
+    },
+    "spots": {
+      "score": null,
+      "severity": null,
+      "score_status": "unavailable",
+      "score_reason": "independent_spots_reference_unavailable",
+      "name": "可见色斑",
+      "score_view": "front",
+      "score_direction": "higher_is_better",
+      "scoring_version": "V3.0.1/doctor-v3-roi-4/0e4e990ab1f122ed639eb2e53af642888a79593842e3e93bd92535c783a8fab0/8e27a91f193d6bb21587eb65c5d89003328da727152bcfe5951e788582095bdd",
+      "score_basis": "v3_visible_spots",
+      "total_count": {
+        "left": 68,
+        "front": 59,
+        "right": 63
+      },
+      "regions": [
+        {
+          "left": null,
+          "front": 34,
+          "right": null,
+          "region": "forehead",
+          "name": "额部",
+          "primary_view": "front",
+          "primary_count": 34,
+          "supplementary_views": []
+        },
+        {
+          "left": 0,
+          "front": 4,
+          "right": 0,
+          "region": "nose",
+          "name": "鼻部",
+          "primary_view": "front",
+          "primary_count": 4,
+          "supplementary_views": []
+        },
+        {
+          "left": null,
+          "front": 14,
+          "right": 63,
+          "region": "left_cheek",
+          "name": "左面颊",
+          "primary_view": "right",
+          "primary_count": 63,
+          "supplementary_views": [
+            "front"
+          ]
+        },
+        {
+          "left": 68,
+          "front": 7,
+          "right": null,
+          "region": "right_cheek",
+          "name": "右面颊",
+          "primary_view": "left",
+          "primary_count": 68,
+          "supplementary_views": [
+            "front"
+          ]
+        },
+        {
+          "left": null,
+          "front": 0,
+          "right": 0,
+          "region": "chin",
+          "name": "下巴",
+          "primary_view": "front",
+          "primary_count": 0,
+          "supplementary_views": []
+        }
+      ],
+      "unassigned_count": {
+        "left": 0,
+        "front": 0,
+        "right": 0
+      },
+      "regional_scores": {
+        "score_view": "front",
+        "score_direction": "higher_is_better",
+        "region_schema": "v3_native",
+        "region_side_convention": "image_left_right",
+        "scoring_version": "V3.0.1/doctor-v3-roi-4/0e4e990ab1f122ed639eb2e53af642888a79593842e3e93bd92535c783a8fab0/8e27a91f193d6bb21587eb65c5d89003328da727152bcfe5951e788582095bdd",
+        "items": [
+          {
+            "score": null,
+            "severity": null,
+            "score_status": "unavailable",
+            "score_reason": "independent_spots_reference_unavailable",
+            "region": "forehead",
+            "name": "额部"
+          },
+          {
+            "score": null,
+            "severity": null,
+            "score_status": "unavailable",
+            "score_reason": "independent_spots_reference_unavailable",
+            "region": "nose",
+            "name": "鼻部"
+          },
+          {
+            "score": null,
+            "severity": null,
+            "score_status": "unavailable",
+            "score_reason": "independent_spots_reference_unavailable",
+            "region": "left_zygoma",
+            "name": "画面左颧部"
+          },
+          {
+            "score": null,
+            "severity": null,
+            "score_status": "unavailable",
+            "score_reason": "independent_spots_reference_unavailable",
+            "region": "right_zygoma",
+            "name": "画面右颧部"
+          },
+          {
+            "score": null,
+            "severity": null,
+            "score_status": "unavailable",
+            "score_reason": "independent_spots_reference_unavailable",
+            "region": "left_cheek",
+            "name": "画面左面颊"
+          },
+          {
+            "score": null,
+            "severity": null,
+            "score_status": "unavailable",
+            "score_reason": "independent_spots_reference_unavailable",
+            "region": "right_cheek",
+            "name": "画面右面颊"
+          },
+          {
+            "score": null,
+            "severity": null,
+            "score_status": "unavailable",
+            "score_reason": "independent_spots_reference_unavailable",
+            "region": "perioral",
+            "name": "口周"
+          },
+          {
+            "score": null,
+            "severity": null,
+            "score_status": "unavailable",
+            "score_reason": "independent_spots_reference_unavailable",
+            "region": "jaw",
+            "name": "下颌"
+          }
+        ]
+      }
+    },
+    "surface_gloss": {
+      "score": 72.0,
+      "severity": "轻度",
+      "score_status": "available",
+      "score_reason": null,
+      "name": "表面油光",
+      "score_view": "front",
+      "score_direction": "higher_is_better",
+      "scoring_version": "V3.0.1/doctor-v3-roi-4/0e4e990ab1f122ed639eb2e53af642888a79593842e3e93bd92535c783a8fab0/8e27a91f193d6bb21587eb65c5d89003328da727152bcfe5951e788582095bdd",
+      "score_basis": "v3_surface_gloss",
+      "total_count": {
+        "left": 0,
+        "front": 27,
+        "right": 1
+      },
+      "regions": [
+        {
+          "left": null,
+          "front": 1,
+          "right": null,
+          "region": "forehead",
+          "name": "额部",
+          "primary_view": "front",
+          "primary_count": 1,
+          "supplementary_views": []
+        },
+        {
+          "left": null,
+          "front": 18,
+          "right": null,
+          "region": "nose",
+          "name": "鼻部",
+          "primary_view": "front",
+          "primary_count": 18,
+          "supplementary_views": []
+        },
+        {
+          "left": null,
+          "front": 1,
+          "right": 1,
+          "region": "left_cheek",
+          "name": "左面颊",
+          "primary_view": "right",
+          "primary_count": 1,
+          "supplementary_views": [
+            "front"
+          ]
+        },
+        {
+          "left": 0,
+          "front": 3,
+          "right": null,
+          "region": "right_cheek",
+          "name": "右面颊",
+          "primary_view": "left",
+          "primary_count": 0,
+          "supplementary_views": [
+            "front"
+          ]
+        },
+        {
+          "left": null,
+          "front": 4,
+          "right": null,
+          "region": "perioral",
+          "name": "口周",
+          "primary_view": "front",
+          "primary_count": 4,
+          "supplementary_views": []
+        },
+        {
+          "left": 0,
+          "front": null,
+          "right": 0,
+          "region": "chin",
+          "name": "下巴",
+          "primary_view": "right",
+          "primary_count": 0,
+          "supplementary_views": []
+        }
+      ],
+      "unassigned_count": {
+        "left": 0,
+        "front": 0,
+        "right": 0
+      },
+      "regional_scores": {
+        "score_view": "front",
+        "score_direction": "higher_is_better",
+        "region_schema": "v3_native",
+        "region_side_convention": "image_left_right",
+        "scoring_version": "V3.0.1/doctor-v3-roi-4/0e4e990ab1f122ed639eb2e53af642888a79593842e3e93bd92535c783a8fab0/8e27a91f193d6bb21587eb65c5d89003328da727152bcfe5951e788582095bdd",
+        "items": [
+          {
+            "score": 72.0,
+            "severity": "轻度",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "forehead",
+            "name": "额部"
+          },
+          {
+            "score": 70.0,
+            "severity": "轻度",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "nose",
+            "name": "鼻部"
+          },
+          {
+            "score": 77.0,
+            "severity": "轻度",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "left_nasal",
+            "name": "画面左鼻旁"
+          },
+          {
+            "score": 76.0,
+            "severity": "轻度",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "right_nasal",
+            "name": "画面右鼻旁"
+          },
+          {
+            "score": 74.0,
+            "severity": "轻度",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "left_zygoma",
+            "name": "画面左颧部"
+          },
+          {
+            "score": 100.0,
+            "severity": "未见明显",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "right_zygoma",
+            "name": "画面右颧部"
+          },
+          {
+            "score": 100.0,
+            "severity": "未见明显",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "left_cheek",
+            "name": "画面左面颊"
+          },
+          {
+            "score": 100.0,
+            "severity": "未见明显",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "right_cheek",
+            "name": "画面右面颊"
+          },
+          {
+            "score": 100.0,
+            "severity": "未见明显",
+            "score_status": "available",
+            "score_reason": null,
+            "region": "chin",
+            "name": "下巴"
+          }
+        ]
+      }
+    }
+  }
+}

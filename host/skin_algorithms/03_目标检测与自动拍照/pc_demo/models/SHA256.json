@@ -1,0 +1,7 @@
+{
+  "face_landmarker.task": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+  "face_detection_yunet.onnx": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4",
+  "head_pose_fsanet_1x1.onnx": "120fa107a2dd3be78c21c3a73a0db980590643a5372893e8878094898262f213",
+  "contact/model.onnx": "e4d9deba2eb3aaa9ec143045de305f7be38480124ac3ef577ac5e0eec122dae1",
+  "device/model.onnx": "218e922d784795901bd5e165e11755898f6c29c4a5724715862aa8cdf1919a8c"
+}

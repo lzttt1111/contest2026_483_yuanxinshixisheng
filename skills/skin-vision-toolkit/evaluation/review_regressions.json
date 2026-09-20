@@ -1,0 +1,198 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "id": "unknown-rerun",
+      "passed": true,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "unknown_rerun_id",
+            "detail": "ghost"
+          }
+        ],
+        "metrics": {
+          "records": 2,
+          "protected_ids": [
+            "a",
+            "b"
+          ],
+          "safe_rerun_ids": []
+        }
+      }
+    },
+    {
+      "id": "unknown-review-state",
+      "passed": true,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "unknown_review_state",
+            "detail": "a"
+          }
+        ],
+        "metrics": {
+          "records": 2,
+          "protected_ids": [
+            "b"
+          ],
+          "safe_rerun_ids": []
+        }
+      }
+    },
+    {
+      "id": "string-false",
+      "passed": true,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "Boolean field required: committed"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "missing-contract-point",
+      "passed": true,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "missing_contract_fields",
+            "detail": [
+              "revision"
+            ]
+          }
+        ],
+        "metrics": {
+          "contracts_checked": 2,
+          "point_transfer_allowed": false,
+          "requires_live_verification": true
+        }
+      }
+    },
+    {
+      "id": "missing-unit",
+      "passed": true,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "missing_unit",
+            "detail": "spots"
+          }
+        ],
+        "metrics": {
+          "reuse_candidates": [
+            "existing"
+          ],
+          "requirements_checked": 1,
+          "recommendation": "collect_missing_evidence"
+        }
+      }
+    },
+    {
+      "id": "fractional-workers",
+      "passed": true,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "batch worker budgets must be positive integers"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "boolean-workers",
+      "passed": true,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "batch worker budgets must be positive integers"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "boolean-frame-count",
+      "passed": true,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "invalid capture configuration"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "false-string-registration_verified",
+      "passed": true,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "Boolean field required: registration_verified"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "false-string-cross_view_unique_claim",
+      "passed": true,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "Boolean field required: cross_view_unique_claim"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "false-string-human",
+      "passed": true,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "Boolean field required: human_confirmed"
+          }
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "false-string-baseline",
+      "passed": true,
+      "result": {
+        "status": "invalid_input",
+        "findings": [
+          {
+            "code": "invalid_input",
+            "detail": "Boolean field required: baseline_verified"
+          }
+        ],
+        "metrics": {}
+      }
+    }
+  ]
+}

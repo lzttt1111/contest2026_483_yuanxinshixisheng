@@ -1,0 +1,17 @@
+{
+  "schema": "aisia_scoring_v011_assets_v1",
+  "delivery_mode": "bundled_internal_git_checkout",
+  "override_environment_variable": "AISIA_SCORING_V011_ROOT",
+  "files": [
+    {
+      "relative_path": "全量历史ECDF评分配置.json",
+      "size_bytes": 11339357,
+      "sha256": "8cf292c2e87b21a2b9e3543bd2a031567835eca330b0fc52134aaebf4435b808"
+    },
+    {
+      "relative_path": "综合色素V0.1.2_shadow评分配置.json",
+      "size_bytes": 19753820,
+      "sha256": "b047ff042b22e93cf98f3a85f7b333a120ffe73a801bd659edbd6b33902565fa"
+    }
+  ]
+}

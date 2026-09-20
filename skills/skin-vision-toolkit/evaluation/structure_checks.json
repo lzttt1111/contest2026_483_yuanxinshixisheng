@@ -1,0 +1,137 @@
+{
+  "passed": true,
+  "errors": [],
+  "skills": [
+    {
+      "skill": "pose-guided-capture",
+      "quick_validate_exit": 0,
+      "script_sha256": "74055b93b14b2d50d1ccf26650f0e75531c0f10f5ffea9c6c1b49f7895cf0521",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "sys"
+      ]
+    },
+    {
+      "skill": "vision-batch-recovery",
+      "quick_validate_exit": 0,
+      "script_sha256": "290bd7acf552db5ab94c506d0c17040c6d0c4a7821af8a24bdb76dad1256656c",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "sys"
+      ]
+    },
+    {
+      "skill": "vision-data-review",
+      "quick_validate_exit": 0,
+      "script_sha256": "106224673ef46a00af0f9c68d57b9229b0b3aadeed61fd50ba174d27583e3fb8",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "sys"
+      ]
+    },
+    {
+      "skill": "vision-feature-engineering",
+      "quick_validate_exit": 0,
+      "script_sha256": "c41462660a1f1a426fdbbeb7a1860fa3286ec42ec3610b32a6827b441c8b4e6b",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "sys"
+      ]
+    },
+    {
+      "skill": "vision-generalization",
+      "quick_validate_exit": 0,
+      "script_sha256": "fb0d7fd30d5bad2aaf4335d461065ca96353e7bb3fea147170ff889b3976cb90",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "sys"
+      ]
+    },
+    {
+      "skill": "vision-metrics-calibration",
+      "quick_validate_exit": 0,
+      "script_sha256": "0a5969d18eaec8a1f89d898198c8b976217635daba5c4f6a5d5636a80fc95293",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "sys"
+      ]
+    },
+    {
+      "skill": "vision-result-publication",
+      "quick_validate_exit": 0,
+      "script_sha256": "26ab58520f60e5f5f432b253ba0408c86911ad76199d2721ce0c7af2540809f4",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "sys"
+      ]
+    },
+    {
+      "skill": "vision-runtime-parity",
+      "quick_validate_exit": 0,
+      "script_sha256": "377cf2f4a2e669423eef7899cc3b3c69e028e4b1df0bd91a1bc446f9853003e7",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "sys"
+      ]
+    },
+    {
+      "skill": "vision-spec-to-evidence",
+      "quick_validate_exit": 0,
+      "script_sha256": "ebab38102876303346615cda14bd53571c909bb002acfcc15ed17c5a223b0b3a",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "sys"
+      ]
+    },
+    {
+      "skill": "vision-system-integration",
+      "quick_validate_exit": 0,
+      "script_sha256": "3050cb208ce8f6c5355f7ca6146a7432d2a143ce2f1ce52bd33a93b7d500b4fd",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "sys"
+      ]
+    }
+  ],
+  "note": "Static checks and quick_validate do not prove model decision quality."
+}

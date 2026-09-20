@@ -1,0 +1,11 @@
+# 独立三项执行与评分状态
+
+运行只执行 pores、spots、surface_gloss；不执行Brown或UV，也不使用它们过滤色斑。常驻Celery与solo池配置保持。
+
+此前色斑42分及左面颊100分来自带跨检测支持过滤的V3参考，不能用于独立可见色斑，因此撤回。当前JSON仍包含三项目及9/8/9区域；spots整体及区域score/severity返回null，表示独立评分参考尚未就绪。不能解释成未检出色斑。毛孔和油光沿用各自评分。
+
+输入仍为三张乱序RGB图片；正式评分使用正面。输出对象字段：name为中文名，score为0—100或null，severity为等级或null，regions为区域数组，区域包含region/name/score/severity。
+
+部署：celery -A cloud_three.tasks:app worker --queues=shuiguang_scores --pool=solo --concurrency=1 --loglevel=INFO。API：uvicorn cloud_three.api:app --port 8893。提交POST /api/score-jobs，查询GET /api/score-jobs/{queue_id}。
+
+本版本是独立检测纠错检查点，尚不能作为三项分区评分全部完成的稳定版。

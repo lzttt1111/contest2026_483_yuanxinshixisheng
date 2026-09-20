@@ -1,0 +1,42 @@
+{
+  "fixture_schema": "dermavision_scoring_fixture_manifest_v1",
+  "fixtures": {
+    "clinic28-09_r1": {
+      "anchor_id": "clinic28-09_RGB_M",
+      "fixture_file": "clinic28-09_r1.json",
+      "fixture_sha256": "ba942ae3b977ad35dc670e19d2fe29643f245abc422d7cb1766507340c4e2526",
+      "fixture_size_bytes": 8517,
+      "required_source_metric_count": 102,
+      "source_document_sha256": "595beab277ef80bb9cc85378dcd17ceced2e26f16bbb8fb317e7f6fa806ca480",
+      "source_kind": "historical_acceptance_detector_metrics"
+    },
+    "clinic28-23_r1": {
+      "anchor_id": "clinic28-23_RGB_M",
+      "fixture_file": "clinic28-23_r1.json",
+      "fixture_sha256": "e4db8340f508bbd0756e2a629e98ca572a49c023aa9089654d211460006bbaa0",
+      "fixture_size_bytes": 8519,
+      "required_source_metric_count": 102,
+      "source_document_sha256": "28f7d4890099c89caaa9e6d2bc4c4d9c842939cf96eb8c089cd29beee5085fab",
+      "source_kind": "historical_acceptance_detector_metrics"
+    },
+    "clinic28-25_r1": {
+      "anchor_id": "clinic28-25_RGB_M",
+      "fixture_file": "clinic28-25_r1.json",
+      "fixture_sha256": "bc79838a006e9cd43cd6cb42062a485c590c7e016c3d6a985579ad3bf1df6d18",
+      "fixture_size_bytes": 8520,
+      "required_source_metric_count": 102,
+      "source_document_sha256": "8fe62e2b2b1ef95b0bdfe26a817f329cfa66c51cd2e348c9fe830b341f7149f2",
+      "source_kind": "historical_acceptance_detector_metrics"
+    },
+    "clinic28-25_r3": {
+      "anchor_id": "clinic28-25_RGB_M_r3",
+      "fixture_file": "clinic28-25_r3.json",
+      "fixture_sha256": "bc79838a006e9cd43cd6cb42062a485c590c7e016c3d6a985579ad3bf1df6d18",
+      "fixture_size_bytes": 8520,
+      "required_source_metric_count": 102,
+      "source_document_sha256": "cb06041b0a6aaf4787a876fc46d4dbfd68c37ff6aaa6fc3aed0421d3fefdec8b",
+      "source_kind": "historical_acceptance_detector_metrics"
+    }
+  },
+  "formula_registry_sha256": "9ac2d51db8239679318d791f55f3519a69996596f489153a3779db983e059c27"
+}

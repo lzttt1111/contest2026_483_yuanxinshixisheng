@@ -1,0 +1,8 @@
+# Main Python 3.10 packages. Clean Ubuntu 22.04 installation must be verified by receiver.
+fastapi==0.139.0
+uvicorn==0.51.0
+numpy==2.2.6
+Pillow==12.3.0
+opencv-contrib-python==5.0.0.93
+mediapipe==0.10.35
+httpx==0.28.1

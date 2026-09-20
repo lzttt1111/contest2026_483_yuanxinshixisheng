@@ -1,0 +1,63 @@
+"""Versioned compatibility recipes. They never replace detector source measurements."""
+# Each recipe is an explicit V2 input with the closest retained V3 report meaning.
+FEATURES={
+"01":{"density":"pores.density_burden.pore_density_per_100k_px","area_p50":"pores.size_burden.p50_pore_area_px"},
+"02":{"gloss_area":"oil_tendency.surface_gloss_coverage.gloss_area_ratio",
+      "gloss_high_area":"oil_tendency.surface_gloss_coverage.high_gloss_area_ratio"},
+"03":{"spots.area":"pigmentation.visible_spots.visible_spot_area_ratio",
+      "spots.p90":"pigmentation.visible_spots.p90_visible_spot_delta_e",
+      "brown.area":"pigmentation.brown_pigment.brown_area_ratio",
+      "brown.p90":"pigmentation.brown_pigment.p90_brown_intensity",
+      "uv.area":"pigmentation.uv_spots.uv_spot_area_ratio",
+      "uv.p90":"pigmentation.uv_spots.p90_uv_spot_intensity"},
+"04":{"area":"diffuse_redness.coverage.diffuse_red_area_ratio",
+      "high_area":"diffuse_redness.coverage.high_red_area_ratio",
+      "mean":"diffuse_redness.intensity.mean_redness","p90":"diffuse_redness.intensity.p90_redness"},
+"05":{"clusters":"vascular.count_length.vascular_density_per_100k_px",
+      "affected_area":"vascular.coverage_width.vascular_area_ratio",
+      "local_density":"vascular.count_length.vascular_length_density_per_10k_px"},
+"06":{"erythema_density":"acne_activity.follicular_erythema.follicular_erythema_density",
+      "papule_density":"acne_activity.follicular_papule.papule_density",
+      "pustule_density":"acne_activity.follicular_pustule.pustule_density"},
+"07":{"area":"dry_fine_lines.coverage.fine_line_network_coverage_ratio",
+      "high_area":"dry_fine_lines.coverage.high_density_fine_line_area_ratio",
+      "density":"dry_fine_lines.density.fine_line_length_density",
+      "contrast_p50":"dry_fine_lines.visual_surface.p50_fine_line_contrast"},
+"09":{"extent":"structural_grooves.range.groove_continuous_length_ratio",
+      "mean_depth":"structural_grooves.depth.mean_groove_relative_depth",
+      "p90_depth":"structural_grooves.depth.p90_groove_relative_depth",
+      "volume":"structural_grooves.volume.normalized_groove_volume"},
+"10":{"raised_area":"smoothness.raised_irregularity.raised_area_ratio",
+      "raised_p90":"smoothness.raised_irregularity.p90_raised_relative_height",
+      "depressed_area":"smoothness.depressed_irregularity.depressed_area_ratio",
+      "depressed_p90":"smoothness.depressed_irregularity.p90_depressed_relative_depth"},
+"11":{"smoothness":"contour_firmness.midface_support_decline.midface_surface_continuity",
+      "turning":"contour_firmness.midface_support_decline.midface_transition_burden",
+      "jowl":"contour_firmness.lower_face_sagging.jowl_bulge_burden",
+      "jaw_continuity":"contour_firmness.lower_face_sagging.jawline_continuity"}
+}
+RAW={
+"01":{"density":("pores","feature_density_per_100k_skin_px"),"area_p50":("pores","p50_instance_area_px")},
+"02":{"gloss_area":("surface_gloss","gloss_area_ratio"),"gloss_high_area":("surface_gloss","high_gloss_area_ratio"),
+      "gloss_mean":("surface_gloss","mean_gloss_intensity"),
+      "porphyrin_high_density":("porphyrin","porphyrin_high_density"),"porphyrin_p90":("porphyrin","实例P90强度（0～1）")},
+"03":{"spots.area":("spots","feature_area_ratio"),"spots.p90":("spots","p90_delta_e"),
+      "brown.area":("brown","continuous_brown_coverage_ratio"),"brown.p90":("brown","p90_intensity"),
+      "uv.area":("uv_spots","连续异常面积占比"),"uv.p90":("uv_spots","实例P90强度（0～1）")},
+"04":{"area":("redness","diffuse_red_area_ratio"),"high_area":("redness","high_intensity_area_ratio"),
+      "mean":("redness","mean_intensity"),"p90":("redness","p90_intensity")},
+"05":{"clusters":("vascular","count"),"affected_area":("vascular","area_ratio"),"local_density":("vascular","line_density_per_10k_px")},
+"08":{"main_count":("wrinkle","wrinkle_segment_count"),"count":("wrinkle","wrinkle_segment_count"),"length_burden":("wrinkle","total_wrinkle_length_px"),
+      "length":("wrinkle","total_wrinkle_length_px"),"maximum":("wrinkle","max_segment_length_px")},
+"07":{"count":("wrinkle","wrinkle_segment_count"),"length":("wrinkle","total_wrinkle_length_px"),
+      "maximum":("wrinkle","max_segment_length_px")},
+"09":{"count":("wrinkle","wrinkle_segment_count"),"length":("wrinkle","total_wrinkle_length_px"),
+      "maximum":("wrinkle","max_segment_length_px")},
+"10":{"raised_area":("texture","raised_like_area_ratio"),"raised_p90":("texture","p90_raised_relief_estimate"),
+      "depressed_area":("texture","depressed_like_area_ratio"),"depressed_p90":("texture","p90_depressed_relief_estimate")}
+}
+UNITS={"density":"个/10万有效像素","area_p50":"px²","large_density":"密度指数","gloss_mean":"0–1",
+       "porphyrin_p90":"0–1","clusters":"处","roi_count":"个","local_density":"标准化密度",
+       "main_count":"条","length_burden":"标准化长度","contrast_p50":"标准化对比度"}
+HIGHER_HEALTH={("11","smoothness"),("11","jaw_continuity")}
+VERSION="doctor_v3_compatible_image_scoring_20260908_v3"

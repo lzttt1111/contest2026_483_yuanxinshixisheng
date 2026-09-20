@@ -1,0 +1,18 @@
+{
+  "task_id": "example_diagnostic_one",
+  "images": [
+    {
+      "image_id": "image_01",
+      "path": "one/inputs/right.jpg"
+    },
+    {
+      "image_id": "image_02",
+      "path": "one/inputs/front.jpg"
+    },
+    {
+      "image_id": "image_03",
+      "path": "one/inputs/left.jpg"
+    }
+  ],
+  "mirrored": false
+}

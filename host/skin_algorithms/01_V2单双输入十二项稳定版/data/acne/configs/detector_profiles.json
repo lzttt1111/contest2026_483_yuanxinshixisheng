@@ -1,0 +1,60 @@
+{
+  "current_default": "v3_balanced",
+  "class_name": "acne_candidate",
+  "profiles": {
+    "v3_balanced": {
+      "description": "Recommended current default end-to-end profile. Best balance of recall, F1, count MAE, and average predictions among tested GPU baselines.",
+      "weights": "models/acne/detector/acne_candidate_baseline_v3_n_768.pt",
+      "sha256": "50df3a1db9d2ae7888958c36758430b4c6aac82543c75e72519eef3277fa2b23",
+      "imgsz": 768,
+      "conf": 0.15,
+      "device": "cpu",
+      "test_metrics": {
+        "precision": 0.3935498948352419,
+        "recall": 0.4404917603975935,
+        "f1": 0.41569982720315973,
+        "mAP50": 0.2603655830454146,
+        "mAP50_95": 0.060955995013743935,
+        "count_mae": 5.529209621993127,
+        "average_predictions": 13.1340206185567
+      }
+    },
+    "v5_high_map_candidate_pool": {
+      "description": "Highest raw detector mAP profile. Use only as a candidate pool because it over-predicts and has poor count MAE.",
+      "weights": "models/acne/detector/acne_candidate_baseline_v5_n_960.pt",
+      "imgsz": 960,
+      "conf": 0.05,
+      "device": "cpu",
+      "test_metrics": {
+        "precision": 0.43501319910203984,
+        "recall": 0.3760141385525528,
+        "f1": 0.4033676936029663,
+        "mAP50": 0.32358174603872925,
+        "mAP50_95": 0.08191614879968853,
+        "count_mae": 51.93127147766323,
+        "average_predictions": 65.0618556701031
+      }
+    },
+    "v5_count_friendly": {
+      "description": "More conservative V5 profile selected from val count-friendly threshold logic. Higher precision and low count MAE, but lower recall.",
+      "weights": "models/acne/detector/acne_candidate_baseline_v5_n_960.pt",
+      "imgsz": 960,
+      "conf": 0.15,
+      "device": "cpu",
+      "test_metrics": {
+        "precision": 0.4559168622192424,
+        "recall": 0.3557415642165838,
+        "f1": 0.3996473699676756,
+        "mAP50": 0.22602228807075495,
+        "mAP50_95": 0.05308291734817953,
+        "count_mae": 5.123711340206185,
+        "average_predictions": 9.766323024054984
+      }
+    }
+  },
+  "notes": [
+    "These profiles are engineering baselines, not clinical diagnostic models.",
+    "Do not use inputs/ development images as formal accuracy evidence.",
+    "Docker was not used; WSL native GPU training succeeded."
+  ]
+}

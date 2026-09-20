@@ -1,0 +1,132 @@
+{
+  "registry_version": "medical_scoring_registry_v2_20260728",
+  "score_direction": "higher_is_more_visible_burden",
+  "activation_status": "uncalibrated",
+  "activation_requirements": [
+    "完成38万张样本去重、质量筛选和设备分层统计",
+    "完成医生盲评标注及阈值验证",
+    "完成同条件重复拍摄稳定性验证"
+  ],
+  "candidate_grade_labels": [
+    {"min": 0, "max": 20, "label": "未见明显"},
+    {"min": 21, "max": 40, "label": "轻度"},
+    {"min": 41, "max": 60, "label": "中度"},
+    {"min": 61, "max": 80, "label": "较明显"},
+    {"min": 81, "max": 100, "label": "显著"}
+  ],
+  "rules": {
+    "redness": {
+      "name": "弥漫性泛红",
+      "status": "white_light_proxy",
+      "doctor_source": "面部弥漫性泛红检测需求_V2",
+      "groups": [
+        {"name": "泛红覆盖负担", "weight": 0.35, "available": true},
+        {"name": "泛红强度", "weight": 0.30, "available": true},
+        {"name": "背景红色连续性", "weight": 0.20, "available": true},
+        {"name": "边界与均匀性", "weight": 0.15, "available": true}
+      ]
+    },
+    "spots": {
+      "name": "看得见的色斑负担",
+      "status": "supported_component",
+      "doctor_source": "面部色素检测需求说明_V2",
+      "groups": [
+        {"name": "可见色斑范围", "weight": 0.45, "available": true},
+        {"name": "可见色斑对比", "weight": 0.30, "available": true},
+        {"name": "可见色斑形态", "weight": 0.25, "available": true}
+      ]
+    },
+    "brown": {
+      "name": "Brown综合色素负担",
+      "status": "rgb_brown_proxy",
+      "doctor_source": "面部色素检测需求说明_V2",
+      "groups": [
+        {"name": "Brown覆盖负担", "weight": 0.40, "available": true},
+        {"name": "Brown强度", "weight": 0.30, "available": true},
+        {"name": "高强度Brown区域", "weight": 0.15, "available": true},
+        {"name": "Brown点片形态", "weight": 0.15, "available": true}
+      ]
+    },
+    "texture": {
+      "name": "二维可见表面纹理代理",
+      "status": "two_dimensional_proxy",
+      "doctor_source": "面部皮肤光滑度检测需求说明_V2",
+      "groups": [
+        {"name": "凸起样二维纹理", "weight": 0.4737, "available": true},
+        {"name": "凹陷样二维纹理", "weight": 0.5263, "available": true},
+        {"name": "二维纹理聚集", "weight": 0.0, "available": true}
+      ],
+      "note": "未实现附着物分类及真实高度、深度、体积；聚集只作辅助，不计分。"
+    },
+    "pores": {
+      "name": "可见毛孔",
+      "status": "supported_without_large_pore_threshold",
+      "doctor_source": "面部毛孔检测需求说明_V2",
+      "groups": [
+        {"name": "毛孔密度负担", "weight": 0.20, "available": true},
+        {"name": "毛孔面积负担", "weight": 0.25, "available": true},
+        {"name": "毛孔尺度负担", "weight": 0.25, "available": true},
+        {"name": "大毛孔负担", "weight": 0.20, "available": false},
+        {"name": "毛孔形态负担", "weight": 0.10, "available": true}
+      ],
+      "note": "大毛孔阈值待参考人群分布和医生标注后启用，候选分仅对可用权重归一化。"
+    },
+    "uv_spots": {
+      "name": "UV下更明显的色斑负担",
+      "status": "simulated_uv_unvalidated",
+      "doctor_source": "面部色素检测需求说明_V2",
+      "groups": [
+        {"name": "UV样色素范围", "weight": 0.55, "available": true},
+        {"name": "UV样色素强度", "weight": 0.30, "available": true},
+        {"name": "UV样点片形态", "weight": 0.15, "available": true}
+      ],
+      "note": "白光RGB代理，换真实UV采集后必须重建常模。"
+    },
+    "porphyrin": {
+      "name": "紫质荧光代理",
+      "status": "incomplete_oil_component",
+      "doctor_source": "面部油脂分泌检测需求说明_V2",
+      "groups": [
+        {"name": "紫质目标范围", "weight": 0.375, "available": true},
+        {"name": "紫质荧光代理强度", "weight": 0.375, "available": true},
+        {"name": "紫质聚集", "weight": 0.25, "available": true}
+      ],
+      "note": "缺少表面油光检测，不生成医生文档中的完整油脂分泌倾向评分。"
+    },
+    "wrinkle": {
+      "name": "二维可见稳定性线性皱纹代理",
+      "status": "single_image_2d_proxy",
+      "doctor_source": "面部稳定性线性皱纹检测需求说明_V2",
+      "groups": [
+        {"name": "纹路密度", "weight": 0.1875, "available": true},
+        {"name": "纹路长度", "weight": 0.25, "available": true},
+        {"name": "纹路宽度与面积", "weight": 0.25, "available": true},
+        {"name": "纹路视觉对比", "weight": 0.1875, "available": true},
+        {"name": "纹路线性连续性", "weight": 0.125, "available": true},
+        {"name": "三维凹陷", "weight": 0.0, "available": false}
+      ],
+      "note": "把医生20%的三维凹陷权重剔除后，对可用二维80%权重归一化；不输出真实深度。"
+    },
+    "acne": {
+      "name": "痤疮样候选代理",
+      "status": "class_limited_proxy",
+      "doctor_source": "面部毛囊炎症及痤疮检测需求_V2",
+      "groups": [
+        {"name": "候选范围负担", "weight": 0.70, "available": true},
+        {"name": "候选信号强度", "weight": 0.30, "available": true}
+      ],
+      "note": "当前单类别模型不能伪造毛囊周围红斑、丘疹和丘脓疱三类20/40/40正式评分。"
+    }
+  },
+  "composites": {
+    "pigmentation": {
+      "name": "综合色素负担",
+      "components": [
+        {"item": "spots", "weight": 0.40},
+        {"item": "uv_spots", "weight": 0.25},
+        {"item": "brown", "weight": 0.35}
+      ],
+      "note": "红褐重叠只作辅助，不重复计分。"
+    }
+  }
+}

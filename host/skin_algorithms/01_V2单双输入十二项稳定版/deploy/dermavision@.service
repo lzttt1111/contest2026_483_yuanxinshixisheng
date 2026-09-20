@@ -1,0 +1,23 @@
+[Unit]
+Description=AISIA Single RGB Twelve Analysis Worker - %i
+Documentation=file:/home/bool/deployment/dermavision/deploy/README.md
+After=network-online.target redis.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=bool
+WorkingDirectory=/home/bool/deployment/dermavision
+EnvironmentFile=-/home/bool/deployment/dermavision/.env
+Environment=PYTORCH_NVML_BASED_CUDA_CHECK=1
+Environment=CUDA_VISIBLE_DEVICES=0
+ExecStart=/home/bool/deployment/dermavision/.venv/bin/python /home/bool/deployment/dermavision/run_cloud_worker.py --target %i
+MemoryMax=12G
+MemorySwapMax=0
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=180
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target

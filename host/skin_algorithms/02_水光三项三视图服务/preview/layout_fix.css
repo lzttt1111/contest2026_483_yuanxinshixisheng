@@ -1,0 +1,7 @@
+/* The reference layout uses three result panels followed by full-width tables. */
+.tables{grid-template-columns:minmax(0,1fr)}
+.photo img{height:auto;aspect-ratio:1;object-fit:contain;background:#fff}
+.source{padding:12px 18px}
+.source p{margin:0}
+body{background:white}
+.score-card{margin-top:16px}

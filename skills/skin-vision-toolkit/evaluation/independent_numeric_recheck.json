@@ -1,0 +1,401 @@
+{
+  "source_event_timestamp": "2026-09-10T09:02:01.705Z",
+  "source_event_sha256": "a9eb191d5f562fc8b0797a345e2310a58fced17e8bf512057269627985163a61",
+  "author": "/root/independent_skill_validation",
+  "review": {
+    "phase": "numeric_recheck",
+    "model": "gpt-6-astra",
+    "effort": "medium",
+    "started_at": "2026-09-10 08:59:21 UTC",
+    "ended_at": "2026-09-10 09:00:33 UTC",
+    "target_version": "0.1.2，按任务指定；未读取版本清单独立确认",
+    "blocking_issues": [],
+    "release_recommendation": {
+      "approved": true,
+      "reason": "三个已报告的布尔值冒充数值问题均已实际复核为拒绝；相邻合法数值保持可用，角度、坐标、版本和报告投影的补充类型探针符合当前合同。本次批准限于离线Skill包的这组数值类型修复，不代表穷尽输入验证或生产验收。"
+    },
+    "method": {
+      "checker_files_reviewed": 10,
+      "independent_probes_executed": 31,
+      "files_written": 0,
+      "read_author_numeric_tests_or_expected": false,
+      "read_primary_reports": false,
+      "execution": "Python -B及sys.dont_write_bytecode=True，内存加载check.py并调用check。数值案例由原normal题面独立变更；报告投影通过内存Path替身提供JSON，不创建资产文件。",
+      "exception_semantics": "以下ValueError均为直接check调用实际抛出的异常。已审查CLI main会将ValueError映射为invalid_input；本轮未将该映射冒称为实际CLI输出。",
+      "prohibited_actions_performed": []
+    },
+    "reported_issue_rechecks": [
+      {
+        "field": "physical_scale",
+        "base": "06-normal，unit改为mm2",
+        "resolved": true,
+        "probes": [
+          {
+            "value": true,
+            "actual": {
+              "exception": "ValueError",
+              "detail": "finite number required: physical_scale"
+            }
+          },
+          {
+            "value": false,
+            "actual": {
+              "exception": "ValueError",
+              "detail": "finite number required: physical_scale"
+            }
+          },
+          {
+            "value": 0,
+            "actual": {
+              "exception": "ValueError",
+              "detail": "physical_scale must be positive"
+            }
+          },
+          {
+            "value": -0.5,
+            "actual": {
+              "exception": "ValueError",
+              "detail": "physical_scale must be positive"
+            }
+          },
+          {
+            "value": 0.5,
+            "actual": {
+              "status": "pass",
+              "findings": []
+            }
+          },
+          {
+            "value": null,
+            "actual": {
+              "status": "fail",
+              "findings": [
+                "missing_physical_scale"
+              ]
+            }
+          }
+        ],
+        "judgment": "布尔值、零和负数不再作为物理尺度接受；缺证据与非法类型得到区分。正尺度pass仅说明声明条件通过，没有证明真实标定。"
+      },
+      {
+        "field": "max_abs_tolerance",
+        "base": "09-normal，保存数组最大误差约0.0001",
+        "resolved": true,
+        "probes": [
+          {
+            "value": true,
+            "actual": {
+              "exception": "ValueError",
+              "detail": "finite numeric tolerance required"
+            }
+          },
+          {
+            "value": 0,
+            "actual": {
+              "status": "fail",
+              "findings": [
+                "numeric_parity_failed"
+              ],
+              "max_abs": 9.999999999998899e-05
+            }
+          },
+          {
+            "value": -0.1,
+            "actual": {
+              "exception": "ValueError",
+              "detail": "negative tolerance"
+            }
+          },
+          {
+            "value": 0.001,
+            "actual": {
+              "status": "pass",
+              "findings": [],
+              "max_abs": 9.999999999998899e-05
+            }
+          }
+        ],
+        "judgment": "布尔容差被拒绝；合法零容差进入实际比较并因非零误差失败，正容差正确通过。"
+      },
+      {
+        "field": "yaw_sign",
+        "base": "04-normal，front目标与三帧yaw均为0",
+        "resolved": true,
+        "probes": [
+          {
+            "value": true,
+            "actual": {
+              "exception": "ValueError",
+              "detail": "yaw_sign must be integer -1 or 1, not boolean"
+            }
+          },
+          {
+            "value": -1,
+            "actual": {
+              "status": "pass",
+              "captured": {
+                "front": 2
+              },
+              "complete": true
+            }
+          },
+          {
+            "value": 1,
+            "actual": {
+              "status": "pass",
+              "captured": {
+                "front": 2
+              },
+              "complete": true
+            }
+          },
+          {
+            "value": 0,
+            "actual": {
+              "exception": "ValueError",
+              "detail": "yaw_sign must be integer -1 or 1, not boolean"
+            }
+          },
+          {
+            "value": 1.0,
+            "actual": {
+              "exception": "ValueError",
+              "detail": "yaw_sign must be integer -1 or 1, not boolean"
+            }
+          }
+        ],
+        "judgment": "只接受整数-1和1；本组正面零角度探针检验类型边界，不单独证明非零镜像方向行为。"
+      }
+    ],
+    "adjacent_numeric_probes": [
+      {
+        "base": "04-normal",
+        "change": {
+          "frames[0].yaw": false
+        },
+        "actual": {
+          "exception": "ValueError",
+          "detail": "finite frame number required: yaw"
+        }
+      },
+      {
+        "base": "04-normal",
+        "change": {
+          "config.yaw_tolerance": true
+        },
+        "actual": {
+          "exception": "ValueError",
+          "detail": "finite capture number required: yaw_tolerance"
+        }
+      },
+      {
+        "base": "04-normal",
+        "change": {
+          "capture_revision": true
+        },
+        "actual": {
+          "exception": "ValueError",
+          "detail": "capture_revision must be nonnegative integer"
+        }
+      },
+      {
+        "base": "06-normal",
+        "change": {
+          "declared_p50": true
+        },
+        "actual": {
+          "exception": "ValueError",
+          "detail": "finite number required: declared_p50"
+        }
+      },
+      {
+        "base": "06-normal",
+        "change": {
+          "declared_count": true
+        },
+        "actual": {
+          "exception": "ValueError",
+          "detail": "declared_count must be nonnegative integer"
+        }
+      },
+      {
+        "base": "10-normal",
+        "change": {
+          "current_revision": true
+        },
+        "actual": {
+          "exception": "ValueError",
+          "detail": "revision must be nonnegative integer"
+        }
+      },
+      {
+        "base": "02-normal",
+        "change": {
+          "records[0].revision": true
+        },
+        "actual": {
+          "exception": "ValueError",
+          "detail": "revision must be nonnegative integer"
+        }
+      },
+      {
+        "base": "05-normal",
+        "change": {
+          "instances[0].x": false
+        },
+        "actual": {
+          "exception": "ValueError",
+          "detail": "integer centroid required for this raster audit"
+        }
+      }
+    ],
+    "coordinate_probes": {
+      "base": {
+        "parent_case": "09-normal",
+        "coordinate_case": {
+          "scale": 0.5,
+          "pad_xy": [
+            2,
+            4
+          ],
+          "model_points": [
+            [
+              7,
+              14
+            ]
+          ],
+          "original_points": [
+            [
+              10,
+              20
+            ]
+          ],
+          "tolerance_pixels": 0
+        }
+      },
+      "results": [
+        {
+          "change": {},
+          "actual": {
+            "status": "pass",
+            "restored_points": [
+              [
+                10.0,
+                20.0
+              ]
+            ],
+            "max_error_pixels": 0.0
+          }
+        },
+        {
+          "change": {
+            "scale": true
+          },
+          "actual": {
+            "exception": "ValueError",
+            "detail": "finite number required: scale"
+          }
+        },
+        {
+          "change": {
+            "tolerance_pixels": false
+          },
+          "actual": {
+            "exception": "ValueError",
+            "detail": "finite number required: tolerance_pixels"
+          }
+        },
+        {
+          "change": {
+            "pad_xy": [
+              false,
+              4
+            ]
+          },
+          "actual": {
+            "exception": "ValueError",
+            "detail": "finite coordinate number required"
+          }
+        },
+        {
+          "change": {
+            "model_points": [
+              [
+                true,
+                14
+              ]
+            ]
+          },
+          "actual": {
+            "exception": "ValueError",
+            "detail": "finite coordinate number required"
+          }
+        }
+      ],
+      "judgment": "合法数值正确还原；尺度、容差、padding和点坐标中的布尔值均在计算前被拒绝。"
+    },
+    "report_projection_probes": [
+      {
+        "source": {
+          "count": 1
+        },
+        "report": {
+          "count": true
+        },
+        "actual": {
+          "status": "fail",
+          "findings": [
+            "projection_mismatch"
+          ]
+        },
+        "judgment": "消除了Python中1等于True导致的错误投影一致。"
+      },
+      {
+        "source": {
+          "count": 1,
+          "coverage": 0.25
+        },
+        "report": {
+          "coverage": 0.25,
+          "count": 1
+        },
+        "actual": {
+          "status": "pass",
+          "findings": []
+        },
+        "judgment": "对象键顺序变化不引入错误差异。"
+      },
+      {
+        "source": {
+          "count": 1
+        },
+        "report": {
+          "count": 1.0
+        },
+        "actual": {
+          "status": "fail",
+          "findings": [
+            "projection_mismatch"
+          ]
+        },
+        "judgment": "当前比较保留整数与浮点序列化形式差异。这是比纯数值等价更严格的投影政策，应由适配者了解。"
+      }
+    ],
+    "static_review_notes": [
+      "关键数值字段改为type(value)属于int/float，或严格type(value)为int，避免bool作为int子类通过。",
+      "数据标注和系统集成revision新增非负整数检查；采集角度、时间和槽位目标新增有限数值类型检查。",
+      "报告投影采用排序后的JSON序列化比较，可区分true与1并忽略键顺序。",
+      "所审查脚本未新增写文件、模型、网络、训练或部署调用。"
+    ],
+    "limitations": [
+      "这是针对三项已报告缺陷及相邻字段的31个有限探针，不是所有数值、结构、溢出或输入组合的穷尽审查。",
+      "本轮没有重跑原30题全量回归，不以此前版本的回归结果替代当前版本全面回归。",
+      "报告投影测试实际执行了比较逻辑，但文件访问由内存Path替身提供；本轮没有重新验证真实路径权限、软链接或文件读取边界。",
+      "报告比较将1和1.0判为不同；若业务允许数值等价而不要求整数/浮点形式一致，需要另行明确合同，不能静默假设当前脚本支持。",
+      "合法physical_scale仅表示提供了正数；检查器未核实标尺来源，也没有在本轮验证物理量换算。",
+      "直接调用check的适配者仍须处理异常；本轮观测到的拒绝不全部是直接返回JSON。",
+      "未读取包版本元数据，0.1.2版本标识来自任务描述。",
+      "未运行模型、GPU、下载、训练、相机或业务操作；没有修改任何文件。"
+    ]
+  }
+}

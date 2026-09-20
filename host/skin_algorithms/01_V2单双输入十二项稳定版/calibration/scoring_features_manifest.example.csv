@@ -1,0 +1,2 @@
+image_id,subject_id,quality_status,device,age,sex,skin_type,scoring_features_path
+example_0001,subject_0001,PASS,phone_a,32,女,,/results/example_0001/scoring_features.json

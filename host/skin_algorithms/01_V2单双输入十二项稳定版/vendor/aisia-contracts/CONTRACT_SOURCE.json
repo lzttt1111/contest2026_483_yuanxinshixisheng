@@ -1,0 +1,256 @@
+{
+  "commit": "9a0b9265d4622ac60c4d73fcc71219f230b05f78",
+  "version": "0.2.0.dev1",
+  "files": [
+    {
+      "path": ".gitignore",
+      "size": 38,
+      "sha256": "1c3a63237170f667a7e107333bca1ee2f3db9ddd37df8da0025855009e9a96ba"
+    },
+    {
+      "path": "aisia_contracts/__init__.py",
+      "size": 1079,
+      "sha256": "564056a241be4293d5e7b68abb726b9cc80ad64b665ced024203d6882aa5f3c0"
+    },
+    {
+      "path": "aisia_contracts/algorithms/__init__.py",
+      "size": 390,
+      "sha256": "d84ce57a6ccec11b94ff45d44d79f6ecb66d59967d3033c08848c29303b13c71"
+    },
+    {
+      "path": "aisia_contracts/algorithms/acne/__init__.py",
+      "size": 65,
+      "sha256": "6e3b715b82265528103f4a691f0f8fc577e53959d3821ff4e8c18149e3cf9132"
+    },
+    {
+      "path": "aisia_contracts/algorithms/acne/v1.py",
+      "size": 2440,
+      "sha256": "58fb3fb4732882000cb8c48750908b9b362daa4601359a2914aa1690716db968"
+    },
+    {
+      "path": "aisia_contracts/algorithms/acne/v2.py",
+      "size": 2859,
+      "sha256": "ddcb9a101f4deb86483aea9ce553484a828caed8f1e573293e32ca1ad9307a9e"
+    },
+    {
+      "path": "aisia_contracts/algorithms/brown/__init__.py",
+      "size": 56,
+      "sha256": "5ee703fbe8025bcc390fcb42b7b307c2dda12d05accb864031c85e99a0b0f2e4"
+    },
+    {
+      "path": "aisia_contracts/algorithms/brown/v1.py",
+      "size": 1594,
+      "sha256": "dd8702cae2f04e7c89cfd639e9f17aec274f41fcaa7688b13dfc93b41921a8d3"
+    },
+    {
+      "path": "aisia_contracts/algorithms/brown/v2.py",
+      "size": 696,
+      "sha256": "1cb7943beb158f02b535b60d6481b57164fa97a2ca17f4e902e8f8d13db5035d"
+    },
+    {
+      "path": "aisia_contracts/algorithms/brown/v3.py",
+      "size": 816,
+      "sha256": "5aebf707bbf90aa9c4332eda106d7f3e90c4e5207894599112d29da33cfdd786"
+    },
+    {
+      "path": "aisia_contracts/algorithms/contour_firmness/__init__.py",
+      "size": 73,
+      "sha256": "3c0e97be3c17cfc566e21610b76379f7652d8f6cc7c0db597df0a9a698da1fdd"
+    },
+    {
+      "path": "aisia_contracts/algorithms/contour_firmness/v1.py",
+      "size": 2592,
+      "sha256": "b15a9fe149fb71a00079caff63296a180d9c1a7bbb97ef0329be197d2ee0f0c0"
+    },
+    {
+      "path": "aisia_contracts/algorithms/pores/__init__.py",
+      "size": 56,
+      "sha256": "b591a87e6b4caa1607b4bb5278c11e2e316e7fda24eb73f9706145703121ae19"
+    },
+    {
+      "path": "aisia_contracts/algorithms/pores/v1.py",
+      "size": 1551,
+      "sha256": "e5af76795b29c0abccc42041e1e02cbbb3b81760820e36cec65558bd4eaaea2f"
+    },
+    {
+      "path": "aisia_contracts/algorithms/pores/v2.py",
+      "size": 696,
+      "sha256": "e6643f969c68407dca0e83fb9d295586ac73ed26932c3c95ab275e41ea52ddc0"
+    },
+    {
+      "path": "aisia_contracts/algorithms/pores/v3.py",
+      "size": 816,
+      "sha256": "d748ea6526f0393043afe8043cffb34ea212e996d2bf39dcbaa091af3164d347"
+    },
+    {
+      "path": "aisia_contracts/algorithms/purple/__init__.py",
+      "size": 53,
+      "sha256": "57b9d1368e21c3986351d5ec93b1590c6ae9baf8f82a20150196e2760a4e2595"
+    },
+    {
+      "path": "aisia_contracts/algorithms/purple/v1.py",
+      "size": 1865,
+      "sha256": "2239b040ed6cfc26a57008f6ef128f0323373ebecadfbe22b5b6b0a986e380fa"
+    },
+    {
+      "path": "aisia_contracts/algorithms/purple/v2.py",
+      "size": 828,
+      "sha256": "904dd5744180708103fd83b3c6e02196e7b43b0d1b15da744d81311549d866ae"
+    },
+    {
+      "path": "aisia_contracts/algorithms/redness/__init__.py",
+      "size": 58,
+      "sha256": "6339f27b7edca4676e3449ebf387bda181dfc45f08544ee36bb7b3896b6fd1f0"
+    },
+    {
+      "path": "aisia_contracts/algorithms/redness/v1.py",
+      "size": 3403,
+      "sha256": "1a1758cb92eaf14256ba498254ac1369eb633e8739aa28f9d27c78bcc1644355"
+    },
+    {
+      "path": "aisia_contracts/algorithms/redness/v2.py",
+      "size": 663,
+      "sha256": "911a4dfccfade4d3c027afcd2e7bb1e45441a24ec8c46a9e599970de43189373"
+    },
+    {
+      "path": "aisia_contracts/algorithms/redness/v3.py",
+      "size": 896,
+      "sha256": "5bc002e59ff85377d8ca1850238ccaa7d5f8e2cf209d2cd3705b9f7a5d6a933f"
+    },
+    {
+      "path": "aisia_contracts/algorithms/spots/__init__.py",
+      "size": 56,
+      "sha256": "d8eb591f4a30774861a37addc34726554bc9525d8f0117c08d4d95139ce2b8bf"
+    },
+    {
+      "path": "aisia_contracts/algorithms/spots/v1.py",
+      "size": 3772,
+      "sha256": "ac993de0254e1cc20a0d978caf018c905e43899fc5fea07caffa3daf17fea701"
+    },
+    {
+      "path": "aisia_contracts/algorithms/spots/v2.py",
+      "size": 645,
+      "sha256": "22ba28ca0c14607b9a4724fdc07bc33a8940aadef0a6e7755b70c1df0b39b046"
+    },
+    {
+      "path": "aisia_contracts/algorithms/spots/v3.py",
+      "size": 816,
+      "sha256": "d17e384941af828d8965e69ec5578f5a2be4085aa264552e4c82b812e36ca099"
+    },
+    {
+      "path": "aisia_contracts/algorithms/surface_gloss/__init__.py",
+      "size": 70,
+      "sha256": "881f65e06758d83f54c1a63eae9d23b69374d00f7063758743ca3b3365a4c39d"
+    },
+    {
+      "path": "aisia_contracts/algorithms/surface_gloss/v1.py",
+      "size": 2125,
+      "sha256": "0f33f4d01aa7bfd0a916f5daeecb1a139ba0dafd9748095fc34068716f8b64b6"
+    },
+    {
+      "path": "aisia_contracts/algorithms/texture/__init__.py",
+      "size": 58,
+      "sha256": "23da597a123db35e7a717b0d19a3f2082648af59f7b235423dc0086566b5e242"
+    },
+    {
+      "path": "aisia_contracts/algorithms/texture/v1.py",
+      "size": 1708,
+      "sha256": "31f26d14abcee72e1cbbf22ba5175488c0830d8e98718191e6212d1dd1b6de8d"
+    },
+    {
+      "path": "aisia_contracts/algorithms/texture/v2.py",
+      "size": 718,
+      "sha256": "bba0d5ed29e09020fa7c25ed966671679ed313cde02862713033c2fbf3252563"
+    },
+    {
+      "path": "aisia_contracts/algorithms/texture/v3.py",
+      "size": 840,
+      "sha256": "6e1c87580a94a261d560465666d868b4cdecbd137a7e447a0b8859d7df84d94f"
+    },
+    {
+      "path": "aisia_contracts/algorithms/vascular/__init__.py",
+      "size": 65,
+      "sha256": "59ad30fc7e161b1391304c798ad35c82f81637bede88035a11748180477a5cab"
+    },
+    {
+      "path": "aisia_contracts/algorithms/vascular/v1.py",
+      "size": 2143,
+      "sha256": "b92adfc97ab65421f019a78fcaf39d180865185183682e55651a278aab4a31ae"
+    },
+    {
+      "path": "aisia_contracts/algorithms/wrinkle/__init__.py",
+      "size": 54,
+      "sha256": "b41a02117fa77872ec94de4e5b9b12fe72bc842e4c2765acae8ba6802293c0b6"
+    },
+    {
+      "path": "aisia_contracts/algorithms/wrinkle/v1.py",
+      "size": 2039,
+      "sha256": "756668094892896bab067f6aa3587b6702467991a2fbab3cffa8f3399fec07ab"
+    },
+    {
+      "path": "aisia_contracts/algorithms/wrinkle/v2.py",
+      "size": 836,
+      "sha256": "4c5f53b789ef1d98834563eacc1e252f82519c6ea25ff0b804260e3d3b11aef7"
+    },
+    {
+      "path": "aisia_contracts/base.py",
+      "size": 391,
+      "sha256": "29421927447ca5109274b95c3bede4030bb8f790fea29103e64827fb7ca90420"
+    },
+    {
+      "path": "aisia_contracts/canonicalization.py",
+      "size": 2122,
+      "sha256": "07765408abbc5a030a3c3a2a3e4dc842875626fbacd87434208b10dc6cbe7754"
+    },
+    {
+      "path": "aisia_contracts/envelope.py",
+      "size": 3026,
+      "sha256": "8d2bb77ea5dbdbb59d13deb71bcdb4ecfc24163af3a5a8121b8e3b594a1f6bf3"
+    },
+    {
+      "path": "aisia_contracts/medical_metrics.py",
+      "size": 5628,
+      "sha256": "227a7ebeab8ee50c736aeb21222c2271d46c2bf8b6c40259f8d8d57781e996ef"
+    },
+    {
+      "path": "aisia_contracts/overall_summary/__init__.py",
+      "size": 1197,
+      "sha256": "ee8bc16f3095dc219f29fb43f0813a0f10f1022e2e12786c1b7ab07c6bbc1b7c"
+    },
+    {
+      "path": "aisia_contracts/overall_summary/v1.py",
+      "size": 12068,
+      "sha256": "9a272fa734d180cdade9e90d5445573338e9662484d9ad3eeb4f8f162b74b0a3"
+    },
+    {
+      "path": "aisia_contracts/region_metrics.py",
+      "size": 4983,
+      "sha256": "c0e74d1efc6316fb80e628da46e263d5b8c70a6e386ef4ba9fd93c4516dc3834"
+    },
+    {
+      "path": "aisia_contracts/registry.py",
+      "size": 1179,
+      "sha256": "b7c55623dd20e8a4fc53309c86935b5dea72a451c7b2ef3981d924536608df60"
+    },
+    {
+      "path": "aisia_contracts/scoring_input/__init__.py",
+      "size": 656,
+      "sha256": "b892e1a7cc337a3e134adabf5bc22c570118ad0025b7938cdfa92cc04c599919"
+    },
+    {
+      "path": "aisia_contracts/scoring_input/v1.py",
+      "size": 4213,
+      "sha256": "8140d7111f244825426ad1bfed1ee5a7bcf425f1c25e0e2e89f80ae0888a7987"
+    },
+    {
+      "path": "pyproject.toml",
+      "size": 357,
+      "sha256": "0ac16a6ef435aa63eb13cc72c1205baeb1406647a652ca9a037fa851c76ed3a9"
+    },
+    {
+      "path": "uv.lock",
+      "size": 32098,
+      "sha256": "043d97f7a66115391c1e813ddc67edea1b352af7ba7e71842623cb9aef317b52"
+    }
+  ]
+}

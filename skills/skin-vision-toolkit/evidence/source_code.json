@@ -1,0 +1,47 @@
+{
+  "captured_at": "2026-09-10T03:27:34.039564+00:00",
+  "files": [
+    {
+      "id": "water_capture",
+      "relative_path": "shuiguang/capture.py",
+      "sha256": "70c16ff6664d6112ccff45efda9cfc013ac1aa44dd9c088ea3c18a06655d2a6d",
+      "bytes": 2627
+    },
+    {
+      "id": "water_pipeline",
+      "relative_path": "shuiguang/pipeline.py",
+      "sha256": "115cad517d0c880004ecec3026cb5a8b2bca923ea897e18529b7feedce33ed3b",
+      "bytes": 7332
+    },
+    {
+      "id": "water_regional_tests",
+      "relative_path": "tests/test_regional_v2.py",
+      "sha256": "5fe5cb83b6493f132947a0bdd70d9965d7c59f8f7d74aa23e98e4edcba248463",
+      "bytes": 7137
+    },
+    {
+      "id": "water_audit_side_effects",
+      "relative_path": "tools/audit_regional_v2.py",
+      "sha256": "1d8459b20b58743c3d13337d0b7cac5e77380714f166f4ec70eae707abe68d1f",
+      "bytes": 5661
+    },
+    {
+      "id": "pc_web_modes",
+      "relative_path": "web/app.js",
+      "sha256": "f59fd9bcc79e115c475c0ab47f5583eccbe5d8aa5f500cc5dffdf87500b7e15c",
+      "bytes": 12195
+    },
+    {
+      "id": "pc_capture_gate",
+      "relative_path": "lab/state.py",
+      "sha256": "2c0ba8e9837498db41ccd8104a223dd23bacda5e6e635f72fef8dddebaf73862",
+      "bytes": 5707
+    }
+  ],
+  "source_roots_not_distributed": true,
+  "observations": [
+    "PC mode switch calls reset(all).",
+    "Regional audit invokes enrich_result and rebuild; not a read-only source command.",
+    "Water capture requires three distinct RGB views; PC two-slot contract must not be assumed equivalent."
+  ]
+}

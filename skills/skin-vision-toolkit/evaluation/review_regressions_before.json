@@ -1,0 +1,95 @@
+{
+  "passed": false,
+  "cases": [
+    {
+      "id": "unknown-rerun",
+      "passed": false,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "records": 2,
+          "protected_ids": [
+            "a",
+            "b"
+          ],
+          "safe_rerun_ids": [
+            "ghost"
+          ]
+        }
+      }
+    },
+    {
+      "id": "unknown-review-state",
+      "passed": false,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "records": 2,
+          "protected_ids": [
+            "b"
+          ],
+          "safe_rerun_ids": [
+            "a"
+          ]
+        }
+      }
+    },
+    {
+      "id": "string-false",
+      "passed": false,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "recovery_plan": [
+            {
+              "id": "a",
+              "action": "skip"
+            },
+            {
+              "id": "b",
+              "action": "retry_or_recompute"
+            }
+          ],
+          "execution_started": false
+        }
+      }
+    },
+    {
+      "id": "missing-contract-point",
+      "passed": false,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "missing_contract_fields",
+            "detail": [
+              "revision"
+            ]
+          }
+        ],
+        "metrics": {
+          "contracts_checked": 2,
+          "point_transfer_allowed": true
+        }
+      }
+    },
+    {
+      "id": "missing-unit",
+      "passed": false,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "reuse_candidates": [
+            "existing"
+          ],
+          "requirements_checked": 1,
+          "recommendation": "reuse_then_validate"
+        }
+      }
+    }
+  ]
+}

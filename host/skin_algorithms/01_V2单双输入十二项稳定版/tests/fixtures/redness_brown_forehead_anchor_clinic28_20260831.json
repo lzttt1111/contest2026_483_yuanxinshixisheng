@@ -1,0 +1,18 @@
+{
+  "schema": "dermavision_redness_brown_forehead_anchor_v1",
+  "historical_source": {
+    "clinic28-09_docx_sha256": "7c5f449ba3da855b6b23d767eebc397e847d4acaf56db5c39b14e1e340a71ab9",
+    "redness_overlay_sha256": "79ec7f745115d19c8d2ade93e08919cf928fefef03b41600a4edac88667d0386",
+    "redness_full_face_count": 64,
+    "redness_forehead_valid_area": 69310,
+    "redness_forehead_count": 18,
+    "brown_overlay_sha256": "40d2d265fc96230d6df63136f66907b73aea1df3dbe3db112fc2c77d3964d54c",
+    "brown_full_face_count": 559,
+    "pigmentation_forehead_joint_count": 185
+  },
+  "release_minimums": {
+    "clinic28-25": {"redness_area": 20000, "redness_count": 1, "brown_area": 20000, "brown_count": 1},
+    "clinic28-09": {"redness_area": 20000, "redness_count": 1, "brown_area": 20000, "brown_count": 1},
+    "clinic28-23": {"redness_area": 20000, "redness_count": 1, "brown_area": 20000, "brown_count": 1}
+  }
+}

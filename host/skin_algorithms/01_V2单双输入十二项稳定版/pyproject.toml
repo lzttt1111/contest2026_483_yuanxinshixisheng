@@ -1,0 +1,51 @@
+[project]
+name = "aisia-skin-analysis"
+version = "0.1.0"
+description = "AISIA nine-item GPU skin analysis, score calibration, and optional medical report tools"
+readme = "README.md"
+requires-python = "==3.10.*"
+dependencies = [
+    "aisia-contracts",
+    "celery==5.6.3",
+    "fastapi==0.139.0",
+    "matplotlib==3.10.9",
+    "mediapipe==0.10.14",
+    "numpy==1.26.4",
+    "nvidia-ml-py==13.610.43",
+    "opencv-contrib-python==4.11.0.86",
+    "opencv-python==4.11.0.86",
+    "oss2==2.19.1",
+    "pillow==12.3.0",
+    "polars==1.42.1",
+    "psutil==7.2.2",
+    "pydantic-settings==2.14.2",
+    "pytest==9.1.1",
+    "python-dotenv==1.2.2",
+    "python-docx==1.2.0",
+    "python-multipart==0.0.32",
+    "pyyaml==6.0.3",
+    "redis==8.0.1",
+    "requests==2.34.2",
+    "scikit-image==0.25.2",
+    "scipy==1.15.3",
+    "tqdm==4.67.1",
+    "torch==2.10.0+cu128",
+    "torchvision==0.25.0+cu128",
+    "ultralytics==8.4.90",
+    "ultralytics-thop==2.0.20",
+    "uvicorn==0.50.0",
+]
+
+[tool.uv]
+package = false
+index-url = "https://mirrors.aliyun.com/pypi/simple/"
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+aisia-contracts = { path = "vendor/aisia-contracts" }
+torch = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }

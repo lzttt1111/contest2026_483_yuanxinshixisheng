@@ -1,0 +1,27 @@
+{
+  "schema_version": "doctor_v3_template_authority_v2",
+  "format": "docx",
+  "effective_date": "2026-09-08",
+  "supersedes": "home_source_layout.json and institution_source_layout.json derived from previous PDFs",
+  "text_only": true,
+  "editions": {
+    "home": {
+      "file": "home_template_20260908.docx",
+      "sha256": "e59eef253c19832fc8dedd9834f2a9bc6bf1ba2ddc582dc6431ad2a6fd31c5ca",
+      "tables": 32,
+      "paragraphs": 246
+    },
+    "institution": {
+      "file": "institution_template_20260908.docx",
+      "sha256": "8e2fb7f3a5bfe9618956b8e4bf03d2b5238993462b0829e20b6dbbc3874708b0",
+      "tables": 75,
+      "paragraphs": 394
+    }
+  },
+  "rules": [
+    "Clone retained DOCX; preserve native styles and section geometry.",
+    "No detection images in the first text-only delivery.",
+    "Bind real results; remove example identity/numbers, authoring notes and image placeholder text.",
+    "No fallback to the older PDF-derived layout."
+  ]
+}

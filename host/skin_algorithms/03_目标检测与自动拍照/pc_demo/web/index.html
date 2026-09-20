@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>摄像头联调实验</title><link rel="icon" href="data:,"><link rel="stylesheet" href="style.css"></head>
+<body><main><h1>摄像头联调实验</h1>
+<nav aria-label="检测模式"><button class="tab active" data-mode="face">人脸自动拍照</button><button class="tab" data-mode="device">旧仪器检测</button></nav>
+<div class="layout"><section class="workspace">
+<div class="toolbar"><label for="camera">摄像头选择</label><select id="camera"><option value="">默认摄像头</option></select><button id="start" class="primary">开启摄像头</button><button id="stop" disabled>停止</button><label><input id="mirror" type="checkbox"> 显示镜像</label></div>
+<div class="viewport"><video id="video" autoplay muted playsinline hidden></video><canvas id="display" hidden></canvas><p id="empty">开启摄像头后显示画面</p></div>
+<div class="photos" id="photos"><article><h2>左侧照片</h2><div class="photo"><img id="left-image" alt="左侧拍摄结果" hidden><span id="left-empty">暂无照片</span></div><div class="actions"><a id="left-download" aria-disabled="true">下载照片</a><button data-retake="left" disabled>重拍</button></div><small id="left-meta"></small></article><article><h2>右侧照片</h2><div class="photo"><img id="right-image" alt="右侧拍摄结果" hidden><span id="right-empty">暂无照片</span></div><div class="actions"><a id="right-download" aria-disabled="true">下载照片</a><button data-retake="right" disabled>重拍</button></div><small id="right-meta"></small></article></div>
+</section><aside><h2 id="panel-title">当前角度</h2><dl><div><dt id="metric-a">Yaw</dt><dd id="yaw">—</dd></div><div><dt id="metric-b">Pitch</dt><dd id="pitch">—</dd></div><div><dt id="metric-c">Roll</dt><dd id="roll">—</dd></div></dl>
+<section class="face-only capture-settings"><h2>自动拍照设置</h2>
+<form id="capture-settings">
+<div class="setting-grid"><label for="target-angle">目标侧转角度<div class="number-field"><input id="target-angle" type="number" min="5" max="80" step="1" value="45" required><span>°</span></div></label>
+<label for="angle-tolerance">允许误差<div class="number-field"><span>±</span><input id="angle-tolerance" type="number" min="1" max="20" step="1" value="5" required><span>°</span></div></label></div>
+<p id="range-preview" class="range-preview">左右各45° · 接受40°–50°</p>
+<details><summary>高级设置：稳定时间与头部倾斜</summary><div class="setting-grid advanced-grid">
+<label for="pitch-limit">俯仰上限（±°）<input id="pitch-limit" type="number" min="5" max="45" value="12" required></label>
+<label for="roll-limit">歪头上限（±°）<input id="roll-limit" type="number" min="5" max="45" value="12" required></label>
+<label for="stable-duration">稳定时间（毫秒）<input id="stable-duration" type="number" min="300" max="3000" step="100" value="500" required></label></div>
+<p class="muted">俯仰持续超限时，先调整摄像头高度；需要放宽时在这里明确设置。</p></details>
+<button type="submit" id="apply-settings" class="primary wide">应用参数 · 新一轮</button>
+<p id="settings-status" class="muted" role="status">默认：45° ±5° · 稳定500ms · 俯仰/歪头±12°</p>
+</form><p class="muted">稳定角度每秒刷新 · 推理与拍照逐帧判断</p><details><summary>原始角度诊断</summary><p id="raw-pose" class="muted">等待原始角度</p><p class="muted">采用3帧中值＋时间平滑。拍照时稳定角度和当前原始角度均须达标。</p></details></section>
+<section id="region-panel" hidden><h2>人脸七区</h2><p class="muted">V5 YOLOX-S + V5 MobileNetV3-Small</p><label><input id="regions" type="checkbox" checked> 显示分区</label> <label><input id="landmarks" type="checkbox"> 468关键点</label><p id="region-status">等待人脸</p><div id="region-legend"></div><p class="muted">左右以本人为准。眼睛、嘴唇不纳入皮肤区域。几何分区不代表治疗适用区域；皮肤算法尚未接入。</p></section>
+<section><h2>进度</h2><progress id="progress" max="1" value="0"></progress><p id="guidance" role="status" aria-live="polite">等待有效人脸</p><button id="reset" class="wide" disabled>重置本轮</button></section>
+<section class="settings"><label><input id="contact" type="checkbox" checked> 显示仪器接触点</label><details><summary>拍摄提示与参数</summary><p>手持摄像头绕人移动，保持镜头朝向人脸。避免仅在原地转动镜头。</p><p>左右以受试者为基准；当前负 yaw 对应左侧。首次使用需核对方向，必要时修改 config.json 的 left_yaw_sign。</p><p>本实验采用空间连续跟踪。丢脸或多人交叉后请重置，不能用于身份识别。</p><p>清晰度等阈值可在 config.json 调整，修改后重启服务。</p></details></section>
+</aside></div><footer><span id="status" role="status">等待连接</span><span id="provider">电脑模拟联调</span><span id="performance">— FPS · — ms</span></footer></main><script type="module" src="app.js"></script></body></html>

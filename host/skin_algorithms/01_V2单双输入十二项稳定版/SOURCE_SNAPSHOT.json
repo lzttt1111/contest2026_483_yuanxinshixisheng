@@ -1,0 +1,16 @@
+{
+  "schema": "dermavision_v2_public_source_identity_v1",
+  "release": "v2-submission-20260915",
+  "source_revision": "787a500d35223aebcb3bcf42eb98ee82fecac73c",
+  "contract": {
+    "version": "0.2.0.dev1",
+    "revision": "9a0b9265d4622ac60c4d73fcc71219f230b05f78",
+    "source": "vendor/aisia-contracts"
+  },
+  "packaging": {
+    "format": "uncompressed_directory",
+    "sanitized_for_public_submission": true,
+    "dependency_source_changed_to_bundled_contract": true
+  },
+  "integrity": "All final files are recorded in PACKAGE_MANIFEST.json."
+}

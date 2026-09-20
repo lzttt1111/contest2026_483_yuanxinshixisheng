@@ -1,0 +1,33 @@
+{
+  "schema": "aisia_public_source_lineage_v1",
+  "assembled_at": "2026-09-15",
+  "software_version": "0.0.1",
+  "status": "PC_FUNCTIONAL_BASELINE_RK3576_NOT_DEPLOYED",
+  "authoritative_snapshot": {
+    "created": "2026-09-07",
+    "original_manifest": "manifests/package_files.json",
+    "original_manifest_sha256": "08fc1114d5b5fbc90e4b1fa7fb85815b7004b2d145b5dd07487eff87f062b4d7",
+    "original_files_verified": 98
+  },
+  "components": [
+    {
+      "name": "combined_pc_runtime",
+      "role": "PC服务、网页、模型与测试",
+      "verified_files": 41
+    },
+    {
+      "name": "target_detection_model_lineage",
+      "role": "目标检测训练与评估来源说明"
+    },
+    {
+      "name": "head_pose_capture_lineage",
+      "role": "人脸角度与自动拍照来源说明"
+    },
+    {
+      "name": "board_migration_reference",
+      "role": "历史RK3568迁移参考，不代表RK3576发布",
+      "verified_files": 37
+    }
+  ],
+  "integrity_note": "当前交付中的78个来源文件与已验证快照SHA256一致；未使用未经验证的候选文件替换。"
+}

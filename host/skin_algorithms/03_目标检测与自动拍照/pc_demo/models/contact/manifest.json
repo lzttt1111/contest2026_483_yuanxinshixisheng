@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "model_id": "contact-mobilenet-v3-small-camera-active-v5",
+  "model_lineage": "V5",
+  "role": "contact_point",
+  "format": "onnx",
+  "quantization": "FP32",
+  "sha256": "e4d9deba2eb3aaa9ec143045de305f7be38480124ac3ef577ac5e0eec122dae1",
+  "size_bytes": 4713440,
+  "artifact_path": "models/contact/model.onnx",
+  "input": {"name": "roi_image", "layout": "NCHW", "shape": [1, 3, 256, 256], "color_space": "RGB", "dtype": "float32"},
+  "outputs": [
+    {"name": "contact_heatmap_logits", "shape": [1, 1, 64, 64]},
+    {"name": "contact_visibility_logits", "shape": [1, 3], "classes": ["visible", "occluded_inferable", "not_annotatable"]}
+  ],
+  "preprocessing": {"device_bbox_expansion": 0.2, "normalization": "ImageNet"},
+  "postprocessing": {"decoder": "peak_neighborhood_weighted_centroid", "radius": 3},
+  "source": {
+    "source_worktree": ".worktrees/dev-zero-touch",
+    "base_commit": "96509609817fa0d9e7335746e08f67622a4efee7",
+    "checkpoint_sha256": "299f4ea45c2d0aae742fac2c67e71d4b61dbdf0d59a44ca1d96b394075086fa2",
+    "dataset_manifest_sha256": "f2c5ec3e3738ccbd08361fe38aad9b6d90650772ac843ba021dcfe7dc1392ede"
+  },
+  "license": "torchvision MobileNetV3-Small ImageNet initialization; project-trained weights",
+  "status": "CURRENT_BASELINE_CANDIDATE"
+}

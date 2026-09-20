@@ -1,0 +1,179 @@
+{
+  "pores": {
+    "score": 57.0,
+    "severity": "中度",
+    "name": "毛孔",
+    "regions": [
+      {
+        "score": 57.0,
+        "severity": "中度",
+        "region": "forehead",
+        "name": "额部"
+      },
+      {
+        "score": 61.0,
+        "severity": "轻度",
+        "region": "nose",
+        "name": "鼻部"
+      },
+      {
+        "score": 61.0,
+        "severity": "轻度",
+        "region": "left_nasal",
+        "name": "画面左鼻旁"
+      },
+      {
+        "score": 57.0,
+        "severity": "中度",
+        "region": "right_nasal",
+        "name": "画面右鼻旁"
+      },
+      {
+        "score": 68.0,
+        "severity": "轻度",
+        "region": "left_inner_cheek",
+        "name": "画面左内侧面颊"
+      },
+      {
+        "score": 59.0,
+        "severity": "中度",
+        "region": "right_inner_cheek",
+        "name": "画面右内侧面颊"
+      },
+      {
+        "score": 79.0,
+        "severity": "轻度",
+        "region": "left_outer_cheek",
+        "name": "画面左外侧面颊"
+      },
+      {
+        "score": 54.0,
+        "severity": "中度",
+        "region": "right_outer_cheek",
+        "name": "画面右外侧面颊"
+      },
+      {
+        "score": 67.0,
+        "severity": "轻度",
+        "region": "chin",
+        "name": "下巴"
+      }
+    ]
+  },
+  "spots": {
+    "score": null,
+    "severity": null,
+    "name": "可见色斑",
+    "regions": [
+      {
+        "score": null,
+        "severity": null,
+        "region": "forehead",
+        "name": "额部"
+      },
+      {
+        "score": null,
+        "severity": null,
+        "region": "nose",
+        "name": "鼻部"
+      },
+      {
+        "score": null,
+        "severity": null,
+        "region": "left_zygoma",
+        "name": "画面左颧部"
+      },
+      {
+        "score": null,
+        "severity": null,
+        "region": "right_zygoma",
+        "name": "画面右颧部"
+      },
+      {
+        "score": null,
+        "severity": null,
+        "region": "left_cheek",
+        "name": "画面左面颊"
+      },
+      {
+        "score": null,
+        "severity": null,
+        "region": "right_cheek",
+        "name": "画面右面颊"
+      },
+      {
+        "score": null,
+        "severity": null,
+        "region": "perioral",
+        "name": "口周"
+      },
+      {
+        "score": null,
+        "severity": null,
+        "region": "jaw",
+        "name": "下颌"
+      }
+    ]
+  },
+  "surface_gloss": {
+    "score": 72.0,
+    "severity": "轻度",
+    "name": "表面油光",
+    "regions": [
+      {
+        "score": 72.0,
+        "severity": "轻度",
+        "region": "forehead",
+        "name": "额部"
+      },
+      {
+        "score": 70.0,
+        "severity": "轻度",
+        "region": "nose",
+        "name": "鼻部"
+      },
+      {
+        "score": 77.0,
+        "severity": "轻度",
+        "region": "left_nasal",
+        "name": "画面左鼻旁"
+      },
+      {
+        "score": 76.0,
+        "severity": "轻度",
+        "region": "right_nasal",
+        "name": "画面右鼻旁"
+      },
+      {
+        "score": 74.0,
+        "severity": "轻度",
+        "region": "left_zygoma",
+        "name": "画面左颧部"
+      },
+      {
+        "score": 100.0,
+        "severity": "未见明显",
+        "region": "right_zygoma",
+        "name": "画面右颧部"
+      },
+      {
+        "score": 100.0,
+        "severity": "未见明显",
+        "region": "left_cheek",
+        "name": "画面左面颊"
+      },
+      {
+        "score": 100.0,
+        "severity": "未见明显",
+        "region": "right_cheek",
+        "name": "画面右面颊"
+      },
+      {
+        "score": 100.0,
+        "severity": "未见明显",
+        "region": "chin",
+        "name": "下巴"
+      }
+    ]
+  }
+}

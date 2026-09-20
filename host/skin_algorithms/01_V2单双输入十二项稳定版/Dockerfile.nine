@@ -1,0 +1,28 @@
+FROM python:3.10.20-slim
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    TZ=Asia/Shanghai \
+    PYTORCH_NVML_BASED_CUDA_CHECK=1 \
+    MPLCONFIGDIR=/app/.cache/matplotlib \
+    YOLO_CONFIG_DIR=/app/.cache/ultralytics \
+    PATH=/app/.venv/bin:$PATH
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+      ffmpeg fonts-noto-cjk libegl1 libgles2 libgl1 libglib2.0-0 \
+      libgomp1 libsm6 libxext6 libxrender1 tzdata \
+ && rm -rf /var/lib/apt/lists/* \
+ && pip install --no-cache-dir uv==0.11.27 \
+      -i https://mirrors.aliyun.com/pypi/simple/
+
+WORKDIR /app
+
+COPY pyproject.toml uv.lock .python-version ./
+RUN uv sync --frozen --no-dev --no-install-project
+
+COPY . .
+
+# 一个容器只启动一个 target。生产分别启动六个 DermaVision queue、痤疮和
+# 皱纹，共八个容器；GPU 由 NVIDIA Container Toolkit 在运行时注入。
+ENTRYPOINT ["python", "run_cloud_worker.py"]
+CMD ["--target", "dermavision-all"]

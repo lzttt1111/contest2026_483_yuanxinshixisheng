@@ -1,0 +1,59 @@
+{
+  "sources": {
+    "skin": "03_皮肤检测/01_旧VSCode对话/logs/zitengliu/2026-07-10/codex__019fd0c2-c4d9-7661-bc91-f7f4ce666495.jsonl",
+    "target": "01_目标检测/01_模型研发与验证/logs/zitengliu/2026-07-14/codex__019f5e5c-d4d2-7383-94fd-820e40044e04.jsonl",
+    "capture": "02_角度检测与自动拍照/logs/zitengliu/2026-08-25/codex__01a037b0-40c4-7183-85aa-d1019c0672ae.jsonl"
+  },
+  "selections": [
+    {
+      "skill": "vision-spec-to-evidence",
+      "source": "skin",
+      "seq": 31527
+    },
+    {
+      "skill": "vision-data-review",
+      "source": "target",
+      "seq": 11841
+    },
+    {
+      "skill": "vision-generalization",
+      "source": "target",
+      "seq": 19406
+    },
+    {
+      "skill": "pose-guided-capture",
+      "source": "capture",
+      "seq": 298
+    },
+    {
+      "skill": "vision-feature-engineering",
+      "source": "skin",
+      "seq": 1262
+    },
+    {
+      "skill": "vision-metrics-calibration",
+      "source": "skin",
+      "seq": 41439
+    },
+    {
+      "skill": "vision-result-publication",
+      "source": "skin",
+      "seq": 68110
+    },
+    {
+      "skill": "vision-batch-recovery",
+      "source": "skin",
+      "seq": 29299
+    },
+    {
+      "skill": "vision-runtime-parity",
+      "source": "capture",
+      "seq": 1035
+    },
+    {
+      "skill": "vision-system-integration",
+      "source": "target",
+      "seq": 15893
+    }
+  ]
+}

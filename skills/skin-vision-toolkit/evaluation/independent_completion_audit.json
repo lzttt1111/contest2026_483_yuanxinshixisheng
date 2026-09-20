@@ -1,0 +1,394 @@
+{
+  "source_event_timestamp": "2026-09-10T04:03:44.821Z",
+  "source_event_sha256": "c7d564674f7132ec24ef02ae148c483f23399060f92dba7eb94a2003f4a7a70e",
+  "author": "/root/independent_skill_validation",
+  "review": {
+    "phase": "completion_audit",
+    "model": "gpt-6-astra",
+    "effort": "medium",
+    "started_at": "2026-09-10 04:00:02 UTC",
+    "ended_at": "2026-09-10 04:01:20 UTC",
+    "target_version": "0.1.1，按本轮任务指定；未另行读取包版本清单",
+    "blocking_issues": [],
+    "release_recommendation": {
+      "approved": true,
+      "reason": "本轮新增的镜像与采集revision、分位数及分母对账、letterbox逆变换和反镜像行为通过独立有限探针检查；10份工作示例提供具体推导与产物组织，不仅复述脚本pass。批准范围为带明确证据边界的离线Skill包，不代表真实产品、硬件、临床或完整业务交付验收。"
+    },
+    "coverage": {
+      "worked_examples_read": 10,
+      "updated_skill_entries_read": 3,
+      "updated_contracts_read": 3,
+      "updated_checker_implementations_read": 3,
+      "independently_constructed_probes": 11,
+      "read_completion_checks_py": false,
+      "read_expected_or_primary_reports": false,
+      "files_written": 0,
+      "business_changes": 0,
+      "gpu_or_model_execution": false,
+      "additional_agents_started": 0,
+      "execution_method": "审查代码后，通过Python -B及sys.dont_write_bytecode=True在内存调用check；没有创建输入文件。"
+    },
+    "independent_behavior_checks": [
+      {
+        "probe": "mirror_correct",
+        "input_basis": "left=-45；raw/stable yaw均为+45；yaw_sign=-1；t=0/100/200；stable_ms=200；min_frames=3；初始revision=4。",
+        "independent_reasoning": "+45乘-1得到-45，三帧连续达到200ms。",
+        "actual": {
+          "status": "pass",
+          "captured": {
+            "left": 2
+          },
+          "complete": true,
+          "capture_revision": 4
+        },
+        "judgment": "符合合同。"
+      },
+      {
+        "probe": "mirror_wrong",
+        "input_basis": "保持前一输入，仅yaw_sign改为+1。",
+        "independent_reasoning": "+45与left目标-45相差90度，不满足5度容差。",
+        "actual": {
+          "status": "pass",
+          "captured": {},
+          "complete": false,
+          "capture_revision": 4
+        },
+        "judgment": "正确未触发；pass只代表回放未产生所定义的问题，不代表采集完成。"
+      },
+      {
+        "probe": "retake",
+        "input_basis": "完成left后，在t=300标记retake=left，继续t=400/500有效帧。",
+        "independent_reasoning": "重拍清除槽位及稳定窗口，新窗口在t=500完成；一次重拍增加一次revision。",
+        "actual": {
+          "status": "pass",
+          "captured": {
+            "left": 5
+          },
+          "complete": true,
+          "capture_revision": 5
+        },
+        "judgment": "符合合同，旧帧索引被新触发帧替代。"
+      },
+      {
+        "probe": "retake_then_reset_new_face",
+        "input_basis": "接续重拍序列，t=600执行reset_all并换为p2，继续t=700/800。",
+        "independent_reasoning": "整轮重置释放人物状态并增加revision；p2重新稳定后在t=800触发。",
+        "actual": {
+          "status": "pass",
+          "captured": {
+            "left": 8
+          },
+          "complete": true,
+          "capture_revision": 6
+        },
+        "judgment": "符合合同。"
+      },
+      {
+        "probe": "quantiles_correct",
+        "input_basis": "values=[2,4,8,20]；valid=observed=80；positive=8；declared_p50=6；declared_p90=16.4。",
+        "independent_reasoning": "P50为4和8的中点6；P90位置为2.7，因此8+0.7×12=16.4。",
+        "actual": {
+          "status": "pass",
+          "count": 4,
+          "coverage": 0.1,
+          "density_per_100k_pixels": 5000.0,
+          "p50": 6.0,
+          "p90": 16.400000000000002
+        },
+        "judgment": "正确，浮点差异在1e-9门槛内。"
+      },
+      {
+        "probe": "incorrect_declared_p90",
+        "input_basis": "前一输入declared_p90改为11.4。",
+        "independent_reasoning": "声明11.4不等于合并原始值重算结果16.4。",
+        "actual": {
+          "status": "fail",
+          "finding": "quantile_mismatch",
+          "declared": 11.4,
+          "recomputed": 16.400000000000002
+        },
+        "judgment": "正确拒绝错误声明。",
+        "probe_label_correction": "执行时标签名为averaged_subset_p90，但11.4只是本探针设置的错误声明值，并非某个已定义划分的精确平均分位数；不以该标签作为数值证据。"
+      },
+      {
+        "probe": "expanded_domain_and_bad_median",
+        "input_basis": "valid=80；observed=40；values=[2,4,8,20]；declared_p50=9。",
+        "independent_reasoning": "声明分母超过实际检测上限，且P50应为6。",
+        "actual": {
+          "status": "fail",
+          "findings": [
+            "expanded_denominator",
+            "quantile_mismatch"
+          ],
+          "recomputed_p50": 6.0
+        },
+        "judgment": "两个问题均被发现；返回coverage和density仍是对声明输入的诊断计算，不能在fail状态下当正式有效统计使用。"
+      },
+      {
+        "probe": "inverse_letterbox_two_points",
+        "input_basis": "scale=2；pad_xy=[4,6]；model_points=[[24,46],[4,6]]；reference=[[10,20],[0,0]]；容差0。",
+        "independent_reasoning": "逐轴先减padding再除以2，分别得到[10,20]和[0,0]。",
+        "actual": {
+          "status": "pass",
+          "restored_points": [
+            [
+              10.0,
+              20.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "max_error_pixels": 0.0
+        },
+        "judgment": "符合逆变换公式。"
+      },
+      {
+        "probe": "inverse_then_mirror",
+        "input_basis": "上一输入增加mirror_width=50，reference改为[[39,20],[49,0]]。",
+        "independent_reasoning": "逆变换后x按49-x反镜像。",
+        "actual": {
+          "status": "pass",
+          "restored_points": [
+            [
+              39.0,
+              20.0
+            ],
+            [
+              49.0,
+              0.0
+            ]
+          ],
+          "max_error_pixels": 0.0
+        },
+        "judgment": "反镜像顺序和width-1的像素索引约定正确。"
+      },
+      {
+        "probe": "incorrect_padding",
+        "input_basis": "正确案例的pad_xy改为[0,0]，reference不变。",
+        "independent_reasoning": "误还原为[12,23]和[2,3]，每点误差sqrt(2²+3²)=sqrt(13)。",
+        "actual": {
+          "status": "fail",
+          "finding": "coordinate_parity_failed",
+          "restored_points": [
+            [
+              12.0,
+              23.0
+            ],
+            [
+              2.0,
+              3.0
+            ]
+          ],
+          "max_error_pixels": 3.605551275463989,
+          "tensor_numeric_comparison_valid": true
+        },
+        "judgment": "正确区分张量一致与坐标失败，整体fail。"
+      },
+      {
+        "probe": "zero_scale_rejected",
+        "input_basis": "coordinate_case.scale=0。",
+        "actual": {
+          "direct_exception": "ValueError",
+          "detail": "invalid coordinate parity contract"
+        },
+        "judgment": "无效除数在计算前被拒绝；CLI main对ValueError映射为invalid_input，本轮实际执行的是直接check调用。"
+      }
+    ],
+    "worked_example_artifact_assessment": [
+      {
+        "skill": "vision-spec-to-evidence",
+        "supports": [
+          "具有正反能力项的能力矩阵",
+          "复用与重训方案理由",
+          "输入输出和停止条件"
+        ],
+        "limit": "具体误差阈值、模型来源原件和验收数据尚须由真实任务提供。"
+      },
+      {
+        "skill": "vision-data-review",
+        "supports": [
+          "逐记录标注保护表",
+          "xywh坐标范围",
+          "空重跑及未知状态处理",
+          "修订记录说明"
+        ],
+        "limit": "没有替代真实图像和人工标签审核。"
+      },
+      {
+        "skill": "vision-generalization",
+        "supports": [
+          "明确人物划分与数据来源协议",
+          "模型选择边界",
+          "困难样本队列规则"
+        ],
+        "limit": "基线误差表仍是应记录字段的说明，未提供已运行模型的实测表；精度未运行被明确标注。"
+      },
+      {
+        "skill": "pose-guided-capture",
+        "supports": [
+          "状态序列",
+          "触发帧推导",
+          "重拍revision关系",
+          "镜像符号对照",
+          "触发帧保存规范"
+        ],
+        "limit": "未产生真实相机字节或验证生产相机状态机。"
+      },
+      {
+        "skill": "vision-feature-engineering",
+        "supports": [
+          "实际小栅格阶段面积表",
+          "候选越域原因",
+          "先查有效域的诊断顺序"
+        ],
+        "limit": "未包含真实阶段图或授权后的回归图。"
+      },
+      {
+        "skill": "vision-metrics-calibration",
+        "supports": [
+          "带来源公式的指标表",
+          "候选配置示例",
+          "无评分任务时score_enabled=false",
+          "分母扩张与合并分位数反例"
+        ],
+        "limit": "无真实参考分布、医生标定或物理尺度证据；示例不声称拥有这些证据。"
+      },
+      {
+        "skill": "vision-result-publication",
+        "supports": [
+          "字段到网页和报告的映射",
+          "展示文案样例",
+          "同源差值和越界引用反例",
+          "无模型重建验收步骤"
+        ],
+        "limit": "没有生成或渲染正式Word/PDF；无法作为版式验收回执。"
+      },
+      {
+        "skill": "vision-batch-recovery",
+        "supports": [
+          "带执行前提的逐样本恢复计划",
+          "健康记录字段",
+          "缓存版本与假成功反例"
+        ],
+        "limit": "未执行真实中断恢复，也未测量吞吐、内存或服务稳定性。"
+      },
+      {
+        "skill": "vision-runtime-parity",
+        "supports": [
+          "数值误差示例",
+          "letterbox还原和反镜像公式",
+          "错误padding定位",
+          "完整迁移证据清单"
+        ],
+        "limit": "未执行真实模型转换或硬件provider验证。"
+      },
+      {
+        "skill": "vision-system-integration",
+        "supports": [
+          "旧revision及跨帧关联问题分析",
+          "时钟域与状态冲突说明",
+          "交付物组织和联调顺序"
+        ],
+        "limit": "提供交付包的组织范例，而不是实际可运行端到端交付闭包；两槽与三图不等价的项目事实本轮未独立核实。"
+      }
+    ],
+    "representative_comparison": [
+      {
+        "id": "01-normal",
+        "correctness": "两阶段主要可复用候选、继续验证的结论一致。",
+        "omissions_or_changes": "有Skill阶段更明确能力矩阵与停止条件；两阶段均没有许可证原件或真实误差证据。",
+        "invalid_actions": "两阶段均未观察到越权下载或训练。",
+        "human_supplement_count": "not_observed"
+      },
+      {
+        "id": "02-normal",
+        "correctness": "人工保护和空重跑结论一致；基线按未明确的xyxy假设计算面积0.20，有Skill合同明确xywh后修正为0.30。",
+        "omissions_or_changes": "明确坐标合同带来实际计算差异，不能将基线条件性假设与合同已知时的答案等同。",
+        "invalid_actions": "两阶段均无标签改写。",
+        "human_supplement_count": "not_observed"
+      },
+      {
+        "id": "03-normal",
+        "correctness": "两阶段划分和来源判断一致。",
+        "omissions_or_changes": "有Skill阶段加强分层评估组织；完整数据规模和实测泛化精度均不可得。",
+        "invalid_actions": "两阶段均未训练或改划分。",
+        "human_supplement_count": "not_observed"
+      },
+      {
+        "id": "04-normal",
+        "correctness": "两阶段均判断第三帧t=200触发。",
+        "omissions_or_changes": "有Skill阶段补充触发帧原始字节、frame_id和revision保存规则；这些不属于基线题面已提供的实测证据。",
+        "invalid_actions": "两阶段均未调用摄像头。",
+        "human_supplement_count": "not_observed"
+      },
+      {
+        "id": "05-normal",
+        "correctness": "两阶段面积、保留率和包含关系一致。",
+        "omissions_or_changes": "有Skill阶段显式采用support交集口径；参考皮肤真实性仍需上游证据。",
+        "invalid_actions": "两阶段均未调阈值或修改Mask。",
+        "human_supplement_count": "not_observed"
+      },
+      {
+        "id": "06-normal",
+        "correctness": "两阶段count=4、coverage=0.2、P50=2.5、P90=3.7一致。",
+        "omissions_or_changes": "有Skill阶段统一密度为每10万像素4000，基线每像素0.04数学等价；分位数算法从明确假设变成合同规定。",
+        "invalid_actions": "两阶段均未新增无依据评分或物理测量。",
+        "human_supplement_count": "not_observed"
+      },
+      {
+        "id": "07-normal",
+        "correctness": "两阶段均确认实际JSON投影一致。",
+        "omissions_or_changes": "有Skill阶段增加实际SHA256回执；均未完成真实文档渲染。",
+        "invalid_actions": "两阶段均未运行模型或修改报告。",
+        "human_supplement_count": "not_observed"
+      },
+      {
+        "id": "08-normal",
+        "correctness": "两阶段均跳过a并将b列为带执行者检查前提的重试候选。",
+        "omissions_or_changes": "有Skill阶段更明确缓存身份覆盖范围；没有实测执行者状态或产物有效性。",
+        "invalid_actions": "两阶段均未启动恢复任务。",
+        "human_supplement_count": "not_observed"
+      },
+      {
+        "id": "09-normal",
+        "correctness": "两阶段均仅认可保存数组的局部容差通过。",
+        "omissions_or_changes": "有Skill阶段增加RMSE和numeric_comparison_valid；NCHW简化快照语义在后续合同中明确。",
+        "invalid_actions": "两阶段均未加载或转换模型。",
+        "human_supplement_count": "not_observed"
+      },
+      {
+        "id": "10-normal",
+        "correctness": "两阶段均认为给定字段、版本、同帧关系一致，并保留时钟和坐标实证前提。",
+        "omissions_or_changes": "有Skill阶段强化生命周期和交付闭包组织；没有实际端到端结果。",
+        "invalid_actions": "两阶段均未操作系统集成或叠加真实旧结果。",
+        "human_supplement_count": "not_observed"
+      }
+    ],
+    "comparison_measurement_limits": {
+      "comparison_type": "同一代理先无Skill、后有Skill的描述性回顾。",
+      "causal_efficiency_conclusion": "not_supported",
+      "blind_or_randomized_comparison": false,
+      "independent_human_correctness_labels": "not_observed",
+      "human_supplement_count": "not_observed",
+      "per_case_wall_time": "not_observed",
+      "per_case_token_usage": "not_observed",
+      "per_case_tool_call_savings": "not_observed",
+      "exhaustive_omission_count": "not_observed",
+      "operational_invalidity": "可确认两阶段未观察到请求边界外的模型、训练、写文件或部署动作；这不等于所有工具调用均最优。",
+      "baseline_tool_friction": "基线发生过一次默认UNC读取拒绝及路径列表显示截断，随后只读恢复；这些是可见环境摩擦，不能归因于未使用Skill。",
+      "order_and_example_effects": "有Skill阶段继承基线题面经验，且normal题与合同示例高度重合；不能据变化宣称Skill提高了因果效率或量化成功率。",
+      "current_probes": "本轮新增探针由本代理构造，未读取作者completion_checks或预期；仍是有限合成样本，不是生产全面验收。"
+    },
+    "remaining_limits": [
+      "本轮未重新运行完整30题；原30题在上一轮已独立回归，本轮针对新增行为执行11个自主探针。",
+      "工作示例支撑教学分析产物和交付结构；标题中的完整产物不能解释为已生成真实模型、报告、基线实验或端到端工程。",
+      "采集revision目前输出最终值，未提供每个历史触发事件对应revision的完整事件账本；当前最终状态回放范围内可以使用，实际产品需要保存事件元数据。",
+      "分母扩张被报告为fail后仍返回声明分母上的诊断数值；调用方必须读取status和findings，不能只取metrics。",
+      "letterbox检查只支持合同规定的统一scale、padding及可选水平反镜像，不覆盖仿射、透视或真实世界坐标。",
+      "有限输入类型及数值边界探针不构成所有畸形输入的穷尽验证。",
+      "全规划逐项矩阵、包版本清单及最终打包完整性由主代理继续完成，本轮没有独立宣称这些步骤完成。"
+    ]
+  }
+}

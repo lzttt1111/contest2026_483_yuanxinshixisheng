@@ -1,0 +1,6 @@
+interface:
+  display_name: "模型训练与跨场景泛化"
+  short_description: "依据可追溯输入完成模型训练与跨场景泛化，输出明确检查结果及未解决证据"
+  default_prompt: "使用 $vision-generalization 审阅本任务材料，先说明适用范围并给出有证据的结果。"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,474 @@
+{
+  "rk_source_base_commit": "e8798373ad89af17f622f10ebc421a74d7a02b2c",
+  "note": "Current file snapshots include uncommitted sources. Hashes, not base commit alone, identify content.",
+  "files": [
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/lab/backend.py",
+      "destination": "pc_demo/lab/backend.py",
+      "size": 1841,
+      "sha256": "15a170c7df89099264ef0a8a06141cafe564b7af6c23fe5b2923fa2266f4acdf"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/lab/regions.py",
+      "destination": "pc_demo/lab/regions.py",
+      "size": 6351,
+      "sha256": "a17fc9c36ef92df11bad9bd2e232aa48ee297e2c6c8ed49086bdff7380c6b636"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/lab/state.py",
+      "destination": "pc_demo/lab/state.py",
+      "size": 5707,
+      "sha256": "2c0ba8e9837498db41ccd8104a223dd23bacda5e6e635f72fef8dddebaf73862"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/models/face_detection_yunet.onnx",
+      "destination": "pc_demo/models/face_detection_yunet.onnx",
+      "size": 232589,
+      "sha256": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/models/face_landmarker.task",
+      "destination": "pc_demo/models/face_landmarker.task",
+      "size": 3758596,
+      "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/models/head_pose_fsanet_1x1.onnx",
+      "destination": "pc_demo/models/head_pose_fsanet_1x1.onnx",
+      "size": 964897,
+      "sha256": "120fa107a2dd3be78c21c3a73a0db980590643a5372893e8878094898262f213"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/models/SHA256.json",
+      "destination": "pc_demo/models/SHA256.json",
+      "size": 478,
+      "sha256": "b08d9d9ead66493bd2e3365c26aa431c52d343b06622b9e530fee848ee8a8459"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/models/contact/manifest.json",
+      "destination": "pc_demo/models/contact/manifest.json",
+      "size": 1295,
+      "sha256": "6455b7b983b902329900bd7678f14dd3df0601f3b56996b977f7909b4853ce16"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/models/contact/model.onnx",
+      "destination": "pc_demo/models/contact/model.onnx",
+      "size": 4713440,
+      "sha256": "e4d9deba2eb3aaa9ec143045de305f7be38480124ac3ef577ac5e0eec122dae1"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/models/device/manifest.json",
+      "destination": "pc_demo/models/device/manifest.json",
+      "size": 1147,
+      "sha256": "5b106f22351a78595766d925ee066b1579542012eb9b83abb327acacc73d82b6"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/models/device/model.onnx",
+      "destination": "pc_demo/models/device/model.onnx",
+      "size": 35994066,
+      "sha256": "218e922d784795901bd5e165e11755898f6c29c4a5724715862aa8cdf1919a8c"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/vendor/head_pose/estimator.py",
+      "destination": "pc_demo/vendor/head_pose/estimator.py",
+      "size": 3732,
+      "sha256": "2d4051d6dda54da0d3897371380bc002f157007a7f4eccb2ad897ddd0bed619b"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/vendor/head_pose/face_detector.py",
+      "destination": "pc_demo/vendor/head_pose/face_detector.py",
+      "size": 7544,
+      "sha256": "d0ee71e6e586b47e7458daa3cafb3fc2b25e692009843ea731e7c283ccb2c0b8"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/vendor/head_pose/preprocess.py",
+      "destination": "pc_demo/vendor/head_pose/preprocess.py",
+      "size": 3912,
+      "sha256": "28e539e88be82e7a7221e27c70298c4128196bbcae06911453d5b49b618c854b"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/vendor/head_pose/__init__.py",
+      "destination": "pc_demo/vendor/head_pose/__init__.py",
+      "size": 410,
+      "sha256": "049bec6016aba868e1e1a346ed4e5613a69101a712356436d222b85ddec4fb80"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/vendor/target_detection/cli.py",
+      "destination": "pc_demo/vendor/target_detection/cli.py",
+      "size": 1040,
+      "sha256": "31be0d834dd2f97b053f1a513a113ef20aa752f45568a15dbf4f6a38492b38a4"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/vendor/target_detection/pipeline.py",
+      "destination": "pc_demo/vendor/target_detection/pipeline.py",
+      "size": 208,
+      "sha256": "8204588663ca201bdb0618ef04e35b259cfb34e8238ca0b2d3e23b2eb1666238"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/vendor/target_detection/preprocessing.py",
+      "destination": "pc_demo/vendor/target_detection/preprocessing.py",
+      "size": 2005,
+      "sha256": "7fa17cd1a1f03b26c607546e1e6ecb17955ca31f96dd709029899021aa768ece"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/vendor/target_detection/runtime.py",
+      "destination": "pc_demo/vendor/target_detection/runtime.py",
+      "size": 10333,
+      "sha256": "7075212ab8bfb8bd357f38bbaa5fd17faeed78be61022537c892275526929104"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/vendor/target_detection/service.py",
+      "destination": "pc_demo/vendor/target_detection/service.py",
+      "size": 2505,
+      "sha256": "c7b1cedba771c371e55a3d4e229ea75a89163bcc2c3327453e343bb5971dddea"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/vendor/target_detection/version.py",
+      "destination": "pc_demo/vendor/target_detection/version.py",
+      "size": 198,
+      "sha256": "104fa06f065e6b74d7df3fcafcd2e8d4f02163f6ecbda62894fa02c68a1ea440"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/vendor/target_detection/__init__.py",
+      "destination": "pc_demo/vendor/target_detection/__init__.py",
+      "size": 440,
+      "sha256": "35e3b3f1bf3dc6990b51e470899871c74d84bfa463ea14441577065db0bd0819"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/vendor/target_detection/__main__.py",
+      "destination": "pc_demo/vendor/target_detection/__main__.py",
+      "size": 80,
+      "sha256": "3d2438ae92f4746e9ffaa1f837b1fe803f6281091d1f31f8c95643716f257d9a"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/web/angle-display.mjs",
+      "destination": "pc_demo/web/angle-display.mjs",
+      "size": 324,
+      "sha256": "a1e7c7777a7b55503077c88b4b7a62018b4e53fe98fefa7f76253e2b3b382ef3"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/web/app.js",
+      "destination": "pc_demo/web/app.js",
+      "size": 12195,
+      "sha256": "f59fd9bcc79e115c475c0ab47f5583eccbe5d8aa5f500cc5dffdf87500b7e15c"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/web/index.html",
+      "destination": "pc_demo/web/index.html",
+      "size": 5254,
+      "sha256": "d98a55ab1bcc04e7a663e19466ef7588ebc71488c8dbd1b4702812038d642ee9"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/web/style.css",
+      "destination": "pc_demo/web/style.css",
+      "size": 5134,
+      "sha256": "e0cb83d0e3ad570d2e57a3cece9506da03451b50a3a6b3bdc67508134c3dc438"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/tests/test_angle_display.mjs",
+      "destination": "pc_demo/tests/test_angle_display.mjs",
+      "size": 540,
+      "sha256": "ba93022e8e6bc0b82b91fc42ec22df6b2076d0ad4eb4229610d7f18e38f16aa6"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/tests/test_api.py",
+      "destination": "pc_demo/tests/test_api.py",
+      "size": 3147,
+      "sha256": "fa05bd4440fda8d473aab35d0464bbf001beba85ba3821caf2a6eb77fe1851ee"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/tests/test_regions.py",
+      "destination": "pc_demo/tests/test_regions.py",
+      "size": 1722,
+      "sha256": "b5b5855744f182b33d27b7f0386a563b6fcb1a54fdfc6f71e9d26fc2bd4076d4"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/tests/test_state.py",
+      "destination": "pc_demo/tests/test_state.py",
+      "size": 3522,
+      "sha256": "8af9991432def54d2efc8d8dd094b19da4a5b691bb496452e76b8a4341a6886b"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/server.py",
+      "destination": "pc_demo/server.py",
+      "size": 11097,
+      "sha256": "2e308653b54f8b342d3a511e6b55f59d597ab04a4bd2e14fc3be58964c21f846"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/config.json",
+      "destination": "pc_demo/config.json",
+      "size": 241,
+      "sha256": "0f8064dc335c396655fda30ee5547f2e0966fa4e28cb21e02562aecf336182f5"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/requirements-observed.txt",
+      "destination": "pc_demo/requirements-observed.txt",
+      "size": 297,
+      "sha256": "0611bcb81f286547e053d3dfd5ce275ad4ffe55bc1b689cd44a303e1d4675c89"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/tools/smoke.py",
+      "destination": "pc_demo/tools/smoke.py",
+      "size": 1575,
+      "sha256": "750f88acb6995c7356d22033e80051c316b163b6f997120eebf645b014796b2a"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/tools/smoke_regions.py",
+      "destination": "pc_demo/tools/smoke_regions.py",
+      "size": 1305,
+      "sha256": "dbeacd7501d49c9ffbbb4942cd2968dfdd504db550e5387a678eee6f835cd3be"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/docs/FACE_REGIONS.md",
+      "destination": "docs/source_notes/FACE_REGIONS.md",
+      "size": 3374,
+      "sha256": "8e73221c41e98f3c71983686688d7f5beff8a24d7fe14cc541b60f178d9f5d1c"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/docs/HEAD_POSE_NOTICES.md",
+      "destination": "docs/source_notes/HEAD_POSE_NOTICES.md",
+      "size": 1109,
+      "sha256": "e43e44b666409b711985e294041488b97dde3a920024a042c10bed0dba283eb7"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/RK3576三功能联调实验/docs/THIRD_PARTY.md",
+      "destination": "docs/source_notes/THIRD_PARTY.md",
+      "size": 400,
+      "sha256": "47ccb04ad1105ee79fd1dcdcad69bc139029f346dc2e3ca5d102d944e504981b"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/端测角度识别拍照_2026.9.1/third_party_licenses/FSA_NET_PYTORCH_MIT.txt",
+      "destination": "licenses/FSA_NET_PYTORCH_MIT.txt",
+      "size": 1069,
+      "sha256": "11bc611e7e2e50561307c528cb98903e1c674a2f62b0412b589ca4d85dfa851c"
+    },
+    {
+      "source": "/mnt/d/CNN小型模型/端测角度识别拍照_2026.9.1/third_party_licenses/YUNET_MIT.txt",
+      "destination": "licenses/YUNET_MIT.txt",
+      "size": 1086,
+      "sha256": "2ad92c7a6eb7aebede4e19f5ec4930c8bd9d614dbb8e75be1f740edae346734c"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/cpp/CMakeLists.txt",
+      "destination": "rk3568_reference/cpp/CMakeLists.txt",
+      "size": 2691,
+      "sha256": "e003975209528b00dba146c991db034e703c0fe72c7a7bfc4d401665e7c43416"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/cpp/src/rknn_batch_probe.cpp",
+      "destination": "rk3568_reference/cpp/src/rknn_batch_probe.cpp",
+      "size": 3759,
+      "sha256": "71b022e3f86dd4a00d63be41799352f6c1fe9d25558607d3af2b6417ec4c8432"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/cpp/src/rk3568_pipeline.cpp",
+      "destination": "rk3568_reference/cpp/src/rk3568_pipeline.cpp",
+      "size": 23660,
+      "sha256": "1a3562bd28281ec1a7ded2162ad3b491d086861037ae68e364551109ce07a1bb"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/cpp/src/rknn_probe.cpp",
+      "destination": "rk3568_reference/cpp/src/rknn_probe.cpp",
+      "size": 2610,
+      "sha256": "39f990853e304c0bb61cb06c10863ec112c572b96b75388c349f8e1d9d7f713a"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/cpp/src/medvision_rk3568.cpp",
+      "destination": "rk3568_reference/cpp/src/medvision_rk3568.cpp",
+      "size": 24400,
+      "sha256": "c5119faea4312f2834926ca7cfbaf8242b612640f58764dc3a4d4c792feee83d"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/cpp/src/rknn_backend.cpp",
+      "destination": "rk3568_reference/cpp/src/rknn_backend.cpp",
+      "size": 5237,
+      "sha256": "f83014719eeaee855c1428707835f5658347a3ddbd137cb1b1a6e96f9fff9622"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/cpp/include/medvision/rknn_backend.hpp",
+      "destination": "rk3568_reference/cpp/include/medvision/rknn_backend.hpp",
+      "size": 1050,
+      "sha256": "8068db656c0e4d91edd7246cbe37c4faf79ba8a910f0cc88eb21a3bda3f48632"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/cpp/include/medvision/rk3568_pipeline.hpp",
+      "destination": "rk3568_reference/cpp/include/medvision/rk3568_pipeline.hpp",
+      "size": 2182,
+      "sha256": "d55df20682eb2e61c6a2ffa4e13229e8b23a268953a20ad5f467bd3acd3e4834"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/config/service.env.example",
+      "destination": "rk3568_reference/config/service.env.example",
+      "size": 425,
+      "sha256": "46e8f250dd0eda7bae13022adf982e4bbe750fa7012228e07af9063eff315dc7"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/deploy/capture_serial.ps1",
+      "destination": "rk3568_reference/deploy/capture_serial.ps1",
+      "size": 2138,
+      "sha256": "ba2711c6e5aaeab5e1a4c57061a76026ccca383da0e7ad766ac92bb4f8572c27"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/deploy/deploy.ps1",
+      "destination": "rk3568_reference/deploy/deploy.ps1",
+      "size": 2434,
+      "sha256": "fedcda2430daa162815cba2946ca901665df02a67c0fe924cd9178cdf9e78b7b"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/deploy/serve_demo.ps1",
+      "destination": "rk3568_reference/deploy/serve_demo.ps1",
+      "size": 796,
+      "sha256": "3bd52d43733555108d17fe55575a29dba2c21917a47e04c761a3f6c8995b5c5b"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/deploy/start.sh",
+      "destination": "rk3568_reference/deploy/start.sh",
+      "size": 3208,
+      "sha256": "bb45e14b879edfa4b4490276b048faeb88d00e88c8a1b3d9e7a0bf8c85808cd2"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/deploy/collect_diagnostics.ps1",
+      "destination": "rk3568_reference/deploy/collect_diagnostics.ps1",
+      "size": 5475,
+      "sha256": "c4f373000a907b7ab0185046fe8725697f802303e48d09f977467595ce8bbea9"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/deploy/stop.sh",
+      "destination": "rk3568_reference/deploy/stop.sh",
+      "size": 1452,
+      "sha256": "ba3c955897d83fb3cebc622a38a4e18e4f3c4c991c79e136371fe2df92d87e7a"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/tools/prepare_hybrid_quant.py",
+      "destination": "rk3568_reference/tools/prepare_hybrid_quant.py",
+      "size": 4576,
+      "sha256": "c53ebe61d23ff0dc2569baf995536861d5c3c1763fa1eaac26ff94466e6c2519"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/tools/build_hybrid_quant.py",
+      "destination": "rk3568_reference/tools/build_hybrid_quant.py",
+      "size": 3663,
+      "sha256": "79b9f61b4fa2de9232903af070ab062e7b11d80c8b7308fefc215fc4b66bb652"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/tools/package_release.py",
+      "destination": "rk3568_reference/tools/package_release.py",
+      "size": 11034,
+      "sha256": "84999b12defe8314a9eff2d43afa25cafa8c8a775272e66199ebb2230defd997"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/tools/make_hybrid_profile.py",
+      "destination": "rk3568_reference/tools/make_hybrid_profile.py",
+      "size": 3349,
+      "sha256": "3d56b72cfb4006b8d330eb907d2edc5440776944133da1bc9f021a7d55bf3cb0"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/tools/prepare_parity_inputs.py",
+      "destination": "rk3568_reference/tools/prepare_parity_inputs.py",
+      "size": 7508,
+      "sha256": "6ab7b226a5d1a56cb7ec631a913daddef9ee48ea599a0910b80b53947382f485"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/tools/run_http_stability.py",
+      "destination": "rk3568_reference/tools/run_http_stability.py",
+      "size": 10842,
+      "sha256": "8df59ef4c31416ed9d67ef74abad654efbc800ee0e227dc9057d5dc7dcf4fee4"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/tools/convert_rknn.py",
+      "destination": "rk3568_reference/tools/convert_rknn.py",
+      "size": 7276,
+      "sha256": "257b2701debcee3644dde0d18644be4555bfd6172a85d4329f50baf21089c374"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/tools/compare_rknn_output.py",
+      "destination": "rk3568_reference/tools/compare_rknn_output.py",
+      "size": 6277,
+      "sha256": "d694e018ccc60e9b1f2ad75d31fea5099d92f05fc2cfc9fd08b9b50ba06f8eb0"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/tools/test_run_http_stability.py",
+      "destination": "rk3568_reference/tools/test_run_http_stability.py",
+      "size": 4947,
+      "sha256": "e90d4cf3c232bf88d9dd9e7dedcd7cc16b98ab67fda1fc963b9e2a46e652c2aa"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/tools/evaluate_rknn_parity.py",
+      "destination": "rk3568_reference/tools/evaluate_rknn_parity.py",
+      "size": 19316,
+      "sha256": "97f390802f0e42cae3aa926b34adf30a9f9053e5bf795de0730e52d79a2b0244"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/tools/export_v5_onnx.py",
+      "destination": "rk3568_reference/tools/export_v5_onnx.py",
+      "size": 13152,
+      "sha256": "4598585facf0cab0e7fdfc52fa052a8a4fa7399359053642ee430e68fdffffde"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/tools/prepare_calibration.py",
+      "destination": "rk3568_reference/tools/prepare_calibration.py",
+      "size": 8363,
+      "sha256": "93d0a433d2cba9bd5657a38bc9508447a8bad08f15a13fc21960589721d6563b"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/tools/build_cpp.sh",
+      "destination": "rk3568_reference/tools/build_cpp.sh",
+      "size": 2363,
+      "sha256": "d271bf99530e74fc0146717535895616d413318e003f6433fa338e92d517f71c"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/web/rk3568_demo/index.html",
+      "destination": "rk3568_reference/web/rk3568_demo/index.html",
+      "size": 6118,
+      "sha256": "be03046b727da17e8e29c30e97f023c0938bf478a0a778a86e4523aa0ab2b62d"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/web/rk3568_demo/app.js",
+      "destination": "rk3568_reference/web/rk3568_demo/app.js",
+      "size": 15729,
+      "sha256": "ce7767b039d1368981a7036fe5a88b0b19ea71a88e81f524bf32f3451313adc7"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/web/rk3568_demo/styles.css",
+      "destination": "rk3568_reference/web/rk3568_demo/styles.css",
+      "size": 9062,
+      "sha256": "03219c95d5897ea7c432ef4f297c26ae68e87c106a267756bb8c313c8aedcc0e"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/README.md",
+      "destination": "rk3568_reference/README.md",
+      "size": 4781,
+      "sha256": "9fbf5c87dc12b3f25ab908a3ab76c2efcd0a07914a0e564dab65068dd08d0477"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/BOARD_HANG_OBSERVATION_2026-08-31.md",
+      "destination": "rk3568_reference/BOARD_HANG_OBSERVATION_2026-08-31.md",
+      "size": 2292,
+      "sha256": "28403581a2cc0d497b9befb83d336a6d2a90dc516f9dc2d676379c7f0758dcf8"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/artifacts/parity/rknn_parity_report.json",
+      "destination": "rk3568_reference/artifacts/parity/rknn_parity_report.json",
+      "size": 119222,
+      "sha256": "d4ff5bb3baaf64542df98fac444b33517328079eaa4e18eac3d63d5ccae75e47"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/artifacts/onnx/export_manifest.json",
+      "destination": "rk3568_reference/artifacts/onnx/export_manifest.json",
+      "size": 4209,
+      "sha256": "7110d590cbd649839822e0e7005581839b110fec3e34ec1bd3e06245a4dd496a"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/artifacts/onnx/device_yolox_s_v5_raw_opset12.onnx",
+      "destination": "rk3568_reference/artifacts/onnx/device_yolox_s_v5_raw_opset12.onnx",
+      "size": 35771075,
+      "sha256": "30e1782cd50c1ebb9e760ebf033ad4126db0a1f21fa7f7a507b91bfc22357375"
+    },
+    {
+      "source": "<RK3568_REFERENCE_ROOT>/artifacts/onnx/contact_mobilenet_v3_small_v5_opset12.onnx",
+      "destination": "rk3568_reference/artifacts/onnx/contact_mobilenet_v3_small_v5_opset12.onnx",
+      "size": 4718804,
+      "sha256": "c8bb6a3f6893629385760c2d69d30da96ae665e09f3875e95f3e937028892c96"
+    }
+  ]
+}

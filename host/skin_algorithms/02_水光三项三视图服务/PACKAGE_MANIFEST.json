@@ -1,0 +1,2991 @@
+{
+  "package": "02_水光三项三视图服务",
+  "stage": "bisenet_diagnostic_not_formal_calibration",
+  "files": [
+    {
+      "path": ".gitignore",
+      "size": 76,
+      "sha256": "dead8752474fdfe560e6abde6b0d77f0f50ffce0876b314b6a12fedfe3719ea1"
+    },
+    {
+      "path": "BiSeNet_Celery诊断部署与字段说明.md",
+      "size": 14139,
+      "sha256": "97520208b8b6c742d0f339d4a15494778a76b15adcfd906fb2af35059dc8ad96"
+    },
+    {
+      "path": "BiSeNet本机试运行说明_20260915.md",
+      "size": 2535,
+      "sha256": "69b8685953a4defa894c91bcd48857ecad28ba7378d62566620d927d0aadcbbf"
+    },
+    {
+      "path": "BiSeNet评分诊断对照_20260915.md",
+      "size": 2249,
+      "sha256": "92da22dbbf78648b50aa38325d1483a3d7f4c9f9ff6967dece837758c95c72ec"
+    },
+    {
+      "path": "LATEST_CLOUD_RUN_ONE.json",
+      "size": 4190,
+      "sha256": "6e8fe1c6191f2126b9f149c5d923d32825756434c58030d3e8535297b033b93b"
+    },
+    {
+      "path": "LATEST_CLOUD_RUN_TWO.json",
+      "size": 4195,
+      "sha256": "03f3a80bd0f6fc4befafb96f63aab43b07408afdc75af22e9b2f6526b6d142c2"
+    },
+    {
+      "path": "LOCAL_HTTP_ACCEPTANCE.json",
+      "size": 287,
+      "sha256": "ed1c55718b923529f773be18a0c186238f92a836a06deb1f1f89340dea2e5def"
+    },
+    {
+      "path": "QA_RECEIPT.json",
+      "size": 1308,
+      "sha256": "7722a8f8a5be2c54362c21c75d1a8da26876fdf9d987bf13ad41a759e42bf399"
+    },
+    {
+      "path": "README.md",
+      "size": 3032,
+      "sha256": "0fd0c24998892cb9010685e2ff85f0d55c884f132e827e2a83ebcfa0a5935429"
+    },
+    {
+      "path": "STANDALONE_DIAGNOSTIC_ACCEPTANCE.json",
+      "size": 1867,
+      "sha256": "f603f388c2f89fee0c1e6cc7e08228fbc71e1d44fb87444a6d545174c9283fde"
+    },
+    {
+      "path": "cloud_three/__init__.py",
+      "size": 49,
+      "sha256": "964d6d03346ed60de282c524743927f3d5b0560db758f6e2087b974fa1fac1f9"
+    },
+    {
+      "path": "cloud_three/analysis.py",
+      "size": 3338,
+      "sha256": "2040532b35ada3ab1882791894966bc68e530b917a69658e0914de17c5ea3430"
+    },
+    {
+      "path": "cloud_three/api.py",
+      "size": 3451,
+      "sha256": "82228554b9ff4e608a2c1541e65058bb98d52c58c3a6ceffdd21b28e199e54de"
+    },
+    {
+      "path": "cloud_three/compose_v2.py",
+      "size": 5499,
+      "sha256": "9e9f80780b67f34ec9b4fbaf493c4ab1dc3dfced4bf6fb08d7533e4676e9553a"
+    },
+    {
+      "path": "cloud_three/contracts.py",
+      "size": 4306,
+      "sha256": "c58c51a2e1f050574e1ed79940f559ff94283b25a16d8e5349be51aeddbf834f"
+    },
+    {
+      "path": "cloud_three/contracts_v2.py",
+      "size": 4755,
+      "sha256": "8a998db92161bf4c6b65a0813505ac19c558c14cef5dd00255f344036bf158bd"
+    },
+    {
+      "path": "cloud_three/independent_spots.py",
+      "size": 6919,
+      "sha256": "d7b455a32a458d8c2bccc0d615ef1e22760179f2ea5e5431218d752bf6d771ec"
+    },
+    {
+      "path": "cloud_three/live_scoring.py",
+      "size": 149,
+      "sha256": "633e74fb241251d6b5f4c93ff360b6d057d41679a02cf179191792ce0df96a9e"
+    },
+    {
+      "path": "cloud_three/public_scores.py",
+      "size": 2294,
+      "sha256": "a0a7ec398c64f297388492ef2d43d2aa8c61e49d69ae0cf99d25a5114d1ed9a1"
+    },
+    {
+      "path": "cloud_three/resident_scoring.py",
+      "size": 4568,
+      "sha256": "4ea984453da478f3a0a3b5045af3115e91cfea45d082d7271cbf6d4d36afae61"
+    },
+    {
+      "path": "cloud_three/scoring.py",
+      "size": 3695,
+      "sha256": "88d25e42c96525675fdc7f1244bfa835235025bc9564dbd1d27df076fa386a63"
+    },
+    {
+      "path": "cloud_three/scoring_evidence.py",
+      "size": 3398,
+      "sha256": "cc2b8886c332a3fa757acd7d5903b173080b662db07dfb64f1dd977b55b24496"
+    },
+    {
+      "path": "cloud_three/service.py",
+      "size": 8330,
+      "sha256": "172797329ad5ed5f1c7b5cfd02ffdfd8e4aad410e22508b5967803b400a099af"
+    },
+    {
+      "path": "cloud_three/service_scores.py",
+      "size": 6113,
+      "sha256": "0458f72fdc869bf137ce6719010b5c21b60a5b8168cbae660f8a52768509a309"
+    },
+    {
+      "path": "cloud_three/settings.py",
+      "size": 1052,
+      "sha256": "82fff515cbc98d63d9e30c36f12ed6bdf2d3bbf813cfb5ffc7ad214756e0581c"
+    },
+    {
+      "path": "cloud_three/tasks.py",
+      "size": 2842,
+      "sha256": "a344aae81ed7f5a33f5cc3a3ddb3e9d49bc7f7fb5b5630385b70527624db62bb"
+    },
+    {
+      "path": "cloud_three/v3_rules/__init__.py",
+      "size": 59,
+      "sha256": "6cecc06cf94644841ceabcb55b8699316f651555397eba4583c3638f9b2a5c01"
+    },
+    {
+      "path": "cloud_three/v3_rules/scoring.py",
+      "size": 3342,
+      "sha256": "c3396bdceb2c3fe20b0769309c93e4ee771ae385bfc11fae5ad3144d666a34c7"
+    },
+    {
+      "path": "cloud_three/v3_saved.py",
+      "size": 6411,
+      "sha256": "90245ba64c01104b6490ef92cad0aa5bb2c940105585ef5bb968615754efd008"
+    },
+    {
+      "path": "delivery_tests/test_delivery.py",
+      "size": 2031,
+      "sha256": "1668279e1b1e18391f105330ed1822c20f25193b09fc17187a4c99379e08e3cb"
+    },
+    {
+      "path": "delivery_tests/test_diagnostic_isolation.py",
+      "size": 1797,
+      "sha256": "097a69e5e24a5317c77e5e279305dbc63dfa111e548adca864741c2822d02886"
+    },
+    {
+      "path": "delivery_tests/test_hair_preprocess_candidate.py",
+      "size": 2640,
+      "sha256": "f9b14ace1b50bfa6563a665695ca33db5c5269b73c24ebafea5be0d853b2d1bf"
+    },
+    {
+      "path": "delivery_tests/test_independent_spots.py",
+      "size": 2884,
+      "sha256": "4e963a0a64d5ae78fd485627a389ccbb001eaa5932c00a5efe2db3975c04bfe8"
+    },
+    {
+      "path": "deploy/README.md",
+      "size": 1425,
+      "sha256": "3b8fd5ef6ad5e339655e4a08eff1e9116df11a3dc7e4d04206fee12eec1a3fa3"
+    },
+    {
+      "path": "deploy/shuiguang-score-api.service",
+      "size": 476,
+      "sha256": "f7b8fed5a36780b76ffe0c89a397de0b42958a2396bcb892cc92f7ad78f55272"
+    },
+    {
+      "path": "deploy/shuiguang-score-worker.service",
+      "size": 568,
+      "sha256": "14432eb09e8d9f41096b7eb845afc8923b5eddf80bb91f8689797d441e3e3b3b"
+    },
+    {
+      "path": "deploy/shuiguang.env.example",
+      "size": 263,
+      "sha256": "85b28ed27ba3f001f136a07e3bd1bdfc38fa4a36904d2295ac50edc80716d7f7"
+    },
+    {
+      "path": "docs/JSON字段说明.md",
+      "size": 1072,
+      "sha256": "632acdbb5ac19cb286469d8df37cee2298d90a501d96801b124ca6780cba9069"
+    },
+    {
+      "path": "docs/交付内容清单.md",
+      "size": 1514,
+      "sha256": "d6a74fa5c8f3e6a5576cad1a61fd929469af6d655173bec3353bf8e64fa89c7a"
+    },
+    {
+      "path": "docs/技术架构与部署说明.md",
+      "size": 1994,
+      "sha256": "edd08f7c8f793e8d1d1e511176a0ebae61abf93bab3ae0b474be6806c3d080bc"
+    },
+    {
+      "path": "docs/来源模型与评分参考.md",
+      "size": 1911,
+      "sha256": "967a64e753a0943b12d43862529aa6f25ba2638bc026cf3f6ee744373d9da507"
+    },
+    {
+      "path": "examples/camera_demo/inputs/front.jpg",
+      "size": 167174,
+      "sha256": "af567b75b8365967d804c6c1eab3a8fffac1277e6df104dfdbd31c033d3ac1ea"
+    },
+    {
+      "path": "examples/camera_demo/inputs/left.jpg",
+      "size": 154431,
+      "sha256": "a0891c8cb5e756f27df45267897ee68c8baf43b2f65537a3b1aaed60e6e01f6a"
+    },
+    {
+      "path": "examples/camera_demo/inputs/right.jpg",
+      "size": 160018,
+      "sha256": "418e2b672cf7183a3ea3fe771432ca12d44fe04557f1a950044011914a8bfc57"
+    },
+    {
+      "path": "examples/camera_demo/request.json",
+      "size": 274,
+      "sha256": "f29ead0483ab9309e704f0048c028de08ee5883a028c4307310447233cf198f8"
+    },
+    {
+      "path": "examples/camera_demo/result.json",
+      "size": 3763,
+      "sha256": "6a2b8264fd604c6c248f95d42ccfd05614180059f7ff7847f06f24c54150db60"
+    },
+    {
+      "path": "examples/current_demo/detections/pores/front.png",
+      "size": 1572042,
+      "sha256": "2f537c81f4cc9660084b835f5ab1cbcead1d5b30c821e5c163d394a1942372a8"
+    },
+    {
+      "path": "examples/current_demo/detections/pores/left.png",
+      "size": 1661280,
+      "sha256": "8d8ad971bdc7f9dcdf4c53e2a9db90e661f6edade0cbef9b56b78554de5bbf55"
+    },
+    {
+      "path": "examples/current_demo/detections/pores/right.png",
+      "size": 1630615,
+      "sha256": "df23aa430eb63d22d000e3289a0be8dfcffacd61fd6497b7fb0ad939aa351dba"
+    },
+    {
+      "path": "examples/current_demo/detections/spots/front.png",
+      "size": 1528414,
+      "sha256": "ab0f68fd07d3005790ed9368050fee4d13993810619fda21ba60f3fe5bd9668a"
+    },
+    {
+      "path": "examples/current_demo/detections/spots/left.png",
+      "size": 1650253,
+      "sha256": "f790df9440f0ad2e9485254447e164095ae053f239356bced42ee862a70dad4c"
+    },
+    {
+      "path": "examples/current_demo/detections/spots/right.png",
+      "size": 1616570,
+      "sha256": "d1c3249155e26f3987986e7fda161c67a7a74b4515d2921d7fb087f068aba206"
+    },
+    {
+      "path": "examples/current_demo/detections/surface_gloss/front.png",
+      "size": 1518536,
+      "sha256": "a03821f5b04f9b618e61eed416cd0a414f27ce229f313afd5b426fadb52502d0"
+    },
+    {
+      "path": "examples/current_demo/detections/surface_gloss/left.png",
+      "size": 1634907,
+      "sha256": "f7d49bc6e60a0662be9b63440554cb9cd4e4e15f20e75e7e55aac1c2bc8795ea"
+    },
+    {
+      "path": "examples/current_demo/detections/surface_gloss/right.png",
+      "size": 1603265,
+      "sha256": "85fa24317c1b5d006345a9521e037452fd986c9edf710cc043660b3e6b66ae8b"
+    },
+    {
+      "path": "examples/current_demo/inputs/front.png",
+      "size": 17955317,
+      "sha256": "819e11d46666769235febd7bf7937587fcc58c655f7108e5335a5d73e09af390"
+    },
+    {
+      "path": "examples/current_demo/inputs/left.png",
+      "size": 19367935,
+      "sha256": "2b35860ac4ab609a2c7d48d0b65f9a4031af5defcd8a7b3d48af0be3514adb51"
+    },
+    {
+      "path": "examples/current_demo/inputs/right.png",
+      "size": 18786622,
+      "sha256": "013f53ffad84d147ca51a702ac980f5887818d12eed77a5a12546abb541141ff"
+    },
+    {
+      "path": "examples/current_demo/result.json",
+      "size": 3797,
+      "sha256": "da858f39a3e471a9648ec40d092faa780b769ee2905e5207fb326465b1c41242"
+    },
+    {
+      "path": "examples/current_demo/result_internal.json",
+      "size": 14196,
+      "sha256": "7b831a2a973b74a7363ed1067f9ffb439874a2c44217cbb6a01b7600f641f204"
+    },
+    {
+      "path": "examples/diagnostic_one/result.json",
+      "size": 4157,
+      "sha256": "fcfab2b868c77f4c80c91fde79584f4370c26ebd5fce22f8334ab0dc13a84ef7"
+    },
+    {
+      "path": "examples/diagnostic_two/result.json",
+      "size": 4173,
+      "sha256": "6b7bd3d5ecbd26413fc6fa38a0f7fbc66a7dfb50324ba039b3b10e73aa53d6b8"
+    },
+    {
+      "path": "examples/one/inputs/front.jpg",
+      "size": 2531161,
+      "sha256": "bd198ff885d73eb937b91c9eac10a0eed2ea8e4028f24de830e459a1cb2d5568"
+    },
+    {
+      "path": "examples/one/inputs/left.jpg",
+      "size": 2779677,
+      "sha256": "9725580145cae7a1154081250bd4877582e883862615fa19307bbd0f2915cec5"
+    },
+    {
+      "path": "examples/one/inputs/right.jpg",
+      "size": 2696056,
+      "sha256": "d9a698e49e8da9ea49448061012936debd75e77b290bea7e2682324ada2d66d6"
+    },
+    {
+      "path": "examples/two/inputs/front.jpg",
+      "size": 2828160,
+      "sha256": "b4bff596dd505371340656d4d70e222f99594da0b1ea49db875984312a173791"
+    },
+    {
+      "path": "examples/two/inputs/left.jpg",
+      "size": 3460057,
+      "sha256": "bb57b6645af6f1039025eb70ff03c90a9c42fa50c148cb5f186b10d52363118b"
+    },
+    {
+      "path": "examples/two/inputs/right.jpg",
+      "size": 3172972,
+      "sha256": "bd42c831346ed1167d87ea8ebedebbc7f8cf65a5917f32407ded120b76b2d2b3"
+    },
+    {
+      "path": "finalize_v3_runtime.py",
+      "size": 1405,
+      "sha256": "56c0e9d8541b89c0a98a3c0a04fa57a6951822029e65da712a08a4e93ad98181"
+    },
+    {
+      "path": "preview/README.md",
+      "size": 784,
+      "sha256": "d756cdb549a43276a87776dd67ef78630c12280b66ad3870a899cb038a782314"
+    },
+    {
+      "path": "preview/app.js",
+      "size": 4687,
+      "sha256": "cca9e2115130cb2df0c0ad42b86f5b519de61bad99ddfac2b3d9e20dcdd9ee25"
+    },
+    {
+      "path": "preview/index.html",
+      "size": 2047,
+      "sha256": "a96a6f814c095c4f45ff65b7cab668a187be6c96f65d2720a80e027fb897315d"
+    },
+    {
+      "path": "preview/layout_fix.css",
+      "size": 301,
+      "sha256": "02a34aadb33e6c9be200b09248f5c9acc63f1dcb2720f58e0fd7d0d8fa0992e2"
+    },
+    {
+      "path": "preview/style.css",
+      "size": 4732,
+      "sha256": "3b1c2957b1e281fbba7f88dbc24545d46fe3e66bc7833a62cff2dd4028cf36c6"
+    },
+    {
+      "path": "preview_server.py",
+      "size": 2965,
+      "sha256": "bbfc761e083ce7523ea69aef19a37438341129acaf4accf2d08919b9ac7e3d41"
+    },
+    {
+      "path": "pyproject.toml",
+      "size": 1364,
+      "sha256": "d1539ee70091b3dfd8627a3598536c82e6debeff623830aa42943dc902ef9621"
+    },
+    {
+      "path": "request_scores_example.json",
+      "size": 320,
+      "sha256": "43255cd16e2f56a69ea591ad8096b878e8ca43ef0d5099f89fa4eddf27015643"
+    },
+    {
+      "path": "run_diagnostic_json.py",
+      "size": 739,
+      "sha256": "37b875a74fabeed6bac4af6de78aea4e634ad2befaa7300f752f8a6d10189a98"
+    },
+    {
+      "path": "run_scores_json.py",
+      "size": 555,
+      "sha256": "42750afa9a2fc18087cd381a5751d5ccf3c33bb7344e3943dbbf32164852e3a8"
+    },
+    {
+      "path": "scripts/audit_extra_exclusions.py",
+      "size": 2338,
+      "sha256": "18b15e8ea2e01bbc42ef85e1c45fb209d7505b8cc55d116fc9ae53db319eae75"
+    },
+    {
+      "path": "scripts/build_delivery.py",
+      "size": 2323,
+      "sha256": "0fc0e61f51878a93c80703bd79d8326364b748ae2d0bd284c2889224e5a67876"
+    },
+    {
+      "path": "scripts/compare_hair_preprocessing.py",
+      "size": 3591,
+      "sha256": "8801b5514b7c3d5e3fc7c2c66ccebb1e1168cecd95f4a809163689d9cfa0be65"
+    },
+    {
+      "path": "scripts/fit_independent_spots.py",
+      "size": 4111,
+      "sha256": "932e787e1266bbf8ea8319b2560181237a09ea5ef03f345797495370a18c8356"
+    },
+    {
+      "path": "scripts/refresh_package_manifest.py",
+      "size": 1647,
+      "sha256": "a49d881492c3b179742abf153bd163934b397311df10f22d7e5d1bd5e3903dda"
+    },
+    {
+      "path": "scripts/run_local_diagnostic_service.py",
+      "size": 1299,
+      "sha256": "182e5396ba9e096325a5d3ef3fa351ec3ac0da538d494453f1cf48ecf110020d"
+    },
+    {
+      "path": "scripts/verify_local_http.py",
+      "size": 1449,
+      "sha256": "c0c5e6c3dbb3d36565ee7ecb02201365baf9856118a06b23555aff79609fff75"
+    },
+    {
+      "path": "scripts/verify_package.py",
+      "size": 4382,
+      "sha256": "2820459a5ef65b27a2b760e6cef3f01617d0b7c65b1d0bcdd543239f39fa3e1f"
+    },
+    {
+      "path": "scripts/verify_standalone_celery.py",
+      "size": 4790,
+      "sha256": "bc33195f61c9c0b684cd8650fead86400e12c86f9ab7a39546de20e8d18118c1"
+    },
+    {
+      "path": "serve_bisenet_trial.py",
+      "size": 3901,
+      "sha256": "2249333736a2ee3a3484645470a8cea20df7032a4d930f5c7e98b970d979770d"
+    },
+    {
+      "path": "third_party/face-parsing-LICENSE.txt",
+      "size": 1078,
+      "sha256": "f15d0602ed0006afc3437b236b7383ab659202f5e78f8f625243a2590a5caea8"
+    },
+    {
+      "path": "trial_web/comparison.js",
+      "size": 1461,
+      "sha256": "c9b7572d392dc59a38d345abeea90788d4ce3c017298699987e5b8745ae98061"
+    },
+    {
+      "path": "trial_web/index.html",
+      "size": 4725,
+      "sha256": "185d6ebd4067139001af1fbfedf1d958f0d20343ec8ba922f8de91269c889080"
+    },
+    {
+      "path": "uv.lock",
+      "size": 82007,
+      "sha256": "b579cf3d5547d752d5c3c87872bd6fdf0e8ffe67e3697561a82bfccce266777b"
+    },
+    {
+      "path": "vendor/aisia-contracts/.gitignore",
+      "size": 38,
+      "sha256": "1c3a63237170f667a7e107333bca1ee2f3db9ddd37df8da0025855009e9a96ba"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/__init__.py",
+      "size": 1079,
+      "sha256": "564056a241be4293d5e7b68abb726b9cc80ad64b665ced024203d6882aa5f3c0"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/__init__.py",
+      "size": 347,
+      "sha256": "8917a552eda57e3b95d52c64759d38052e885e351cb26e5147d20fefeda77d1f"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/acne/__init__.py",
+      "size": 47,
+      "sha256": "dacc1e24d15061b72ccbb3b0a92d836b7064be5f2ba6018934a1866cf5ea1277"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/acne/v1.py",
+      "size": 2440,
+      "sha256": "58fb3fb4732882000cb8c48750908b9b362daa4601359a2914aa1690716db968"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/brown/__init__.py",
+      "size": 52,
+      "sha256": "aa07786de9d0b7425407fc3b6fb3c98fc626dc9e7f31976607bb7e4b431781ff"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/brown/v1.py",
+      "size": 1594,
+      "sha256": "dd8702cae2f04e7c89cfd639e9f17aec274f41fcaa7688b13dfc93b41921a8d3"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/brown/v2.py",
+      "size": 696,
+      "sha256": "1cb7943beb158f02b535b60d6481b57164fa97a2ca17f4e902e8f8d13db5035d"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/pores/__init__.py",
+      "size": 52,
+      "sha256": "a301a65eaa4c69606398a2dbbd3ab96d6adc17c06db5455a792fc973483d8534"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/pores/v1.py",
+      "size": 1551,
+      "sha256": "e5af76795b29c0abccc42041e1e02cbbb3b81760820e36cec65558bd4eaaea2f"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/pores/v2.py",
+      "size": 696,
+      "sha256": "e6643f969c68407dca0e83fb9d295586ac73ed26932c3c95ab275e41ea52ddc0"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/purple/__init__.py",
+      "size": 49,
+      "sha256": "2210a45e740bd2c1df47e583a3c501a303c40118b231c5b532bbba99d4d54496"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/purple/v1.py",
+      "size": 1865,
+      "sha256": "2239b040ed6cfc26a57008f6ef128f0323373ebecadfbe22b5b6b0a986e380fa"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/redness/__init__.py",
+      "size": 54,
+      "sha256": "27a0c5b364a9e333a49cc521da20bfa1abcd1d351018462dc02204ce29276c0b"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/redness/v1.py",
+      "size": 3403,
+      "sha256": "1a1758cb92eaf14256ba498254ac1369eb633e8739aa28f9d27c78bcc1644355"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/redness/v2.py",
+      "size": 663,
+      "sha256": "911a4dfccfade4d3c027afcd2e7bb1e45441a24ec8c46a9e599970de43189373"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/spots/__init__.py",
+      "size": 52,
+      "sha256": "2b2c1dfd77aef80ec1b06f622f6978f0050dd8e3f9bd039f16f5fcd6eec6c006"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/spots/v1.py",
+      "size": 3772,
+      "sha256": "ac993de0254e1cc20a0d978caf018c905e43899fc5fea07caffa3daf17fea701"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/spots/v2.py",
+      "size": 645,
+      "sha256": "22ba28ca0c14607b9a4724fdc07bc33a8940aadef0a6e7755b70c1df0b39b046"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/texture/__init__.py",
+      "size": 54,
+      "sha256": "4ebf3cef156c1c377c924d7faa2b988910e237ee18e06ef78fddf63612eb0e62"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/texture/v1.py",
+      "size": 1708,
+      "sha256": "31f26d14abcee72e1cbbf22ba5175488c0830d8e98718191e6212d1dd1b6de8d"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/texture/v2.py",
+      "size": 718,
+      "sha256": "bba0d5ed29e09020fa7c25ed966671679ed313cde02862713033c2fbf3252563"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/wrinkle/__init__.py",
+      "size": 50,
+      "sha256": "2601e6fd9c9972baa675b52b583e9df22b3797768d9065c337f6d234d1c1b006"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/algorithms/wrinkle/v1.py",
+      "size": 2039,
+      "sha256": "756668094892896bab067f6aa3587b6702467991a2fbab3cffa8f3399fec07ab"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/base.py",
+      "size": 391,
+      "sha256": "29421927447ca5109274b95c3bede4030bb8f790fea29103e64827fb7ca90420"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/envelope.py",
+      "size": 3026,
+      "sha256": "8d2bb77ea5dbdbb59d13deb71bcdb4ecfc24163af3a5a8121b8e3b594a1f6bf3"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/medical_metrics.py",
+      "size": 5628,
+      "sha256": "227a7ebeab8ee50c736aeb21222c2271d46c2bf8b6c40259f8d8d57781e996ef"
+    },
+    {
+      "path": "vendor/aisia-contracts/aisia_contracts/registry.py",
+      "size": 1179,
+      "sha256": "b7c55623dd20e8a4fc53309c86935b5dea72a451c7b2ef3981d924536608df60"
+    },
+    {
+      "path": "vendor/aisia-contracts/pyproject.toml",
+      "size": 352,
+      "sha256": "015ebb6998472d28a97c753657eb7cf5c9f9bfb162eb57b781ab96f5a4619274"
+    },
+    {
+      "path": "vendor/aisia-contracts/uv.lock",
+      "size": 32098,
+      "sha256": "043d97f7a66115391c1e813ddc67edea1b352af7ba7e71842623cb9aef317b52"
+    },
+    {
+      "path": "vendor/independent_spots_reference.json",
+      "size": 246338,
+      "sha256": "9004be0f2e2b36ea1c7a9353e9c9144ade046964156ec9edf8f9ddcde714e199"
+    },
+    {
+      "path": "vendor/legacy_score_fallback.json",
+      "size": 1455,
+      "sha256": "42075da7b29fda8dce902d6ab91f5cc901d2958e4b8adf1300385d6f09fba29a"
+    },
+    {
+      "path": "vendor/v3/00_runtime_assets/scoring_v011/SCORING_ASSET_MANIFEST.json",
+      "size": 559,
+      "sha256": "368fc844275cbcf7727c1e9c766e36f0536e620fba11ccdc86ebe7c6125321df"
+    },
+    {
+      "path": "vendor/v3/00_runtime_assets/scoring_v011/全量历史ECDF评分配置.json",
+      "size": 11339357,
+      "sha256": "8cf292c2e87b21a2b9e3543bd2a031567835eca330b0fc52134aaebf4435b808"
+    },
+    {
+      "path": "vendor/v3/00_runtime_assets/scoring_v011/综合色素V0.1.2_shadow评分配置.json",
+      "size": 19753820,
+      "sha256": "b047ff042b22e93cf98f3a85f7b333a120ffe73a801bd659edbd6b33902565fa"
+    },
+    {
+      "path": "vendor/v3/00_runtime_assets/scoring_word_provisional/word_population_reference_1000.json",
+      "size": 4108678,
+      "sha256": "a6933505ae50384612d28ed9b3cd788d5112566049bbcf8622f7bdb406a894ea"
+    },
+    {
+      "path": "vendor/v3/00_runtime_assets/vendor_skin/VENDOR_RUNTIME_MANIFEST.json",
+      "size": 2825,
+      "sha256": "ca3257dc21aa914bed5e6aabe1a736c72caad81454e1aec1d0781bd703e2f9f9"
+    },
+    {
+      "path": "vendor/v3/calibration/dataset_manifest.example.csv",
+      "size": 186,
+      "sha256": "62099792055445bec5c946b87ef33183052de0f31b6e68f91107b73a512565d7"
+    },
+    {
+      "path": "vendor/v3/calibration/metric_labels_v2_zh_20260728.json",
+      "size": 7166,
+      "sha256": "b38d771e8a1cfa6f49aa6f097553afefccf87550a0fd7d01684752abdf081cee"
+    },
+    {
+      "path": "vendor/v3/calibration/metric_registry.json",
+      "size": 5853,
+      "sha256": "65c8aa2a20605614c77ed3c8db8bff22a7c0c85782c4013057f3d7f6a4c8083c"
+    },
+    {
+      "path": "vendor/v3/calibration/metric_registry_v2_proxy_20260728.json",
+      "size": 25336,
+      "sha256": "5a6231ea936a38e1cbbfc28158defa66978b6ba03b7bc406bcfe8526365dbeb7"
+    },
+    {
+      "path": "vendor/v3/calibration/scoring_features_manifest.example.csv",
+      "size": 173,
+      "sha256": "000e14886120e674ee78e09a39fc32c321621e620b02975b02736a4740267ba8"
+    },
+    {
+      "path": "vendor/v3/calibration/v2_explicit_formula_registry_v1.json",
+      "size": 135639,
+      "sha256": "9ac2d51db8239679318d791f55f3519a69996596f489153a3779db983e059c27"
+    },
+    {
+      "path": "vendor/v3/data/acne/configs/detector_profiles.json",
+      "size": 2332,
+      "sha256": "98f19d0c6c8b999562c947dee79a8446f173de4704649a7e0a5a8383e5e07b03"
+    },
+    {
+      "path": "vendor/v3/data/acne/configs/preprocess.yaml",
+      "size": 196,
+      "sha256": "23d5bfc54e27f86b2bfa43ef80d2bd920443d356999e13079488a292d94a98bf"
+    },
+    {
+      "path": "vendor/v3/data/calibration/rbx_reference.png",
+      "size": 309178,
+      "sha256": "5e34746dac396182bfd9fa8383bb7dc45b3452a0a0ce095e27ceced190595c72"
+    },
+    {
+      "path": "vendor/v3/data/calibration/rbx_visia_pair1_profile.json",
+      "size": 4139,
+      "sha256": "149cf3084b05b369a2f3b2be492e009dbec24c8d20929ebda765ee6a494e32d9"
+    },
+    {
+      "path": "vendor/v3/data/raw_images/111.png",
+      "size": 182527,
+      "sha256": "b7263e379367c285a51a4fe367e1dfda4e956f4f2378b69e61297c815975ed2a"
+    },
+    {
+      "path": "vendor/v3/data/raw_images/22.png",
+      "size": 145664,
+      "sha256": "4bdb4427cd6f00f4a57b331e3e6fda7c3c7dec1d08a9477ae5e8bcb7dbea4f7e"
+    },
+    {
+      "path": "vendor/v3/data/raw_images/333.png",
+      "size": 132695,
+      "sha256": "fea7577e9aef9151b7f6f6c78902632766075a28fabaf2d9375d94ebb86ea59b"
+    },
+    {
+      "path": "vendor/v3/data/raw_images/侧脸1.png",
+      "size": 398696,
+      "sha256": "5e269e5738b2bc07e9e5989d0fecd562bf798a6fb1510a7febb58e11e3a4612d"
+    },
+    {
+      "path": "vendor/v3/data/raw_images/侧脸2.png",
+      "size": 365919,
+      "sha256": "82582db4cc88c651bdaf8ede1539454d8f842d949363fa5472d57c6b9306bfec"
+    },
+    {
+      "path": "vendor/v3/data/raw_images/正脸.png",
+      "size": 427397,
+      "sha256": "ae2fe8398033ebb4f2d4f345204f6f9d7f81fdf7ff8c5022a9b82b28e647ccce"
+    },
+    {
+      "path": "vendor/v3/data/raw_images/测试.png",
+      "size": 185528,
+      "sha256": "35f3fa8f97628c430b979b4a8ebf818c564f36719a75e751aaca8869297fc290"
+    },
+    {
+      "path": "vendor/v3/data/reference.jpg",
+      "size": 185528,
+      "sha256": "35f3fa8f97628c430b979b4a8ebf818c564f36719a75e751aaca8869297fc290"
+    },
+    {
+      "path": "vendor/v3/data/test_images/111.png",
+      "size": 182527,
+      "sha256": "b7263e379367c285a51a4fe367e1dfda4e956f4f2378b69e61297c815975ed2a"
+    },
+    {
+      "path": "vendor/v3/data/test_images/22.png",
+      "size": 145664,
+      "sha256": "4bdb4427cd6f00f4a57b331e3e6fda7c3c7dec1d08a9477ae5e8bcb7dbea4f7e"
+    },
+    {
+      "path": "vendor/v3/data/test_images/visia示例图1.png",
+      "size": 451729,
+      "sha256": "0c524e7a34682c17a754d3e1e432cb3ca02da77fba012804403134b6b9a54e6a"
+    },
+    {
+      "path": "vendor/v3/data/test_images/visia示例图2.png",
+      "size": 399221,
+      "sha256": "7715de21c03637bded088fe46e3af970795e740e8f6fc32c820c97d945d56918"
+    },
+    {
+      "path": "vendor/v3/data/test_images/visia示例图3.png",
+      "size": 539851,
+      "sha256": "6c102a668dec73b237ea00f806f2af0f95b5db1cd6342037a4a76aa9702d89b9"
+    },
+    {
+      "path": "vendor/v3/data/test_images/侧脸1.png",
+      "size": 398696,
+      "sha256": "5e269e5738b2bc07e9e5989d0fecd562bf798a6fb1510a7febb58e11e3a4612d"
+    },
+    {
+      "path": "vendor/v3/data/test_images/侧脸2.png",
+      "size": 365919,
+      "sha256": "82582db4cc88c651bdaf8ede1539454d8f842d949363fa5472d57c6b9306bfec"
+    },
+    {
+      "path": "vendor/v3/data/test_images/正脸.png",
+      "size": 427397,
+      "sha256": "ae2fe8398033ebb4f2d4f345204f6f9d7f81fdf7ff8c5022a9b82b28e647ccce"
+    },
+    {
+      "path": "vendor/v3/data/test_images/测试.png",
+      "size": 185528,
+      "sha256": "35f3fa8f97628c430b979b4a8ebf818c564f36719a75e751aaca8869297fc290"
+    },
+    {
+      "path": "vendor/v3/data/wrinkle/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "vendor/v3/data/wrinkle/test_images/1000058_1.jpg",
+      "size": 234153,
+      "sha256": "c5bafa2b3d2bbc1351537b293876ec70483229080f69a4ebe82434c9a3038eaf"
+    },
+    {
+      "path": "vendor/v3/models/face_landmarker.task",
+      "size": 3758596,
+      "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff"
+    },
+    {
+      "path": "vendor/v3/models/face_parsing_resnet18.onnx",
+      "size": 53205364,
+      "sha256": "0d9bd318e46987c3bdbfacae9e2c0f461cae1c6ac6ea6d43bbe541a91727e33f"
+    },
+    {
+      "path": "vendor/v3/models/selfie_multiclass_256x256.tflite",
+      "size": 16371837,
+      "sha256": "c6748b1253a99067ef71f7e26ca71096cd449baefa8f101900ea23016507e0e0"
+    },
+    {
+      "path": "vendor/v3/models/selfie_segmenter.tflite",
+      "size": 249537,
+      "sha256": "191ac9529ae506ee0beefa6b2c945a172dab9d07d1e802a290a4e4038226658b"
+    },
+    {
+      "path": "vendor/v3/run.py",
+      "size": 66565,
+      "sha256": "c91d3cfa01f8537bad24039548b7d39a378d868cb48f476db286611fc136e458"
+    },
+    {
+      "path": "vendor/v3/services/README.md",
+      "size": 505,
+      "sha256": "f09d19935e08c8c26ea54059ca77400a7fd2ff0c1a63e2ff135dac0da0132743"
+    },
+    {
+      "path": "vendor/v3/src/__init__.py",
+      "size": 52,
+      "sha256": "b60b157cf1835937408f11dbbceec30259485b0df2fc8929b93deb9808e46c8c"
+    },
+    {
+      "path": "vendor/v3/src/acne/__init__.py",
+      "size": 39,
+      "sha256": "7371e999c0389bfb6c2bd27ec5791fe4d20afbca5acac6d403bc3432bceac29c"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_candidate_generator.py",
+      "size": 44099,
+      "sha256": "60a9a905172d2e3073af9c0f561f5712d87b0e537fbf67845d45a0e0d7c68efc"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_detector.py",
+      "size": 4727,
+      "sha256": "f7e4cb20a10581df1e5f0bfdf95c4fc5751accbc85332fdb3bf589208b419a34"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/.flake8",
+      "size": 110,
+      "sha256": "efebb6ab5e71c33c85ffa251d553228c59a5a33d16f652afa32b6ab87b785bab"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/.gitignore",
+      "size": 3078,
+      "sha256": "5e2c671ddc9e301dafc241ad1a7c07aa85a91fef560a17721b41977b9eddba17"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/.pre-commit-config.yaml",
+      "size": 449,
+      "sha256": "37117d1db8b4fa5888a1a379784e200543881281c0f36678746dcecd9714f1a5"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/LICENSE",
+      "size": 1065,
+      "sha256": "df045dcb3ed0e4eb0adf1f1f077d9f88fc11a1b58f1410ca0f72a6e66d2d64ef"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/README.md",
+      "size": 3184,
+      "sha256": "70bba9ead5a744e896e34fd8a97c4af706eb928eaae7a36e3f3a03154454acab"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/black.toml",
+      "size": 540,
+      "sha256": "8e12269adfb133dc8cd8732a6f97b25abaab30217d09ae8a79d25a0ab7f36ae5"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/configs/config.yaml",
+      "size": 135,
+      "sha256": "a5cf2ed519141af05c20825f64791e2e8f345993f4143f1425f2f30fcf927d32"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/configs/optimizers/adamw.yaml",
+      "size": 49,
+      "sha256": "ba1e2ccc57d0a1c982dd2f66c25d2acbe71c467dfb4111db4790373950484448"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/configs/optimizers/sgd.yaml",
+      "size": 110,
+      "sha256": "d02b57c2aeadfa3c9c9b3143cfeebe1a90107b6d14d900e32eecf52408ddb9d2"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/configs/path/path_data.yaml",
+      "size": 161,
+      "sha256": "8332e3956797242d2145f4dfc39c3b568e72a98111052f4ee9f95afd4f66f868"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/configs/predict/default.yaml",
+      "size": 378,
+      "sha256": "d1a14e7939d0a408a6f909bc3c687abb824bd99a1421f96b678bd464c5acc26d"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/configs/scheduler/cos_ann_warm_restarts.yaml",
+      "size": 104,
+      "sha256": "a2590a7bcf1676476ca02c826a79f76c35f261a9646b273534b5ad9504d293b6"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/configs/scheduler/cosine_annealing_lr.yaml",
+      "size": 96,
+      "sha256": "9874fee0da16abf13f110129cccf7012d6eb58de5ace3b1a62fa2345a60dbbad"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/configs/scheduler/step_lr.yaml",
+      "size": 89,
+      "sha256": "58911141de6e55e91b32053c389a7e85a6884f739e893f4ac3b48cb4c02ea6d9"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/configs/train_val_params/params.yaml",
+      "size": 160,
+      "sha256": "f4e109ec4dcf35a2a037cf3dd4b673cb77653daac9aca59ba23523e3e7f619a4"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/configs/trainer/gpu_train.yaml",
+      "size": 63,
+      "sha256": "2178e8b2cd5fb82b5c257b4e85b999df4b5248d0f4c271a482a3f3f99b6c3a86"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/dataset/__init__.py",
+      "size": 56,
+      "sha256": "08d8a07269210f00df211b178c9ca103eacf15de586d7b0d2ee9f20b1907684d"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/dataset/acne_data_module.py",
+      "size": 1461,
+      "sha256": "3de76b37fb447cf3427306def90468efcb9bdb7e3b0f93bd76137f950ff817a2"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/dataset/acne_dataset.py",
+      "size": 2272,
+      "sha256": "f202c887f865fa1a082735da30efba403228f66307d560bb4d98da894dcd8df4"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/infer_json.py",
+      "size": 2863,
+      "sha256": "d1942339517472b926ab6736d433a09d89f7368237006ee2fbdfe12b5f954dc7"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/model/__init__.py",
+      "size": 60,
+      "sha256": "a9dc1d651cf71ad57c974d57d09b1711bfbfd333a224b6e5ac236ec4112baa95"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/model/base_model.py",
+      "size": 5294,
+      "sha256": "20a8eb1350776ec49c3063893e1388f9eff60d718c254da3fb1c803d9eb88d8d"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/model/model_ld_smoothing.py",
+      "size": 4129,
+      "sha256": "41d1b1267fcb7783c36d45d89d624e7f0badb3f611d6051c61963748f2c1fed5"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/model/model_ldl.py",
+      "size": 2826,
+      "sha256": "43d1d1fb957f4b5cd60fbfa5b21941cbac8c833ff923add29f4acd1e1097c6ef"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/model/resnet50.py",
+      "size": 8631,
+      "sha256": "0b8ef642e16ed827d57991694380ecad8cfc111c96f8302cd7269d1634493ca6"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/predict.py",
+      "size": 2302,
+      "sha256": "f6cc945a0c19df6347775d6e1613f979748ac4e7ee66e151f6b38f48205e7a2d"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/predict_on_img.py",
+      "size": 1730,
+      "sha256": "d4b1a71885cb7bee9327bcd9ab4c7c6bef809a3decc11e8df5367fa9e7edcd0c"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/requirements.txt",
+      "size": 143,
+      "sha256": "b4a0099d0e791290407fc4afe3621a0c74d36450e0009ac35264973060d0d91c"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/train.py",
+      "size": 1625,
+      "sha256": "db2a71b31d9ee7d099da5edfb57addeaf222000d2484c2d8a75d8bb9bb02dd3a"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/transforms/__init__.py",
+      "size": 37,
+      "sha256": "c4ea1352765124bcd924f055e0c6256cb22531a464c7cf670367969c49baa594"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/transforms/acne_transforms.py",
+      "size": 1112,
+      "sha256": "260a10bc2752447e5f1ecfc121147b06a755c3c1d6b3285ed7a97cfb77ba30f3"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/utils/__init__.py",
+      "size": 39,
+      "sha256": "68f3f6a939f22892e1cfefe5954d203117cdc6f91889310dadd0d8a618a1b0f1"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/utils/genLD.py",
+      "size": 633,
+      "sha256": "22d612569e2aa54c29ff884ea650c390d5376d71a9d5c61a048ab3f74ccfae20"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/utils/smooth_ldl.py",
+      "size": 2328,
+      "sha256": "72c220aab56cf27568d46d0a0d7bc69135485d875eb4ecb4f5d0bfe35ff9581b"
+    },
+    {
+      "path": "vendor/v3/src/acne/acne_lds_vendor/utils/utils.py",
+      "size": 1380,
+      "sha256": "f4dfac4acb3797b4f3e2d6e9b4d028f5f387f0f49513b881ca9c55b57744da54"
+    },
+    {
+      "path": "vendor/v3/src/acne/algorithms/__init__.py",
+      "size": 54,
+      "sha256": "1a681619a114a10ad75987dd657a9ad66ca0ec1b688ffd9e760232f8b37ac14f"
+    },
+    {
+      "path": "vendor/v3/src/acne/algorithms/acne_analysis.py",
+      "size": 24112,
+      "sha256": "9b246f1aa32f5b72a136b541ec2f0b3dbc5459dacd2b3a452f45dcd1f1e9c5b8"
+    },
+    {
+      "path": "vendor/v3/src/acne/artifact_policy.py",
+      "size": 3315,
+      "sha256": "734da616b7e2b3f4117325aafb61905a138439436053c9b6d8ff6c15ec159143"
+    },
+    {
+      "path": "vendor/v3/src/acne/clinical_quantification.py",
+      "size": 13499,
+      "sha256": "428265eda778a42c2bf2517d8b6fc762aed8cf56a3d7c2c9f1a39c0e5de681c4"
+    },
+    {
+      "path": "vendor/v3/src/acne/core/__init__.py",
+      "size": 57,
+      "sha256": "2a7710482b78245009918de4ed787ded3e0e7e832b1cb1191033e960df694354"
+    },
+    {
+      "path": "vendor/v3/src/acne/core/config.py",
+      "size": 1916,
+      "sha256": "17e3427cb3756c01416eae607708b9e901abf6937b2a694ca49e49a49f4935bc"
+    },
+    {
+      "path": "vendor/v3/src/acne/detector_postprocess.py",
+      "size": 11088,
+      "sha256": "7ac08910f9e76686e5c9f36c300c112c65dd04a7e152986d4f1858777f9a84f4"
+    },
+    {
+      "path": "vendor/v3/src/acne/display_outputs.py",
+      "size": 14234,
+      "sha256": "03a15fcfdb52785f73294dbdf097b560dd2845c382ff4d6ff217dc8628710c2a"
+    },
+    {
+      "path": "vendor/v3/src/acne/face_preprocess.py",
+      "size": 40086,
+      "sha256": "7be08314749440cc18431ea03b562e8faeffd9968aa39ff910f2dcdb242a08e4"
+    },
+    {
+      "path": "vendor/v3/src/acne/face_regions.py",
+      "size": 3192,
+      "sha256": "520dcd4b631fd918b4e2122fc21748f4871053490c8ee37ff39284b623c1ff66"
+    },
+    {
+      "path": "vendor/v3/src/acne/gpu_runtime.py",
+      "size": 1699,
+      "sha256": "02bef6f21b0b75284758184c94c40989cff0637897d8d221fbdd6b5cdc71198b"
+    },
+    {
+      "path": "vendor/v3/src/acne/grading_adapter.py",
+      "size": 4422,
+      "sha256": "e87645629b9e3159f40d04382e1c35c6ffba80415512bb2515d9eb900b3b396a"
+    },
+    {
+      "path": "vendor/v3/src/acne/image_io.py",
+      "size": 2202,
+      "sha256": "7a834231e4e135493fb7e87546347613b6e429b20f9529b40660bb974d16c6bc"
+    },
+    {
+      "path": "vendor/v3/src/acne/medical_v2_delivery.py",
+      "size": 5359,
+      "sha256": "4f17d4f6b926286c45007a438ae8dabc25be986468f807d4837ed529506226fa"
+    },
+    {
+      "path": "vendor/v3/src/acne/medical_v2_schema.py",
+      "size": 13676,
+      "sha256": "de3204607417cddb5afaeda3c865bd700238a60be2836f089412f53df5666b6e"
+    },
+    {
+      "path": "vendor/v3/src/acne/pipeline.py",
+      "size": 6175,
+      "sha256": "3bab4bdc7a5c9c65c5942fdd1e4409604c70fe65e336f41c7f135de18901e0ab"
+    },
+    {
+      "path": "vendor/v3/src/acne/quality_control.py",
+      "size": 1956,
+      "sha256": "ff6fea8fe8e8cb74271fc6e218ede02775e5d6a712dfe2df83d69466031281f0"
+    },
+    {
+      "path": "vendor/v3/src/acne/quantification_result.py",
+      "size": 2497,
+      "sha256": "005ebb4b1d11f4b0d772f410a55cb480eba3583e80874323c188dd45ce309629"
+    },
+    {
+      "path": "vendor/v3/src/acne/user_detection_report.py",
+      "size": 11529,
+      "sha256": "6ecbea85782902a1936485fef507e9632d6d45c7ce14581b32d52860ff984f2b"
+    },
+    {
+      "path": "vendor/v3/src/acne/version.py",
+      "size": 368,
+      "sha256": "43448bc2f905a17c8d37eebda9ea6d136f77b779de3f19969193e9bda93d0e70"
+    },
+    {
+      "path": "vendor/v3/src/acne/worker.py",
+      "size": 14937,
+      "sha256": "d5b942dbb8ff1abdfab298ae365d29ee93748205d181a7582c0a61397eaf2396"
+    },
+    {
+      "path": "vendor/v3/src/added_algorithms/__init__.py",
+      "size": 86,
+      "sha256": "80b3b99d006b9c4809b468f066b47dfde9aca8efa5be7bef7ba4bc9f65ab4234"
+    },
+    {
+      "path": "vendor/v3/src/added_algorithms/public_metrics.py",
+      "size": 8865,
+      "sha256": "5e601f8b86cf6bb47902c8d2e58ce8bb18e5ed8913a66d5ec8d582e1f9b0afbf"
+    },
+    {
+      "path": "vendor/v3/src/added_algorithms/runner.py",
+      "size": 6764,
+      "sha256": "69cda658bec7932e04a00deb62287ba1534a72c16abec3536638848bacabfec9"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/__init__.py",
+      "size": 541,
+      "sha256": "f95a833ac3d8bbe442b9ced2d891f989751bc067cdce46717d008b13aad3a4fb"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/adapters/__init__.py",
+      "size": 171,
+      "sha256": "728db04d71d2948d7ffecf90330d97876eb2a8d5211eca0daf7ae959ebc074af"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/adapters/acne.py",
+      "size": 13663,
+      "sha256": "54a624a3a9293465e2d56bae03f5bc389d623c1c7d05b9127229c1bd11355a18"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/adapters/dermavision.py",
+      "size": 23391,
+      "sha256": "abd14f97af4046dea4e910261cdeb902678d26e8206a9305511e5a74de257831"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/adapters/wrinkle.py",
+      "size": 17948,
+      "sha256": "6c6ba30ef3afb8053c06a3d41eead93182bf5f7865ceacc2364fcf35fcc724b9"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/aggregator.py",
+      "size": 16712,
+      "sha256": "faf3824fb4866474ed7f8f98c6606314583171f776b7a5b84c78705cbe28429c"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/cli.py",
+      "size": 2119,
+      "sha256": "d67c478f4021c13908e4a9b3ad916683bde73ae34f8e540355fe531803351484"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/clinic_twelve_delivery.py",
+      "size": 3316,
+      "sha256": "26b1b25692c6ab06b97324ec83d79be8e7d96616ba8875dbdca63855177d723d"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/controlled_evidence.py",
+      "size": 15359,
+      "sha256": "e0b92e255956e97a69c6c60a1c93569b72fb21f594e7dc747ce302693ee71666"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/controlled_report_explanations.py",
+      "size": 1692,
+      "sha256": "1e010c97fd0c4c7eaa169124dd3ffae7b4335ddf397909d90b5eb145e410dc39"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/controlled_report_metrics.py",
+      "size": 19542,
+      "sha256": "ac2d71eced8f5ac1121fbac4f2a993ac4f9182e99d521b3344551e01961b2028"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/controlled_report_pigmentation.py",
+      "size": 8303,
+      "sha256": "24d03f1e5473dab294ea260798895f104be811d303bad1f6fb5f1877c05bc510"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/controlled_report_redness.py",
+      "size": 5091,
+      "sha256": "d7ea700b16b709d7dce1ac381a172e076447880cae6f3a44ad416e3c8f7a5731"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/controlled_report_truth.py",
+      "size": 9689,
+      "sha256": "2fe560c40bec60da04d051dbb8f51e1ed6a37e81e9ec19e440814e381d93ee14"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/formal_view.py",
+      "size": 57084,
+      "sha256": "2479146ed658ba77049e95a4b3e3c8ee608d80b017566446c231e78f64253760"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/identity.py",
+      "size": 2299,
+      "sha256": "134a8ad04f7b9be160c2b42b78bcd59add73a5613554ae9fcfcc9c3ded7fd6cd"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/institution_word_features.py",
+      "size": 7272,
+      "sha256": "7386c785085a8158927143bb15211a03ee4e4cb555f8da9126f0d6239a3efb75"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/integration.py",
+      "size": 11740,
+      "sha256": "76181d51c1dbc34ffc5df24e094d34d911747f80b84de9a94aa4099c2821ac6e"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/io_utils.py",
+      "size": 1279,
+      "sha256": "6a7fb0cafb75ec638e5c5a9a479b194b8d5d906b7cc5759ecde63a08c988566b"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/models.py",
+      "size": 3623,
+      "sha256": "497978affbf0395805ad5e8ea8a871f41d5a08c3cd6078a6c1cf6cf5ad985561"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/report.py",
+      "size": 36869,
+      "sha256": "84397fb5b8a6066c86b8542eec4007d5db2b70da3e89d6840f2b768c456ff0d1"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/single_rgb_v012_delivery.py",
+      "size": 20250,
+      "sha256": "3886643c858a4635175215839aa7e74586ab2dddc2dc1defa4f1f955ad19894f"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/twelve_delivery.py",
+      "size": 11421,
+      "sha256": "db57be211a4b9c5504d9c121c503c4a912ea75d7b0f2eade113d1e7f93380dd0"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/twelve_delivery_contract.py",
+      "size": 6237,
+      "sha256": "c1e0e6116d6612adc4180ef1c03ebb5e15431345ad8f347d313ef7c18b0d7a79"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/v012.py",
+      "size": 52567,
+      "sha256": "eddaf16016aeb73a5d561b4b17f5e5a1c7a408b7ee7ddf428088842d88280680"
+    },
+    {
+      "path": "vendor/v3/src/aisia_medical_report/word_scoring.py",
+      "size": 13516,
+      "sha256": "ef5c4cab1b5e88b3641531f6fcd57aa0b7c5052a97e3bd8ae765cd4453eb4714"
+    },
+    {
+      "path": "vendor/v3/src/api_server.py",
+      "size": 3026,
+      "sha256": "ce5c0a525f069462277287640e1c7410136367111fa70d35c05bbbd08296804f"
+    },
+    {
+      "path": "vendor/v3/src/capture_profile.py",
+      "size": 1769,
+      "sha256": "834f10661764a38f3438974b5909e230c01593676f1a0a076c6805a5f02e16fc"
+    },
+    {
+      "path": "vendor/v3/src/consumer_pigment/__init__.py",
+      "size": 54,
+      "sha256": "363e384f795152b748b6eb23a8b003d74adce5f8776bc96e4ffa2f9d5bc58290"
+    },
+    {
+      "path": "vendor/v3/src/consumer_pigment/brown_contrast.py",
+      "size": 1098,
+      "sha256": "cd947191f9683f1a94a86818050cd90d8b47ccb33a89656266441a22f9d83ad2"
+    },
+    {
+      "path": "vendor/v3/src/consumer_pigment/brown_detection_policy.py",
+      "size": 2252,
+      "sha256": "415bf2969485d72bc236d166be8d45b283be0d5227e384504be01dd25b1418e1"
+    },
+    {
+      "path": "vendor/v3/src/consumer_pigment/brown_evidence.py",
+      "size": 3254,
+      "sha256": "b38f0af8d9db68a9ab69b66a5ddd9bd1c7b79a91adbf0406b569c47f2ad75ac7"
+    },
+    {
+      "path": "vendor/v3/src/consumer_pigment/brown_presets.py",
+      "size": 5274,
+      "sha256": "235f99ccf098e6b91b8183b7c79780bd911d3ded4ebf7f3041bc15553ff67346"
+    },
+    {
+      "path": "vendor/v3/src/consumer_pigment/brown_render.py",
+      "size": 1955,
+      "sha256": "c1e576b77265236265af75dd7f43eabf52c4fb33af83327558f9d2ded26bd92e"
+    },
+    {
+      "path": "vendor/v3/src/consumer_pigment/brown_tone.py",
+      "size": 2576,
+      "sha256": "a58a84c1c37165389fe3de07b746e34fad151d331d64b4f4347fb81a9e15e607"
+    },
+    {
+      "path": "vendor/v3/src/consumer_pigment/comparison_export.py",
+      "size": 4694,
+      "sha256": "55fcd4a7073da298531385cb25ac3dd869018b9f33e51707c8ceb9b08e93c94c"
+    },
+    {
+      "path": "vendor/v3/src/consumer_pigment/formal_markers.py",
+      "size": 7396,
+      "sha256": "3cb6b8ddbf33a41c8674da71fd7673b2201dc641b6db2db628872ec73cad0938"
+    },
+    {
+      "path": "vendor/v3/src/consumer_pigment/markers.py",
+      "size": 6966,
+      "sha256": "6efc4796998a2dc7a8fb41b01f2b6fa9b76d4572ed3cd9420a7c34f7fc510eb0"
+    },
+    {
+      "path": "vendor/v3/src/consumer_pigment/purple_presets.py",
+      "size": 5859,
+      "sha256": "0ca522df231e9c4f2b10499368baa352ffe47173aeb9c0b4b13d048632f55ecb"
+    },
+    {
+      "path": "vendor/v3/src/consumer_pigment/purple_render.py",
+      "size": 2129,
+      "sha256": "142da15a03f55f71e5b2fc83d2280820130332941dcf491fcd7f1ec17f57fc1f"
+    },
+    {
+      "path": "vendor/v3/src/consumer_pigment/specular.py",
+      "size": 4079,
+      "sha256": "6823fc339ddf1a778465b9389fb68ceeb54456392d8833391b9fe9ddb5434f4f"
+    },
+    {
+      "path": "vendor/v3/src/core/__init__.py",
+      "size": 58,
+      "sha256": "6846f78bc300525d7e34f698e8ab1538f6e4e26de043cf879c72e9f157e1162f"
+    },
+    {
+      "path": "vendor/v3/src/core/config.py",
+      "size": 1874,
+      "sha256": "e38a056bf79f74a1cc7aa5590d0769356478b23c5822f15aae671e1a787d3526"
+    },
+    {
+      "path": "vendor/v3/src/core/storage.py",
+      "size": 1930,
+      "sha256": "84a65ce83e31ec4ea04bafce221166fbdee2939eafe871696e845cc4bfaa0f91"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/__init__.py",
+      "size": 867,
+      "sha256": "ac3ed3bb2861533dfb011be3cfc009b04f4b89de1cdb1e42e59d71c6c8d46f03"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/atomic_publish.py",
+      "size": 2434,
+      "sha256": "703aca249328db9a747518a048a954176cb7fed0cc7eabc1fd21bd747550e37d"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/capture_manifest.py",
+      "size": 6916,
+      "sha256": "dd6b94bc9ae3ab7d8cadde364f5356978ea4f6b86a728cb4f776a111be9c42b4"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/clinic_provider.py",
+      "size": 16854,
+      "sha256": "be8ce052333302a9033dfe20e5d2170d7ed304788ca9a9d1db295fd599d61b05"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/clinic_visuals.py",
+      "size": 4564,
+      "sha256": "f4e9696a962257b04f81d59b66c0dd13a6dbedf471f1a61b6583c399e67d7529"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/cloud_capture.py",
+      "size": 7922,
+      "sha256": "b5eb63d507820e7cfa752e947dd91e2cabdc2f8ea8eb13bfc13ee0ea6c5b2b68"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/contracts.py",
+      "size": 2755,
+      "sha256": "7fc1bba248ba33658d582fd916deb5c23c5ebbefccd638a8f132efb6a541d088"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/exporter.py",
+      "size": 20452,
+      "sha256": "a60cdd55344b626f9dfc9c94f031f93238ed73d9100c56ab153e5c1a69303faa"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/final_delivery_layout.py",
+      "size": 12544,
+      "sha256": "add8912b381d231f10b0523f95017f9df1eb1c6a945e9e622ea5fc5f2fe950dc"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/instrument_style.py",
+      "size": 5649,
+      "sha256": "3b769e84f0c6498a88344d85310a77455f1f8ea2aeaff7eda4da9f7548bf8921"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/instrument_style_overlay.py",
+      "size": 2514,
+      "sha256": "987432b7fa0b3e80bcf1dd5bb958666dce1e904bb83d2d040af4e310f9388043"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/orchestrator.py",
+      "size": 17432,
+      "sha256": "07046ec6a2d25964a8aaf4e9b6ddeaaa049202484f7f41d3823ed70b6ed80990"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/persistent_cli.py",
+      "size": 4905,
+      "sha256": "ba3fb824786f4dec053fc42ce774f03002c2b054df89c1bab23348feb4a85856"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/persistent_protocol.py",
+      "size": 4778,
+      "sha256": "715eb50f03ad02a38f1424867463a749ce1723e6bc2170aa426070c6b57fb368"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/persistent_runtime.py",
+      "size": 12844,
+      "sha256": "17e1133d245e12fb1338728b98ed535332068ad9b436c975da96b88fbb8927db"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/persistent_slot.py",
+      "size": 7189,
+      "sha256": "802c1d00018ff6b85387b6beaacb6d11390dee13e7999a62c8338dfe84789e0a"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/public_contract.py",
+      "size": 3445,
+      "sha256": "a8446555e85e05a9c17e4f621217703a9ceccc32cd2f7b1e7926f0724c701df1"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/public_metrics.py",
+      "size": 15667,
+      "sha256": "c7fb23bcaccdda4111c03dd6edd55f6a7ec5bd58bda29133977363f031b548ff"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/route_modality_provider.py",
+      "size": 14854,
+      "sha256": "205346d0b112f04ee774ff406bb56b5bee616d8fd167fb5f91d2abc4021ffa65"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/route_plan.py",
+      "size": 8578,
+      "sha256": "fc687f1c507f95db3167cb948160d59c1c6aff4b7138d3c4ca359644ad4399eb"
+    },
+    {
+      "path": "vendor/v3/src/detection_runtime/vascular_provider.py",
+      "size": 4933,
+      "sha256": "667669c14520948766915e9c8c54878f76cc5b992cb03044ae40752e2f345164"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v2/relative_mesh_style_gallery.py",
+      "size": 10968,
+      "sha256": "e921a86f85e8234a705824edd90d15d687d42775671836bb2014307573ecead3"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/__init__.py",
+      "size": 163,
+      "sha256": "f576a26058e459bf5121aebdcb2766e4da707d950bb63ef99d2ce95326dadd96"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/_stage1_anatomical_extent.py",
+      "size": 10236,
+      "sha256": "077e36b2b4408a76164e3ec26a44e067ee1cf97e981f5660ca08bb389bdded46"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/_stage1_appearance.py",
+      "size": 5974,
+      "sha256": "cf58e105990235b0a68fac243a0e8447d7b93173f5f3ab51c71c8673366d8561"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/_stage1_geometry_math.py",
+      "size": 10852,
+      "sha256": "24995f8d6522aa11aa2751265f4b7b1d05f00c3ec991db5a719780e0520dcc76"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/_stage1_glabella_roi.py",
+      "size": 5701,
+      "sha256": "5899dcca65560a53e5687493f90a8c048ef0b16ed8d3ff0bd4a7cba0c482bfea"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/_stage1_groove_measurement.py",
+      "size": 8207,
+      "sha256": "96bf0d09c4956dfc003bc802544a74839305171317617fd5cfae958bb510c6e7"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/_stage1_line_shapes.py",
+      "size": 3282,
+      "sha256": "de5f82983c0411802c0e502ca6415b012a21963a3af15c4d96d302d1f0be1fe6"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/additive_scoring.py",
+      "size": 3721,
+      "sha256": "5e1b6015d5df659b8c8b48b1ce61c2bc6414613d3d8c77dc9ebce9d229a5e461"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/bundle.py",
+      "size": 4775,
+      "sha256": "566fd6a6cf44e022ae7453c224f167630a2a2914621ffa9a4c726a3cc14e5663"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/calibration.py",
+      "size": 3713,
+      "sha256": "b9ee611b43d9813552b132b0e7f3e6b478851ec893bfff6b1c84b4c69672d7b2"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/clinical_scoring.py",
+      "size": 14097,
+      "sha256": "5ed1ac205eb138878785148c9811c97811caa6e793559a4746448694c5d9f218"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/cloud_delivery.py",
+      "size": 1789,
+      "sha256": "71a8de8638eedad20e21dce2de5b5f6e0419a64da8a8779e3a0da03ca622b615"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/common_result_features.py",
+      "size": 10470,
+      "sha256": "bea7f513ec685ead6642e6d078c36e3694c4d4d239c9199a64bc66b4c4cc5f7c"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/compatibility_recipes.py",
+      "size": 5055,
+      "sha256": "d4ba78b155972f7172c7feedb70f63abc13aa29821422d3b63aac8f022e790c1"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/delivery.py",
+      "size": 9870,
+      "sha256": "ce08135a3fefb4e893f28947d048e14a44d061666f31d924d0bbf417a4eba93c"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/evaluation_scope.py",
+      "size": 3213,
+      "sha256": "8406dcdc9fb79bf82c91927d26506bb9a56937b21cb68fee6356d2704792afb9"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/evidence.py",
+      "size": 3246,
+      "sha256": "cc1312274035e932e27b88d04ebc257ba5f43703135c124b08275f5a0309b418"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/figures.py",
+      "size": 3111,
+      "sha256": "3a7f12b8be64b80cc071fbf6620dd8821a99decefffa3a8937ae84516b3b527c"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/formal_text.py",
+      "size": 2375,
+      "sha256": "e69b78f8f6520702ea281d9f42ce7bb5a04ac300c6f58611697f0f6a1016347a"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/geometry_regions.py",
+      "size": 4326,
+      "sha256": "2e2addc9f3f8a890b6ebc40cbbda1d997ed36166e70811367b66fe3264b2e0b8"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/historical_metrics.py",
+      "size": 11735,
+      "sha256": "4bfcbacf11ef940f7a1637150ac2958bd6fbe59016b870e517172df6e0a2175c"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/historical_proxy_view.py",
+      "size": 1602,
+      "sha256": "5425dddc1299c540148369984ffaf3acc41de07328aa8d0a2150dddd2dded61b"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/history.py",
+      "size": 2415,
+      "sha256": "9f3963f89cc6a10568150914bf5171f9796e5e92ef249ff2dc9c205b7d224fe9"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/large_pore_estimation.py",
+      "size": 634,
+      "sha256": "613839f601193483197cf68686541c28672a5d02d6ea5cb020ab590cc6352bb9"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/legacy_state_compatibility.py",
+      "size": 3186,
+      "sha256": "1bd4a726ec8acdcece7d469a2342b33100e00da06abbc030ff9a6a813eea88d5"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/legacy_uv_statistics.py",
+      "size": 720,
+      "sha256": "9a84faaabfd6452b59ae1d4ce5de29f3e83bd32e86d4a1bf9ebf5bfd0d32afb3"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/measured_distribution.py",
+      "size": 5488,
+      "sha256": "db621e49071cea8a30bda9f6605963e1f99182e7f726fa11dc8b53ce270e3dae"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/measurements.py",
+      "size": 8273,
+      "sha256": "924e378e03d4fc8fe2a48446c6970432378d57d05be69149c7d420a01eeb85db"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/merged_reference.py",
+      "size": 2091,
+      "sha256": "06da347936ab9f3c61968faebadeb1c3db443cd900da641d8f193ef67685f319"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/named_roi_proxy.py",
+      "size": 10142,
+      "sha256": "8d48d2034dd908e9957b74dc218ca25d7df9ae497743a7895c1691db6a5e095b"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/native_measurement_provenance.py",
+      "size": 1382,
+      "sha256": "ae5697ea1e7dc49a4279c5842f4b21f58513807d07510ea8a45f2e2794973cd4"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/paired_calibration.py",
+      "size": 2321,
+      "sha256": "9a58dae158cbb6a81039d4f3af9570adb8105b04546a501c4b250560d7c90f03"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/paired_profile_scoring.py",
+      "size": 2831,
+      "sha256": "06dbfa7319dfaf363b3100a4fdda1445df3179fc1f90d534c9b214df9520afaf"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/pdf_report.py",
+      "size": 15016,
+      "sha256": "29cbead40e66e8cf87e868270c23175157dfb7ec079dfc6e950237989538e25d"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/phenotypes.py",
+      "size": 8704,
+      "sha256": "2161505bf7dd91b32baca5518d5af02d0776646d23db2031fa0a262aed16a5d6"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/pigment_distribution.py",
+      "size": 2727,
+      "sha256": "63f2ce1c1d6b0fc2be473e0b7af8eadc5bea6d6aac1959e871939f9948188ddb"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/protected_scoring.py",
+      "size": 9448,
+      "sha256": "fe41fa80027d8cb140f31ad68539bc0ff489985366bcc938aa5febd8c3036e8c"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/reference_contracts.py",
+      "size": 3271,
+      "sha256": "82f4072cb989549eade7176edce4708fe1d227ba2a881d22209b609a9e8a79ff"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/regions.py",
+      "size": 3335,
+      "sha256": "202db509d07d7b19ecac48acaa2e22a7fcf3bf225e0b13ad761d8ed6a8bedbad"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/registry.py",
+      "size": 7491,
+      "sha256": "4191105a5705f792070df77273477489cccb0a3eb24f97935fe6a9691a498488"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/report_model.py",
+      "size": 3741,
+      "sha256": "1e2b68092819a7e7280c10e0293d684e8e83eb543a87fba23afdd93220b157b2"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/sample_collection_index.py",
+      "size": 9810,
+      "sha256": "10876b4b66fe6ae3cea514372bc184770f2f1a9878673e661d813a56ae5c1c70"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/saved_gloss_regions.py",
+      "size": 1288,
+      "sha256": "3365becd814a41d5ba2f32348895755ad1eb60f7de422f9d72e3b8217fe03b54"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/score_availability.py",
+      "size": 2477,
+      "sha256": "a0faa7130218a280573d9800e1c40a60b9a89bf36f45d72f9358713d417cbc26"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/scoring.py",
+      "size": 3342,
+      "sha256": "c3396bdceb2c3fe20b0769309c93e4ee771ae385bfc11fae5ad3144d666a34c7"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/scoring_domains.py",
+      "size": 1127,
+      "sha256": "62e33600d3131696da4846a83a0e077fcecd17e91d351c3e0223b5ef55d8bcbc"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/severity_guard.py",
+      "size": 4399,
+      "sha256": "30ffcc4d7dfd9d9e64a46dff95f9a5a815bddc5326a565e9c7a4c40a78c2f0ee"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_config.py",
+      "size": 2719,
+      "sha256": "15f15a11a270e8f6298520930229e1860c8c0bb838a9f18633817cb1ab9c675f"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_delivery.py",
+      "size": 2686,
+      "sha256": "178d9376d571c34987aacab5cb68348a84cf2279fd45b5681712698dbc68a78c"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_geometry.py",
+      "size": 23837,
+      "sha256": "b378a2751b490978f54cfb12f16d855e04e91dbe7d2450a518c5ce3512c5fdae"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_guard.py",
+      "size": 21844,
+      "sha256": "3bada94da8f4f519096b7702631bebddc21a242f89ceb0b905d71b52c6dcc537"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_identity.py",
+      "size": 680,
+      "sha256": "dc2a2f3004ab2e1add6f085a577e0c2bf05caacc7e1fe21365199e2d93603447"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_lines.py",
+      "size": 12302,
+      "sha256": "19c32845c088efbfa92db23020ca752d1781693315a8eabb93dab667ee434379"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_pipeline.py",
+      "size": 6248,
+      "sha256": "955066f19fbe755b36867a018c91fd38eb939970964cb3bb3103104a8e229715"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_reference.py",
+      "size": 8455,
+      "sha256": "ccdded397fbfc5f66da4fe8b78158ee0e4a95b9761b3210358fc18d263b1ffef"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_report_state.py",
+      "size": 1587,
+      "sha256": "95fef1cb7e1081d7aa65cf3f6c6c4fc7f77413863b4f2fde9402714d20e8967a"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_resume.py",
+      "size": 5932,
+      "sha256": "70b0935496611fa500a39302a1b70f0537941787121e86350cc076f244aec87c"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_retry.py",
+      "size": 907,
+      "sha256": "ed32a2174b5b0cd3f4fec3e51d905128573b8f9a0493333735ef614d9c5fd3aa"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_runtime.py",
+      "size": 1277,
+      "sha256": "e22b953de556efd4eb94f062a6899c31d4ca99979be16df6ec01f24548d52c5e"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_schema.py",
+      "size": 3624,
+      "sha256": "a56c21ffd2c467fe902421a80a2a8909c1d8b46d465ceec48bb01715fd43a71f"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_scoring.py",
+      "size": 16321,
+      "sha256": "dfa859e6d6b82cafc9e13a8795226e7633bb935e28c485ff37f0e1ceb8f6edbd"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_storage.py",
+      "size": 9302,
+      "sha256": "e40208ce520b9538676edc204c892588d3a08ae196b987da119d2e4fee48b096"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_two_d.py",
+      "size": 20048,
+      "sha256": "58d604228f80c8dc8cc66b3d28d8108d0aa66a6a3db0c84bf20779c4fc2e2b0e"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_two_d_phenotypes.py",
+      "size": 8439,
+      "sha256": "d75db8698a2db17f1b61a10a6365a257771dd661ae6c5b40caa9c5f6f500d169"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_word.py",
+      "size": 24468,
+      "sha256": "1e76716a7f0e6bce37a39bbe114b43414f94e2bfb488374d38ee510ab61e50cb"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage1_zero_state.py",
+      "size": 1618,
+      "sha256": "92593c65a78ad33025f997c17a66e351bffd289d49fc4a11a1cc40eae1fed54c"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage2_direct_scores.py",
+      "size": 17672,
+      "sha256": "6ffc16a08c19dbe373a76986991b24451d3feb2808f917661c437d22d7bc8f2b"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage2_execution_gate.py",
+      "size": 5502,
+      "sha256": "59bcdb7405a3f47483ab251a9c828526cb34fc929ee55dd4eac72acc80c0564b"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage2_measurement_support.py",
+      "size": 5212,
+      "sha256": "3ba1e3f27e2341eb3039a534c2ba346069c0b1058c2164361bf9dadd3aab6fd4"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage2_parameter_artifact.py",
+      "size": 11024,
+      "sha256": "cb11ac6241863fc757869e21f99630acf87f077e6253d685d4cb8894496abf8f"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage2_parameter_fit.py",
+      "size": 11587,
+      "sha256": "a38e45801a57f1ad6e933d1103121bdf8aaa38d9761fb446202e8351fc0d0d39"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage2_parameter_replay.py",
+      "size": 14236,
+      "sha256": "c169314c678600c2986e64af3a7b122459082f2f769a0bcc1305ef5234dfb915"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage2_parameter_validation.py",
+      "size": 6673,
+      "sha256": "81f36d4d069dd4828c842031418701806f9813210fdb1efe783a77969af3376d"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage2_reference.py",
+      "size": 35232,
+      "sha256": "8c9e97ea83890e4a7328ecfee2e8a6a644a70344e6c8a0f0880e460754bb0953"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage2_reference_loader.py",
+      "size": 5856,
+      "sha256": "d43a3ead824829f858ba7d7f4508b7635186beb44d9dee2cd0405e7d287b593d"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/stage2_roi_repair.py",
+      "size": 11064,
+      "sha256": "a9a48627d14aba8756ff9e504acd505080e1d5a2e6cccfdc720f88a80d601175"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/v2_saved_replay.py",
+      "size": 4642,
+      "sha256": "603ebc1483b4c9dcdb621bfa21ea3f14516f056b4ab3d380f740272c48d89d25"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/word_delivery.py",
+      "size": 12101,
+      "sha256": "7a4fbbfb386fcbf0118f7e50e40ea30d48ad721adcd93e938c1fbb25334c9ba4"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/word_images.py",
+      "size": 11617,
+      "sha256": "f39759b29c870ea1f93f3d037219087e44bef8a2bf299407983a3659125a0531"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/word_narratives.py",
+      "size": 2633,
+      "sha256": "18a0c6f2cd305a40ac0d085ca9906b2104099e42a80546c515c024e2356d97ea"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/word_package.py",
+      "size": 3535,
+      "sha256": "ea219acbe44331b3f3516921e600723e19a27b4165a7008f75cd9bf561756165"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/word_phrase_bindings.py",
+      "size": 4057,
+      "sha256": "3c1f2a12a4a261276439b819a4e36709269799c416d9c0268acc404c308a654c"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/word_public_labels.py",
+      "size": 884,
+      "sha256": "c90acad35b386832411b64754128395bafaa127be698e8d528dc643c8a46ff6a"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/word_report.py",
+      "size": 7226,
+      "sha256": "e22fb32017a569bf5534a046ddd8fbf368c46fc26aea9b3b1919a8bd560aa99f"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/word_slots.py",
+      "size": 5326,
+      "sha256": "ed868e7527d8afff607a2d7c998c8a9e345a47b7d41732129184ad910fa89900"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/word_source_report.py",
+      "size": 13644,
+      "sha256": "c1ff710e3f3c06aff747165516e92da3945917a3510e9fa125089fce06a38379"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/word_tables.py",
+      "size": 18331,
+      "sha256": "9ac922955cfcbe26a758b4a7054ba390b5069a48d630a10c975e22deb7255fcf"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/word_text.py",
+      "size": 10020,
+      "sha256": "4e2dae19c8f15947fe585959497db1fc9c680b34ab25abba31e9560122dac118"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/wrinkle_frames.py",
+      "size": 2395,
+      "sha256": "20783396365dba5a4cc2334f115190c1e5bd79ad91bda3f02a7add8289dbdc2f"
+    },
+    {
+      "path": "vendor/v3/src/doctor_v3/wrinkle_metrics.py",
+      "size": 2531,
+      "sha256": "7160fa65cd29c05c7d2d02f4db3edc95c729498ffc8422154220e48194ffb0ee"
+    },
+    {
+      "path": "vendor/v3/src/engines/__init__.py",
+      "size": 25,
+      "sha256": "b5a26176b5d710162ede06061dfb907d36abf26c19e6581cd0b2afa9741371d4"
+    },
+    {
+      "path": "vendor/v3/src/engines/brown_engine.py",
+      "size": 40749,
+      "sha256": "e2102a9fc05bee54c6b33df415f3ae76b551168c016cc419ec85de305e259eca"
+    },
+    {
+      "path": "vendor/v3/src/engines/clinic_fluorescence_porphyrin_engine.py",
+      "size": 25648,
+      "sha256": "fb59a1fbc81972d0da1162a289c3b32591409c42c91ecd568107f306e62d9e48"
+    },
+    {
+      "path": "vendor/v3/src/engines/clinic_vascular_structure_engine.py",
+      "size": 34588,
+      "sha256": "a47762396d6135c1bdb6e38b3219928efa24bfb60bbf335941bbb35bf4cf02ea"
+    },
+    {
+      "path": "vendor/v3/src/engines/fluorescence_porphyrin_engine.py",
+      "size": 13780,
+      "sha256": "81498d08a1f981807389901a405c469a6fd17cb2b0d994f0a321c4190a1dd11c"
+    },
+    {
+      "path": "vendor/v3/src/engines/pigmentation_fusion_engine.py",
+      "size": 5651,
+      "sha256": "6c5ab82ac32cfb2559a1447c25fda23e68aad335f04f7c7cdd255d563402e20f"
+    },
+    {
+      "path": "vendor/v3/src/engines/pores_engine.py",
+      "size": 18041,
+      "sha256": "280cfc58f17a44c2c37163dbcbacd8cce7d94b28bd0ff06b791243cf15134dc8"
+    },
+    {
+      "path": "vendor/v3/src/engines/porphyrin_engine.py",
+      "size": 30525,
+      "sha256": "663308413386f150aef26f58f8904e4cd26bb61c44ab2e6a08e66aaf02732ef9"
+    },
+    {
+      "path": "vendor/v3/src/engines/purple_analysis_engine.py",
+      "size": 71814,
+      "sha256": "88f854a084c4505c83311b529ee3790fa67da64b74fd968aa88bd8f5acdf6563"
+    },
+    {
+      "path": "vendor/v3/src/engines/purple_base_renderer.py",
+      "size": 17668,
+      "sha256": "71845b1264ea5617a466b462ac0203ab887ec8cf64ebdb3d600106573325b518"
+    },
+    {
+      "path": "vendor/v3/src/engines/rbx_engine.py",
+      "size": 125099,
+      "sha256": "6047c7a262165ddf3dfbae5530e106178ea3320f894d7bd4646ce3a497bfdf7d"
+    },
+    {
+      "path": "vendor/v3/src/engines/relative_face_geometry.py",
+      "size": 6285,
+      "sha256": "fb48b4f4f102f22c6b6411204c2f8f5b6c0a21177eaca63327b79c2f791b0c53"
+    },
+    {
+      "path": "vendor/v3/src/engines/rgb_proxy_fluorescence_porphyrin_engine.py",
+      "size": 1049,
+      "sha256": "17afa44def528eaaf6382a688203b4e06a2fe5cb3db047256a6c769cabbf4043"
+    },
+    {
+      "path": "vendor/v3/src/engines/spots_engine.py",
+      "size": 148874,
+      "sha256": "ea1e119dec996d72ba642d118d7ec4b0dc61b1748b67f5880cdcda3fc9d8ae12"
+    },
+    {
+      "path": "vendor/v3/src/engines/surface_gloss_engine.py",
+      "size": 60415,
+      "sha256": "b14a1a1f34d017149b22bc4a6646c1bb33ddbc6e5886904c9c98be5776c369b0"
+    },
+    {
+      "path": "vendor/v3/src/engines/texture_engine.py",
+      "size": 22133,
+      "sha256": "2028c94732ba95691a14a0f308d88a67987f4e9ec39497fcfd231b5d375b0b4e"
+    },
+    {
+      "path": "vendor/v3/src/engines/uv365_spots_engine.py",
+      "size": 5808,
+      "sha256": "40fb17ee756520aa7222bddc4825a0effc0ae7a60c2341fae5153b495a21a1ad"
+    },
+    {
+      "path": "vendor/v3/src/engines/uv_spots_engine.py",
+      "size": 14583,
+      "sha256": "c8a1244142799ba4ab1c9cd651c7c01dfae89ad5b629cd4a9c87621037f006f4"
+    },
+    {
+      "path": "vendor/v3/src/engines/vascular_structure_engine.py",
+      "size": 37016,
+      "sha256": "f30e88fa973d80c80371bf1e4842e95fd8f8cd1702e1af41f931de7b0094bc07"
+    },
+    {
+      "path": "vendor/v3/src/engines/vendor_skin_overlay.py",
+      "size": 2894,
+      "sha256": "d9942bd6d907100442d717bad01d35136405f00d2ecd5269b25d69d9c132b3ae"
+    },
+    {
+      "path": "vendor/v3/src/engines/vendor_skin_style.py",
+      "size": 12450,
+      "sha256": "7ecf432096d4aee93971e5e96d39933b4f8f555819b50d142207d432c1ac636e"
+    },
+    {
+      "path": "vendor/v3/src/engines/visia_regions.py",
+      "size": 36094,
+      "sha256": "57c3ba2c9f8f93e32429076a9b2a6ad2eedcd37f7039e5c67bc923084c240b4b"
+    },
+    {
+      "path": "vendor/v3/src/engines/visia_unified_contour.py",
+      "size": 20274,
+      "sha256": "257fcc35c5f357fdd1e8180fe681b60ceb67694310af2a79c96167b84abbc113"
+    },
+    {
+      "path": "vendor/v3/src/engines/wrinkles_engine.py",
+      "size": 9915,
+      "sha256": "fe0e31bdab3c4d66f2692d7575209a1a36a1099e3e3fc763751f517d444f594d"
+    },
+    {
+      "path": "vendor/v3/src/medical_v2_delivery.py",
+      "size": 12752,
+      "sha256": "28cd9eb01325360b0d4fa1a19fd681ae1c265f1f7b88ecdd77983db3753c9685"
+    },
+    {
+      "path": "vendor/v3/src/medical_v2_schema.py",
+      "size": 19368,
+      "sha256": "f5825010df3c9420666dc64f44d84b2dbf83b813c00732dd0deaf7ed96898173"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/__init__.py",
+      "size": 141,
+      "sha256": "f537b1e7418c0b48ae04eee2cc8d3ffa83b1bf563a3f37631f2cc9a12afadc82"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/batch_runtime/__init__.py",
+      "size": 81,
+      "sha256": "641b060b59cd5b3c618602449bcb53aa7057a22807a615c12510da05e09d94e6"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/batch_runtime/claims.py",
+      "size": 4896,
+      "sha256": "e63ec788cb9ed033e8149698c2c7c76dc5f5160c3aad246d474a12b9cfc9bbdb"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/batch_runtime/identifiers.py",
+      "size": 623,
+      "sha256": "5bbb06272aa37b461e912bb0133d2144be1aae703d39f1172063629d926597c8"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/batch_runtime/quality_review.py",
+      "size": 3132,
+      "sha256": "58a8e64f43f0a0fc50d275c1468216fbd405df84906b9ab1b65801fcd9183820"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/batch_runtime/state_store.py",
+      "size": 8393,
+      "sha256": "a15fe057282ae56392b1a2dac5c433450506b22fb042b3c6c7cb64626b2dc3f7"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/batch_runtime/summary.py",
+      "size": 4617,
+      "sha256": "5b24029576acf9f7493a601c7d66477821619e4176d6a6401113d4e8cdadf1eb"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/batch_runtime_safety.py",
+      "size": 4167,
+      "sha256": "c7795f58084a8e22f7f37bb1641074b8a75a9419a33ff82683ba50edd2670572"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/batch_slot_launcher.py",
+      "size": 2403,
+      "sha256": "884ac56b0824e56f0f08afd6a59d14cbff1c991d54a37a289d16ac2ddcc4f20a"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/calibration.py",
+      "size": 16789,
+      "sha256": "d8e2675209d4a2bc80cefad7d83e31b3110b9776fae22522da4690d73e5f5958"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/clinical_reports.py",
+      "size": 19287,
+      "sha256": "7f6c24a14ef6a9e49f6bdfac15f0a906ddeea32a9ef94c6b50f524e850f7d91f"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/final_output.py",
+      "size": 9365,
+      "sha256": "6793a361f127e71420b6b8a5142e2fb71b1e6a94415220d720be1daf0d57043c"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/final_output_artifacts.py",
+      "size": 9454,
+      "sha256": "83a363c9e741e36f782acd5695f74df31f36569717d5aff1467d10faf6cfde3e"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/input_manifest.py",
+      "size": 3081,
+      "sha256": "45058e451f2f37eb348601ea408c893c3e3d49b122db64dbfe487b635f164473"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/json_utils.py",
+      "size": 980,
+      "sha256": "1759af2cae7f2697ad4adbf2319b77dacee38ec71bdb0ef9968295e900637252"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/legacy_import.py",
+      "size": 5511,
+      "sha256": "724b502894c6fc7fc6dfd5f751f0ee9d3a17f8b7b433364c185f7c2a47da04ff"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/medical_v2_schema.py",
+      "size": 27089,
+      "sha256": "b27514273efde345f0213fcb0a734dd00199d1ef1f20fafec8940bc29503c5b5"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/metrics.py",
+      "size": 20096,
+      "sha256": "add0fadf8831a6c1ecc0ac65f842f20322442b9e0d4cf08de40212de4491f782"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/orchestrator.py",
+      "size": 20164,
+      "sha256": "b6ce9ed9926d6e21a49ad09f062b18dedc0aee7434a80b95f8d22da95b01874c"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/production_proxy_scoring.py",
+      "size": 8852,
+      "sha256": "5dc31a4016373a6613ac46fce02e374b0ef57f738918996c05c3c4ec6ab51265"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/public_sanitize.py",
+      "size": 1857,
+      "sha256": "1d28c71b9afdd948c88b95d4790354a7509df646cc87548e7aeece1b0cf5ab36"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/resident_worker.py",
+      "size": 7741,
+      "sha256": "f715b072c6c947f44da753715bd66f10051840df5133668094d14cb9c126b40a"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/review_output.py",
+      "size": 23946,
+      "sha256": "3c32c7dd57bb6d1b6db9ec07b54e904825012e2075e64be6f7c92ecfbe03c389"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/scoring.py",
+      "size": 3366,
+      "sha256": "665049a93fd9815209e6969510903db827a87167b2a9a02585a70ebe4d621c75"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/service_paths.py",
+      "size": 439,
+      "sha256": "bf04f47b05d528e209a07005ec59e85cde99780ec0890a3b98d6d7e24a852bf4"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/v2_labels.py",
+      "size": 2096,
+      "sha256": "f616d5bb454ea7c39299af1a51c60fb59da363dd38c522c55fa916f09b012469"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/v2_medical_csv.py",
+      "size": 2226,
+      "sha256": "2bb04c4a0bdf997381782b9ee8759ae47c294cbc71e79fda900d32dfa352fa80"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/v2_proxy_projection.py",
+      "size": 12231,
+      "sha256": "b984204e68524eac213b651ed82f124a4a9e00c70abdc2a905cf7f4bc3ecb2a4"
+    },
+    {
+      "path": "vendor/v3/src/nine_analysis/zero_target_metrics.py",
+      "size": 4617,
+      "sha256": "e832ade11798181c277d870d8ca91344684f2ee15aafe47c06d7deec5757f240"
+    },
+    {
+      "path": "vendor/v3/src/pipeline.py",
+      "size": 38892,
+      "sha256": "3734dc84ed9d72755190b1d09a457e0ecdb93967233caafbdcad3ff10c250b88"
+    },
+    {
+      "path": "vendor/v3/src/preprocess/__init__.py",
+      "size": 143,
+      "sha256": "1cfa218711b23aead2ef4380b65ad348cead47ca209a292cc9cb1e147b13c910"
+    },
+    {
+      "path": "vendor/v3/src/preprocess/analysis_mask_bundle.py",
+      "size": 5135,
+      "sha256": "7fa853da11b47d717e8fcbd7e03b6532414cf9fd20d42f53427dd3679105ff7f"
+    },
+    {
+      "path": "vendor/v3/src/preprocess/consumer_quality.py",
+      "size": 5620,
+      "sha256": "c657ac4f52084640af6aae17dec79701966a7d6e41c5ff59608ebdc8adb011aa"
+    },
+    {
+      "path": "vendor/v3/src/preprocess/face_parser.py",
+      "size": 3271,
+      "sha256": "cc3cc8066b1bc1e66cee50a2a568d463bf26e3f337c8b350755cef3a696aa056"
+    },
+    {
+      "path": "vendor/v3/src/preprocess/image_preprocessor.py",
+      "size": 62001,
+      "sha256": "3cd28ae2eece45117af29d15119314b88ef6599860c97545f64264ba703cc1c7"
+    },
+    {
+      "path": "vendor/v3/src/preprocess/profile_mask_policy.py",
+      "size": 5797,
+      "sha256": "5c2937219a42fb17e20d4c68fa0cbf645c63db3e861bb11b7f97656aff647913"
+    },
+    {
+      "path": "vendor/v3/src/preprocess/semantic_hair.py",
+      "size": 1875,
+      "sha256": "48dea954cd9cfe3aad88e4de49428cb2ef37903047af14346ccf73d09f79c268"
+    },
+    {
+      "path": "vendor/v3/src/profile_strategy.py",
+      "size": 7024,
+      "sha256": "81300d881f5c8ec59a48e696bef18982c66b869677874e006d44ce80e9e68521"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/__init__.py",
+      "size": 5954,
+      "sha256": "a6482f207b3997a760e21df8540a1efd24ea9f3eb1968ce5930f7266554ebb11"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/builder.py",
+      "size": 8024,
+      "sha256": "aa607d335c25e2bff621ed9e2a15b6c3f5b7e2dc1bd4dee40a3b673627c7e125"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/compatibility_artifacts.py",
+      "size": 6501,
+      "sha256": "f5848c366dc911e8eda41e74b7d8286ee26e3b9a121a23d70be4f4f2c44a97c3"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/compatibility_cv.py",
+      "size": 8799,
+      "sha256": "e7660cd5c2792fccefaf29ada9d2b9bd1fae45181a7e55bdb1937511dff6aa24"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/compatibility_dataset.py",
+      "size": 2518,
+      "sha256": "8a4e08eb50a3eb720b62127a412d66044ad5725a6b71f3f9045453a9b958b1ea"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/compatibility_models.py",
+      "size": 8764,
+      "sha256": "68a62421a062025eb30f92da7c7d73604130d64d24030835b71175466384db63"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/compatibility_profile.py",
+      "size": 3531,
+      "sha256": "ad60fdfa6a88f10739ead2a048c02df32c290ed7704071b814b2bd8edac4004a"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/compatibility_serialization.py",
+      "size": 2437,
+      "sha256": "b24e39a8fdf2f685dd7992d432b4652279ecebe5036a1e6ed1d6eaebad0bfcfa"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/confirmation_evaluation.py",
+      "size": 8259,
+      "sha256": "aa73c5363b8124ac1e5def25fc2b76814df922aec6fa87de75361133a69980c9"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/confirmation_manifest_builder.py",
+      "size": 7238,
+      "sha256": "e66dac807c3b73904a3b82ae01fa329d60e9d1a183db513bdd7b6db094878735"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/confirmation_outputs.py",
+      "size": 4379,
+      "sha256": "af362d7c1f985adec1d3b8738dae9d7069ae9babd8e897ecb0262f2ddd96abd5"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/confirmation_report.py",
+      "size": 3569,
+      "sha256": "f1ca122847d12258564c158548d3d82b88d6050681bf777eb86bd75e773a90e9"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/confirmation_selection.py",
+      "size": 4362,
+      "sha256": "4fb8efadeaa440cb2f400a157bb3a7a0ac70339c925950636d73abdef71948ec"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/diagnostics_v2.py",
+      "size": 7154,
+      "sha256": "bf3654a24cb175f77beed07cc9e55683ba0d9f95eab189a07a0af58b9bada6ef"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/fitting.py",
+      "size": 6342,
+      "sha256": "f8b799e756a8245a235407323636ab0542aaa6d33f29b3274d5f6caaacb573cf"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/fold_manifest_builder.py",
+      "size": 4643,
+      "sha256": "039d2553ba306efbd2c7abfe0f38b0177668e41b60ba653fad107c8402f0cd4a"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/hybrid_candidate.py",
+      "size": 9334,
+      "sha256": "d77c4ed584d4b6eae35e09c8f63e4a07a31a43f447d7a15f3da4a0ee49dfe152"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/hybrid_profile.py",
+      "size": 4724,
+      "sha256": "34b374a1d64806cc1a9f6b7990397b4ac2578501e26462fae87f3f5e943f5afa"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/hybrid_promotion.py",
+      "size": 5977,
+      "sha256": "99989ec3c1f79bdfad6519339c3c2a6519b5ed14edc92971db657c71a67a59e4"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/hybrid_runtime.py",
+      "size": 2824,
+      "sha256": "a3433e34aba1af1c07f9f24dfd7d66f63dc82e1fc0b7cf4d5677d20fba5e2d81"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/legacy_scoring.py",
+      "size": 3913,
+      "sha256": "0083ac563e5621b14370c5233bd521839c7f45c22ec315c101999266038451b0"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/lineage.py",
+      "size": 8208,
+      "sha256": "6ca769d07036ea6a45328bd6659b5bebb09ccd12e123d20952f4574217fdee05"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/manifest.py",
+      "size": 8217,
+      "sha256": "2d79ba7554de006492fb505140bf18b71a0d8eabd3ab030f3e3d50a03093f2b5"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/medical_review_selection.py",
+      "size": 2790,
+      "sha256": "2c18a904b9d1d1ec6547e1e0c8336cb36fe74a4b145cb3b8c4eef15d11e5063f"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/observation_lineage.py",
+      "size": 2866,
+      "sha256": "f02810c6cccc45bf9fbe51cbd7b118660ad3043ea43ea9edbbaa27bf04e74ff1"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/population_artifacts.py",
+      "size": 4696,
+      "sha256": "97bd6514f1615f7c4b37a92ecc857e404631808b582944664958191e70aad8b0"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/population_diagnostics.py",
+      "size": 1974,
+      "sha256": "73d93e883c1c762481ee99a73bdc8d7936b2896f54c06b22d9afe34efa58de42"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/population_profile.py",
+      "size": 7978,
+      "sha256": "029e9b4dcbdc492c526911df1ea4878b9be68e5672aa9950d107983293ade9a0"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/population_runtime.py",
+      "size": 2772,
+      "sha256": "2fce9f3f5f943cbde2311ff461a5b65b6449011cffe8df6f3bbf96b084620470"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/population_serialization.py",
+      "size": 3872,
+      "sha256": "9cd18e90adb1b6ae2838e751027dc104b89afa8fe132395d70cdaf326fb48fdd"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/reserve_activation.py",
+      "size": 5892,
+      "sha256": "6e395d831ec7f45b6e2101ad2b457b3860f2d0b592828c3c3a4a1b610c20034e"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/split_contract.py",
+      "size": 5026,
+      "sha256": "8204844f8dfe7d87fd7aa2adefe87af5a16f6bd359f3a1d8ea8e21d7a729a2b9"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/word_acne_2d.py",
+      "size": 4378,
+      "sha256": "993a6014d1bfa30d4ef3631aee813a66ae1f8da79996573cdc05e807eab8c342"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/word_population_profile.py",
+      "size": 5130,
+      "sha256": "0eaf6ab05608cf979b945b15b25a2e7425afe526417ac48f89ff258f1e1449dc"
+    },
+    {
+      "path": "vendor/v3/src/scoring_bridge/word_wrinkle_2d.py",
+      "size": 5210,
+      "sha256": "03122edc49f8d50e5da0f7903e3fd1326ce82a707e0273eaed19af7216ada010"
+    },
+    {
+      "path": "vendor/v3/src/scoring_calibration/__init__.py",
+      "size": 72,
+      "sha256": "a3baae498edc44854aae0cd79b1440da7b818985f885500a9ecbb410a5f7979b"
+    },
+    {
+      "path": "vendor/v3/src/scoring_calibration/v011/__init__.py",
+      "size": 195,
+      "sha256": "ae17404ea418365bbd5ef96ac3a43c2b2a87a6b71b8c884969dcc8547dc381e6"
+    },
+    {
+      "path": "vendor/v3/src/scoring_calibration/v011/full_reference.py",
+      "size": 31056,
+      "sha256": "3291dd1688070fdc424819b981ba7f1d06eba9c832a2d8d1f504dd156af128d3"
+    },
+    {
+      "path": "vendor/v3/src/scoring_calibration/v011/population.py",
+      "size": 8952,
+      "sha256": "afca837d88a167f8226d52181c74b786a30c18382caef9fe7619f92d4610475e"
+    },
+    {
+      "path": "vendor/v3/src/scoring_calibration/v011/presentation.py",
+      "size": 1875,
+      "sha256": "1b3b8b6552fa6afa629397da531802a058c225757d00d699403614e24b43caf5"
+    },
+    {
+      "path": "vendor/v3/src/scoring_calibration/v011/quality.py",
+      "size": 9303,
+      "sha256": "6637617f29947d52c6ee0b88ab8368df51d4af2ad8068fdbd030cf092a528efc"
+    },
+    {
+      "path": "vendor/v3/src/scoring_calibration/v011/registry.py",
+      "size": 8820,
+      "sha256": "556a79ca6f95b8d4959c61e215b903c70524639ddc0a18c3ace2a724e7ef8666"
+    },
+    {
+      "path": "vendor/v3/src/scoring_calibration/v011/scoring.py",
+      "size": 6761,
+      "sha256": "5ecaff6d981e6cfb3e276eb1db4fcdb791abce7d120074201e86f926c8e11e5c"
+    },
+    {
+      "path": "vendor/v3/src/scoring_calibration/v012/__init__.py",
+      "size": 409,
+      "sha256": "75bde5abf0ad84f51bee98573fbce835e4bd5391d3c98503cef3b3caa3f4c742"
+    },
+    {
+      "path": "vendor/v3/src/scoring_calibration/v012/explanation.py",
+      "size": 4793,
+      "sha256": "95f9014598df19ef26072172b7e1e1eaebf3d27e9dd46db84600cec6f9ef32d9"
+    },
+    {
+      "path": "vendor/v3/src/scoring_calibration/v012/pigmentation.py",
+      "size": 5541,
+      "sha256": "95a0f00fcc7ce899b9cec1e2dd424f9022e34f09f76bd96b22a0ace307d5bcb4"
+    },
+    {
+      "path": "vendor/v3/src/scoring_calibration/v012/profile.py",
+      "size": 5607,
+      "sha256": "33f70612014df0309be77a2bed13d7770a87f7f33f5458c48b2e10cb09b4ce05"
+    },
+    {
+      "path": "vendor/v3/src/utils/__init__.py",
+      "size": 22,
+      "sha256": "33d9ff26f1fd83217226ec4fb52c751331befa22ee5dc4097c000ff3bb76181c"
+    },
+    {
+      "path": "vendor/v3/src/utils/analysis_debug_outputs.py",
+      "size": 2468,
+      "sha256": "c58acca7bd1057d890770a2a221822af965ddadbc5539f10cefcd199dd410bba"
+    },
+    {
+      "path": "vendor/v3/src/utils/detailed_metrics.py",
+      "size": 44073,
+      "sha256": "353e8733b3b14c2bb112336ba420faad6a0b49e1d21c50956c9aab26019a0627"
+    },
+    {
+      "path": "vendor/v3/src/utils/gpu_backend.py",
+      "size": 12503,
+      "sha256": "36f2f0ab5cf1ed1a9178ff75683b5d44b3870a2ed1529586f96b44f284df08ec"
+    },
+    {
+      "path": "vendor/v3/src/utils/io_utils.py",
+      "size": 745,
+      "sha256": "1e4c894cba07cbe8df0f01f5b0d3a54edd02699539332770fbff5acca2c7578d"
+    },
+    {
+      "path": "vendor/v3/src/utils/model_loader.py",
+      "size": 3260,
+      "sha256": "cdc5684f483a3eebd8c647eccbf42fca364b2801a9e181d50c16beaf8f57c77c"
+    },
+    {
+      "path": "vendor/v3/src/version.py",
+      "size": 386,
+      "sha256": "21b3e1798a298299c4c0338e7e80ae4c4a4bd2d1f88ed22d3bd78c7f09ac0c1b"
+    },
+    {
+      "path": "vendor/v3/src/worker.py",
+      "size": 36694,
+      "sha256": "32bb59e453c7fc1639b8fcc1c1f4515e549c7be8c7a9f22e8c7afb8cae6b4e06"
+    },
+    {
+      "path": "vendor/v3/src/wrinkle/__init__.py",
+      "size": 49,
+      "sha256": "d73397f9a6cce11d728c24a74ea49dca5e2c05462d48278c790f93779e9fffc6"
+    },
+    {
+      "path": "vendor/v3/src/wrinkle/algorithms/__init__.py",
+      "size": 102,
+      "sha256": "2d9203cee6b5cf4c1f1714cf00b05df807d8a82c6d96fa30a2022470a9ed8eb6"
+    },
+    {
+      "path": "vendor/v3/src/wrinkle/algorithms/wrinkle_detection_algorithm.py",
+      "size": 149029,
+      "sha256": "2f3964c2f4f99105c8dd40080bfda4286625a75c76828892831a4514ef9aa585"
+    },
+    {
+      "path": "vendor/v3/src/wrinkle/clinical_quantification.py",
+      "size": 13970,
+      "sha256": "5d88ca5ecf7cedaf7c53c88c23ec3ad5cb9b4e23e6e9d1c90cc9ae69ef4a2dd2"
+    },
+    {
+      "path": "vendor/v3/src/wrinkle/core/__init__.py",
+      "size": 25,
+      "sha256": "caaf940b04e66bae644913c6a62c116938309bc8fd8d8815e68f83e006abfee0"
+    },
+    {
+      "path": "vendor/v3/src/wrinkle/core/config.py",
+      "size": 1679,
+      "sha256": "53df9fd4d1b166c30ac424655153ae7935e065edc006152f612c637b7da54f6f"
+    },
+    {
+      "path": "vendor/v3/src/wrinkle/medical_v2_delivery.py",
+      "size": 5362,
+      "sha256": "1645258e0fd467cde5e1158c60aeaecf4144dbe88b1bb32026a13dad5d179f79"
+    },
+    {
+      "path": "vendor/v3/src/wrinkle/medical_v2_schema.py",
+      "size": 13051,
+      "sha256": "915fc262d29f19926e51359a5e8864212d34d76f88cd3eddaed34fa7f0a61127"
+    },
+    {
+      "path": "vendor/v3/src/wrinkle/output_files.py",
+      "size": 1052,
+      "sha256": "2d3c52ab904dde8a46fdbc05006e633cd9a103fe2e2f1cedc6816b683d4ef6da"
+    },
+    {
+      "path": "vendor/v3/src/wrinkle/pipeline.py",
+      "size": 14316,
+      "sha256": "6797e5c07a0f6c12549c84d550cbd035bf96446adfb625e7c80705bbeb7c8a18"
+    },
+    {
+      "path": "vendor/v3/src/wrinkle/report_region_overlays.py",
+      "size": 7037,
+      "sha256": "79c67fa4cc722c5b8d6d58a732b3b8cb7595f6ef27b5d9e3607b38f6e1d5ed4a"
+    },
+    {
+      "path": "vendor/v3/src/wrinkle/runtime_cache.py",
+      "size": 1512,
+      "sha256": "714cfae032f0ab0b4e9a20502d9109cb4040800c8ebf8109644570cb120dbe60"
+    },
+    {
+      "path": "vendor/v3/src/wrinkle/version.py",
+      "size": 386,
+      "sha256": "21b3e1798a298299c4c0338e7e80ae4c4a4bd2d1f88ed22d3bd78c7f09ac0c1b"
+    },
+    {
+      "path": "vendor/v3/src/wrinkle/worker.py",
+      "size": 15535,
+      "sha256": "174f6d543f1e42737800b9092f3cbad53b565b4178294ef58c2652b69ec723d1"
+    },
+    {
+      "path": "vendor/v3/templates/AISIA_面部多指标检测汇总模板_V2.docx",
+      "size": 64925,
+      "sha256": "9de65290471199a14690db5b0db1571257788a24c23168ccf077e3c3701ffd4c"
+    },
+    {
+      "path": "vendor/v3/templates/doctor_v3_text/ACTIVE_TEMPLATE.json",
+      "size": 965,
+      "sha256": "feccc5fc63c4fe8824e41e63c4b746b03bef5382598f4a03cb8c07fe7338e1cc"
+    },
+    {
+      "path": "vendor/v3/templates/doctor_v3_text/artifact.md",
+      "size": 2688,
+      "sha256": "2df8cc2d51e260d9f528fb485f62ed0c3b72325e39a22ead91c0d3a861674d04"
+    },
+    {
+      "path": "vendor/v3/templates/doctor_v3_text/home_source_layout.json",
+      "size": 106415,
+      "sha256": "09dcf50fb24049fef3628ad030fe72f9186e05fe6dca420ee5020e4b9d7adc59"
+    },
+    {
+      "path": "vendor/v3/templates/doctor_v3_text/home_template_20260908.docx",
+      "size": 62679,
+      "sha256": "e59eef253c19832fc8dedd9834f2a9bc6bf1ba2ddc582dc6431ad2a6fd31c5ca"
+    },
+    {
+      "path": "vendor/v3/templates/doctor_v3_text/institution_source_layout.json",
+      "size": 198718,
+      "sha256": "faec3ca904aea106b2cc150d782231a7b9566381c13fda08782a3b3c43665316"
+    },
+    {
+      "path": "vendor/v3/templates/doctor_v3_text/institution_template_20260908.docx",
+      "size": 88821,
+      "sha256": "8e2fb7f3a5bfe9618956b8e4bf03d2b5238993462b0829e20b6dbbc3874708b0"
+    },
+    {
+      "path": "vendor/v3_reference.json",
+      "size": 15102716,
+      "sha256": "8e27a91f193d6bb21587eb65c5d89003328da727152bcfe5951e788582095bdd"
+    },
+    {
+      "path": "vendor/water/data/calibration/rbx_visia_pair1_profile.json",
+      "size": 4139,
+      "sha256": "149cf3084b05b369a2f3b2be492e009dbec24c8d20929ebda765ee6a494e32d9"
+    },
+    {
+      "path": "vendor/water/models/capture/face_detection_yunet.onnx",
+      "size": 232589,
+      "sha256": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4"
+    },
+    {
+      "path": "vendor/water/models/capture/head_pose_fsanet_1x1.onnx",
+      "size": 964897,
+      "sha256": "120fa107a2dd3be78c21c3a73a0db980590643a5372893e8878094898262f213"
+    },
+    {
+      "path": "vendor/water/models/face_landmarker.task",
+      "size": 3758596,
+      "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff"
+    },
+    {
+      "path": "vendor/water/models/selfie_multiclass_256x256.tflite",
+      "size": 16371837,
+      "sha256": "c6748b1253a99067ef71f7e26ca71096cd449baefa8f101900ea23016507e0e0"
+    },
+    {
+      "path": "vendor/water/models/selfie_segmenter.tflite",
+      "size": 249537,
+      "sha256": "191ac9529ae506ee0beefa6b2c945a172dab9d07d1e802a290a4e4038226658b"
+    },
+    {
+      "path": "vendor/water/sg_core/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "vendor/water/sg_core/acne/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "vendor/water/sg_core/acne/acne_detector.py",
+      "size": 4109,
+      "sha256": "f5acbce0b49a28b9d1043fd47d3e3fa17f7b2f5c262c38a51a8235804be660cd"
+    },
+    {
+      "path": "vendor/water/sg_core/acne/detector_postprocess.py",
+      "size": 2845,
+      "sha256": "412b2a672745bdf72a437804c3a3daef3c048f0ad3f1a92c82f821cf8d5516a5"
+    },
+    {
+      "path": "vendor/water/sg_core/capture_profile.py",
+      "size": 343,
+      "sha256": "ac3f3ce96021882bc94eb417148d3a2df2b1bac2888df729257a83b75a04009d"
+    },
+    {
+      "path": "vendor/water/sg_core/consumer_pigment/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "vendor/water/sg_core/consumer_pigment/brown_contrast.py",
+      "size": 1044,
+      "sha256": "edefab6ef7ea48b25975d6c5cfc887acd23db309dbe2b0c454232bec58515a13"
+    },
+    {
+      "path": "vendor/water/sg_core/consumer_pigment/brown_detection_policy.py",
+      "size": 1551,
+      "sha256": "4c4678ff0b012c18ccf38f398ed63d95c889b3cc03e0f1aa3205361c6cef4e15"
+    },
+    {
+      "path": "vendor/water/sg_core/consumer_pigment/formal_markers.py",
+      "size": 6405,
+      "sha256": "5d09dddac8d39b72b5b95bfeeddf966486d60464dde83f0ce8725a34fa54bacb"
+    },
+    {
+      "path": "vendor/water/sg_core/consumer_pigment/markers.py",
+      "size": 5766,
+      "sha256": "4cdefdcc65f2552fc02bfe9929f16e1e751fee8ca849aff217e408483d36ce2e"
+    },
+    {
+      "path": "vendor/water/sg_core/consumer_pigment/specular.py",
+      "size": 3587,
+      "sha256": "4e00df56621db0ef3ad24dc8301a7d076f62816598def80cfe67a9cfbfe28d85"
+    },
+    {
+      "path": "vendor/water/sg_core/engines/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "vendor/water/sg_core/engines/brown_engine.py",
+      "size": 26161,
+      "sha256": "8823c66378889ca0f879b3129b674d9a8a595325c1c8936879468bf38e07d20c"
+    },
+    {
+      "path": "vendor/water/sg_core/engines/clinic_vascular_structure_engine.py",
+      "size": 28476,
+      "sha256": "3cf61297621aa1b78034f6ab13d21645fb50eabb493febce454aa40069099e25"
+    },
+    {
+      "path": "vendor/water/sg_core/engines/pores_engine.py",
+      "size": 10987,
+      "sha256": "47d28d8899c69332a8c0d83a50c8dff4993b9017edd83ac4fc51d372ea7e7eb6"
+    },
+    {
+      "path": "vendor/water/sg_core/engines/rbx_engine.py",
+      "size": 72889,
+      "sha256": "ad074bfa5ece8371d20b1ab8ac99f7d9926a4d8d4f161b05ece6dff8550097a3"
+    },
+    {
+      "path": "vendor/water/sg_core/engines/spots_engine.py",
+      "size": 98634,
+      "sha256": "8796e1d99cfd87288f3f7f6d7af62235148779233f8d8bc08a045305e905593a"
+    },
+    {
+      "path": "vendor/water/sg_core/engines/surface_gloss_engine.py",
+      "size": 39414,
+      "sha256": "05b65157cdbc4ca2fb795f58fcfd6156af677af735409d7d55a5b53f248a372e"
+    },
+    {
+      "path": "vendor/water/sg_core/engines/texture_engine.py",
+      "size": 12901,
+      "sha256": "1507391391ae59a9e4b6d42a36026606948258855ce2d6b78864aa417c16111d"
+    },
+    {
+      "path": "vendor/water/sg_core/engines/vascular_structure_engine.py",
+      "size": 32945,
+      "sha256": "e32e50ebec556e47e6faa7c2cf15288a18606b38945fcef524fd9f934e9076eb"
+    },
+    {
+      "path": "vendor/water/sg_core/engines/visia_regions.py",
+      "size": 28728,
+      "sha256": "ee02e1b75c3bc561204443215e14d170423e1a0c69c97ddc3e8677636e0dd294"
+    },
+    {
+      "path": "vendor/water/sg_core/engines/visia_unified_contour.py",
+      "size": 18933,
+      "sha256": "e67147a82ddcbf8ad29ae3cad591fc81e629d0288c777e5c0465952b42d947f3"
+    },
+    {
+      "path": "vendor/water/sg_core/preprocess/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "vendor/water/sg_core/preprocess/analysis_mask_bundle.py",
+      "size": 4586,
+      "sha256": "2c884a9111eff31a527405f3bb8022c71f8f0e7237d1ad3b5b20522e65b54356"
+    },
+    {
+      "path": "vendor/water/sg_core/preprocess/consumer_quality.py",
+      "size": 5120,
+      "sha256": "a28cc727964150af65bbf6e647aaaaba268ce71908c7cda9fdc182c550b757e1"
+    },
+    {
+      "path": "vendor/water/sg_core/preprocess/image_preprocessor.py",
+      "size": 47755,
+      "sha256": "7641d657ea9e2cc040ab19c908b31c43e8ea8fe686e37773f12de4e59d0c24a8"
+    },
+    {
+      "path": "vendor/water/sg_core/preprocess/profile_mask_policy.py",
+      "size": 3652,
+      "sha256": "7e45376d1df71961982bc9a19564b1bcad0cf6f0bfece83027e080f4fae16935"
+    },
+    {
+      "path": "vendor/water/sg_core/utils/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "vendor/water/sg_core/utils/gpu_backend.py",
+      "size": 11511,
+      "sha256": "fcff9941d263cad1fa29b34a393ecfb11ecb5247799aac0bf4a34656a53824a3"
+    },
+    {
+      "path": "vendor/water/sg_core/utils/io_utils.py",
+      "size": 719,
+      "sha256": "9c852083a045abb1567b0fafd55fbb51e5594f3079b1ae5f49e159e5e374b7b9"
+    },
+    {
+      "path": "vendor/water/sg_core/utils/model_loader.py",
+      "size": 2920,
+      "sha256": "e8ccb26f3f1c31a86c4c3957c13a6aa1b860ba0b95cd5f6bd7ee29fa9f226670"
+    },
+    {
+      "path": "vendor/water/shuiguang/__init__.py",
+      "size": 102,
+      "sha256": "59ada1133c7102f8f8324aafac33624d19b9745cbfb0891d678055b8569622a3"
+    },
+    {
+      "path": "vendor/water/shuiguang/anatomy.py",
+      "size": 8130,
+      "sha256": "083955e44786051173e100f18a3c490cec71e437ad325ef1fbb65b2100faf763"
+    },
+    {
+      "path": "vendor/water/shuiguang/camera_core/__init__.py",
+      "size": 86,
+      "sha256": "bddb1bb8db4d8437160962c0cee9a49df9a2f1856f5c008f343b7b31e5dcd657"
+    },
+    {
+      "path": "vendor/water/shuiguang/camera_core/backend.py",
+      "size": 2115,
+      "sha256": "6574e91568d841ab4e5efdda5ed050e39bfdb015f83e5824e27ab6033bf9f32c"
+    },
+    {
+      "path": "vendor/water/shuiguang/camera_core/head_pose/__init__.py",
+      "size": 410,
+      "sha256": "049bec6016aba868e1e1a346ed4e5613a69101a712356436d222b85ddec4fb80"
+    },
+    {
+      "path": "vendor/water/shuiguang/camera_core/head_pose/estimator.py",
+      "size": 3732,
+      "sha256": "2d4051d6dda54da0d3897371380bc002f157007a7f4eccb2ad897ddd0bed619b"
+    },
+    {
+      "path": "vendor/water/shuiguang/camera_core/head_pose/face_detector.py",
+      "size": 7544,
+      "sha256": "d0ee71e6e586b47e7458daa3cafb3fc2b25e692009843ea731e7c283ccb2c0b8"
+    },
+    {
+      "path": "vendor/water/shuiguang/camera_core/head_pose/preprocess.py",
+      "size": 3912,
+      "sha256": "28e539e88be82e7a7221e27c70298c4128196bbcae06911453d5b49b618c854b"
+    },
+    {
+      "path": "vendor/water/shuiguang/camera_core/routes.py",
+      "size": 1923,
+      "sha256": "15c32143d92becd22297de2709f0a4a12843a76da2f1828c6a4ee605e205bce9"
+    },
+    {
+      "path": "vendor/water/shuiguang/camera_core/service.py",
+      "size": 11585,
+      "sha256": "f917102a0262a27eb19cc062f1242aa1cadd29bbfc5d98bdb1e4723ba81cb2e5"
+    },
+    {
+      "path": "vendor/water/shuiguang/camera_core/state.py",
+      "size": 5944,
+      "sha256": "b668d4969f965f20b86d1ffdce2de8dc0ed02f191f52bdc90deb954643209ae9"
+    },
+    {
+      "path": "vendor/water/shuiguang/capture.py",
+      "size": 2627,
+      "sha256": "70c16ff6664d6112ccff45efda9cfc013ac1aa44dd9c088ea3c18a06655d2a6d"
+    },
+    {
+      "path": "vendor/water/shuiguang/config.py",
+      "size": 784,
+      "sha256": "a37e625f2bc826dd32f091ed3f46774043bf407bcb00bf8d4a344f86b4ecae5c"
+    },
+    {
+      "path": "vendor/water/shuiguang/detectors.py",
+      "size": 5513,
+      "sha256": "b53448055e6f39967c803380ffe1993110a56457526da9ec4ab19b2a712defe0"
+    },
+    {
+      "path": "vendor/water/shuiguang/io.py",
+      "size": 1797,
+      "sha256": "eda0e2f8f6e3cd9b053f0637469225f75807de06ff3ca3a841c3d741bc02ec5c"
+    },
+    {
+      "path": "vendor/water/shuiguang/measurement_partition.py",
+      "size": 2183,
+      "sha256": "5637301c4073390a64a863dc9dbfb5363f3da2948a6fcc83069b4bcc0fc7c2f1"
+    },
+    {
+      "path": "vendor/water/shuiguang/observation_display.py",
+      "size": 2262,
+      "sha256": "24cd16a78f412e5e645988044cdcef3abf302c24d2571784a8cb136a9be0bb1c"
+    },
+    {
+      "path": "vendor/water/shuiguang/orientation.py",
+      "size": 2559,
+      "sha256": "0476b55008a30d6d3259cf0fa81f7d6087ec14dbdded46b2a02d0348535d7926"
+    },
+    {
+      "path": "vendor/water/shuiguang/pipeline.py",
+      "size": 7836,
+      "sha256": "066acb23b5249a77e741bbde207a564fe2cd9de10376eff8b0ae9c1b84d85474"
+    },
+    {
+      "path": "vendor/water/shuiguang/preprocess.py",
+      "size": 3201,
+      "sha256": "cf352470786fbb50ec85dcb095af4c4627ab82aa5a389fb337ee9adf30c365aa"
+    },
+    {
+      "path": "vendor/water/shuiguang/presentation.py",
+      "size": 8452,
+      "sha256": "727c0a09dd6755f628b62d26cc6c6e1eb0bc6a792130e7d506f72fcfce7b62ae"
+    },
+    {
+      "path": "vendor/water/shuiguang/regional_package.py",
+      "size": 13064,
+      "sha256": "7c29d8d48478a7c4020ddeb3de1ec335acbc6ef666b051fae844d1f2a6fb04b4"
+    },
+    {
+      "path": "vendor/water/shuiguang/regional_statistics.py",
+      "size": 10413,
+      "sha256": "35f25a1c342d8386a2d74301442a47ba5f13009350ccae90524b13ceeb0cd6d1"
+    },
+    {
+      "path": "vendor/water/shuiguang/render.py",
+      "size": 5205,
+      "sha256": "6eb6c47606e6009f44f263c6036aa73cdb4824ea550acbba71466bf09380987a"
+    },
+    {
+      "path": "vendor/water/shuiguang/results.py",
+      "size": 3280,
+      "sha256": "e93b1821e56aeb31f96b1df47a2a9eeca77b5434cbf83a6903ba493c6830fb72"
+    },
+    {
+      "path": "vendor/water/shuiguang/runtime.py",
+      "size": 825,
+      "sha256": "f437913048b2acb82c63d0324e1bcefe913e3fd678db37f7c5be4b7ce52a425c"
+    },
+    {
+      "path": "接口字段与JSON说明_20260915.md",
+      "size": 1072,
+      "sha256": "632acdbb5ac19cb286469d8df37cee2298d90a501d96801b124ca6780cba9069"
+    },
+    {
+      "path": "本机常驻诊断服务入口.md",
+      "size": 1428,
+      "sha256": "ca10d1087c901fc590c3b995a0201dd4691f6246d4b3c4e112f40b30a83b2949"
+    },
+    {
+      "path": "模型资产与用途说明.md",
+      "size": 1472,
+      "sha256": "56547b2e2f4cf7039855da9fec710400e8f34fc23a3c060b9ec52c26af188c16"
+    },
+    {
+      "path": "水光三项检测技术与部署说明_20260915.md",
+      "size": 14761,
+      "sha256": "30ef6b944379b51014641cb051f863c46e9ab336e06a39a5a7920f75088d6e74"
+    },
+    {
+      "path": "目标补充_预处理修复与分层验收_20260915.md",
+      "size": 2360,
+      "sha256": "a44beb19c3232e2c1e4434992b24bcafba41108eac12c9020b6a6bcb2331c701"
+    },
+    {
+      "path": "预处理五十图方案选择结论_20260915.md",
+      "size": 3227,
+      "sha256": "3ed811fd4f558d035a855d9e20761cef02f7d49091e231bb1d3e11890636d4c3"
+    },
+    {
+      "path": "预处理候选修复说明_20260915.md",
+      "size": 3109,
+      "sha256": "0e430efa08d25be5379b97fa211717517e7820f2c950e8d980bc2dfa6d2014cd"
+    },
+    {
+      "path": "预处理模型路线审查_20260915.md",
+      "size": 2434,
+      "sha256": "4c9c0f6e3af68606ae89fecffc98edbfc935a8e338d5f7ffe9c2fad408a29439"
+    },
+    {
+      "path": "预处理视觉审查记录_20260915.md",
+      "size": 1387,
+      "sha256": "ce96d313532ced23b3c425e42601882d34002964477c6555616c9e612995f0b6"
+    }
+  ]
+}

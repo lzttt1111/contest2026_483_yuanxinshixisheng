@@ -1,0 +1,4250 @@
+{
+  "schema_version": 1,
+  "manifest": "<RK3568_REFERENCE_ROOT>/build/parity/parity_input_manifest.json",
+  "board_output_root": "<RK3568_REFERENCE_ROOT>/build/parity/board_outputs/outputs",
+  "device": {
+    "fp16": {
+      "variant": "device_fp16",
+      "samples": 50,
+      "reference_positive_frames": 49,
+      "board_recalled_frames": 49,
+      "board_recall": 1.0,
+      "recall_drop_percentage_points": 0.0,
+      "matched_iou_min": 0.9806633591651917,
+      "matched_iou_mean": 0.994560779357443,
+      "matched_iou_p05": 0.9914032459259033,
+      "negative_disagreements": 0,
+      "tensor_metrics": [
+        {
+          "index": 0,
+          "samples": 50,
+          "max_abs": 0.1105947494506836,
+          "mean_abs": 0.005260780276730656,
+          "min_cosine": 0.9999990750191053
+        },
+        {
+          "index": 1,
+          "samples": 50,
+          "max_abs": 0.28983116149902344,
+          "mean_abs": 0.009795098910108208,
+          "min_cosine": 0.999994276975777
+        },
+        {
+          "index": 2,
+          "samples": 50,
+          "max_abs": 0.19260764122009277,
+          "mean_abs": 0.006778287654742599,
+          "min_cosine": 0.9999928948216993
+        }
+      ],
+      "gate": {
+        "minimum_matched_iou": 0.98,
+        "maximum_recall_drop_percentage_points": 2.0,
+        "pass": true
+      },
+      "frames": [
+        {
+          "index": 0,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9960893988609314
+        },
+        {
+          "index": 1,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9962617754936218
+        },
+        {
+          "index": 2,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9945303201675415
+        },
+        {
+          "index": 3,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9964337944984436
+        },
+        {
+          "index": 4,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9961291551589966
+        },
+        {
+          "index": 5,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9957414269447327
+        },
+        {
+          "index": 6,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9970791935920715
+        },
+        {
+          "index": 7,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9929935336112976
+        },
+        {
+          "index": 8,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9958212375640869
+        },
+        {
+          "index": 9,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9915838837623596
+        },
+        {
+          "index": 10,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.993759274482727
+        },
+        {
+          "index": 11,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9975437521934509
+        },
+        {
+          "index": 12,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9965637922286987
+        },
+        {
+          "index": 13,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9948237538337708
+        },
+        {
+          "index": 14,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9932294487953186
+        },
+        {
+          "index": 15,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9917105436325073
+        },
+        {
+          "index": 16,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9922035336494446
+        },
+        {
+          "index": 17,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9958052039146423
+        },
+        {
+          "index": 18,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9929643869400024
+        },
+        {
+          "index": 19,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9944586753845215
+        },
+        {
+          "index": 20,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9953951239585876
+        },
+        {
+          "index": 21,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9921541810035706
+        },
+        {
+          "index": 22,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9971283674240112
+        },
+        {
+          "index": 23,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9924125075340271
+        },
+        {
+          "index": 24,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9909893870353699
+        },
+        {
+          "index": 25,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9912828207015991
+        },
+        {
+          "index": 26,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9806633591651917
+        },
+        {
+          "index": 27,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9938190579414368
+        },
+        {
+          "index": 28,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9954602718353271
+        },
+        {
+          "index": 29,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9916518926620483
+        },
+        {
+          "index": 30,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9934914112091064
+        },
+        {
+          "index": 31,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9945102334022522
+        },
+        {
+          "index": 32,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9923140406608582
+        },
+        {
+          "index": 33,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.994574248790741
+        },
+        {
+          "index": 34,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9936791062355042
+        },
+        {
+          "index": 35,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9982859492301941
+        },
+        {
+          "index": 36,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9994788765907288
+        },
+        {
+          "index": 37,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9955092072486877
+        },
+        {
+          "index": 38,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9938291311264038
+        },
+        {
+          "index": 39,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9954399466514587
+        },
+        {
+          "index": 40,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.997468888759613
+        },
+        {
+          "index": 41,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9966756701469421
+        },
+        {
+          "index": 42,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9956820607185364
+        },
+        {
+          "index": 43,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9951599836349487
+        },
+        {
+          "index": 44,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9954813718795776
+        },
+        {
+          "index": 45,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9949788451194763
+        },
+        {
+          "index": 46,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9947213530540466
+        },
+        {
+          "index": 47,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9980719685554504
+        },
+        {
+          "index": 48,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9974428415298462
+        },
+        {
+          "index": 49,
+          "reference_detections": 0,
+          "board_detections": 0,
+          "best_iou": null
+        }
+      ]
+    },
+    "int8": {
+      "variant": "device_int8",
+      "samples": 50,
+      "reference_positive_frames": 49,
+      "board_recalled_frames": 49,
+      "board_recall": 1.0,
+      "recall_drop_percentage_points": 0.0,
+      "matched_iou_min": 0.8472956418991089,
+      "matched_iou_mean": 0.931234847526161,
+      "matched_iou_p05": 0.8793088436126709,
+      "negative_disagreements": 0,
+      "tensor_metrics": [
+        {
+          "index": 0,
+          "samples": 50,
+          "max_abs": 1.4964523315429688,
+          "mean_abs": 0.0817575752735138,
+          "min_cosine": 0.9998094360561242
+        },
+        {
+          "index": 1,
+          "samples": 50,
+          "max_abs": 3.7475013732910156,
+          "mean_abs": 0.0972519750893116,
+          "min_cosine": 0.9993888161883171
+        },
+        {
+          "index": 2,
+          "samples": 50,
+          "max_abs": 2.004976272583008,
+          "mean_abs": 0.059225143715739254,
+          "min_cosine": 0.9995749613961464
+        }
+      ],
+      "gate": {
+        "minimum_matched_iou": 0.95,
+        "maximum_recall_drop_percentage_points": 2.0,
+        "pass": false
+      },
+      "frames": [
+        {
+          "index": 0,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9767512083053589
+        },
+        {
+          "index": 1,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9360055923461914
+        },
+        {
+          "index": 2,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.86128830909729
+        },
+        {
+          "index": 3,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9545491337776184
+        },
+        {
+          "index": 4,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9357390403747559
+        },
+        {
+          "index": 5,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8472956418991089
+        },
+        {
+          "index": 6,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9379156231880188
+        },
+        {
+          "index": 7,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9590619206428528
+        },
+        {
+          "index": 8,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9429792761802673
+        },
+        {
+          "index": 9,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9051311016082764
+        },
+        {
+          "index": 10,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9708031415939331
+        },
+        {
+          "index": 11,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9550822973251343
+        },
+        {
+          "index": 12,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9315126538276672
+        },
+        {
+          "index": 13,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9183863401412964
+        },
+        {
+          "index": 14,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9157494902610779
+        },
+        {
+          "index": 15,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9894130229949951
+        },
+        {
+          "index": 16,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.893174409866333
+        },
+        {
+          "index": 17,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8707489967346191
+        },
+        {
+          "index": 18,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9281591773033142
+        },
+        {
+          "index": 19,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9269582033157349
+        },
+        {
+          "index": 20,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9178199768066406
+        },
+        {
+          "index": 21,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9202257394790649
+        },
+        {
+          "index": 22,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9178127646446228
+        },
+        {
+          "index": 23,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.914003849029541
+        },
+        {
+          "index": 24,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9350590109825134
+        },
+        {
+          "index": 25,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9213026762008667
+        },
+        {
+          "index": 26,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9277418851852417
+        },
+        {
+          "index": 27,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9181894659996033
+        },
+        {
+          "index": 28,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8967756032943726
+        },
+        {
+          "index": 29,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9665747880935669
+        },
+        {
+          "index": 30,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9126771092414856
+        },
+        {
+          "index": 31,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9262076616287231
+        },
+        {
+          "index": 32,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9359311461448669
+        },
+        {
+          "index": 33,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9345260262489319
+        },
+        {
+          "index": 34,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9418655633926392
+        },
+        {
+          "index": 35,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9116812348365784
+        },
+        {
+          "index": 36,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9920763969421387
+        },
+        {
+          "index": 37,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9739056825637817
+        },
+        {
+          "index": 38,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9748054146766663
+        },
+        {
+          "index": 39,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9169835448265076
+        },
+        {
+          "index": 40,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9461999535560608
+        },
+        {
+          "index": 41,
+          "reference_detections": 2,
+          "board_detections": 3,
+          "best_iou": 0.9120675921440125
+        },
+        {
+          "index": 42,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9450000524520874
+        },
+        {
+          "index": 43,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9410973191261292
+        },
+        {
+          "index": 44,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9245779514312744
+        },
+        {
+          "index": 45,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9349238276481628
+        },
+        {
+          "index": 46,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.958995521068573
+        },
+        {
+          "index": 47,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8921486139297485
+        },
+        {
+          "index": 48,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.962626576423645
+        },
+        {
+          "index": 49,
+          "reference_detections": 0,
+          "board_detections": 0,
+          "best_iou": null
+        }
+      ]
+    },
+    "int8_mmse": {
+      "variant": "device_int8_mmse",
+      "samples": 50,
+      "reference_positive_frames": 49,
+      "board_recalled_frames": 48,
+      "board_recall": 0.9795918367346939,
+      "recall_drop_percentage_points": 2.0408163265306145,
+      "matched_iou_min": 0.6490914821624756,
+      "matched_iou_mean": 0.8815918937325478,
+      "matched_iou_p05": 0.7294262409210205,
+      "negative_disagreements": 0,
+      "tensor_metrics": [
+        {
+          "index": 0,
+          "samples": 50,
+          "max_abs": 4.290429592132568,
+          "mean_abs": 0.30726574003696444,
+          "min_cosine": 0.9971104616278864
+        },
+        {
+          "index": 1,
+          "samples": 50,
+          "max_abs": 12.974711418151855,
+          "mean_abs": 0.40186661183834077,
+          "min_cosine": 0.9898378825682149
+        },
+        {
+          "index": 2,
+          "samples": 50,
+          "max_abs": 9.858835220336914,
+          "mean_abs": 0.38410083293914793,
+          "min_cosine": 0.9741585092627887
+        }
+      ],
+      "gate": {
+        "minimum_matched_iou": 0.95,
+        "maximum_recall_drop_percentage_points": 2.0,
+        "pass": false
+      },
+      "frames": [
+        {
+          "index": 0,
+          "reference_detections": 1,
+          "board_detections": 2,
+          "best_iou": 0.8080089092254639
+        },
+        {
+          "index": 1,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8991344571113586
+        },
+        {
+          "index": 2,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.7784003615379333
+        },
+        {
+          "index": 3,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.8623040914535522
+        },
+        {
+          "index": 4,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.8495928645133972
+        },
+        {
+          "index": 5,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8227797746658325
+        },
+        {
+          "index": 6,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9259666204452515
+        },
+        {
+          "index": 7,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9721371531486511
+        },
+        {
+          "index": 8,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.876916229724884
+        },
+        {
+          "index": 9,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8676115870475769
+        },
+        {
+          "index": 10,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9615424871444702
+        },
+        {
+          "index": 11,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.7030555605888367
+        },
+        {
+          "index": 12,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8650205135345459
+        },
+        {
+          "index": 13,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9022994637489319
+        },
+        {
+          "index": 14,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9136500358581543
+        },
+        {
+          "index": 15,
+          "reference_detections": 2,
+          "board_detections": 1,
+          "best_iou": 0.9563994407653809
+        },
+        {
+          "index": 16,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9244461059570312
+        },
+        {
+          "index": 17,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8852887749671936
+        },
+        {
+          "index": 18,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9074518084526062
+        },
+        {
+          "index": 19,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9396936297416687
+        },
+        {
+          "index": 20,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8638758063316345
+        },
+        {
+          "index": 21,
+          "reference_detections": 2,
+          "board_detections": 1,
+          "best_iou": 0.8826372623443604
+        },
+        {
+          "index": 22,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8813835978507996
+        },
+        {
+          "index": 23,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9651737213134766
+        },
+        {
+          "index": 24,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8696013689041138
+        },
+        {
+          "index": 25,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.941747784614563
+        },
+        {
+          "index": 26,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8913578987121582
+        },
+        {
+          "index": 27,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8967252373695374
+        },
+        {
+          "index": 28,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8830798864364624
+        },
+        {
+          "index": 29,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9161298274993896
+        },
+        {
+          "index": 30,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9114940166473389
+        },
+        {
+          "index": 31,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8846243023872375
+        },
+        {
+          "index": 32,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9443826675415039
+        },
+        {
+          "index": 33,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9510846138000488
+        },
+        {
+          "index": 34,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9408718347549438
+        },
+        {
+          "index": 35,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8134095072746277
+        },
+        {
+          "index": 36,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9006631970405579
+        },
+        {
+          "index": 37,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8597204685211182
+        },
+        {
+          "index": 38,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.6906201243400574
+        },
+        {
+          "index": 39,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9403706192970276
+        },
+        {
+          "index": 40,
+          "reference_detections": 2,
+          "board_detections": 1,
+          "best_iou": 0.6490914821624756
+        },
+        {
+          "index": 41,
+          "reference_detections": 2,
+          "board_detections": 1,
+          "best_iou": 0.7892962694168091
+        },
+        {
+          "index": 42,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9127777218818665
+        },
+        {
+          "index": 43,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9257975816726685
+        },
+        {
+          "index": 44,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8283899426460266
+        },
+        {
+          "index": 45,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9070982933044434
+        },
+        {
+          "index": 46,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.964989423751831
+        },
+        {
+          "index": 47,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8883165717124939
+        },
+        {
+          "index": 48,
+          "reference_detections": 1,
+          "board_detections": 0,
+          "best_iou": null
+        },
+        {
+          "index": 49,
+          "reference_detections": 0,
+          "board_detections": 0,
+          "best_iou": null
+        }
+      ]
+    },
+    "int8_opt2": {
+      "variant": "device_int8_opt2",
+      "samples": 50,
+      "reference_positive_frames": 49,
+      "board_recalled_frames": 49,
+      "board_recall": 1.0,
+      "recall_drop_percentage_points": 0.0,
+      "matched_iou_min": 0.8472956418991089,
+      "matched_iou_mean": 0.931234847526161,
+      "matched_iou_p05": 0.8793088436126709,
+      "negative_disagreements": 0,
+      "tensor_metrics": [
+        {
+          "index": 0,
+          "samples": 50,
+          "max_abs": 1.4964523315429688,
+          "mean_abs": 0.0817575752735138,
+          "min_cosine": 0.9998094360561242
+        },
+        {
+          "index": 1,
+          "samples": 50,
+          "max_abs": 3.7475013732910156,
+          "mean_abs": 0.0972519750893116,
+          "min_cosine": 0.9993888161883171
+        },
+        {
+          "index": 2,
+          "samples": 50,
+          "max_abs": 2.004976272583008,
+          "mean_abs": 0.059225143715739254,
+          "min_cosine": 0.9995749613961464
+        }
+      ],
+      "gate": {
+        "minimum_matched_iou": 0.95,
+        "maximum_recall_drop_percentage_points": 2.0,
+        "pass": false
+      },
+      "frames": [
+        {
+          "index": 0,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9767512083053589
+        },
+        {
+          "index": 1,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9360055923461914
+        },
+        {
+          "index": 2,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.86128830909729
+        },
+        {
+          "index": 3,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9545491337776184
+        },
+        {
+          "index": 4,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9357390403747559
+        },
+        {
+          "index": 5,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8472956418991089
+        },
+        {
+          "index": 6,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9379156231880188
+        },
+        {
+          "index": 7,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9590619206428528
+        },
+        {
+          "index": 8,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9429792761802673
+        },
+        {
+          "index": 9,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9051311016082764
+        },
+        {
+          "index": 10,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9708031415939331
+        },
+        {
+          "index": 11,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9550822973251343
+        },
+        {
+          "index": 12,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9315126538276672
+        },
+        {
+          "index": 13,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9183863401412964
+        },
+        {
+          "index": 14,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9157494902610779
+        },
+        {
+          "index": 15,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9894130229949951
+        },
+        {
+          "index": 16,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.893174409866333
+        },
+        {
+          "index": 17,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8707489967346191
+        },
+        {
+          "index": 18,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9281591773033142
+        },
+        {
+          "index": 19,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9269582033157349
+        },
+        {
+          "index": 20,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9178199768066406
+        },
+        {
+          "index": 21,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9202257394790649
+        },
+        {
+          "index": 22,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9178127646446228
+        },
+        {
+          "index": 23,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.914003849029541
+        },
+        {
+          "index": 24,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9350590109825134
+        },
+        {
+          "index": 25,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9213026762008667
+        },
+        {
+          "index": 26,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9277418851852417
+        },
+        {
+          "index": 27,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9181894659996033
+        },
+        {
+          "index": 28,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8967756032943726
+        },
+        {
+          "index": 29,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9665747880935669
+        },
+        {
+          "index": 30,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9126771092414856
+        },
+        {
+          "index": 31,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9262076616287231
+        },
+        {
+          "index": 32,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9359311461448669
+        },
+        {
+          "index": 33,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9345260262489319
+        },
+        {
+          "index": 34,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9418655633926392
+        },
+        {
+          "index": 35,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9116812348365784
+        },
+        {
+          "index": 36,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9920763969421387
+        },
+        {
+          "index": 37,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9739056825637817
+        },
+        {
+          "index": 38,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9748054146766663
+        },
+        {
+          "index": 39,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9169835448265076
+        },
+        {
+          "index": 40,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9461999535560608
+        },
+        {
+          "index": 41,
+          "reference_detections": 2,
+          "board_detections": 3,
+          "best_iou": 0.9120675921440125
+        },
+        {
+          "index": 42,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9450000524520874
+        },
+        {
+          "index": 43,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9410973191261292
+        },
+        {
+          "index": 44,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9245779514312744
+        },
+        {
+          "index": 45,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9349238276481628
+        },
+        {
+          "index": 46,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.958995521068573
+        },
+        {
+          "index": 47,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8921486139297485
+        },
+        {
+          "index": 48,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.962626576423645
+        },
+        {
+          "index": 49,
+          "reference_detections": 0,
+          "board_detections": 0,
+          "best_iou": null
+        }
+      ]
+    },
+    "int8_hybrid_proposal": {
+      "variant": "device_int8_hybrid_proposal",
+      "samples": 50,
+      "reference_positive_frames": 49,
+      "board_recalled_frames": 49,
+      "board_recall": 1.0,
+      "recall_drop_percentage_points": 0.0,
+      "matched_iou_min": 0.8472956418991089,
+      "matched_iou_mean": 0.931234847526161,
+      "matched_iou_p05": 0.8793088436126709,
+      "negative_disagreements": 0,
+      "tensor_metrics": [
+        {
+          "index": 0,
+          "samples": 50,
+          "max_abs": 1.4964523315429688,
+          "mean_abs": 0.0817575752735138,
+          "min_cosine": 0.9998094360561242
+        },
+        {
+          "index": 1,
+          "samples": 50,
+          "max_abs": 3.7475013732910156,
+          "mean_abs": 0.0972519750893116,
+          "min_cosine": 0.9993888161883171
+        },
+        {
+          "index": 2,
+          "samples": 50,
+          "max_abs": 2.004976272583008,
+          "mean_abs": 0.059225143715739254,
+          "min_cosine": 0.9995749613961464
+        }
+      ],
+      "gate": {
+        "minimum_matched_iou": 0.95,
+        "maximum_recall_drop_percentage_points": 2.0,
+        "pass": false
+      },
+      "frames": [
+        {
+          "index": 0,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9767512083053589
+        },
+        {
+          "index": 1,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9360055923461914
+        },
+        {
+          "index": 2,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.86128830909729
+        },
+        {
+          "index": 3,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9545491337776184
+        },
+        {
+          "index": 4,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9357390403747559
+        },
+        {
+          "index": 5,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8472956418991089
+        },
+        {
+          "index": 6,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9379156231880188
+        },
+        {
+          "index": 7,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9590619206428528
+        },
+        {
+          "index": 8,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9429792761802673
+        },
+        {
+          "index": 9,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9051311016082764
+        },
+        {
+          "index": 10,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9708031415939331
+        },
+        {
+          "index": 11,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9550822973251343
+        },
+        {
+          "index": 12,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9315126538276672
+        },
+        {
+          "index": 13,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9183863401412964
+        },
+        {
+          "index": 14,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9157494902610779
+        },
+        {
+          "index": 15,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9894130229949951
+        },
+        {
+          "index": 16,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.893174409866333
+        },
+        {
+          "index": 17,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8707489967346191
+        },
+        {
+          "index": 18,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9281591773033142
+        },
+        {
+          "index": 19,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9269582033157349
+        },
+        {
+          "index": 20,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9178199768066406
+        },
+        {
+          "index": 21,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9202257394790649
+        },
+        {
+          "index": 22,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9178127646446228
+        },
+        {
+          "index": 23,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.914003849029541
+        },
+        {
+          "index": 24,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9350590109825134
+        },
+        {
+          "index": 25,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9213026762008667
+        },
+        {
+          "index": 26,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9277418851852417
+        },
+        {
+          "index": 27,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9181894659996033
+        },
+        {
+          "index": 28,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8967756032943726
+        },
+        {
+          "index": 29,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9665747880935669
+        },
+        {
+          "index": 30,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9126771092414856
+        },
+        {
+          "index": 31,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9262076616287231
+        },
+        {
+          "index": 32,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9359311461448669
+        },
+        {
+          "index": 33,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9345260262489319
+        },
+        {
+          "index": 34,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9418655633926392
+        },
+        {
+          "index": 35,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9116812348365784
+        },
+        {
+          "index": 36,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9920763969421387
+        },
+        {
+          "index": 37,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9739056825637817
+        },
+        {
+          "index": 38,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9748054146766663
+        },
+        {
+          "index": 39,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9169835448265076
+        },
+        {
+          "index": 40,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9461999535560608
+        },
+        {
+          "index": 41,
+          "reference_detections": 2,
+          "board_detections": 3,
+          "best_iou": 0.9120675921440125
+        },
+        {
+          "index": 42,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9450000524520874
+        },
+        {
+          "index": 43,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9410973191261292
+        },
+        {
+          "index": 44,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9245779514312744
+        },
+        {
+          "index": 45,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9349238276481628
+        },
+        {
+          "index": 46,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.958995521068573
+        },
+        {
+          "index": 47,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.8921486139297485
+        },
+        {
+          "index": 48,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.962626576423645
+        },
+        {
+          "index": 49,
+          "reference_detections": 0,
+          "board_detections": 0,
+          "best_iou": null
+        }
+      ]
+    },
+    "int8_hybrid_regression_head": {
+      "variant": "device_int8_hybrid_regression_head",
+      "samples": 50,
+      "reference_positive_frames": 49,
+      "board_recalled_frames": 49,
+      "board_recall": 1.0,
+      "recall_drop_percentage_points": 0.0,
+      "matched_iou_min": 0.9047878980636597,
+      "matched_iou_mean": 0.9790302101446657,
+      "matched_iou_p05": 0.9352193474769592,
+      "negative_disagreements": 0,
+      "tensor_metrics": [
+        {
+          "index": 0,
+          "samples": 50,
+          "max_abs": 1.3790867328643799,
+          "mean_abs": 0.07116580918431283,
+          "min_cosine": 0.9998418818069991
+        },
+        {
+          "index": 1,
+          "samples": 50,
+          "max_abs": 3.7344532012939453,
+          "mean_abs": 0.08024167597293853,
+          "min_cosine": 0.999419493016034
+        },
+        {
+          "index": 2,
+          "samples": 50,
+          "max_abs": 2.021017074584961,
+          "mean_abs": 0.049873952120542527,
+          "min_cosine": 0.9995974539338355
+        }
+      ],
+      "gate": {
+        "minimum_matched_iou": 0.95,
+        "maximum_recall_drop_percentage_points": 2.0,
+        "pass": false
+      },
+      "frames": [
+        {
+          "index": 0,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9871022701263428
+        },
+        {
+          "index": 1,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9891865253448486
+        },
+        {
+          "index": 2,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9563230276107788
+        },
+        {
+          "index": 3,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9733513593673706
+        },
+        {
+          "index": 4,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9880804419517517
+        },
+        {
+          "index": 5,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9207475781440735
+        },
+        {
+          "index": 6,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.996100127696991
+        },
+        {
+          "index": 7,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9903169274330139
+        },
+        {
+          "index": 8,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9954089522361755
+        },
+        {
+          "index": 9,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9799033403396606
+        },
+        {
+          "index": 10,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9957022666931152
+        },
+        {
+          "index": 11,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.992622435092926
+        },
+        {
+          "index": 12,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9954378008842468
+        },
+        {
+          "index": 13,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.956622838973999
+        },
+        {
+          "index": 14,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9934623837471008
+        },
+        {
+          "index": 15,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9934936761856079
+        },
+        {
+          "index": 16,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9632353782653809
+        },
+        {
+          "index": 17,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9870909452438354
+        },
+        {
+          "index": 18,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9047878980636597
+        },
+        {
+          "index": 19,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9843389391899109
+        },
+        {
+          "index": 20,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9255438446998596
+        },
+        {
+          "index": 21,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.96063232421875
+        },
+        {
+          "index": 22,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9891641139984131
+        },
+        {
+          "index": 23,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9497326016426086
+        },
+        {
+          "index": 24,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9890555739402771
+        },
+        {
+          "index": 25,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9883830547332764
+        },
+        {
+          "index": 26,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9883460402488708
+        },
+        {
+          "index": 27,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9809433817863464
+        },
+        {
+          "index": 28,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9944878220558167
+        },
+        {
+          "index": 29,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9858585000038147
+        },
+        {
+          "index": 30,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.96385258436203
+        },
+        {
+          "index": 31,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9891223311424255
+        },
+        {
+          "index": 32,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9923142194747925
+        },
+        {
+          "index": 33,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9919620752334595
+        },
+        {
+          "index": 34,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9744595289230347
+        },
+        {
+          "index": 35,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9818370342254639
+        },
+        {
+          "index": 36,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9962682127952576
+        },
+        {
+          "index": 37,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9897108674049377
+        },
+        {
+          "index": 38,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9707313776016235
+        },
+        {
+          "index": 39,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.980006992816925
+        },
+        {
+          "index": 40,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9874854683876038
+        },
+        {
+          "index": 41,
+          "reference_detections": 2,
+          "board_detections": 3,
+          "best_iou": 0.9790185689926147
+        },
+        {
+          "index": 42,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9907260537147522
+        },
+        {
+          "index": 43,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9951599836349487
+        },
+        {
+          "index": 44,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9677529335021973
+        },
+        {
+          "index": 45,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9922837615013123
+        },
+        {
+          "index": 46,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9955314993858337
+        },
+        {
+          "index": 47,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9510705471038818
+        },
+        {
+          "index": 48,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9877238869667053
+        },
+        {
+          "index": 49,
+          "reference_detections": 0,
+          "board_detections": 0,
+          "best_iou": null
+        }
+      ]
+    },
+    "int8_hybrid_all_heads": {
+      "variant": "device_int8_hybrid_all_heads",
+      "samples": 50,
+      "reference_positive_frames": 49,
+      "board_recalled_frames": 49,
+      "board_recall": 1.0,
+      "recall_drop_percentage_points": 0.0,
+      "matched_iou_min": 0.9563729166984558,
+      "matched_iou_mean": 0.9873549853052411,
+      "matched_iou_p05": 0.9697286128997803,
+      "negative_disagreements": 0,
+      "tensor_metrics": [
+        {
+          "index": 0,
+          "samples": 50,
+          "max_abs": 1.4631462097167969,
+          "mean_abs": 0.06649971462786197,
+          "min_cosine": 0.9998574166098525
+        },
+        {
+          "index": 1,
+          "samples": 50,
+          "max_abs": 3.7813282012939453,
+          "mean_abs": 0.07875769227743148,
+          "min_cosine": 0.9994347423300673
+        },
+        {
+          "index": 2,
+          "samples": 50,
+          "max_abs": 2.060079574584961,
+          "mean_abs": 0.0467383224517107,
+          "min_cosine": 0.9996039357219959
+        }
+      ],
+      "gate": {
+        "minimum_matched_iou": 0.95,
+        "maximum_recall_drop_percentage_points": 2.0,
+        "pass": true
+      },
+      "frames": [
+        {
+          "index": 0,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.986139178276062
+        },
+        {
+          "index": 1,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9897825121879578
+        },
+        {
+          "index": 2,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9563729166984558
+        },
+        {
+          "index": 3,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9714522361755371
+        },
+        {
+          "index": 4,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9880804419517517
+        },
+        {
+          "index": 5,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9820146560668945
+        },
+        {
+          "index": 6,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.996100127696991
+        },
+        {
+          "index": 7,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9891217947006226
+        },
+        {
+          "index": 8,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9954089522361755
+        },
+        {
+          "index": 9,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9857909679412842
+        },
+        {
+          "index": 10,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9957022666931152
+        },
+        {
+          "index": 11,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9921939969062805
+        },
+        {
+          "index": 12,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9956647753715515
+        },
+        {
+          "index": 13,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9904099702835083
+        },
+        {
+          "index": 14,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9934623837471008
+        },
+        {
+          "index": 15,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9934936761856079
+        },
+        {
+          "index": 16,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9941432476043701
+        },
+        {
+          "index": 17,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9868600368499756
+        },
+        {
+          "index": 18,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9878641366958618
+        },
+        {
+          "index": 19,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9847102165222168
+        },
+        {
+          "index": 20,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9932063817977905
+        },
+        {
+          "index": 21,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9602568745613098
+        },
+        {
+          "index": 22,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.99012690782547
+        },
+        {
+          "index": 23,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9786960482597351
+        },
+        {
+          "index": 24,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9890555739402771
+        },
+        {
+          "index": 25,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.990315318107605
+        },
+        {
+          "index": 26,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9902786612510681
+        },
+        {
+          "index": 27,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9808523058891296
+        },
+        {
+          "index": 28,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9944878220558167
+        },
+        {
+          "index": 29,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9887514114379883
+        },
+        {
+          "index": 30,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9941379427909851
+        },
+        {
+          "index": 31,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9891223311424255
+        },
+        {
+          "index": 32,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9913457632064819
+        },
+        {
+          "index": 33,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9935904741287231
+        },
+        {
+          "index": 34,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9735082983970642
+        },
+        {
+          "index": 35,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9816430807113647
+        },
+        {
+          "index": 36,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9962092638015747
+        },
+        {
+          "index": 37,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9897108674049377
+        },
+        {
+          "index": 38,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9685795307159424
+        },
+        {
+          "index": 39,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.980006992816925
+        },
+        {
+          "index": 40,
+          "reference_detections": 2,
+          "board_detections": 2,
+          "best_iou": 0.9871885180473328
+        },
+        {
+          "index": 41,
+          "reference_detections": 2,
+          "board_detections": 3,
+          "best_iou": 0.9791192412376404
+        },
+        {
+          "index": 42,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9898419976234436
+        },
+        {
+          "index": 43,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9951599836349487
+        },
+        {
+          "index": 44,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9912281632423401
+        },
+        {
+          "index": 45,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9925064444541931
+        },
+        {
+          "index": 46,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9954881072044373
+        },
+        {
+          "index": 47,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9922410249710083
+        },
+        {
+          "index": 48,
+          "reference_detections": 1,
+          "board_detections": 1,
+          "best_iou": 0.9889704585075378
+        },
+        {
+          "index": 49,
+          "reference_detections": 0,
+          "board_detections": 0,
+          "best_iou": null
+        }
+      ]
+    }
+  },
+  "contact": {
+    "fp16": {
+      "variant": "contact_fp16",
+      "samples": 48,
+      "point_error_roi_diagonal_ratio_max": 0.0006980005078924839,
+      "point_error_roi_diagonal_ratio_mean": 0.0002271565701965077,
+      "point_error_roi_diagonal_ratio_p95": 0.0005360510498404552,
+      "visibility_matches": 48,
+      "visibility_match_rate": 1.0,
+      "tensor_metrics": [
+        {
+          "index": 0,
+          "samples": 48,
+          "max_abs": 0.1940479278564453,
+          "mean_abs": 0.012028137299542626,
+          "min_cosine": 0.9996964392152844
+        },
+        {
+          "index": 1,
+          "samples": 48,
+          "max_abs": 0.01634502410888672,
+          "mean_abs": 0.004687101662663433,
+          "min_cosine": 0.9999052736543975
+        }
+      ],
+      "gate": {
+        "maximum_point_error_roi_diagonal_ratio": 0.02,
+        "minimum_visibility_match_rate": 0.98,
+        "pass": true
+      },
+      "frames": [
+        {
+          "index": 0,
+          "point_error_roi_diagonal_ratio": 0.00027691132888643465,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 1,
+          "point_error_roi_diagonal_ratio": 0.0002621933917287651,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 2,
+          "point_error_roi_diagonal_ratio": 9.717579411726044e-05,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 3,
+          "point_error_roi_diagonal_ratio": 0.00016740029736818314,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 4,
+          "point_error_roi_diagonal_ratio": 0.0006980005078924839,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 5,
+          "point_error_roi_diagonal_ratio": 0.0001409504232786928,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 6,
+          "point_error_roi_diagonal_ratio": 0.00010504282830847078,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 7,
+          "point_error_roi_diagonal_ratio": 0.0002617036228651465,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 8,
+          "point_error_roi_diagonal_ratio": 0.00013294706039252755,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 9,
+          "point_error_roi_diagonal_ratio": 0.000365941661741224,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 10,
+          "point_error_roi_diagonal_ratio": 0.0002410502036452711,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 11,
+          "point_error_roi_diagonal_ratio": 8.510105955004596e-05,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 12,
+          "point_error_roi_diagonal_ratio": 3.272075829795636e-05,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 13,
+          "point_error_roi_diagonal_ratio": 0.0002652502454935329,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 14,
+          "point_error_roi_diagonal_ratio": 0.000186323290844695,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 15,
+          "point_error_roi_diagonal_ratio": 0.00011805641285973346,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 16,
+          "point_error_roi_diagonal_ratio": 0.00016848115091456822,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 17,
+          "point_error_roi_diagonal_ratio": 0.00023209069046631998,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 18,
+          "point_error_roi_diagonal_ratio": 0.00016489656440660033,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 19,
+          "point_error_roi_diagonal_ratio": 0.0002313309819622687,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 20,
+          "point_error_roi_diagonal_ratio": 1.3347169886554722e-05,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 21,
+          "point_error_roi_diagonal_ratio": 0.00033159474766653334,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 22,
+          "point_error_roi_diagonal_ratio": 0.0004565456419833391,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 23,
+          "point_error_roi_diagonal_ratio": 0.0003906236579889236,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 24,
+          "point_error_roi_diagonal_ratio": 0.0002776437469905761,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 25,
+          "point_error_roi_diagonal_ratio": 0.00045591660991604215,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 26,
+          "point_error_roi_diagonal_ratio": 0.00012494682513524195,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 27,
+          "point_error_roi_diagonal_ratio": 0.0001506662485361141,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 28,
+          "point_error_roi_diagonal_ratio": 0.00016048050317824542,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 29,
+          "point_error_roi_diagonal_ratio": 5.218848305246128e-05,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 30,
+          "point_error_roi_diagonal_ratio": 0.00013838247821352536,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 31,
+          "point_error_roi_diagonal_ratio": 0.0006376402589210866,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 32,
+          "point_error_roi_diagonal_ratio": 0.00020071638744791816,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 33,
+          "point_error_roi_diagonal_ratio": 6.884039967941649e-05,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 34,
+          "point_error_roi_diagonal_ratio": 0.00022243323562003598,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 35,
+          "point_error_roi_diagonal_ratio": 0.00018067589374370232,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 36,
+          "point_error_roi_diagonal_ratio": 0.0002273755993064128,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 37,
+          "point_error_roi_diagonal_ratio": 0.00020497613944234924,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 38,
+          "point_error_roi_diagonal_ratio": 0.0004244604607830738,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 39,
+          "point_error_roi_diagonal_ratio": 0.00013629229360578258,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 40,
+          "point_error_roi_diagonal_ratio": 0.0005788616540712102,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 41,
+          "point_error_roi_diagonal_ratio": 0.0001845695514360732,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 42,
+          "point_error_roi_diagonal_ratio": 6.6792453425678e-05,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 43,
+          "point_error_roi_diagonal_ratio": 0.00010052700023271181,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 44,
+          "point_error_roi_diagonal_ratio": 0.00016828700733818145,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 45,
+          "point_error_roi_diagonal_ratio": 0.00015650484430563858,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 46,
+          "point_error_roi_diagonal_ratio": 0.00032022936499489976,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 47,
+          "point_error_roi_diagonal_ratio": 0.00023842843751046118,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        }
+      ]
+    },
+    "int8": {
+      "variant": "contact_int8",
+      "samples": 48,
+      "point_error_roi_diagonal_ratio_max": 0.8586526949803989,
+      "point_error_roi_diagonal_ratio_mean": 0.2849747710299372,
+      "point_error_roi_diagonal_ratio_p95": 0.614151888613819,
+      "visibility_matches": 14,
+      "visibility_match_rate": 0.2916666666666667,
+      "tensor_metrics": [
+        {
+          "index": 0,
+          "samples": 48,
+          "max_abs": 13.387214660644531,
+          "mean_abs": 0.9315923737982909,
+          "min_cosine": -0.21372316534815533
+        },
+        {
+          "index": 1,
+          "samples": 48,
+          "max_abs": 1.6831886768341064,
+          "mean_abs": 0.7846430900196234,
+          "min_cosine": -0.15755687737364374
+        }
+      ],
+      "gate": {
+        "maximum_point_error_roi_diagonal_ratio": 0.04,
+        "minimum_visibility_match_rate": 0.95,
+        "pass": false
+      },
+      "frames": [
+        {
+          "index": 0,
+          "point_error_roi_diagonal_ratio": 0.06088303194154272,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 1,
+          "point_error_roi_diagonal_ratio": 0.36336108059665895,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 2,
+          "point_error_roi_diagonal_ratio": 0.1595512078208119,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 3,
+          "point_error_roi_diagonal_ratio": 0.45960504487634024,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 4,
+          "point_error_roi_diagonal_ratio": 0.1441796783369009,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 5,
+          "point_error_roi_diagonal_ratio": 0.36443186292186075,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 6,
+          "point_error_roi_diagonal_ratio": 0.2095201058700606,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 7,
+          "point_error_roi_diagonal_ratio": 0.23279557396838865,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 8,
+          "point_error_roi_diagonal_ratio": 0.16330483270393964,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 9,
+          "point_error_roi_diagonal_ratio": 0.04187358531745574,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 10,
+          "point_error_roi_diagonal_ratio": 0.2778305433710423,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 11,
+          "point_error_roi_diagonal_ratio": 0.25343374728260726,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 12,
+          "point_error_roi_diagonal_ratio": 0.06441809019676166,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 13,
+          "point_error_roi_diagonal_ratio": 0.23638761270468256,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 14,
+          "point_error_roi_diagonal_ratio": 0.26657433415093723,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 15,
+          "point_error_roi_diagonal_ratio": 0.24107768212881672,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 16,
+          "point_error_roi_diagonal_ratio": 0.5433363143472885,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 17,
+          "point_error_roi_diagonal_ratio": 0.09178090022071193,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 18,
+          "point_error_roi_diagonal_ratio": 0.6026094139496385,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 19,
+          "point_error_roi_diagonal_ratio": 0.674148839798925,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 20,
+          "point_error_roi_diagonal_ratio": 0.46846591278996286,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 21,
+          "point_error_roi_diagonal_ratio": 0.026122126881437863,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 22,
+          "point_error_roi_diagonal_ratio": 0.5305716952352122,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 23,
+          "point_error_roi_diagonal_ratio": 0.41990306375168923,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 24,
+          "point_error_roi_diagonal_ratio": 0.031198405364478835,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 25,
+          "point_error_roi_diagonal_ratio": 0.03158231441487543,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 26,
+          "point_error_roi_diagonal_ratio": 0.37377002088563166,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 27,
+          "point_error_roi_diagonal_ratio": 0.12423474322735416,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 28,
+          "point_error_roi_diagonal_ratio": 0.5046118843701537,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 29,
+          "point_error_roi_diagonal_ratio": 0.16637197520043484,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 30,
+          "point_error_roi_diagonal_ratio": 0.4585329653897815,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 31,
+          "point_error_roi_diagonal_ratio": 0.1668488606970012,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 32,
+          "point_error_roi_diagonal_ratio": 0.351744272045645,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 33,
+          "point_error_roi_diagonal_ratio": 0.3052025918054945,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 34,
+          "point_error_roi_diagonal_ratio": 0.620367067279147,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 35,
+          "point_error_roi_diagonal_ratio": 0.8586526949803989,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 36,
+          "point_error_roi_diagonal_ratio": 0.3819365400948901,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 37,
+          "point_error_roi_diagonal_ratio": 0.2671679877452981,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 38,
+          "point_error_roi_diagonal_ratio": 0.05433095668671958,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 39,
+          "point_error_roi_diagonal_ratio": 0.24605166402862066,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 40,
+          "point_error_roi_diagonal_ratio": 0.19501172089251148,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 41,
+          "point_error_roi_diagonal_ratio": 0.24361623695232063,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 42,
+          "point_error_roi_diagonal_ratio": 0.1250605376324992,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 43,
+          "point_error_roi_diagonal_ratio": 0.23927734259678912,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 44,
+          "point_error_roi_diagonal_ratio": 0.5413930113684006,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 45,
+          "point_error_roi_diagonal_ratio": 0.18486999257120346,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 46,
+          "point_error_roi_diagonal_ratio": 0.02183532016771132,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 47,
+          "point_error_roi_diagonal_ratio": 0.2889536218759506,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        }
+      ]
+    },
+    "int8_mmse": {
+      "variant": "contact_int8_mmse",
+      "samples": 48,
+      "point_error_roi_diagonal_ratio_max": 0.6785085306454864,
+      "point_error_roi_diagonal_ratio_mean": 0.32864090892807174,
+      "point_error_roi_diagonal_ratio_p95": 0.6529547277466959,
+      "visibility_matches": 0,
+      "visibility_match_rate": 0.0,
+      "tensor_metrics": [
+        {
+          "index": 0,
+          "samples": 48,
+          "max_abs": 14.659056663513184,
+          "mean_abs": 0.8058245666325092,
+          "min_cosine": -0.4398348470003237
+        },
+        {
+          "index": 1,
+          "samples": 48,
+          "max_abs": 1.9575474262237549,
+          "mean_abs": 1.047215321411689,
+          "min_cosine": -0.6685965101269483
+        }
+      ],
+      "gate": {
+        "maximum_point_error_roi_diagonal_ratio": 0.04,
+        "minimum_visibility_match_rate": 0.95,
+        "pass": false
+      },
+      "frames": [
+        {
+          "index": 0,
+          "point_error_roi_diagonal_ratio": 0.2517973754649281,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 1,
+          "point_error_roi_diagonal_ratio": 0.17461899220148558,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 2,
+          "point_error_roi_diagonal_ratio": 0.6603814757345832,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 3,
+          "point_error_roi_diagonal_ratio": 0.3579123351673299,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 4,
+          "point_error_roi_diagonal_ratio": 0.17499848875876417,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 5,
+          "point_error_roi_diagonal_ratio": 0.24849596243731306,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 6,
+          "point_error_roi_diagonal_ratio": 0.3853137606786935,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 7,
+          "point_error_roi_diagonal_ratio": 0.3317320535204883,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 8,
+          "point_error_roi_diagonal_ratio": 0.11840444891360423,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 9,
+          "point_error_roi_diagonal_ratio": 0.17441008313718684,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 10,
+          "point_error_roi_diagonal_ratio": 0.32481129525188634,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 11,
+          "point_error_roi_diagonal_ratio": 0.13237322117556397,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 12,
+          "point_error_roi_diagonal_ratio": 0.15495372650616004,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 13,
+          "point_error_roi_diagonal_ratio": 0.2351012277839071,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 14,
+          "point_error_roi_diagonal_ratio": 0.22423482659446603,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 15,
+          "point_error_roi_diagonal_ratio": 0.47237139400180234,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 16,
+          "point_error_roi_diagonal_ratio": 0.29299932801519246,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 17,
+          "point_error_roi_diagonal_ratio": 0.36853001769948546,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 18,
+          "point_error_roi_diagonal_ratio": 0.4172848860472903,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 19,
+          "point_error_roi_diagonal_ratio": 0.3682735735749328,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 20,
+          "point_error_roi_diagonal_ratio": 0.1432995201335324,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 21,
+          "point_error_roi_diagonal_ratio": 0.08502367649924558,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 22,
+          "point_error_roi_diagonal_ratio": 0.34274704795579225,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 23,
+          "point_error_roi_diagonal_ratio": 0.4585112216739077,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 24,
+          "point_error_roi_diagonal_ratio": 0.19107245971562437,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 25,
+          "point_error_roi_diagonal_ratio": 0.177142366938238,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 26,
+          "point_error_roi_diagonal_ratio": 0.5155275490995005,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 27,
+          "point_error_roi_diagonal_ratio": 0.4412906676600355,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 28,
+          "point_error_roi_diagonal_ratio": 0.16475517608674983,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 29,
+          "point_error_roi_diagonal_ratio": 0.3034557166435577,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 30,
+          "point_error_roi_diagonal_ratio": 0.33518716955384625,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 31,
+          "point_error_roi_diagonal_ratio": 0.3284117551660891,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 32,
+          "point_error_roi_diagonal_ratio": 0.5137383071489823,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 33,
+          "point_error_roi_diagonal_ratio": 0.37986081213087625,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 34,
+          "point_error_roi_diagonal_ratio": 0.4764321787249213,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 35,
+          "point_error_roi_diagonal_ratio": 0.1909336935485954,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 36,
+          "point_error_roi_diagonal_ratio": 0.2569532834740479,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 37,
+          "point_error_roi_diagonal_ratio": 0.6691866295920211,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 38,
+          "point_error_roi_diagonal_ratio": 0.6785085306454864,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 39,
+          "point_error_roi_diagonal_ratio": 0.6117870239259146,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 40,
+          "point_error_roi_diagonal_ratio": 0.5052469516356908,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 41,
+          "point_error_roi_diagonal_ratio": 0.3688850454458774,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 42,
+          "point_error_roi_diagonal_ratio": 0.14083222417358598,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 43,
+          "point_error_roi_diagonal_ratio": 0.19603979778321012,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 44,
+          "point_error_roi_diagonal_ratio": 0.2590053375113785,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 45,
+          "point_error_roi_diagonal_ratio": 0.24272654570442537,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 46,
+          "point_error_roi_diagonal_ratio": 0.29004227154205553,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 47,
+          "point_error_roi_diagonal_ratio": 0.6391621957691913,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        }
+      ]
+    },
+    "int8_opt2": {
+      "variant": "contact_int8_opt2",
+      "samples": 48,
+      "point_error_roi_diagonal_ratio_max": 0.8586526949803989,
+      "point_error_roi_diagonal_ratio_mean": 0.2849747710299372,
+      "point_error_roi_diagonal_ratio_p95": 0.614151888613819,
+      "visibility_matches": 14,
+      "visibility_match_rate": 0.2916666666666667,
+      "tensor_metrics": [
+        {
+          "index": 0,
+          "samples": 48,
+          "max_abs": 13.387214660644531,
+          "mean_abs": 0.9315923737982909,
+          "min_cosine": -0.21372316534815533
+        },
+        {
+          "index": 1,
+          "samples": 48,
+          "max_abs": 1.6831886768341064,
+          "mean_abs": 0.7846430900196234,
+          "min_cosine": -0.15755687737364374
+        }
+      ],
+      "gate": {
+        "maximum_point_error_roi_diagonal_ratio": 0.04,
+        "minimum_visibility_match_rate": 0.95,
+        "pass": false
+      },
+      "frames": [
+        {
+          "index": 0,
+          "point_error_roi_diagonal_ratio": 0.06088303194154272,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 1,
+          "point_error_roi_diagonal_ratio": 0.36336108059665895,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 2,
+          "point_error_roi_diagonal_ratio": 0.1595512078208119,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 3,
+          "point_error_roi_diagonal_ratio": 0.45960504487634024,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 4,
+          "point_error_roi_diagonal_ratio": 0.1441796783369009,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 5,
+          "point_error_roi_diagonal_ratio": 0.36443186292186075,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 6,
+          "point_error_roi_diagonal_ratio": 0.2095201058700606,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 7,
+          "point_error_roi_diagonal_ratio": 0.23279557396838865,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 8,
+          "point_error_roi_diagonal_ratio": 0.16330483270393964,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 9,
+          "point_error_roi_diagonal_ratio": 0.04187358531745574,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 10,
+          "point_error_roi_diagonal_ratio": 0.2778305433710423,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 11,
+          "point_error_roi_diagonal_ratio": 0.25343374728260726,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 12,
+          "point_error_roi_diagonal_ratio": 0.06441809019676166,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 13,
+          "point_error_roi_diagonal_ratio": 0.23638761270468256,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 14,
+          "point_error_roi_diagonal_ratio": 0.26657433415093723,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 15,
+          "point_error_roi_diagonal_ratio": 0.24107768212881672,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 16,
+          "point_error_roi_diagonal_ratio": 0.5433363143472885,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 17,
+          "point_error_roi_diagonal_ratio": 0.09178090022071193,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 18,
+          "point_error_roi_diagonal_ratio": 0.6026094139496385,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 19,
+          "point_error_roi_diagonal_ratio": 0.674148839798925,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 20,
+          "point_error_roi_diagonal_ratio": 0.46846591278996286,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 21,
+          "point_error_roi_diagonal_ratio": 0.026122126881437863,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 22,
+          "point_error_roi_diagonal_ratio": 0.5305716952352122,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 23,
+          "point_error_roi_diagonal_ratio": 0.41990306375168923,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 24,
+          "point_error_roi_diagonal_ratio": 0.031198405364478835,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 25,
+          "point_error_roi_diagonal_ratio": 0.03158231441487543,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 26,
+          "point_error_roi_diagonal_ratio": 0.37377002088563166,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 27,
+          "point_error_roi_diagonal_ratio": 0.12423474322735416,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 28,
+          "point_error_roi_diagonal_ratio": 0.5046118843701537,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 29,
+          "point_error_roi_diagonal_ratio": 0.16637197520043484,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 30,
+          "point_error_roi_diagonal_ratio": 0.4585329653897815,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 31,
+          "point_error_roi_diagonal_ratio": 0.1668488606970012,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 32,
+          "point_error_roi_diagonal_ratio": 0.351744272045645,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 33,
+          "point_error_roi_diagonal_ratio": 0.3052025918054945,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 34,
+          "point_error_roi_diagonal_ratio": 0.620367067279147,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 35,
+          "point_error_roi_diagonal_ratio": 0.8586526949803989,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 36,
+          "point_error_roi_diagonal_ratio": 0.3819365400948901,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 37,
+          "point_error_roi_diagonal_ratio": 0.2671679877452981,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 38,
+          "point_error_roi_diagonal_ratio": 0.05433095668671958,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 39,
+          "point_error_roi_diagonal_ratio": 0.24605166402862066,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 40,
+          "point_error_roi_diagonal_ratio": 0.19501172089251148,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 41,
+          "point_error_roi_diagonal_ratio": 0.24361623695232063,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 42,
+          "point_error_roi_diagonal_ratio": 0.1250605376324992,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 43,
+          "point_error_roi_diagonal_ratio": 0.23927734259678912,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 44,
+          "point_error_roi_diagonal_ratio": 0.5413930113684006,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 45,
+          "point_error_roi_diagonal_ratio": 0.18486999257120346,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 46,
+          "point_error_roi_diagonal_ratio": 0.02183532016771132,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        },
+        {
+          "index": 47,
+          "point_error_roi_diagonal_ratio": 0.2889536218759506,
+          "reference_visibility": 0,
+          "board_visibility": 2,
+          "visibility_match": false
+        }
+      ]
+    },
+    "int8_hybrid_proposal": {
+      "variant": "contact_int8_hybrid_proposal",
+      "samples": 48,
+      "point_error_roi_diagonal_ratio_max": 0.0140321511098348,
+      "point_error_roi_diagonal_ratio_mean": 0.002737201987616518,
+      "point_error_roi_diagonal_ratio_p95": 0.009466894867291962,
+      "visibility_matches": 48,
+      "visibility_match_rate": 1.0,
+      "tensor_metrics": [
+        {
+          "index": 0,
+          "samples": 48,
+          "max_abs": 1.1755032539367676,
+          "mean_abs": 0.0745442909343789,
+          "min_cosine": 0.9859257053590083
+        },
+        {
+          "index": 1,
+          "samples": 48,
+          "max_abs": 0.20165109634399414,
+          "mean_abs": 0.0466194073863638,
+          "min_cosine": 0.998919016015993
+        }
+      ],
+      "gate": {
+        "maximum_point_error_roi_diagonal_ratio": 0.04,
+        "minimum_visibility_match_rate": 0.95,
+        "pass": true
+      },
+      "frames": [
+        {
+          "index": 0,
+          "point_error_roi_diagonal_ratio": 0.0027267489839531023,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 1,
+          "point_error_roi_diagonal_ratio": 0.0038616024702227275,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 2,
+          "point_error_roi_diagonal_ratio": 0.0014167707720799043,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 3,
+          "point_error_roi_diagonal_ratio": 0.0140321511098348,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 4,
+          "point_error_roi_diagonal_ratio": 0.0012149437090402983,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 5,
+          "point_error_roi_diagonal_ratio": 0.0027935578567914727,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 6,
+          "point_error_roi_diagonal_ratio": 0.0009495611574037074,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 7,
+          "point_error_roi_diagonal_ratio": 0.00028431216082618565,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 8,
+          "point_error_roi_diagonal_ratio": 0.0019986016842951687,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 9,
+          "point_error_roi_diagonal_ratio": 0.0009760857864881618,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 10,
+          "point_error_roi_diagonal_ratio": 0.004072384566295479,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 11,
+          "point_error_roi_diagonal_ratio": 0.002959445656510891,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 12,
+          "point_error_roi_diagonal_ratio": 0.0013379665107211126,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 13,
+          "point_error_roi_diagonal_ratio": 0.009469701869480972,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 14,
+          "point_error_roi_diagonal_ratio": 0.002517245318805533,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 15,
+          "point_error_roi_diagonal_ratio": 0.002180508452970647,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 16,
+          "point_error_roi_diagonal_ratio": 0.0011648579766596091,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 17,
+          "point_error_roi_diagonal_ratio": 0.0004272528625221254,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 18,
+          "point_error_roi_diagonal_ratio": 0.0022764240571317247,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 19,
+          "point_error_roi_diagonal_ratio": 0.0019880202008612353,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 20,
+          "point_error_roi_diagonal_ratio": 0.01089728250208388,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 21,
+          "point_error_roi_diagonal_ratio": 0.0029343671142477152,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 22,
+          "point_error_roi_diagonal_ratio": 0.001874253326561162,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 23,
+          "point_error_roi_diagonal_ratio": 0.004796208000183677,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 24,
+          "point_error_roi_diagonal_ratio": 0.00760013404635209,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 25,
+          "point_error_roi_diagonal_ratio": 0.0006908597068141269,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 26,
+          "point_error_roi_diagonal_ratio": 0.0001335449244169172,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 27,
+          "point_error_roi_diagonal_ratio": 0.0016028865200929253,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 28,
+          "point_error_roi_diagonal_ratio": 0.002088732914716276,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 29,
+          "point_error_roi_diagonal_ratio": 0.00024108216352596913,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 30,
+          "point_error_roi_diagonal_ratio": 0.0004326952590385266,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 31,
+          "point_error_roi_diagonal_ratio": 0.001691925579573166,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 32,
+          "point_error_roi_diagonal_ratio": 0.002494530886101881,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 33,
+          "point_error_roi_diagonal_ratio": 0.0016585174754986736,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 34,
+          "point_error_roi_diagonal_ratio": 0.0009326699842724055,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 35,
+          "point_error_roi_diagonal_ratio": 0.00086883854874771,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 36,
+          "point_error_roi_diagonal_ratio": 0.007080478743186804,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 37,
+          "point_error_roi_diagonal_ratio": 0.0027082229712978474,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 38,
+          "point_error_roi_diagonal_ratio": 0.0016385823330666894,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 39,
+          "point_error_roi_diagonal_ratio": 0.0007858856833485191,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 40,
+          "point_error_roi_diagonal_ratio": 0.0017790838642968724,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 41,
+          "point_error_roi_diagonal_ratio": 0.0009044831408993202,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 42,
+          "point_error_roi_diagonal_ratio": 0.0025237923519310355,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 43,
+          "point_error_roi_diagonal_ratio": 0.0015624624802448304,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 44,
+          "point_error_roi_diagonal_ratio": 0.0018080731699400441,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 45,
+          "point_error_roi_diagonal_ratio": 0.0013281519695498153,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 46,
+          "point_error_roi_diagonal_ratio": 0.000218124719482464,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        },
+        {
+          "index": 47,
+          "point_error_roi_diagonal_ratio": 0.009461681863226656,
+          "reference_visibility": 0,
+          "board_visibility": 0,
+          "visibility_match": true
+        }
+      ]
+    }
+  },
+  "selection": {
+    "device": "int8_hybrid_all_heads",
+    "contact": "int8_hybrid_proposal",
+    "int8_default_ready": true,
+    "deployment_readiness": "INT8_DEFAULT_READY"
+  },
+  "result": "PASS"
+}

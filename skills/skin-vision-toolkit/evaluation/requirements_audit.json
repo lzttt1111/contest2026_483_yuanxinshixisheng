@@ -1,0 +1,273 @@
+{
+  "passed": true,
+  "stage": "pre-release-requirements-audit",
+  "at": "2026-09-10T09:02:57.101314+00:00",
+  "plan_sha256": "4df81add9fb16d98ed001887ca9ff4dd23ef893c74454035c0e60a409e9776d7",
+  "location_override": "User-authorized independent Skill sandbox supersedes original plan directory",
+  "checks": [
+    {
+      "id": "SKILL-01",
+      "requirement": "vision-spec-to-evidence：入口/输入/流程/输出/边界/案例/工具",
+      "passed": true,
+      "evidence": [
+        "skills/vision-spec-to-evidence/SKILL.md",
+        "skills/vision-spec-to-evidence/agents/openai.yaml",
+        "skills/vision-spec-to-evidence/scripts/check.py",
+        "skills/vision-spec-to-evidence/references/contract.md",
+        "skills/vision-spec-to-evidence/references/project-case.md",
+        "skills/vision-spec-to-evidence/references/worked-example.md",
+        "evaluation/self_checks.json",
+        "evidence/method_sources.json"
+      ],
+      "verification": "主代理已阅读内容与完整产物示例；独立代理审查全部入口/合同并逐题判断。存在文件不单独证明行为，关联3类实际检查。"
+    },
+    {
+      "id": "SKILL-02",
+      "requirement": "vision-data-review：入口/输入/流程/输出/边界/案例/工具",
+      "passed": true,
+      "evidence": [
+        "skills/vision-data-review/SKILL.md",
+        "skills/vision-data-review/agents/openai.yaml",
+        "skills/vision-data-review/scripts/check.py",
+        "skills/vision-data-review/references/contract.md",
+        "skills/vision-data-review/references/project-case.md",
+        "skills/vision-data-review/references/worked-example.md",
+        "evaluation/self_checks.json",
+        "evidence/method_sources.json"
+      ],
+      "verification": "主代理已阅读内容与完整产物示例；独立代理审查全部入口/合同并逐题判断。存在文件不单独证明行为，关联3类实际检查。"
+    },
+    {
+      "id": "SKILL-03",
+      "requirement": "vision-generalization：入口/输入/流程/输出/边界/案例/工具",
+      "passed": true,
+      "evidence": [
+        "skills/vision-generalization/SKILL.md",
+        "skills/vision-generalization/agents/openai.yaml",
+        "skills/vision-generalization/scripts/check.py",
+        "skills/vision-generalization/references/contract.md",
+        "skills/vision-generalization/references/project-case.md",
+        "skills/vision-generalization/references/worked-example.md",
+        "evaluation/self_checks.json",
+        "evidence/method_sources.json"
+      ],
+      "verification": "主代理已阅读内容与完整产物示例；独立代理审查全部入口/合同并逐题判断。存在文件不单独证明行为，关联3类实际检查。"
+    },
+    {
+      "id": "SKILL-04",
+      "requirement": "pose-guided-capture：入口/输入/流程/输出/边界/案例/工具",
+      "passed": true,
+      "evidence": [
+        "skills/pose-guided-capture/SKILL.md",
+        "skills/pose-guided-capture/agents/openai.yaml",
+        "skills/pose-guided-capture/scripts/check.py",
+        "skills/pose-guided-capture/references/contract.md",
+        "skills/pose-guided-capture/references/project-case.md",
+        "skills/pose-guided-capture/references/worked-example.md",
+        "evaluation/self_checks.json",
+        "evidence/method_sources.json"
+      ],
+      "verification": "主代理已阅读内容与完整产物示例；独立代理审查全部入口/合同并逐题判断。存在文件不单独证明行为，关联3类实际检查。"
+    },
+    {
+      "id": "SKILL-05",
+      "requirement": "vision-feature-engineering：入口/输入/流程/输出/边界/案例/工具",
+      "passed": true,
+      "evidence": [
+        "skills/vision-feature-engineering/SKILL.md",
+        "skills/vision-feature-engineering/agents/openai.yaml",
+        "skills/vision-feature-engineering/scripts/check.py",
+        "skills/vision-feature-engineering/references/contract.md",
+        "skills/vision-feature-engineering/references/project-case.md",
+        "skills/vision-feature-engineering/references/worked-example.md",
+        "evaluation/self_checks.json",
+        "evidence/method_sources.json"
+      ],
+      "verification": "主代理已阅读内容与完整产物示例；独立代理审查全部入口/合同并逐题判断。存在文件不单独证明行为，关联3类实际检查。"
+    },
+    {
+      "id": "SKILL-06",
+      "requirement": "vision-metrics-calibration：入口/输入/流程/输出/边界/案例/工具",
+      "passed": true,
+      "evidence": [
+        "skills/vision-metrics-calibration/SKILL.md",
+        "skills/vision-metrics-calibration/agents/openai.yaml",
+        "skills/vision-metrics-calibration/scripts/check.py",
+        "skills/vision-metrics-calibration/references/contract.md",
+        "skills/vision-metrics-calibration/references/project-case.md",
+        "skills/vision-metrics-calibration/references/worked-example.md",
+        "evaluation/self_checks.json",
+        "evidence/method_sources.json"
+      ],
+      "verification": "主代理已阅读内容与完整产物示例；独立代理审查全部入口/合同并逐题判断。存在文件不单独证明行为，关联3类实际检查。"
+    },
+    {
+      "id": "SKILL-07",
+      "requirement": "vision-result-publication：入口/输入/流程/输出/边界/案例/工具",
+      "passed": true,
+      "evidence": [
+        "skills/vision-result-publication/SKILL.md",
+        "skills/vision-result-publication/agents/openai.yaml",
+        "skills/vision-result-publication/scripts/check.py",
+        "skills/vision-result-publication/references/contract.md",
+        "skills/vision-result-publication/references/project-case.md",
+        "skills/vision-result-publication/references/worked-example.md",
+        "evaluation/self_checks.json",
+        "evidence/method_sources.json"
+      ],
+      "verification": "主代理已阅读内容与完整产物示例；独立代理审查全部入口/合同并逐题判断。存在文件不单独证明行为，关联3类实际检查。"
+    },
+    {
+      "id": "SKILL-08",
+      "requirement": "vision-batch-recovery：入口/输入/流程/输出/边界/案例/工具",
+      "passed": true,
+      "evidence": [
+        "skills/vision-batch-recovery/SKILL.md",
+        "skills/vision-batch-recovery/agents/openai.yaml",
+        "skills/vision-batch-recovery/scripts/check.py",
+        "skills/vision-batch-recovery/references/contract.md",
+        "skills/vision-batch-recovery/references/project-case.md",
+        "skills/vision-batch-recovery/references/worked-example.md",
+        "evaluation/self_checks.json",
+        "evidence/method_sources.json"
+      ],
+      "verification": "主代理已阅读内容与完整产物示例；独立代理审查全部入口/合同并逐题判断。存在文件不单独证明行为，关联3类实际检查。"
+    },
+    {
+      "id": "SKILL-09",
+      "requirement": "vision-runtime-parity：入口/输入/流程/输出/边界/案例/工具",
+      "passed": true,
+      "evidence": [
+        "skills/vision-runtime-parity/SKILL.md",
+        "skills/vision-runtime-parity/agents/openai.yaml",
+        "skills/vision-runtime-parity/scripts/check.py",
+        "skills/vision-runtime-parity/references/contract.md",
+        "skills/vision-runtime-parity/references/project-case.md",
+        "skills/vision-runtime-parity/references/worked-example.md",
+        "evaluation/self_checks.json",
+        "evidence/method_sources.json"
+      ],
+      "verification": "主代理已阅读内容与完整产物示例；独立代理审查全部入口/合同并逐题判断。存在文件不单独证明行为，关联3类实际检查。"
+    },
+    {
+      "id": "SKILL-10",
+      "requirement": "vision-system-integration：入口/输入/流程/输出/边界/案例/工具",
+      "passed": true,
+      "evidence": [
+        "skills/vision-system-integration/SKILL.md",
+        "skills/vision-system-integration/agents/openai.yaml",
+        "skills/vision-system-integration/scripts/check.py",
+        "skills/vision-system-integration/references/contract.md",
+        "skills/vision-system-integration/references/project-case.md",
+        "skills/vision-system-integration/references/worked-example.md",
+        "evaluation/self_checks.json",
+        "evidence/method_sources.json"
+      ],
+      "verification": "主代理已阅读内容与完整产物示例；独立代理审查全部入口/合同并逐题判断。存在文件不单独证明行为，关联3类实际检查。"
+    },
+    {
+      "id": "STRUCTURE",
+      "requirement": "10项命名、frontmatter、引用、无占位和无私有运行路径",
+      "passed": true,
+      "evidence": [
+        "evaluation/structure_checks.json"
+      ],
+      "verification": "官方quick_validate与静态副作用/依赖检查。"
+    },
+    {
+      "id": "PORTABLE",
+      "requirement": "Windows/Linux原目录及无原工程迁移目录运行",
+      "passed": true,
+      "evidence": [
+        "evaluation/self_checks.json",
+        "evaluation/linux_checks.json"
+      ],
+      "verification": "每平台30+30，保留独立临时目录和输入不改写断言。"
+    },
+    {
+      "id": "GATES",
+      "requirement": "明确列出的失败场景及修复回归",
+      "passed": true,
+      "evidence": [
+        "evaluation/review_regressions.json",
+        "evaluation/completion_checks.json"
+      ],
+      "verification": "包括镜像、重拍/revision、失锁/间隔、分母、分位数、letterbox/镜像和假布尔。"
+    },
+    {
+      "id": "INDEPENDENT",
+      "requirement": "同一独立代理先baseline后Skill并修复复核",
+      "passed": true,
+      "evidence": [
+        "evaluation/independent_baseline.json",
+        "evaluation/independent_with_skill.json",
+        "evaluation/independent_recheck.json",
+        "evaluation/independent_completion_audit.json"
+      ],
+      "verification": "真实公开代理消息带时间/事件哈希；不是主代理模拟评审。"
+    },
+    {
+      "id": "PROJECT",
+      "requirement": "项目案例及真实缓存复用，不重跑模型",
+      "passed": true,
+      "evidence": [
+        "evaluation/project_replay.json",
+        "evidence/method_sources.json",
+        "evidence/source_code.json"
+      ],
+      "verification": "1525实例缓存实际域/JSON核对。10项历史来源独立于合成样例，不把历史计划冒充成功。"
+    },
+    {
+      "id": "COVERAGE",
+      "requirement": "覆盖产品运行/研发流程、职责分界、通用层与项目层",
+      "passed": true,
+      "evidence": [
+        "README.md",
+        "VALIDATION.md"
+      ],
+      "verification": "人工内容审阅与独立完整产物示例审阅；不以日志大小/目录数替代工作流。"
+    },
+    {
+      "id": "SCOPE",
+      "requirement": "不改并行项目、Hook、模型；不训练/部署/推送",
+      "passed": true,
+      "evidence": [
+        "WORK_LOG.md",
+        "evaluation/project_replay.json",
+        "evaluation/independent_recheck.json"
+      ],
+      "verification": "本任务主动写入在Skill沙箱；源码只读快照/缓存哈希核对。未做全系统监控，不能归因其他并行任务的修改。"
+    },
+    {
+      "id": "PROVENANCE",
+      "requirement": "证据真实性、候选与实际使用区分、无虚构效率提升",
+      "passed": true,
+      "evidence": [
+        "evidence/method_sources.json",
+        "VALIDATION.md",
+        "evaluation/independent_completion_audit.json"
+      ],
+      "verification": "对照报告记录实际观察及无法测量项；不作随机对照或因果效率声明。"
+    },
+    {
+      "id": "COMPARISON-MEASURES",
+      "requirement": "对照正确性/遗漏/无效操作说明、补充请求数和实际整轮耗时",
+      "passed": true,
+      "evidence": [
+        "evaluation/comparison_measurements.json",
+        "evaluation/independent_completion_audit.json"
+      ],
+      "verification": "实际任务事件计时和补充请求调用计数；逐题耗时未采集，不冒充已有。两组工作量不同，不据此宣称提速。"
+    },
+    {
+      "id": "RELEASE-READY",
+      "requirement": "可复制发布包的输入齐备",
+      "passed": true,
+      "evidence": [
+        "tools/build_release.py"
+      ],
+      "verification": "ZIP与解压校验在发布后以发布校验.json确认，当前只证明打包前置条件。"
+    }
+  ],
+  "version": "0.1.2"
+}

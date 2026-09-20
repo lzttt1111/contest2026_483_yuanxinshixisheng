@@ -1,0 +1,77 @@
+{
+  "schema": "aisia_vendor_runtime_manifest_v1",
+  "asset_scope": "vendor_skin/pyz",
+  "source_snapshot": "vendor-exact-runtime-r16",
+  "delivery_mode": "bundled_internal_git_checkout",
+  "runtime_contract": {
+    "root_relative_to_delivery": "00_runtime_assets/vendor_skin/pyz",
+    "root_environment_variable": "DERMAVISION_VENDOR_SKIN_MODULES_ROOT",
+    "sha256_environment_variable": "DERMAVISION_VENDOR_SKIN_MODULE_SHA256",
+    "verified_module_relative_path": "pyz/core/skin_generate.pyc",
+    "verified_module_sha256": "fd590298569d80ef6b3dfd3d7043c653715b12fddb5f41dbf1fd0ff8417a1581"
+  },
+  "required_imports": [
+    {
+      "module": "core.service",
+      "relative_path": "pyz/core/service/__init__.pyc"
+    },
+    {
+      "module": "core.service.enhence_imgs_service.enhence_imgs",
+      "relative_path": "pyz/core/service/enhence_imgs_service/enhence_imgs.pyc"
+    },
+    {
+      "module": "core.service.enhence_imgs_service.red_1",
+      "relative_path": "pyz/core/service/enhence_imgs_service/red_1.pyc"
+    },
+    {
+      "module": "core.service.enhence_imgs_service.red_1130",
+      "relative_path": "pyz/core/service/enhence_imgs_service/red_1130.pyc"
+    },
+    {
+      "module": "core.service.heatmap_service.heatmap",
+      "relative_path": "pyz/core/service/heatmap_service/heatmap.pyc"
+    }
+  ],
+  "files": [
+    {
+      "relative_path": "pyz/core/__init__.pyc",
+      "size_bytes": 109,
+      "sha256": "1cc0943610ed6309752513bec9daeeaecb54b0e8a4f816839a7e9669698eecb1"
+    },
+    {
+      "relative_path": "pyz/core/service/__init__.pyc",
+      "size_bytes": 117,
+      "sha256": "11b774004685b68d6f66a98f60cd835ebe9345f0491b4273450fd493f9d302e8"
+    },
+    {
+      "relative_path": "pyz/core/service/enhence_imgs_service/enhence_imgs.pyc",
+      "size_bytes": 13701,
+      "sha256": "7e04ec1bd8965d4942384bb1d260d4fb2cf84aae2e7c23ce08d9286a566a32ca"
+    },
+    {
+      "relative_path": "pyz/core/service/enhence_imgs_service/red_1.pyc",
+      "size_bytes": 7736,
+      "sha256": "e75101fe96927b0c126d1b254cf28b5aaf79670125b622f16b6bb41746564a69"
+    },
+    {
+      "relative_path": "pyz/core/service/enhence_imgs_service/red_1130.pyc",
+      "size_bytes": 7876,
+      "sha256": "517fa48fe129bb7fcc8b2eebb1837aabeab1f3960b9ae105d0aea05e1eac9f93"
+    },
+    {
+      "relative_path": "pyz/core/service/heatmap_service/heatmap.pyc",
+      "size_bytes": 2563,
+      "sha256": "0859a9a09da5bb95fca35a5173ca8491440b026222e0e958445df0e4707277d1"
+    },
+    {
+      "relative_path": "pyz/core/skin_generate.pyc",
+      "size_bytes": 5269,
+      "sha256": "fd590298569d80ef6b3dfd3d7043c653715b12fddb5f41dbf1fd0ff8417a1581"
+    },
+    {
+      "relative_path": "pyz/core/skin_model.pyc",
+      "size_bytes": 45396,
+      "sha256": "e9acc2d6669d8d3b8df7cfbbacbe3cc39ef8db7c9dd5ac68957f3339e223db41"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>MedVision · RK3568 离线推理</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="identity">
+      <strong>MedVision</strong>
+      <span>RK3568 离线推理</span>
+    </div>
+    <div class="top-actions">
+      <span class="connection-state" id="connection-state">
+        <i aria-hidden="true"></i><span>正在检查板卡</span>
+      </span>
+      <button class="button primary" id="inference-toggle" type="button" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg>
+        <span>启动推理</span>
+      </button>
+      <button class="button danger" id="camera-stop" type="button" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7z"/></svg>
+        <span>停止</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <section class="vision-column" aria-label="实时摄像头与推理结果">
+      <div class="stage" id="stage">
+        <video id="camera" autoplay muted playsinline></video>
+        <canvas id="view" width="960" height="540" aria-label="镜像摄像头画面与板端检测结果"></canvas>
+        <div class="empty-state" id="empty-state">
+          <span class="empty-mark" aria-hidden="true"></span>
+          <strong>等待摄像头画面</strong>
+          <span>画面仅通过 ADB 转发到本地 RK3568 板卡</span>
+        </div>
+        <dl class="stage-metrics" aria-label="实时性能">
+          <div><dt>FPS</dt><dd id="fps">—</dd></div>
+          <div><dt>往返</dt><dd><span id="rtt">—</span><small>ms</small></dd></div>
+          <div><dt>板端</dt><dd><span id="board-time">—</span><small>ms</small></dd></div>
+        </dl>
+        <span class="coordinate-note">原图坐标 · 镜像显示</span>
+      </div>
+
+      <div class="controls">
+        <label class="camera-select">
+          <span>摄像头</span>
+          <select id="camera-select" aria-label="选择摄像头">
+            <option value="">默认摄像头</option>
+          </select>
+        </label>
+        <button class="button control" id="camera-start" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 6 10 4h4l1.5 2H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/><circle cx="12" cy="12.5" r="3.5"/></svg>
+          <span>启动摄像头</span>
+        </button>
+        <button class="button control" id="inference-start" type="button" disabled>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></svg>
+          <span>启动推理</span>
+        </button>
+        <button class="button control" id="stream-reset" type="button" disabled>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 6M20 5v6h-6"/></svg>
+          <span>重置流</span>
+        </button>
+        <p class="request-policy"><i aria-hidden="true"></i>同一时刻最多一个帧请求在途；慢帧不会积压。</p>
+      </div>
+    </section>
+
+    <aside class="diagnostics" aria-label="RK3568 诊断信息">
+      <section class="rail-section">
+        <h2>连接 / 设置</h2>
+        <dl class="info-list">
+          <div><dt>服务端地址</dt><dd class="mono">127.0.0.1:18080</dd></div>
+          <div><dt>运行时</dt><dd class="mono signal" id="runtime">—</dd></div>
+          <div><dt>板卡型号</dt><dd class="mono" id="board-model">—</dd></div>
+          <div><dt>RKNN 版本</dt><dd class="mono" id="rknn-version">—</dd></div>
+          <div><dt>驱动版本</dt><dd class="mono" id="driver-version">—</dd></div>
+          <div><dt>连接状态</dt><dd id="rail-connection"><span class="status-dot"></span>检查中</dd></div>
+          <div><dt>连接时长</dt><dd class="mono" id="connection-age">—</dd></div>
+        </dl>
+      </section>
+
+      <section class="rail-section">
+        <h2>模型信息</h2>
+        <dl class="model-list">
+          <div><dt>部署配置</dt><dd class="mono signal" id="model-quantization">—</dd></div>
+          <div>
+            <dt>设备检测模型</dt>
+            <dd class="mono" id="device-model">—</dd>
+            <dd class="hash">SHA256 <span class="mono" id="device-sha">—</span></dd>
+          </div>
+          <div>
+            <dt>接触点模型</dt>
+            <dd class="mono" id="contact-model">—</dd>
+            <dd class="hash">SHA256 <span class="mono" id="contact-sha">—</span></dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="rail-section">
+        <h2>耗时分解 <small>最近一帧</small></h2>
+        <dl class="info-list timings">
+          <div><dt>解码（板端）</dt><dd><span id="timing-decode">—</span> ms</dd></div>
+          <div><dt>预处理（板端）</dt><dd><span id="timing-pre">—</span> ms</dd></div>
+          <div><dt>NPU 推理（板端）</dt><dd><span id="timing-npu">—</span> ms</dd></div>
+          <div><dt>后处理（板端）</dt><dd><span id="timing-post">—</span> ms</dd></div>
+          <div class="total"><dt>板端总耗时</dt><dd><span id="timing-total">—</span> ms</dd></div>
+          <div class="total"><dt>往返（RTT）</dt><dd><span id="timing-rtt">—</span> ms</dd></div>
+        </dl>
+      </section>
+
+      <section class="rail-section log-section">
+        <div class="section-title">
+          <h2>事件日志</h2>
+          <button id="clear-log" type="button">清空</button>
+        </div>
+        <ol class="event-log" id="event-log" aria-live="polite"></ol>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="statusbar">
+    <p><span>状态：</span>浏览器仅负责采集与绘制，所有神经网络推理均在 RK3568 板卡端运行。</p>
+    <p><span>版本 0.1.0</span><i></i><span>本地演示模式</span></p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

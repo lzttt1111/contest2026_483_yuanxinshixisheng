@@ -1,0 +1,6 @@
+interface:
+  display_name: "量化统计与评分标定"
+  short_description: "依据可追溯输入完成量化统计与评分标定，输出明确检查结果及未解决证据"
+  default_prompt: "使用 $vision-metrics-calibration 审阅本任务材料，先说明适用范围并给出有证据的结果。"
+policy:
+  allow_implicit_invocation: true

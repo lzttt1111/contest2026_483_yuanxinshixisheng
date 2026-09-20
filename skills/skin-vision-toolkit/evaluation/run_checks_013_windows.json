@@ -1,0 +1,735 @@
+{
+  "kind": "deterministic_offline_checker_tests",
+  "not_llm_behavior_benchmark": true,
+  "cases": [
+    {
+      "id": "01-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.054998999927192926,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "reuse_candidates": [
+            "existing"
+          ],
+          "requirements_checked": 1,
+          "recommendation": "reuse_then_validate"
+        }
+      }
+    },
+    {
+      "id": "01-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.05514580011367798,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "unsupported_measurement",
+            "detail": {
+              "id": "depth",
+              "missing": [
+                "depth_sensor"
+              ]
+            }
+          },
+          {
+            "code": "missing_calibration",
+            "detail": "depth"
+          },
+          {
+            "code": "unknown_license",
+            "detail": "unknown"
+          }
+        ],
+        "metrics": {
+          "reuse_candidates": [],
+          "requirements_checked": 1,
+          "recommendation": "collect_missing_evidence"
+        }
+      }
+    },
+    {
+      "id": "01-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.052521500270813704,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "02-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.0548013998195529,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "records": 2,
+          "protected_ids": [
+            "a",
+            "b"
+          ],
+          "safe_rerun_ids": []
+        }
+      }
+    },
+    {
+      "id": "02-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.054647100158035755,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "negative_has_box",
+            "detail": "a"
+          },
+          {
+            "code": "human_edit_overwrite",
+            "detail": "a"
+          },
+          {
+            "code": "duplicate_id",
+            "detail": "a"
+          },
+          {
+            "code": "duplicate_image",
+            "detail": "a"
+          },
+          {
+            "code": "bbox_outside",
+            "detail": "a"
+          },
+          {
+            "code": "unknown_review_state",
+            "detail": "a"
+          }
+        ],
+        "metrics": {
+          "records": 2,
+          "protected_ids": [
+            "a"
+          ],
+          "safe_rerun_ids": []
+        }
+      }
+    },
+    {
+      "id": "02-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.06753929983824492,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "03-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.05938240000978112,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "records": 3,
+          "splits": {
+            "train": 1,
+            "validation": 1,
+            "test": 1,
+            "reference": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "03-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.061495499685406685,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "subject_leakage",
+            "detail": {
+              "group": "p1",
+              "splits": [
+                "test",
+                "train"
+              ]
+            }
+          },
+          {
+            "code": "session_leakage",
+            "detail": {
+              "group": "s1",
+              "splits": [
+                "test",
+                "train"
+              ]
+            }
+          },
+          {
+            "code": "cluster_leakage",
+            "detail": {
+              "group": "c1",
+              "splits": [
+                "test",
+                "train"
+              ]
+            }
+          },
+          {
+            "code": "test_selection",
+            "detail": "Checkpoint selection uses held-out test"
+          },
+          {
+            "code": "calibration_leakage",
+            "detail": "b"
+          },
+          {
+            "code": "synthetic_leakage",
+            "detail": "b"
+          }
+        ],
+        "metrics": {
+          "records": 2,
+          "splits": {
+            "train": 1,
+            "validation": 0,
+            "test": 1,
+            "reference": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "03-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.05992269981652498,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "04-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.05844609998166561,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "captured": {
+            "front": 2
+          },
+          "complete": true,
+          "trace": [
+            {
+              "frame": 0,
+              "accepted": true
+            },
+            {
+              "frame": 1,
+              "accepted": true
+            },
+            {
+              "frame": 2,
+              "accepted": true
+            }
+          ],
+          "capture_revision": 0
+        }
+      }
+    },
+    {
+      "id": "04-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.05664879968389869,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "raw_pose_outside",
+            "detail": 1
+          },
+          {
+            "code": "stale_frame",
+            "detail": 2
+          }
+        ],
+        "metrics": {
+          "captured": {},
+          "complete": false,
+          "trace": [
+            {
+              "frame": 0,
+              "accepted": true
+            },
+            {
+              "frame": 1,
+              "accepted": false
+            },
+            {
+              "frame": 2,
+              "accepted": false
+            }
+          ],
+          "capture_revision": 0
+        }
+      }
+    },
+    {
+      "id": "04-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.054806599859148264,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "05-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.060954499989748,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "reference_pixels": 4,
+          "valid_pixels": 4,
+          "support_pixels": 1,
+          "retained_ratio": 1.0,
+          "coverage": 0.25
+        }
+      }
+    },
+    {
+      "id": "05-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.05465890001505613,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "reference_skin_removed",
+            "detail": {
+              "retained": 1,
+              "reference": 4
+            }
+          },
+          {
+            "code": "mask_outside_domain",
+            "detail": 1
+          },
+          {
+            "code": "instance_outside_domain",
+            "detail": "a"
+          }
+        ],
+        "metrics": {
+          "reference_pixels": 4,
+          "valid_pixels": 1,
+          "support_pixels": 1,
+          "retained_ratio": 0.25,
+          "coverage": 1.0
+        }
+      }
+    },
+    {
+      "id": "05-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.05621559964492917,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "06-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.06011819979175925,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "count": 4,
+          "coverage": 0.2,
+          "density_per_100k_pixels": 4000.0,
+          "p50": 2.5,
+          "p90": 3.7
+        }
+      }
+    },
+    {
+      "id": "06-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.05375090008601546,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "invalid_denominator",
+            "detail": 0
+          },
+          {
+            "code": "support_outside_denominator",
+            "detail": 20
+          },
+          {
+            "code": "count_mismatch",
+            "detail": {
+              "declared": 8,
+              "instances": 4
+            }
+          },
+          {
+            "code": "unverified_cross_view_count",
+            "detail": "No lesion correspondence"
+          },
+          {
+            "code": "missing_physical_scale",
+            "detail": "mm2"
+          }
+        ],
+        "metrics": {
+          "count": 4,
+          "coverage": null,
+          "density_per_100k_pixels": null,
+          "p50": 2.5,
+          "p90": 3.7
+        }
+      }
+    },
+    {
+      "id": "06-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.05569479987025261,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "07-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.05504360003396869,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "artifact_hashes": {
+            "evidence.txt": "7e763a1494590abd85d922007a7a2a156128d5054117cd0e902b2e447c1abded"
+          },
+          "files_checked": 1,
+          "binding_verified": false,
+          "binding_status": "not_checked: hashes computed only; projection claims are not asset bindings"
+        }
+      }
+    },
+    {
+      "id": "07-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.05886729992926121,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "projection_mismatch",
+            "detail": {
+              "source": "source.json",
+              "report": "wrong_report.json"
+            }
+          },
+          {
+            "code": "path_escape",
+            "detail": "../outside.txt"
+          },
+          {
+            "code": "unexpected_inference",
+            "detail": "Publication-only work must consume existing results"
+          }
+        ],
+        "metrics": {
+          "artifact_hashes": {},
+          "files_checked": 0,
+          "binding_verified": false,
+          "binding_status": "not_checked: hashes computed only; projection claims are not asset bindings"
+        }
+      }
+    },
+    {
+      "id": "07-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.060075999703258276,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "08-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.056015599984675646,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "recovery_plan": [
+            {
+              "id": "a",
+              "action": "skip"
+            },
+            {
+              "id": "b",
+              "action": "retry_or_recompute"
+            }
+          ],
+          "execution_started": false,
+          "preconditions": {
+            "b": [
+              "verify_previous_owner_stopped_or_lease_expired"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "08-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.060373099986463785,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "resource_budget_exceeded",
+            "detail": {
+              "workers": 3,
+              "budget": 1
+            }
+          },
+          {
+            "code": "cache_identity_mismatch",
+            "detail": "a"
+          },
+          {
+            "code": "incomplete_success",
+            "detail": "b"
+          }
+        ],
+        "metrics": {
+          "recovery_plan": [
+            {
+              "id": "a",
+              "action": "retry_or_recompute"
+            },
+            {
+              "id": "b",
+              "action": "retry_or_recompute"
+            }
+          ],
+          "execution_started": false,
+          "preconditions": {}
+        }
+      }
+    },
+    {
+      "id": "08-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.058980800211429596,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "09-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.05796620016917586,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "max_abs": 9.999999999998899e-05,
+          "rmse": 9.999999999998899e-05,
+          "provider": "CPU",
+          "numeric_comparison_valid": true
+        }
+      }
+    },
+    {
+      "id": "09-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.05934059992432594,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "tensor_contract_mismatch",
+            "detail": {
+              "source": {
+                "layout": "NCHW",
+                "color": "RGB",
+                "shape": [
+                  1,
+                  3
+                ]
+              },
+              "target": {
+                "layout": "NHWC",
+                "color": "BGR",
+                "shape": [
+                  1,
+                  3
+                ]
+              }
+            }
+          },
+          {
+            "code": "numeric_parity_failed",
+            "detail": 0.19999999999999998
+          },
+          {
+            "code": "provider_mismatch",
+            "detail": "CPU"
+          },
+          {
+            "code": "calibration_leakage",
+            "detail": [
+              "test1"
+            ]
+          }
+        ],
+        "metrics": {
+          "max_abs": 0.19999999999999998,
+          "rmse": 0.1632993161855452,
+          "provider": "CPU",
+          "numeric_comparison_valid": false
+        }
+      }
+    },
+    {
+      "id": "09-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.05699709989130497,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "10-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.05748770013451576,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "contracts_checked": 2,
+          "point_transfer_allowed": true,
+          "requires_live_verification": true
+        }
+      }
+    },
+    {
+      "id": "10-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.0549253998324275,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "missing_contract_fields",
+            "detail": [
+              "revision"
+            ]
+          },
+          {
+            "code": "stale_revision",
+            "detail": {
+              "current": 3,
+              "result": 2
+            }
+          },
+          {
+            "code": "unregistered_point_transfer",
+            "detail": "Business linkage is not pixel registration"
+          },
+          {
+            "code": "clock_domain_mismatch",
+            "detail": {
+              "source": "monotonic",
+              "target": "unix"
+            }
+          },
+          {
+            "code": "state_document_conflict",
+            "detail": "Implementation clears photos"
+          }
+        ],
+        "metrics": {
+          "contracts_checked": 2,
+          "point_transfer_allowed": false,
+          "requires_live_verification": true
+        }
+      }
+    },
+    {
+      "id": "10-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.056136699859052896,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    }
+  ],
+  "relocated_cases": [],
+  "source_cases_sha256": "d39755cc16f9f8ebb63ee5585eeb398e56e9b3b66cdffd623530faf25634f784",
+  "passed": true,
+  "source_count": 30,
+  "relocated_count": 0,
+  "no_model_or_project_dependency": true
+}

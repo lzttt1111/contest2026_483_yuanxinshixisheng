@@ -1,0 +1,132 @@
+{
+  "registry_version": "doctor_v2_proxy_registry_20260728_v1",
+  "scoring_status": "uncalibrated",
+  "measurement_boundary": "单RGB的2D/2.5D相对代理，非物理3D，不输出毫米或立方毫米",
+  "sources": [
+    {"id": "dry_fine_lines", "path": "皮肤检测指标/面部检测需求md_V2_20260728/面部干燥性细纹检测需求说明_V2 3aad8464701a8006b943f352d9c31a82.md", "sha256": "d762cb7364fdcb45adbd6fa7f1aa79d26671b1c92f124c8adafcf85645af9324"},
+    {"id": "diffuse_redness", "path": "皮肤检测指标/面部检测需求md_V2_20260728/面部弥漫性泛红检测需求_V2 3abd8464701a80c39f9add1a7c10ff46.md", "sha256": "a39860b621f80c9080f73af9358a8b4052c2271eb8c470aff155b4ca66fbc411"},
+    {"id": "acne_activity", "path": "皮肤检测指标/面部检测需求md_V2_20260728/面部毛囊炎症及痤疮检测需求_V2 3abd8464701a8003b848f47a6aecf7d0.md", "sha256": "e0edafaa801dd284368552fdc963443b3291414e810486471cdac6fcd6dbaccd"},
+    {"id": "pores", "path": "皮肤检测指标/面部检测需求md_V2_20260728/面部毛孔检测需求说明_V2 3abd8464701a80d486e3ff71ed09e4e4.md", "sha256": "2f3cf35a3ec10f0b798b8c186c312042f15f6dc21e81ffde1a7ff4bddad7fc6b"},
+    {"id": "vascular", "path": "皮肤检测指标/面部检测需求md_V2_20260728/面部毛细血管增生检测需求_V2 3abd8464701a80a5a118fb7e3aac10ab.md", "sha256": "52651a6e1c2b1edaabd30b0062d98cf17f87dfcb15d0288f8503f4504bed7fa2"},
+    {"id": "oil_tendency", "path": "皮肤检测指标/面部检测需求md_V2_20260728/面部油脂分泌检测需求说明_V2 3abd8464701a80e7bfc3c720c1245716.md", "sha256": "09656e6f20654269bcd01056475562b56b0f3372db9a9a8ce93e375f2b4a4508"},
+    {"id": "smoothness", "path": "皮肤检测指标/面部检测需求md_V2_20260728/面部皮肤光滑度检测需求说明_V2 3abd8464701a806f82a7cd0c2f53105d.md", "sha256": "2bd6bbbfadd546819a66b95370b6a62d6cadbf98c2e6f1155b566ca3528f4465"},
+    {"id": "stable_wrinkles", "path": "皮肤检测指标/面部检测需求md_V2_20260728/面部稳定性线性皱纹检测需求说明 _V2 3abd8464701a805ca9bdeb89d6c2a3c9.md", "sha256": "08b73969ff94ed16f4abb23533526511a552dd520784dd3bb4dc2f4b116c5500"},
+    {"id": "structural_grooves", "path": "皮肤检测指标/面部检测需求md_V2_20260728/面部结构性沟槽检测需求说明 _V2 3aad8464701a8090af7ec719029eb26c.md", "sha256": "5d9f9148a967385077ef70371d065ca4c27dff6266ab02573ddc88a770ca6e30"},
+    {"id": "pigmentation", "path": "皮肤检测指标/面部检测需求md_V2_20260728/面部色素检测需求说明_V2 3abd8464701a80ba9962c326447f7cd0.md", "sha256": "6b6aa392c6545bbb12c424f4c1271ada2201e3b52cd4c9b11c4727c69dde13e2"},
+    {"id": "contour_firmness", "path": "皮肤检测指标/面部检测需求md_V2_20260728/面部轮廓紧致度检测需求说明_V2 3abd8464701a803e89f8e8ca2ffc4a6c.md", "sha256": "f1fa7d90f29d3c4bcceca3c5b86ef35e4b7be3c49d0bfa53c19dfa8f0377c71a"}
+  ],
+  "modules": {
+    "pores": {
+      "name": "可见毛孔", "source_id": "pores", "measurement_mode": "single_rgb_2d_2_5d_proxy",
+      "regions": [{"id":"forehead","weight":0.1666666667},{"id":"nose","weight":0.1666666667},{"id":"left_nasal_side","weight":0.0833333333},{"id":"right_nasal_side","weight":0.0833333333},{"id":"left_inner_cheek","weight":0.0833333333},{"id":"right_inner_cheek","weight":0.0833333333},{"id":"left_outer_cheek","weight":0.0833333333},{"id":"right_outer_cheek","weight":0.0833333333},{"id":"chin","weight":0.1666666667}],
+      "groups": [
+        {"id":"density_burden","weight":0.20,"core_metrics":[{"id":"pore_density_per_100k_px","unit":"count_per_100k_px","direction":"higher_burden","required":true}]},
+        {"id":"area_coverage_burden","weight":0.25,"core_metrics":[{"id":"pore_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true}]},
+        {"id":"size_burden","weight":0.25,"core_metrics":[{"id":"p50_pore_area_px","unit":"standardized_px2","direction":"higher_burden","required":true},{"id":"p90_pore_area_px","unit":"standardized_px2","direction":"higher_burden","required":true}]},
+        {"id":"large_pore_burden","weight":0.20,"core_metrics":[{"id":"large_pore_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"large_pore_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true}]},
+        {"id":"shape_irregularity","weight":0.10,"core_metrics":[{"id":"low_circularity_pore_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"elongated_pore_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true}]}
+      ]
+    },
+    "oil_tendency": {
+      "name":"油脂分泌倾向","source_id":"oil_tendency","measurement_mode":"single_rgb_2d_2_5d_proxy",
+      "regions":[{"id":"forehead","weight":0.1666666667},{"id":"nose","weight":0.1666666667},{"id":"left_nasal_side","weight":0.0833333333},{"id":"right_nasal_side","weight":0.0833333333},{"id":"left_inner_cheek","weight":0.0833333333},{"id":"right_inner_cheek","weight":0.0833333333},{"id":"left_outer_cheek","weight":0.0833333333},{"id":"right_outer_cheek","weight":0.0833333333},{"id":"chin","weight":0.1666666667}],
+      "groups":[
+        {"id":"surface_gloss_coverage","weight":0.25,"core_metrics":[{"id":"gloss_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"high_gloss_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true}]},
+        {"id":"surface_gloss_intensity","weight":0.20,"core_metrics":[{"id":"p50_gloss_intensity","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"p90_gloss_intensity","unit":"relative_0_1","direction":"higher_burden","required":true}]},
+        {"id":"surface_gloss_continuity","weight":0.15,"core_metrics":[{"id":"largest_gloss_component_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true}]},
+        {"id":"porphyrin_density_area","weight":0.15,"core_metrics":[{"id":"porphyrin_density_per_100k_px","unit":"count_per_100k_px","direction":"higher_burden","required":true},{"id":"porphyrin_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true}]},
+        {"id":"porphyrin_intensity","weight":0.15,"core_metrics":[{"id":"p50_porphyrin_intensity","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"p90_porphyrin_intensity","unit":"relative_0_1","direction":"higher_burden","required":true}]},
+        {"id":"high_porphyrin_burden","weight":0.10,"core_metrics":[{"id":"high_porphyrin_target_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"high_porphyrin_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true}]}
+      ]
+    },
+    "pigmentation": {
+      "name":"综合色素问题","source_id":"pigmentation","measurement_mode":"single_rgb_2d_2_5d_proxy",
+      "regions":[{"id":"forehead","weight":0.1428571429},{"id":"left_periocular","weight":0.0714285714},{"id":"right_periocular","weight":0.0714285714},{"id":"left_zygoma","weight":0.0714285714},{"id":"right_zygoma","weight":0.0714285714},{"id":"nose","weight":0.1428571429},{"id":"left_cheek","weight":0.0714285714},{"id":"right_cheek","weight":0.0714285714},{"id":"perioral","weight":0.1428571429},{"id":"jaw_chin","weight":0.1428571429}],
+      "groups":[
+        {"id":"visible_spots","weight":0.40,"core_metrics":[{"id":"visible_spot_density_per_100k_px","unit":"count_per_100k_px","direction":"higher_burden","required":true},{"id":"visible_spot_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"p90_visible_spot_delta_e","unit":"delta_e_proxy","direction":"higher_burden","required":true},{"id":"visible_spot_point_patch_burden","unit":"relative_0_1","direction":"higher_burden","required":true}]},
+        {"id":"uv_spots","weight":0.25,"core_metrics":[{"id":"uv_spot_density_per_100k_px","unit":"count_per_100k_px","direction":"higher_burden","required":true},{"id":"uv_spot_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"p90_uv_spot_intensity","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"high_uv_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true}]},
+        {"id":"brown_pigment","weight":0.35,"core_metrics":[{"id":"brown_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"p90_brown_intensity","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"high_brown_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"brown_point_patch_burden","unit":"relative_0_1","direction":"higher_burden","required":true}]}
+      ]
+    },
+    "diffuse_redness": {
+      "name":"弥漫性泛红","source_id":"diffuse_redness","measurement_mode":"single_rgb_2d_2_5d_proxy",
+      "regions":[{"id":"forehead","weight":0.125},{"id":"glabella","weight":0.125},{"id":"nose","weight":0.125},{"id":"left_nasal_side","weight":0.0625},{"id":"right_nasal_side","weight":0.0625},{"id":"left_cheek","weight":0.0625},{"id":"right_cheek","weight":0.0625},{"id":"left_zygoma","weight":0.0625},{"id":"right_zygoma","weight":0.0625},{"id":"perioral","weight":0.125},{"id":"jaw","weight":0.125}],
+      "groups":[
+        {"id":"coverage","weight":0.35,"core_metrics":[{"id":"diffuse_red_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"high_red_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true}]},
+        {"id":"intensity","weight":0.30,"core_metrics":[{"id":"mean_redness","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"p90_redness","unit":"relative_0_1","direction":"higher_burden","required":true}]},
+        {"id":"continuity","weight":0.20,"core_metrics":[{"id":"max_continuous_red_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"redness_continuity","unit":"relative_0_1","direction":"higher_burden","required":true}]},
+        {"id":"boundary_uniformity","weight":0.15,"core_metrics":[{"id":"boundary_gradient","unit":"relative_0_1","direction":"higher_health","required":true},{"id":"redness_uniformity","unit":"relative_0_1","direction":"higher_burden","required":true}]}
+      ]
+    },
+    "vascular": {
+      "name":"血管样结构","source_id":"vascular","measurement_mode":"single_rgb_2d_2_5d_proxy",
+      "regions":[{"id":"nose_alar_nasal_side","weight":0.1666666667},{"id":"left_cheek","weight":0.0833333333},{"id":"right_cheek","weight":0.0833333333},{"id":"left_zygoma","weight":0.0833333333},{"id":"right_zygoma","weight":0.0833333333},{"id":"forehead","weight":0.1666666667},{"id":"left_periocular","weight":0.0833333333},{"id":"right_periocular","weight":0.0833333333},{"id":"left_jaw","weight":0.0833333333},{"id":"right_jaw","weight":0.0833333333}],
+      "groups":[
+        {"id":"count_length","weight":0.30,"core_metrics":[{"id":"vascular_density_per_100k_px","unit":"count_per_100k_px","direction":"higher_burden","required":true},{"id":"vascular_length_density_per_10k_px","unit":"length_per_10k_px","direction":"higher_burden","required":true}]},
+        {"id":"coverage_width","weight":0.25,"core_metrics":[{"id":"vascular_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"p50_vascular_width_px","unit":"standardized_px","direction":"higher_burden","required":true},{"id":"p90_vascular_width_px","unit":"standardized_px","direction":"higher_burden","required":true}]},
+        {"id":"red_intensity","weight":0.20,"core_metrics":[{"id":"p50_vascular_redness","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"p90_vascular_redness","unit":"relative_0_1","direction":"higher_burden","required":true}]},
+        {"id":"branch_network","weight":0.25,"core_metrics":[{"id":"branch_density_per_10k_px","unit":"count_per_10k_px","direction":"higher_burden","required":true},{"id":"network_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true}]}
+      ]
+    },
+    "acne_activity": {
+      "name":"毛囊炎症及痤疮样活动","source_id":"acne_activity","measurement_mode":"single_rgb_2d_2_5d_proxy",
+      "regions":[{"id":"forehead","weight":0.1666666667},{"id":"nose_nasal_side","weight":0.1666666667},{"id":"left_zygoma","weight":0.0833333333},{"id":"right_zygoma","weight":0.0833333333},{"id":"left_cheek","weight":0.0833333333},{"id":"right_cheek","weight":0.0833333333},{"id":"perioral","weight":0.1666666667},{"id":"left_jaw","weight":0.0833333333},{"id":"right_jaw","weight":0.0833333333}],
+      "groups":[
+        {"id":"follicular_erythema","weight":0.20,"core_metrics":[{"id":"follicular_erythema_density","unit":"count_per_100k_px","direction":"higher_burden","required":true},{"id":"follicular_erythema_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"p90_follicular_redness","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"erythema_halo_completeness","unit":"relative_0_1","direction":"higher_burden","required":true}]},
+        {"id":"follicular_papule","weight":0.40,"core_metrics":[{"id":"papule_density","unit":"count_per_100k_px","direction":"higher_burden","required":true},{"id":"papule_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"p90_papule_redness","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"p90_papule_relief","unit":"relative_2_5d","direction":"higher_burden","required":true}]},
+        {"id":"follicular_pustule","weight":0.40,"core_metrics":[{"id":"pustule_density","unit":"count_per_100k_px","direction":"higher_burden","required":true},{"id":"pustule_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"p90_pustule_redness","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"p90_pustule_relief","unit":"relative_2_5d","direction":"higher_burden","required":true},{"id":"p90_white_yellow_center_area_px","unit":"standardized_px2","direction":"higher_burden","required":true}]}
+      ]
+    },
+    "dry_fine_lines": {
+      "name":"干燥性细纹","source_id":"dry_fine_lines","measurement_mode":"single_rgb_2d_2_5d_proxy",
+      "regions":[{"id":"left_under_eye","weight":0.20},{"id":"right_under_eye","weight":0.20},{"id":"left_zygoma","weight":0.15},{"id":"right_zygoma","weight":0.15},{"id":"left_cheek","weight":0.15},{"id":"right_cheek","weight":0.15}],
+      "groups":[
+        {"id":"density","weight":0.25,"core_metrics":[{"id":"fine_line_density_per_100k_px","unit":"count_per_100k_px","direction":"higher_burden","required":true},{"id":"fine_line_length_density","unit":"length_per_10k_px","direction":"higher_burden","required":true}]},
+        {"id":"scale","weight":0.20,"core_metrics":[{"id":"p50_fine_line_length_px","unit":"standardized_px","direction":"higher_burden","required":true},{"id":"short_fine_line_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"p50_fine_line_width_px","unit":"standardized_px","direction":"higher_burden","required":true},{"id":"narrow_fine_line_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"small_scale_texture_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true}]},
+        {"id":"coverage","weight":0.20,"core_metrics":[{"id":"fine_line_network_coverage_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"high_density_fine_line_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true}]},
+        {"id":"direction_network","weight":0.20,"core_metrics":[{"id":"direction_dispersion","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"crossing_density","unit":"count_per_10k_px","direction":"higher_burden","required":true},{"id":"branch_density","unit":"count_per_10k_px","direction":"higher_burden","required":true},{"id":"multidirectional_interweave","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"network_texture_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true}]},
+        {"id":"visual_surface","weight":0.15,"core_metrics":[{"id":"p50_fine_line_contrast","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"low_mid_contrast_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"short_discontinuous_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"large_groove_exclusion","unit":"relative_0_1","direction":"higher_health","required":true}]}
+      ]
+    },
+    "stable_wrinkles": {
+      "name":"稳定性线性皱纹","source_id":"stable_wrinkles","measurement_mode":"single_rgb_2d_2_5d_proxy",
+      "regions":[{"id":"forehead","weight":0.25},{"id":"glabella","weight":0.25},{"id":"left_crow_feet","weight":0.125},{"id":"right_crow_feet","weight":0.125},{"id":"perioral","weight":0.25}],
+      "groups":[
+        {"id":"density","weight":0.15,"core_metrics":[{"id":"wrinkle_density_per_100k_px","unit":"count_per_100k_px","direction":"higher_burden","required":true}]},
+        {"id":"length","weight":0.20,"core_metrics":[{"id":"wrinkle_length_density","unit":"length_per_10k_px","direction":"higher_burden","required":true},{"id":"p50_wrinkle_length_px","unit":"standardized_px","direction":"higher_burden","required":true},{"id":"p90_wrinkle_length_px","unit":"standardized_px","direction":"higher_burden","required":true}]},
+        {"id":"width_area","weight":0.20,"core_metrics":[{"id":"p50_wrinkle_width_px","unit":"standardized_px","direction":"higher_burden","required":true},{"id":"p90_wrinkle_width_px","unit":"standardized_px","direction":"higher_burden","required":true},{"id":"wrinkle_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true}]},
+        {"id":"contrast","weight":0.15,"core_metrics":[{"id":"p50_wrinkle_contrast","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"p90_wrinkle_contrast","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"high_contrast_wrinkle_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true}]},
+        {"id":"linearity_continuity","weight":0.10,"core_metrics":[{"id":"wrinkle_linearity","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"wrinkle_continuity","unit":"relative_0_1","direction":"higher_burden","required":true}]},
+        {"id":"relative_depth","weight":0.20,"core_metrics":[{"id":"mean_wrinkle_relative_depth","unit":"relative_2_5d","direction":"higher_burden","required":true},{"id":"p90_wrinkle_relative_depth","unit":"relative_2_5d","direction":"higher_burden","required":true}]}
+      ]
+    },
+    "structural_grooves": {
+      "name":"结构性沟槽","source_id":"structural_grooves","measurement_mode":"single_rgb_2d_2_5d_proxy",
+      "regions":[{"id":"left_tear_trough","weight":0.10},{"id":"right_tear_trough","weight":0.10},{"id":"left_midcheek_groove","weight":0.10},{"id":"right_midcheek_groove","weight":0.10},{"id":"left_nasolabial","weight":0.10},{"id":"right_nasolabial","weight":0.10},{"id":"left_mouth_corner_depression","weight":0.10},{"id":"right_mouth_corner_depression","weight":0.10},{"id":"left_marionette","weight":0.10},{"id":"right_marionette","weight":0.10}],
+      "groups":[
+        {"id":"range","weight":0.20,"core_metrics":[{"id":"groove_continuous_length_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"p50_groove_width","unit":"normalized_width","direction":"higher_burden","required":true},{"id":"p90_groove_width","unit":"normalized_width","direction":"higher_burden","required":true}]},
+        {"id":"depth","weight":0.25,"core_metrics":[{"id":"mean_groove_relative_depth","unit":"relative_2_5d","direction":"higher_burden","required":true},{"id":"p90_groove_relative_depth","unit":"relative_2_5d","direction":"higher_burden","required":true}]},
+        {"id":"volume","weight":0.20,"core_metrics":[{"id":"normalized_groove_volume","unit":"normalized_volume","direction":"higher_burden","required":true},{"id":"groove_volume_per_length","unit":"normalized_volume_per_length","direction":"higher_burden","required":true}]},
+        {"id":"curvature_valley","weight":0.20,"core_metrics":[{"id":"clear_valley_segment_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"valley_floor_continuity","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"groove_curvature","unit":"relative_curvature","direction":"higher_burden","required":true},{"id":"surface_transition","unit":"relative_0_1","direction":"higher_burden","required":true}]},
+        {"id":"adjacent_bulge","weight":0.15,"core_metrics":[{"id":"groove_bulge_height_difference","unit":"relative_2_5d","direction":"higher_burden","required":true},{"id":"normalized_adjacent_bulge_volume","unit":"normalized_volume","direction":"higher_burden","required":true}]}
+      ]
+    },
+    "smoothness": {
+      "name":"面部皮肤光滑度","source_id":"smoothness","measurement_mode":"single_rgb_2d_2_5d_proxy",
+      "regions":[{"id":"forehead","weight":0.1428571429},{"id":"nose","weight":0.1428571429},{"id":"left_nasal_side","weight":0.0714285714},{"id":"right_nasal_side","weight":0.0714285714},{"id":"left_zygoma","weight":0.0714285714},{"id":"right_zygoma","weight":0.0714285714},{"id":"left_cheek","weight":0.0714285714},{"id":"right_cheek","weight":0.0714285714},{"id":"perioral","weight":0.1428571429},{"id":"left_jaw","weight":0.0714285714},{"id":"right_jaw","weight":0.0714285714}],
+      "groups":[
+        {"id":"raised_irregularity","weight":0.45,"core_metrics":[{"id":"raised_density_per_100k_px","unit":"count_per_100k_px","direction":"higher_burden","required":true},{"id":"raised_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"mean_raised_relative_height","unit":"relative_2_5d","direction":"higher_burden","required":true},{"id":"p90_raised_relative_height","unit":"relative_2_5d","direction":"higher_burden","required":true},{"id":"raised_volume_per_area","unit":"normalized_volume_per_area","direction":"higher_burden","required":true}]},
+        {"id":"depressed_irregularity","weight":0.50,"core_metrics":[{"id":"depressed_density_per_100k_px","unit":"count_per_100k_px","direction":"higher_burden","required":true},{"id":"depressed_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"mean_depressed_relative_depth","unit":"relative_2_5d","direction":"higher_burden","required":true},{"id":"p90_depressed_relative_depth","unit":"relative_2_5d","direction":"higher_burden","required":true},{"id":"depressed_volume_per_area","unit":"normalized_volume_per_area","direction":"higher_burden","required":true},{"id":"p90_depressed_edge_slope","unit":"relative_slope","direction":"higher_burden","required":true}]},
+        {"id":"surface_attachment","weight":0.05,"core_metrics":[{"id":"attachment_density_per_100k_px","unit":"count_per_100k_px","direction":"higher_burden","required":true},{"id":"attachment_area_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true},{"id":"p90_attachment_area_px","unit":"standardized_px2","direction":"higher_burden","required":true},{"id":"flake_lifted_ratio","unit":"ratio_0_1","direction":"higher_burden","required":true}]}
+      ]
+    },
+    "contour_firmness": {
+      "name":"面部轮廓紧致度","source_id":"contour_firmness","measurement_mode":"single_rgb_2d_2_5d_proxy","regions":[],
+      "groups":[
+        {"id":"midface_support_decline","weight":0.30,"core_metrics":[{"id":"midface_surface_continuity","unit":"relative_0_1","direction":"higher_health","required":true},{"id":"midface_transition_burden","unit":"relative_2_5d","direction":"higher_burden","required":true},{"id":"midcheek_depression_burden","unit":"normalized_volume","direction":"higher_burden","required":true},{"id":"paranasal_depression_burden","unit":"normalized_volume","direction":"higher_burden","required":true},{"id":"lower_cheek_bulge_burden","unit":"normalized_volume","direction":"higher_burden","required":true}]},
+        {"id":"structural_groove_burden","weight":0.30,"core_metrics":[{"id":"firmness_groove_range","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"firmness_groove_depth","unit":"relative_2_5d","direction":"higher_burden","required":true},{"id":"firmness_groove_volume","unit":"normalized_volume","direction":"higher_burden","required":true},{"id":"firmness_groove_valley","unit":"relative_0_1","direction":"higher_burden","required":true},{"id":"firmness_adjacent_bulge","unit":"normalized_volume","direction":"higher_burden","required":true}]},
+        {"id":"lower_face_sagging","weight":0.40,"core_metrics":[{"id":"jowl_bulge_burden","unit":"normalized_volume","direction":"higher_burden","required":true},{"id":"jawline_continuity","unit":"relative_0_1","direction":"higher_health","required":true},{"id":"jawline_curvature_variation","unit":"relative_curvature","direction":"higher_burden","required":true},{"id":"prejowl_sulcus_burden","unit":"normalized_volume","direction":"higher_burden","required":true},{"id":"mouth_corner_depression_burden","unit":"normalized_volume","direction":"higher_burden","required":true},{"id":"other_lower_cheek_bulge","unit":"normalized_volume","direction":"higher_burden","required":true}]}
+      ]
+    }
+  }
+}

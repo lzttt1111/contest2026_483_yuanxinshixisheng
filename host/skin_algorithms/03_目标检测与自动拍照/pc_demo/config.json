@@ -1,0 +1,13 @@
+{
+  "yaw_target": 45,
+  "yaw_tolerance": 5,
+  "pitch_limit": 12,
+  "roll_limit": 12,
+  "stable_ms": 500,
+  "max_gap_ms": 350,
+  "max_frame_age_ms": 700,
+  "min_face_px": 80,
+  "blur_threshold": 60,
+  "yaw_jitter": 3,
+  "left_yaw_sign": -1
+}

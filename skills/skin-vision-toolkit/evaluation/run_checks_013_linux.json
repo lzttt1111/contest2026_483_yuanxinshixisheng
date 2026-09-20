@@ -1,0 +1,1459 @@
+{
+  "kind": "deterministic_offline_checker_tests",
+  "not_llm_behavior_benchmark": true,
+  "cases": [
+    {
+      "id": "01-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.016026261961087584,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "reuse_candidates": [
+            "existing"
+          ],
+          "requirements_checked": 1,
+          "recommendation": "reuse_then_validate"
+        }
+      }
+    },
+    {
+      "id": "01-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01582211605273187,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "unsupported_measurement",
+            "detail": {
+              "id": "depth",
+              "missing": [
+                "depth_sensor"
+              ]
+            }
+          },
+          {
+            "code": "missing_calibration",
+            "detail": "depth"
+          },
+          {
+            "code": "unknown_license",
+            "detail": "unknown"
+          }
+        ],
+        "metrics": {
+          "reuse_candidates": [],
+          "requirements_checked": 1,
+          "recommendation": "collect_missing_evidence"
+        }
+      }
+    },
+    {
+      "id": "01-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01848310203058645,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "02-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01596692396560684,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "records": 2,
+          "protected_ids": [
+            "a",
+            "b"
+          ],
+          "safe_rerun_ids": []
+        }
+      }
+    },
+    {
+      "id": "02-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.015538279025349766,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "negative_has_box",
+            "detail": "a"
+          },
+          {
+            "code": "human_edit_overwrite",
+            "detail": "a"
+          },
+          {
+            "code": "duplicate_id",
+            "detail": "a"
+          },
+          {
+            "code": "duplicate_image",
+            "detail": "a"
+          },
+          {
+            "code": "bbox_outside",
+            "detail": "a"
+          },
+          {
+            "code": "unknown_review_state",
+            "detail": "a"
+          }
+        ],
+        "metrics": {
+          "records": 2,
+          "protected_ids": [
+            "a"
+          ],
+          "safe_rerun_ids": []
+        }
+      }
+    },
+    {
+      "id": "02-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01570804900256917,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "03-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01592729100957513,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "records": 3,
+          "splits": {
+            "train": 1,
+            "validation": 1,
+            "test": 1,
+            "reference": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "03-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.018326300021726638,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "subject_leakage",
+            "detail": {
+              "group": "p1",
+              "splits": [
+                "test",
+                "train"
+              ]
+            }
+          },
+          {
+            "code": "session_leakage",
+            "detail": {
+              "group": "s1",
+              "splits": [
+                "test",
+                "train"
+              ]
+            }
+          },
+          {
+            "code": "cluster_leakage",
+            "detail": {
+              "group": "c1",
+              "splits": [
+                "test",
+                "train"
+              ]
+            }
+          },
+          {
+            "code": "test_selection",
+            "detail": "Checkpoint selection uses held-out test"
+          },
+          {
+            "code": "calibration_leakage",
+            "detail": "b"
+          },
+          {
+            "code": "synthetic_leakage",
+            "detail": "b"
+          }
+        ],
+        "metrics": {
+          "records": 2,
+          "splits": {
+            "train": 1,
+            "validation": 0,
+            "test": 1,
+            "reference": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "03-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.015941528021357954,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "04-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.016440941020846367,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "captured": {
+            "front": 2
+          },
+          "complete": true,
+          "trace": [
+            {
+              "frame": 0,
+              "accepted": true
+            },
+            {
+              "frame": 1,
+              "accepted": true
+            },
+            {
+              "frame": 2,
+              "accepted": true
+            }
+          ],
+          "capture_revision": 0
+        }
+      }
+    },
+    {
+      "id": "04-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01730729202972725,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "raw_pose_outside",
+            "detail": 1
+          },
+          {
+            "code": "stale_frame",
+            "detail": 2
+          }
+        ],
+        "metrics": {
+          "captured": {},
+          "complete": false,
+          "trace": [
+            {
+              "frame": 0,
+              "accepted": true
+            },
+            {
+              "frame": 1,
+              "accepted": false
+            },
+            {
+              "frame": 2,
+              "accepted": false
+            }
+          ],
+          "capture_revision": 0
+        }
+      }
+    },
+    {
+      "id": "04-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01619301800383255,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "05-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01860732096247375,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "reference_pixels": 4,
+          "valid_pixels": 4,
+          "support_pixels": 1,
+          "retained_ratio": 1.0,
+          "coverage": 0.25
+        }
+      }
+    },
+    {
+      "id": "05-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01616067095892504,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "reference_skin_removed",
+            "detail": {
+              "retained": 1,
+              "reference": 4
+            }
+          },
+          {
+            "code": "mask_outside_domain",
+            "detail": 1
+          },
+          {
+            "code": "instance_outside_domain",
+            "detail": "a"
+          }
+        ],
+        "metrics": {
+          "reference_pixels": 4,
+          "valid_pixels": 1,
+          "support_pixels": 1,
+          "retained_ratio": 0.25,
+          "coverage": 1.0
+        }
+      }
+    },
+    {
+      "id": "05-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.015755551983602345,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "06-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01607689098455012,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "count": 4,
+          "coverage": 0.2,
+          "density_per_100k_pixels": 4000.0,
+          "p50": 2.5,
+          "p90": 3.7
+        }
+      }
+    },
+    {
+      "id": "06-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01614455197704956,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "invalid_denominator",
+            "detail": 0
+          },
+          {
+            "code": "support_outside_denominator",
+            "detail": 20
+          },
+          {
+            "code": "count_mismatch",
+            "detail": {
+              "declared": 8,
+              "instances": 4
+            }
+          },
+          {
+            "code": "unverified_cross_view_count",
+            "detail": "No lesion correspondence"
+          },
+          {
+            "code": "missing_physical_scale",
+            "detail": "mm2"
+          }
+        ],
+        "metrics": {
+          "count": 4,
+          "coverage": null,
+          "density_per_100k_pixels": null,
+          "p50": 2.5,
+          "p90": 3.7
+        }
+      }
+    },
+    {
+      "id": "06-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.015772242040839046,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "07-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01599017099943012,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "artifact_hashes": {
+            "evidence.txt": "7e763a1494590abd85d922007a7a2a156128d5054117cd0e902b2e447c1abded"
+          },
+          "files_checked": 1,
+          "binding_verified": false,
+          "binding_status": "not_checked: hashes computed only; projection claims are not asset bindings"
+        }
+      }
+    },
+    {
+      "id": "07-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01872557500610128,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "projection_mismatch",
+            "detail": {
+              "source": "source.json",
+              "report": "wrong_report.json"
+            }
+          },
+          {
+            "code": "path_escape",
+            "detail": "../outside.txt"
+          },
+          {
+            "code": "unexpected_inference",
+            "detail": "Publication-only work must consume existing results"
+          }
+        ],
+        "metrics": {
+          "artifact_hashes": {},
+          "files_checked": 0,
+          "binding_verified": false,
+          "binding_status": "not_checked: hashes computed only; projection claims are not asset bindings"
+        }
+      }
+    },
+    {
+      "id": "07-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01701735600363463,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "08-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01914364902768284,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "recovery_plan": [
+            {
+              "id": "a",
+              "action": "skip"
+            },
+            {
+              "id": "b",
+              "action": "retry_or_recompute"
+            }
+          ],
+          "execution_started": false,
+          "preconditions": {
+            "b": [
+              "verify_previous_owner_stopped_or_lease_expired"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "08-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.015574699034914374,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "resource_budget_exceeded",
+            "detail": {
+              "workers": 3,
+              "budget": 1
+            }
+          },
+          {
+            "code": "cache_identity_mismatch",
+            "detail": "a"
+          },
+          {
+            "code": "incomplete_success",
+            "detail": "b"
+          }
+        ],
+        "metrics": {
+          "recovery_plan": [
+            {
+              "id": "a",
+              "action": "retry_or_recompute"
+            },
+            {
+              "id": "b",
+              "action": "retry_or_recompute"
+            }
+          ],
+          "execution_started": false,
+          "preconditions": {}
+        }
+      }
+    },
+    {
+      "id": "08-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.015631059010047466,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "09-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01601746497908607,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "max_abs": 9.999999999998899e-05,
+          "rmse": 9.999999999998899e-05,
+          "provider": "CPU",
+          "numeric_comparison_valid": true
+        }
+      }
+    },
+    {
+      "id": "09-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.016118770989123732,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "tensor_contract_mismatch",
+            "detail": {
+              "source": {
+                "layout": "NCHW",
+                "color": "RGB",
+                "shape": [
+                  1,
+                  3
+                ]
+              },
+              "target": {
+                "layout": "NHWC",
+                "color": "BGR",
+                "shape": [
+                  1,
+                  3
+                ]
+              }
+            }
+          },
+          {
+            "code": "numeric_parity_failed",
+            "detail": 0.19999999999999998
+          },
+          {
+            "code": "provider_mismatch",
+            "detail": "CPU"
+          },
+          {
+            "code": "calibration_leakage",
+            "detail": [
+              "test1"
+            ]
+          }
+        ],
+        "metrics": {
+          "max_abs": 0.19999999999999998,
+          "rmse": 0.1632993161855452,
+          "provider": "CPU",
+          "numeric_comparison_valid": false
+        }
+      }
+    },
+    {
+      "id": "09-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01617390097817406,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "10-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.015948847983963788,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "contracts_checked": 2,
+          "point_transfer_allowed": true,
+          "requires_live_verification": true
+        }
+      }
+    },
+    {
+      "id": "10-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.017048697045538574,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "missing_contract_fields",
+            "detail": [
+              "revision"
+            ]
+          },
+          {
+            "code": "stale_revision",
+            "detail": {
+              "current": 3,
+              "result": 2
+            }
+          },
+          {
+            "code": "unregistered_point_transfer",
+            "detail": "Business linkage is not pixel registration"
+          },
+          {
+            "code": "clock_domain_mismatch",
+            "detail": {
+              "source": "monotonic",
+              "target": "unix"
+            }
+          },
+          {
+            "code": "state_document_conflict",
+            "detail": "Implementation clears photos"
+          }
+        ],
+        "metrics": {
+          "contracts_checked": 2,
+          "point_transfer_allowed": false,
+          "requires_live_verification": true
+        }
+      }
+    },
+    {
+      "id": "10-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01599348202580586,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    }
+  ],
+  "relocated_cases": [
+    {
+      "id": "01-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.017325435008388013,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "reuse_candidates": [
+            "existing"
+          ],
+          "requirements_checked": 1,
+          "recommendation": "reuse_then_validate"
+        }
+      }
+    },
+    {
+      "id": "01-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.015511670964770019,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "unsupported_measurement",
+            "detail": {
+              "id": "depth",
+              "missing": [
+                "depth_sensor"
+              ]
+            }
+          },
+          {
+            "code": "missing_calibration",
+            "detail": "depth"
+          },
+          {
+            "code": "unknown_license",
+            "detail": "unknown"
+          }
+        ],
+        "metrics": {
+          "reuse_candidates": [],
+          "requirements_checked": 1,
+          "recommendation": "collect_missing_evidence"
+        }
+      }
+    },
+    {
+      "id": "01-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.017558466992340982,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "02-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.017035672964993864,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "records": 2,
+          "protected_ids": [
+            "a",
+            "b"
+          ],
+          "safe_rerun_ids": []
+        }
+      }
+    },
+    {
+      "id": "02-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.020835443981923163,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "negative_has_box",
+            "detail": "a"
+          },
+          {
+            "code": "human_edit_overwrite",
+            "detail": "a"
+          },
+          {
+            "code": "duplicate_id",
+            "detail": "a"
+          },
+          {
+            "code": "duplicate_image",
+            "detail": "a"
+          },
+          {
+            "code": "bbox_outside",
+            "detail": "a"
+          },
+          {
+            "code": "unknown_review_state",
+            "detail": "a"
+          }
+        ],
+        "metrics": {
+          "records": 2,
+          "protected_ids": [
+            "a"
+          ],
+          "safe_rerun_ids": []
+        }
+      }
+    },
+    {
+      "id": "02-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.018188096000812948,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "03-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.017846264992840588,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "records": 3,
+          "splits": {
+            "train": 1,
+            "validation": 1,
+            "test": 1,
+            "reference": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "03-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.017307561996858567,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "subject_leakage",
+            "detail": {
+              "group": "p1",
+              "splits": [
+                "test",
+                "train"
+              ]
+            }
+          },
+          {
+            "code": "session_leakage",
+            "detail": {
+              "group": "s1",
+              "splits": [
+                "test",
+                "train"
+              ]
+            }
+          },
+          {
+            "code": "cluster_leakage",
+            "detail": {
+              "group": "c1",
+              "splits": [
+                "test",
+                "train"
+              ]
+            }
+          },
+          {
+            "code": "test_selection",
+            "detail": "Checkpoint selection uses held-out test"
+          },
+          {
+            "code": "calibration_leakage",
+            "detail": "b"
+          },
+          {
+            "code": "synthetic_leakage",
+            "detail": "b"
+          }
+        ],
+        "metrics": {
+          "records": 2,
+          "splits": {
+            "train": 1,
+            "validation": 0,
+            "test": 1,
+            "reference": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "03-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.016044116055127233,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "04-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.016377745021600276,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "captured": {
+            "front": 2
+          },
+          "complete": true,
+          "trace": [
+            {
+              "frame": 0,
+              "accepted": true
+            },
+            {
+              "frame": 1,
+              "accepted": true
+            },
+            {
+              "frame": 2,
+              "accepted": true
+            }
+          ],
+          "capture_revision": 0
+        }
+      }
+    },
+    {
+      "id": "04-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.017788646975532174,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "raw_pose_outside",
+            "detail": 1
+          },
+          {
+            "code": "stale_frame",
+            "detail": 2
+          }
+        ],
+        "metrics": {
+          "captured": {},
+          "complete": false,
+          "trace": [
+            {
+              "frame": 0,
+              "accepted": true
+            },
+            {
+              "frame": 1,
+              "accepted": false
+            },
+            {
+              "frame": 2,
+              "accepted": false
+            }
+          ],
+          "capture_revision": 0
+        }
+      }
+    },
+    {
+      "id": "04-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.02079611603403464,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "05-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.017370087036397308,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "reference_pixels": 4,
+          "valid_pixels": 4,
+          "support_pixels": 1,
+          "retained_ratio": 1.0,
+          "coverage": 0.25
+        }
+      }
+    },
+    {
+      "id": "05-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.016080462955869734,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "reference_skin_removed",
+            "detail": {
+              "retained": 1,
+              "reference": 4
+            }
+          },
+          {
+            "code": "mask_outside_domain",
+            "detail": 1
+          },
+          {
+            "code": "instance_outside_domain",
+            "detail": "a"
+          }
+        ],
+        "metrics": {
+          "reference_pixels": 4,
+          "valid_pixels": 1,
+          "support_pixels": 1,
+          "retained_ratio": 0.25,
+          "coverage": 1.0
+        }
+      }
+    },
+    {
+      "id": "05-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.0163070359849371,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "06-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.017799033026676625,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "count": 4,
+          "coverage": 0.2,
+          "density_per_100k_pixels": 4000.0,
+          "p50": 2.5,
+          "p90": 3.7
+        }
+      }
+    },
+    {
+      "id": "06-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.016041089955251664,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "invalid_denominator",
+            "detail": 0
+          },
+          {
+            "code": "support_outside_denominator",
+            "detail": 20
+          },
+          {
+            "code": "count_mismatch",
+            "detail": {
+              "declared": 8,
+              "instances": 4
+            }
+          },
+          {
+            "code": "unverified_cross_view_count",
+            "detail": "No lesion correspondence"
+          },
+          {
+            "code": "missing_physical_scale",
+            "detail": "mm2"
+          }
+        ],
+        "metrics": {
+          "count": 4,
+          "coverage": null,
+          "density_per_100k_pixels": null,
+          "p50": 2.5,
+          "p90": 3.7
+        }
+      }
+    },
+    {
+      "id": "06-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.016130951000377536,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "07-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01621485099894926,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "artifact_hashes": {
+            "evidence.txt": "7e763a1494590abd85d922007a7a2a156128d5054117cd0e902b2e447c1abded"
+          },
+          "files_checked": 1,
+          "binding_verified": false,
+          "binding_status": "not_checked: hashes computed only; projection claims are not asset bindings"
+        }
+      }
+    },
+    {
+      "id": "07-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.016274105000775307,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "projection_mismatch",
+            "detail": {
+              "source": "source.json",
+              "report": "wrong_report.json"
+            }
+          },
+          {
+            "code": "path_escape",
+            "detail": "../outside.txt"
+          },
+          {
+            "code": "unexpected_inference",
+            "detail": "Publication-only work must consume existing results"
+          }
+        ],
+        "metrics": {
+          "artifact_hashes": {},
+          "files_checked": 0,
+          "binding_verified": false,
+          "binding_status": "not_checked: hashes computed only; projection claims are not asset bindings"
+        }
+      }
+    },
+    {
+      "id": "07-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01626383699476719,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "08-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.016761420003604144,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "recovery_plan": [
+            {
+              "id": "a",
+              "action": "skip"
+            },
+            {
+              "id": "b",
+              "action": "retry_or_recompute"
+            }
+          ],
+          "execution_started": false,
+          "preconditions": {
+            "b": [
+              "verify_previous_owner_stopped_or_lease_expired"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "08-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01651877403492108,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "resource_budget_exceeded",
+            "detail": {
+              "workers": 3,
+              "budget": 1
+            }
+          },
+          {
+            "code": "cache_identity_mismatch",
+            "detail": "a"
+          },
+          {
+            "code": "incomplete_success",
+            "detail": "b"
+          }
+        ],
+        "metrics": {
+          "recovery_plan": [
+            {
+              "id": "a",
+              "action": "retry_or_recompute"
+            },
+            {
+              "id": "b",
+              "action": "retry_or_recompute"
+            }
+          ],
+          "execution_started": false,
+          "preconditions": {}
+        }
+      }
+    },
+    {
+      "id": "08-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01876397803425789,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "09-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.018345853022765368,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "max_abs": 9.999999999998899e-05,
+          "rmse": 9.999999999998899e-05,
+          "provider": "CPU",
+          "numeric_comparison_valid": true
+        }
+      }
+    },
+    {
+      "id": "09-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.01617606298532337,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "tensor_contract_mismatch",
+            "detail": {
+              "source": {
+                "layout": "NCHW",
+                "color": "RGB",
+                "shape": [
+                  1,
+                  3
+                ]
+              },
+              "target": {
+                "layout": "NHWC",
+                "color": "BGR",
+                "shape": [
+                  1,
+                  3
+                ]
+              }
+            }
+          },
+          {
+            "code": "numeric_parity_failed",
+            "detail": 0.19999999999999998
+          },
+          {
+            "code": "provider_mismatch",
+            "detail": "CPU"
+          },
+          {
+            "code": "calibration_leakage",
+            "detail": [
+              "test1"
+            ]
+          }
+        ],
+        "metrics": {
+          "max_abs": 0.19999999999999998,
+          "rmse": 0.1632993161855452,
+          "provider": "CPU",
+          "numeric_comparison_valid": false
+        }
+      }
+    },
+    {
+      "id": "09-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.016373654012568295,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    },
+    {
+      "id": "10-normal",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.015675272967200726,
+      "result": {
+        "status": "pass",
+        "findings": [],
+        "metrics": {
+          "contracts_checked": 2,
+          "point_transfer_allowed": true,
+          "requires_live_verification": true
+        }
+      }
+    },
+    {
+      "id": "10-failure",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.015787197975441813,
+      "result": {
+        "status": "fail",
+        "findings": [
+          {
+            "code": "missing_contract_fields",
+            "detail": [
+              "revision"
+            ]
+          },
+          {
+            "code": "stale_revision",
+            "detail": {
+              "current": 3,
+              "result": 2
+            }
+          },
+          {
+            "code": "unregistered_point_transfer",
+            "detail": "Business linkage is not pixel registration"
+          },
+          {
+            "code": "clock_domain_mismatch",
+            "detail": {
+              "source": "monotonic",
+              "target": "unix"
+            }
+          },
+          {
+            "code": "state_document_conflict",
+            "detail": "Implementation clears photos"
+          }
+        ],
+        "metrics": {
+          "contracts_checked": 2,
+          "point_transfer_allowed": false,
+          "requires_live_verification": true
+        }
+      }
+    },
+    {
+      "id": "10-not_applicable",
+      "passed": true,
+      "errors": [],
+      "seconds": 0.017604156979359686,
+      "result": {
+        "status": "not_applicable",
+        "findings": [],
+        "metrics": {}
+      }
+    }
+  ],
+  "source_cases_sha256": "d39755cc16f9f8ebb63ee5585eeb398e56e9b3b66cdffd623530faf25634f784",
+  "passed": true,
+  "source_count": 30,
+  "relocated_count": 30,
+  "no_model_or_project_dependency": true
+}

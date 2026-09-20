@@ -1,0 +1,266 @@
+{
+  "at": "2026-09-10T03:31:22.593538+00:00",
+  "files": [
+    {
+      "path": "tests/cases.json",
+      "sha256": "d39755cc16f9f8ebb63ee5585eeb398e56e9b3b66cdffd623530faf25634f784",
+      "bytes": 13156
+    },
+    {
+      "path": "evaluation/prompts.json",
+      "sha256": "e8adcd3885f9d0139cad99a3ace113b557087384ca164958729d3aa7331dcec6",
+      "bytes": 9389
+    },
+    {
+      "path": "skills/pose-guided-capture/agents/openai.yaml",
+      "sha256": "76be6a93db78903567f7b846bf548daac07ec5cb45242df9d2ba504a51fa4688",
+      "bytes": 346
+    },
+    {
+      "path": "skills/pose-guided-capture/references/contract.md",
+      "sha256": "bb2b3e071a9c925c4d6d0fb4091786603357dd68003abd942d0803adabf29f9a",
+      "bytes": 1737
+    },
+    {
+      "path": "skills/pose-guided-capture/references/project-case.md",
+      "sha256": "f77a6f7530bfa31a1ac9cdff573ad77032ac590f637f11205622609055cd83f9",
+      "bytes": 819
+    },
+    {
+      "path": "skills/pose-guided-capture/scripts/check.py",
+      "sha256": "70663e9918e17da021df2eaa021316573e2f2d6f0eb339ed268b9cd765abb5c8",
+      "bytes": 4487
+    },
+    {
+      "path": "skills/pose-guided-capture/SKILL.md",
+      "sha256": "aff886ccddcf55daabd5d5c0e48c465c4701a1af3750a7de22503dc95c0dfeed",
+      "bytes": 2493
+    },
+    {
+      "path": "skills/vision-batch-recovery/agents/openai.yaml",
+      "sha256": "438660cffdcec0ac39841d0cf8b303a85b771e5cedb1314a7a37c7453fc7894a",
+      "bytes": 348
+    },
+    {
+      "path": "skills/vision-batch-recovery/references/contract.md",
+      "sha256": "6ddf5618665eda907c5149aa38ffc305e4fbdfccefbe027e3717270253913a00",
+      "bytes": 1264
+    },
+    {
+      "path": "skills/vision-batch-recovery/references/project-case.md",
+      "sha256": "9c0bf334d67b03b697ed2d87c4b22343902bb36cbce12115fd7c3fc5ee6131bc",
+      "bytes": 795
+    },
+    {
+      "path": "skills/vision-batch-recovery/scripts/check.py",
+      "sha256": "27cdceecc974ffd1ab10761a3c3c9eea53b8843d6b403879c28df1d8dad7c09f",
+      "bytes": 2618
+    },
+    {
+      "path": "skills/vision-batch-recovery/SKILL.md",
+      "sha256": "bc949c3e7dfa9bbf3a6c07481a8ee8698d051e831b4759db8ad9a374e2b0af3e",
+      "bytes": 2489
+    },
+    {
+      "path": "skills/vision-data-review/agents/openai.yaml",
+      "sha256": "a5dd00c6acbe8b2b8b983de05561d573a4067436c1cef554ed86edbf3b7ee1c4",
+      "bytes": 357
+    },
+    {
+      "path": "skills/vision-data-review/references/contract.md",
+      "sha256": "54f41678b8051d952b2ad75fde69889ac83e586196fecda6320afcd7cf3c7a10",
+      "bytes": 1454
+    },
+    {
+      "path": "skills/vision-data-review/references/project-case.md",
+      "sha256": "3147459f8a527b369ad2f12d80b750b235edc719687614fa325485fff47c2fc6",
+      "bytes": 846
+    },
+    {
+      "path": "skills/vision-data-review/scripts/check.py",
+      "sha256": "a07df513e4a1ed42ff4819c8f9814eb98d944681ec3ee81b922e90d9d1c65a74",
+      "bytes": 3150
+    },
+    {
+      "path": "skills/vision-data-review/SKILL.md",
+      "sha256": "8409a450cb936b9e886db324ba0d373e7419cc5814c4ee2a3310b24c4bccd163",
+      "bytes": 2457
+    },
+    {
+      "path": "skills/vision-feature-engineering/agents/openai.yaml",
+      "sha256": "6b25a66f33a824480e61423b371f84329efdccb95c5dfad1865b44b3a55961cf",
+      "bytes": 359
+    },
+    {
+      "path": "skills/vision-feature-engineering/references/contract.md",
+      "sha256": "df1a628741ef835f6e10f8f7e57ca3e10e5b7fd2c7f522d1bc2580aec740cf48",
+      "bytes": 1280
+    },
+    {
+      "path": "skills/vision-feature-engineering/references/project-case.md",
+      "sha256": "e29a2db3aa55394eafe4af81ee4f796d0e2c3e3b13b4cc735cf00e1b6495d053",
+      "bytes": 807
+    },
+    {
+      "path": "skills/vision-feature-engineering/scripts/check.py",
+      "sha256": "961a93cff51634c1b1c1a06be5371e1ae4188047c59b5fd969f76febf30eb028",
+      "bytes": 3339
+    },
+    {
+      "path": "skills/vision-feature-engineering/SKILL.md",
+      "sha256": "02f4de8f5dc0248e978f0df1f46531a579b67ff828164e02ed6c4e3f96302ddc",
+      "bytes": 2566
+    },
+    {
+      "path": "skills/vision-generalization/agents/openai.yaml",
+      "sha256": "e7a92316965d7c00ac847a66a3e451940606ade32c5d08e600ece83391aeb5fb",
+      "bytes": 354
+    },
+    {
+      "path": "skills/vision-generalization/references/contract.md",
+      "sha256": "dd48730b4c216dceb157307987d8738f1dabfd06fafef33a43a0336dc68bdfec",
+      "bytes": 1485
+    },
+    {
+      "path": "skills/vision-generalization/references/project-case.md",
+      "sha256": "b35af787b138b5cfc6a8b768cfe69982a0f3cc9bfa2fd5b5f607720eb7d578d7",
+      "bytes": 876
+    },
+    {
+      "path": "skills/vision-generalization/scripts/check.py",
+      "sha256": "86957c4f70a6822156336e1aafaab8ffc501b2ff225c5abd524fe47409c6704d",
+      "bytes": 3044
+    },
+    {
+      "path": "skills/vision-generalization/SKILL.md",
+      "sha256": "380a551e8d2ea42dacd2c6ff15b3c69ed27cce9c0e5fd6eea535514e0136db35",
+      "bytes": 2492
+    },
+    {
+      "path": "skills/vision-metrics-calibration/agents/openai.yaml",
+      "sha256": "ded2b71bd31427ee4091e13f96e93c8ebee7ee03cc05d522d369e4cc43b1feaa",
+      "bytes": 353
+    },
+    {
+      "path": "skills/vision-metrics-calibration/references/contract.md",
+      "sha256": "d8a4153f8984fd4c9dd4bc7dff6d31347629edde4af5a62b2c413ea29182b9dc",
+      "bytes": 1162
+    },
+    {
+      "path": "skills/vision-metrics-calibration/references/project-case.md",
+      "sha256": "16c82d93da920572da5559bd2f127bae97207d6907e0abe9ee664e5b5a1203be",
+      "bytes": 819
+    },
+    {
+      "path": "skills/vision-metrics-calibration/scripts/check.py",
+      "sha256": "a3a4b3083a0876aaad0ecc7cac8200221fa57a7ee84c879da213f6526a0a36ae",
+      "bytes": 3072
+    },
+    {
+      "path": "skills/vision-metrics-calibration/SKILL.md",
+      "sha256": "4e50877cf9f9a231fd526a1cb8081102d0897d18f91a51ae3da5fb3b5e7c1432",
+      "bytes": 2596
+    },
+    {
+      "path": "skills/vision-result-publication/agents/openai.yaml",
+      "sha256": "8943d042114a83e14429d2e889effd04d81b5f15c731b5933007e40aee8c7532",
+      "bytes": 358
+    },
+    {
+      "path": "skills/vision-result-publication/references/contract.md",
+      "sha256": "ef28bfca99fbeeb376320ebc31346e94ecb6568d2f2ea4ae80a837bcdeefb80e",
+      "bytes": 1095
+    },
+    {
+      "path": "skills/vision-result-publication/references/project-case.md",
+      "sha256": "49440567306d8eb790bc22c26b9243bb71f8b78aed2ae5b1bcf56581102ec966",
+      "bytes": 793
+    },
+    {
+      "path": "skills/vision-result-publication/scripts/check.py",
+      "sha256": "6561d6ff3bc03a370ca1de8107a4e7069e978468850cd52f4533156b0d93715c",
+      "bytes": 2712
+    },
+    {
+      "path": "skills/vision-result-publication/SKILL.md",
+      "sha256": "a6fa4086c4aced525cbe3835ef7f81362ef181092b443591f3c94ef72f0b41ba",
+      "bytes": 2486
+    },
+    {
+      "path": "skills/vision-runtime-parity/agents/openai.yaml",
+      "sha256": "b8cf1396b4bff766111fa05c694e7f67358be35aca5c6872fd54ec55e599546f",
+      "bytes": 342
+    },
+    {
+      "path": "skills/vision-runtime-parity/references/contract.md",
+      "sha256": "0670d905b521e7919457ced4f4ccbe5afc61c94613325367089593fae1ad778f",
+      "bytes": 1385
+    },
+    {
+      "path": "skills/vision-runtime-parity/references/project-case.md",
+      "sha256": "febab17440503db473aec1f3de54e781dd87bcdce41a7d8bd5c8762954e38535",
+      "bytes": 784
+    },
+    {
+      "path": "skills/vision-runtime-parity/scripts/check.py",
+      "sha256": "942f9bfbabea92687a756c538821e830519b81b289bb04088c864a4a24fefef2",
+      "bytes": 3110
+    },
+    {
+      "path": "skills/vision-runtime-parity/SKILL.md",
+      "sha256": "60ce39f103106d87f91eecff144834b48c9e06321b95aed5eeeb1f4d9597e4da",
+      "bytes": 2473
+    },
+    {
+      "path": "skills/vision-spec-to-evidence/agents/openai.yaml",
+      "sha256": "af130200aecc22ae7f2a0038b53f26e4100d8a5bf1e15e58ceb4e1b22d41584f",
+      "bytes": 350
+    },
+    {
+      "path": "skills/vision-spec-to-evidence/references/contract.md",
+      "sha256": "eeecfa3fbde19211c628cc8680b7b56ff0472dd99f626ba8983cc3dffa0a6854",
+      "bytes": 1195
+    },
+    {
+      "path": "skills/vision-spec-to-evidence/references/project-case.md",
+      "sha256": "3ff395daf2ec16d9b2f27181233bd3c981d1be54c0d72faf96c1f51e5eeb34a7",
+      "bytes": 864
+    },
+    {
+      "path": "skills/vision-spec-to-evidence/scripts/check.py",
+      "sha256": "9c53b39a9d0442b429a01d510431c86ccddc450aa851a762e01437d955c8141d",
+      "bytes": 2577
+    },
+    {
+      "path": "skills/vision-spec-to-evidence/SKILL.md",
+      "sha256": "87e63271404b1611a8231a71fd74beabc2e8d084a73ed6e5f4c200e11c5041b5",
+      "bytes": 2467
+    },
+    {
+      "path": "skills/vision-system-integration/agents/openai.yaml",
+      "sha256": "c69696528517dec95de900baf813ae2ea0228020baa429b754e94344cf23b412",
+      "bytes": 358
+    },
+    {
+      "path": "skills/vision-system-integration/references/contract.md",
+      "sha256": "4cf709247a625bf46d6ba86dc072f27190a17cf054c4a0af26a89264ff83a3dc",
+      "bytes": 1390
+    },
+    {
+      "path": "skills/vision-system-integration/references/project-case.md",
+      "sha256": "bfb935d1de2441b86dbc9489f64ade484f07f9400f608cf9f2d9aad87b9b301e",
+      "bytes": 828
+    },
+    {
+      "path": "skills/vision-system-integration/scripts/check.py",
+      "sha256": "3938a2222bd5d0dc7693e4dae5d19ac59627ed3b7eaf674cfac984949637c181",
+      "bytes": 2717
+    },
+    {
+      "path": "skills/vision-system-integration/SKILL.md",
+      "sha256": "d084193afa82a66ae3e21a3e7374ab3bd128c90ce2ab9cfd1321bad272e8dce9",
+      "bytes": 2570
+    }
+  ],
+  "status": "self_review_passed_before_independent_skill_phase"
+}

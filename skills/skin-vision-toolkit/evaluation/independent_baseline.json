@@ -1,0 +1,326 @@
+{
+  "source_event_timestamp": "2026-09-10T03:33:00.571Z",
+  "source_event_sha256": "165cdfb097c2f4b4fec7d8ccbd9d25c35f233403bfc45b895379ae342c2d7752",
+  "author": "/root/independent_skill_validation",
+  "review": {
+    "phase": "baseline",
+    "model": "gpt-6-astra",
+    "effort": "medium",
+    "started_at": "2026-09-10 03:30:27 UTC",
+    "ended_at": "2026-09-10 03:31:22 UTC",
+    "results": [
+      {
+        "id": "01-normal",
+        "applicable": true,
+        "conclusion": "可选择existing作为待验证方案：RGB满足所列spots输入要求，输出单位pixels不需要物理标定，MIT许可和baseline_verified=true提供初步依据；尚不能据此承诺真实场景性能。",
+        "computed_metrics": {
+          "requirements_satisfied": 1,
+          "requirements_total": 1
+        },
+        "actions": {
+          "should": [
+            "确认候选的具体版本、许可文件及依赖许可",
+            "复核基线验证记录及其数据范围",
+            "核对RGB预处理、像素坐标、输出定义、运行环境和验收指标"
+          ],
+          "should_not": [
+            "下载模型",
+            "训练",
+            "将像素测量声称为物理测量",
+            "仅凭baseline_verified字段宣称上线验收通过"
+          ]
+        },
+        "missing_information": [
+          "候选版本和基线验证证据",
+          "目标数据分布",
+          "性能与质量验收阈值"
+        ]
+      },
+      {
+        "id": "02-normal",
+        "applicable": true,
+        "conclusion": "所给清单内部一致：ID和摘要均不重复，positive有合法的归一化矩形，negative无矩形，a的拟议版本未回退。两条记录均为人工确认；rerun_ids为空，本次没有授权重跑目标。",
+        "computed_metrics": {
+          "records": 2,
+          "duplicate_ids": 0,
+          "duplicate_sha256": 0,
+          "human_confirmed": 2,
+          "requested_reruns": 0,
+          "a_bbox_area_normalized": 0.2
+        },
+        "actions": {
+          "should": [
+            "保留两条人工确认标注及其版本",
+            "将当前重跑计划记录为空"
+          ],
+          "should_not": [
+            "重跑或覆盖人工标注",
+            "从空rerun_ids推导批量重跑许可",
+            "把示例摘要视为已校验的真实文件SHA256"
+          ]
+        },
+        "missing_information": [
+          "bbox格式未明示；上述几何计算按归一化xyxy解释",
+          "b未提供版本号，无法判断其版本演进",
+          "未提供实际图像，无法核实标签内容"
+        ]
+      },
+      {
+        "id": "03-normal",
+        "applicable": true,
+        "conclusion": "给定记录在人物、会话、摘要和cluster层面没有跨划分重叠，符合跨人物划分的结构条件。模型选择使用validation；校准与合成来源均位于train，没有观察到测试集参与调参或合成。",
+        "computed_metrics": {
+          "train_records": 1,
+          "validation_records": 1,
+          "test_records": 1,
+          "cross_split_subject_overlap": 0,
+          "cross_split_session_overlap": 0,
+          "cross_split_sha256_overlap": 0,
+          "cross_split_cluster_overlap": 0,
+          "calibration_train_sources": 1,
+          "synthetic_train_sources": 1
+        },
+        "actions": {
+          "should": [
+            "冻结划分及测试集",
+            "记录校准和合成的来源链",
+            "仅在validation进行模型选择，最终方案确定后评估test"
+          ],
+          "should_not": [
+            "启动训练",
+            "用test挑模型、调阈值或生成训练样本",
+            "凭每个划分仅一个人物宣称可靠的人群泛化"
+          ]
+        },
+        "missing_information": [
+          "完整数据规模和人物覆盖",
+          "cluster生成方法及近重复检测证据",
+          "最终验收指标和置信区间方案"
+        ]
+      },
+      {
+        "id": "04-normal",
+        "applicable": true,
+        "conclusion": "按阈值包含等号的解释，正面槽位在第三帧t=200 ms首次触发。连续三帧同一人物、有效且新鲜，平滑与原始yaw均满足正面要求，pitch和roll合格。",
+        "computed_metrics": {
+          "triggered": true,
+          "slot": "front",
+          "trigger_frame_index_zero_based": 2,
+          "trigger_time_ms": 200,
+          "stable_duration_ms": 200,
+          "eligible_frames": 3,
+          "maximum_gap_ms": 100,
+          "maximum_age_ms": 0
+        },
+        "actions": {
+          "should": [
+            "回放中记录第三帧触发及对应人物、槽位和时间",
+            "实际系统联调时核对触发后的去重或槽位锁定"
+          ],
+          "should_not": [
+            "在第一或第二帧提前触发",
+            "因本题回放结论实际调用相机拍照"
+          ]
+        },
+        "missing_information": [
+          "未给出触发后的复位或重复拍照策略；不影响本次首次触发判断"
+        ]
+      },
+      {
+        "id": "05-normal",
+        "applicable": true,
+        "conclusion": "有效域完整保留参考皮肤区域，检测Mask完全包含于有效域，候选中心(0,0)同时位于有效域和检测Mask内。",
+        "computed_metrics": {
+          "reference_skin_area_pixels": 4,
+          "valid_area_pixels": 4,
+          "retained_reference_area_pixels": 4,
+          "retained_ratio": 1.0,
+          "retained_ratio_pass": true,
+          "detection_area_pixels": 1,
+          "detection_outside_valid_pixels": 0,
+          "detection_subset_of_valid": true,
+          "detection_coverage_of_valid": 0.25,
+          "instance_centers_inside_valid": 1,
+          "instance_centers_inside_detection": 1
+        },
+        "actions": {
+          "should": [
+            "记录面积、保留率及包含关系检查通过"
+          ],
+          "should_not": [
+            "无依据调整Mask或阈值",
+            "将一个候选中心等同于经验证的真实病灶"
+          ]
+        },
+        "missing_information": []
+      },
+      {
+        "id": "06-normal",
+        "applicable": true,
+        "conclusion": "在给定图像有效域中，数量4与declared_count一致；覆盖率20%，密度0.04个/像素。采用常见线性插值分位数定义，P50=2.5、P90=3.7。未声明跨视角唯一数量，因此不要求跨视角对应来支持这些单域统计。",
+        "computed_metrics": {
+          "count": 4,
+          "declared_count_matches": true,
+          "valid_area_pixels": 100,
+          "positive_area_pixels": 20,
+          "coverage_ratio": 0.2,
+          "coverage_percent": 20,
+          "density_per_pixel": 0.04,
+          "density_per_100_pixels": 4,
+          "p50": 2.5,
+          "p90": 3.7,
+          "percentile_method": "sorted values, linear interpolation at index (n-1)*p"
+        },
+        "actions": {
+          "should": [
+            "标明有效域分母、像素单位及分位数算法",
+            "保留图像域统计的适用范围"
+          ],
+          "should_not": [
+            "输出毫米或平方毫米结果",
+            "声称跨视角去重数量已验证"
+          ]
+        },
+        "missing_information": [
+          "题面未指定分位数算法；采用线性插值",
+          "values的具体测量含义未定义"
+        ]
+      },
+      {
+        "id": "07-normal",
+        "applicable": true,
+        "conclusion": "已读取source.json与report.json，两者均为count=2、coverage=0.25，结构化投影一致。evidence.txt存在于授权assets目录且可读，内容标示为合成证据。该检查未验证未提供的实际版式文件。",
+        "computed_metrics": {
+          "source_count": 2,
+          "report_count": 2,
+          "source_coverage": 0.25,
+          "report_coverage": 0.25,
+          "differing_fields": 0,
+          "referenced_artifacts_found": 1,
+          "referenced_artifacts_total": 1
+        },
+        "actions": {
+          "should": [
+            "报告结构化字段一致及引用文件可访问",
+            "将合成证据说明与真实模型效果证据区分"
+          ],
+          "should_not": [
+            "运行模型或重新推理",
+            "修改任何文件",
+            "将evidence.txt的存在视为模型效果已验证",
+            "声称完成实际版式视觉验收"
+          ]
+        },
+        "missing_information": [
+          "未提供可渲染的版式产物；无法验证排版观感"
+        ]
+      },
+      {
+        "id": "08-normal",
+        "applicable": true,
+        "conclusion": "恢复计划应跳过a：其成功、提交、产物有效及配置一致条件均满足。b是未提交且产物无效的半成品，应列为恢复重试候选；实际重试前需确认原running执行者已停止或租约失效。workers=1符合max_workers=1。",
+        "computed_metrics": {
+          "skip_count": 1,
+          "retry_candidate_count": 1,
+          "skip_ids": [
+            "a"
+          ],
+          "retry_candidate_ids": [
+            "b"
+          ],
+          "worker_limit_satisfied": true
+        },
+        "actions": {
+          "should": [
+            "规划跳过a",
+            "核对b的存活执行者或租约，避免并发重复运行",
+            "为b规划独立临时产物、校验后提交及可追踪的重试记录"
+          ],
+          "should_not": [
+            "启动任务",
+            "把b视为成功结果",
+            "重复处理a",
+            "在原执行者仍活跃时并行重试b"
+          ]
+        },
+        "missing_information": [
+          "b当前执行者是否存活及租约状态",
+          "失败重试次数和临时产物处理策略"
+        ]
+      },
+      {
+        "id": "09-normal",
+        "applicable": true,
+        "conclusion": "保存的数组在布局标签、颜色标签和形状上相同；最大绝对误差约0.0001，小于0.001，所给数值样本通过容差检查。运行后端CPU与声明CPU一致，校准ID与测试ID无交集。该结果仅支持保存样本的局部一致性。",
+        "computed_metrics": {
+          "shape_matches": true,
+          "layout_matches": true,
+          "color_matches": true,
+          "max_absolute_error": 0.0001,
+          "mean_absolute_error": 0.0001,
+          "max_absolute_tolerance": 0.001,
+          "numeric_tolerance_pass": true,
+          "provider_claim_matches": true,
+          "calibration_test_overlap": 0
+        },
+        "actions": {
+          "should": [
+            "记录张量数值对照通过及覆盖范围",
+            "在完整迁移验收中核对预处理、后处理、代表性样本和实际后端证据"
+          ],
+          "should_not": [
+            "加载模型",
+            "运行推理",
+            "用一个三元素样本宣称完整运行时迁移通过"
+          ]
+        },
+        "missing_information": [
+          "NCHW通常对应四维张量，而本题shape为[1,3]，需说明是否为简化或展平表示",
+          "完整预处理和后处理定义",
+          "实际运行后端证据及代表性样本覆盖"
+        ]
+      },
+      {
+        "id": "10-normal",
+        "applicable": true,
+        "conclusion": "接口字段覆盖消费者要求，结果版本等于当前版本，源帧与目标帧相同。在同一坐标约定下，同帧点显示不依赖跨帧配准。两侧时钟标签均为monotonic；只有确认共享同一时钟域后才可直接比较时间。模式切换清照片与文档不声称保留的状态不冲突。",
+        "computed_metrics": {
+          "missing_consumer_fields": [],
+          "revision_matches": true,
+          "same_frame": true,
+          "clock_type_matches": true,
+          "mode_switch_document_conflict_detected": false
+        },
+        "actions": {
+          "should": [
+            "联调capture_id值、revision值及frame_id传递",
+            "验证同帧点坐标的尺寸、缩放、裁剪、旋转和镜像约定",
+            "测试重拍后旧revision结果拒收",
+            "验证模式切换清理照片、关联结果及显示状态",
+            "核实时钟是否共享进程或设备时钟域；若不共享则建立映射"
+          ],
+          "should_not": [
+            "仅凭相同monotonic名称宣称跨设备时钟已对齐",
+            "扩展为未经配准的跨帧点叠加",
+            "据字段名齐全就宣称完整接口联调通过"
+          ]
+        },
+        "missing_information": [
+          "实际capture_id值及身份关联检查",
+          "点坐标空间定义",
+          "两侧时钟是否同域",
+          "实际文档正文及端到端联调记录"
+        ]
+      }
+    ],
+    "method_limitations": [
+      "无Skill基线：未读取Skill正文、scripts、tests/cases.json、expected或已有评价。",
+      "只分析id以-normal结尾的10题；prompts.json以整文件方式读取，因此文件中其他题面曾同时出现在工具输出中，但未处理或评价。",
+      "只读取授权prompts.json及tests/assets目录；实际读取合成资产为source.json、report.json、evidence.txt，未读取wrong_report.json。",
+      "未写文件，未运行模型、训练、推理、GPU任务、网络或部署；统计通过题面直接计算。",
+      "默认UNC访问失败后进行了明确限定路径的只读升级，未修改工程或依赖。",
+      "结果针对提供的合成数据及声明，不替代真实数据、运行环境、标注内容或最终产品验收。",
+      "未猜测作者预期答案；对分位数、坐标格式及完整验收证据的歧义作了明确限定。"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "status": "INDEPENDENT_DETECTION_PASS_SPOTS_SCORING_PENDING",
+  "execution_heads": [
+    "pores",
+    "spots",
+    "surface_gloss"
+  ],
+  "services": [
+    "dermavision"
+  ],
+  "samples": [
+    {
+      "sample": "current_demo",
+      "score": {
+        "pores": 57.0,
+        "spots": null,
+        "surface_gloss": 72.0
+      },
+      "timing": {
+        "mode": "resident_three_item",
+        "cold_start_seconds": 14.272544265026227,
+        "task_seconds": 12.458891093032435,
+        "resident_reuse_index": 1,
+        "algorithms": [
+          "pores",
+          "spots",
+          "surface_gloss"
+        ],
+        "services": [
+          "dermavision"
+        ]
+      }
+    },
+    {
+      "sample": "camera_demo",
+      "score": {
+        "pores": 71.0,
+        "spots": null,
+        "surface_gloss": 72.0
+      },
+      "timing": {
+        "mode": "resident_three_item",
+        "cold_start_seconds": 14.272544265026227,
+        "task_seconds": 7.856896160985343,
+        "resident_reuse_index": 2,
+        "algorithms": [
+          "pores",
+          "spots",
+          "surface_gloss"
+        ],
+        "services": [
+          "dermavision"
+        ]
+      }
+    }
+  ],
+  "scoring_limit": "Independent spots reference unavailable; spots scores are null. Previous mixed scores withdrawn."
+}

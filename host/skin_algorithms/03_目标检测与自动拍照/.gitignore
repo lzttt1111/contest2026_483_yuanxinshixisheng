@@ -1,0 +1,9 @@
+.venv*/
+__pycache__/
+*.pyc
+pc_demo/captures/
+logs/
+validation-local/
+*.onnx
+*.task
+*.rknn

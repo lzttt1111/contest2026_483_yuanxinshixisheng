@@ -1,0 +1,10 @@
+image_size: 1024
+num_faces: 2
+crop_pad_x_ratio: 0.06
+crop_pad_top_ratio: 0.10
+crop_pad_bottom_ratio: 0.04
+forbidden_mask:
+  eye_dilate: 3
+  mouth_dilate: 2
+  nostril_dilate: 2
+  eyebrow_dilate: 1

@@ -1,0 +1,290 @@
+{
+  "detector_results": {
+    "acne": {
+      "metrics": {
+        "detection": {
+          "count": 1
+        },
+        "preprocess": {
+          "skin_pixels": 407825
+        }
+      }
+    },
+    "brown": {
+      "metrics": {
+        "medical_metrics_v2": {
+          "overall_metrics": {
+            "auxiliary_metrics": {
+              "scope_and_burden": {
+                "brown_spot_area_ratio": 0.068245
+              }
+            },
+            "core_metrics": {
+              "scope_and_burden": {
+                "high_intensity_area_ratio": 0.202249,
+                "patch_target_area_ratio": 0.003539,
+                "punctate_target_area_ratio": 0.064706
+              },
+              "signal_intensity": {
+                "p90_intensity": 0.906372
+              }
+            }
+          }
+        }
+      }
+    },
+    "contour_firmness": {
+      "metrics": {
+        "jaw_arc_asymmetry_ratio": 0.047482,
+        "jaw_continuity_ratio": 0.840505,
+        "jaw_curve_direction_changes": 0.0,
+        "jaw_curve_p90": 0.250534,
+        "midface_convex_concave_turns": 126.0,
+        "midface_relative_relief_p90": 0.310173,
+        "midface_surface_continuity_ratio": 0.263847
+      }
+    },
+    "pores": {
+      "metrics": {
+        "medical_metrics_v2": {
+          "overall_metrics": {
+            "auxiliary_metrics": {
+              "analysis_scope": {
+                "valid_skin_area_px": 243820
+              },
+              "morphology": {
+                "low_circularity_pore_ratio": 0.617159
+              },
+              "scope_and_burden": {
+                "max_instance_area_px": 98.0
+              }
+            },
+            "core_metrics": {
+              "auxiliary_statistics": {
+                "elongated_pore_ratio": 0.476568
+              },
+              "scope_and_burden": {
+                "feature_area_ratio": 0.085071,
+                "feature_density_per_100k_skin_px": 568.8623,
+                "p50_instance_area_px": 9.0,
+                "p90_instance_area_px": 36.0
+              }
+            }
+          }
+        }
+      }
+    },
+    "porphyrin": {
+      "metrics": {
+        "porphyrin": {
+          "总体指标": {
+            "核心指标": {
+              "信号强度": {
+                "实例P50强度（0～1）": 0.823816,
+                "实例P90强度（0～1）": 0.854592,
+                "高强度目标比例": 1.0
+              },
+              "范围与负担": {
+                "单位面积密度（个/10万有效皮肤像素）": 99.9386,
+                "特征面积占比": 0.030006
+              }
+            },
+            "辅助指标": {
+              "范围与负担": {
+                "高强度区域面积占比": 0.0
+              }
+            }
+          }
+        }
+      }
+    },
+    "redness": {
+      "metrics": {
+        "high_red_area_ratio": 0.13967131,
+        "mean_redness": 0.41441375,
+        "medical_metrics_v2": {
+          "overall_metrics": {
+            "auxiliary_metrics": {
+              "analysis_scope": {
+                "valid_skin_area_px": 395142
+              },
+              "scope_and_burden": {
+                "feature_density_per_100k_skin_px": 15.4375
+              },
+              "signal_intensity": {
+                "p90_instance_intensity": 0.837874
+              }
+            },
+            "core_metrics": {
+              "auxiliary_statistics": {
+                "diffuse_redness_uniformity": 0.534899,
+                "redness_boundary_gradient": 0.222883
+              },
+              "scope_and_burden": {
+                "diffuse_red_area_ratio": 0.385375,
+                "max_continuous_region_area_px": 69848,
+                "redness_continuity": 0.458687
+              }
+            }
+          }
+        },
+        "p90_redness": 0.7916153,
+        "red_feature_area_ratio": 0.00902061
+      }
+    },
+    "spots": {
+      "metrics": {
+        "medical_metrics_v2": {
+          "overall_metrics": {
+            "auxiliary_metrics": {
+              "analysis_scope": {
+                "valid_skin_area_px": 291778
+              },
+              "count_and_density": {
+                "punctate_spot_count": 53
+              },
+              "scope_and_burden": {
+                "p90_instance_area_px": 130.0
+              }
+            },
+            "core_metrics": {
+              "scope_and_burden": {
+                "feature_density_per_100k_skin_px": 25.7045,
+                "patch_spot_area_ratio": 0.010189,
+                "punctate_spot_area_ratio": 0.007557
+              },
+              "signal_intensity": {
+                "p90_delta_e": 6.66016
+              }
+            }
+          }
+        },
+        "spot_area_ratio": 0.01774637
+      }
+    },
+    "surface_gloss": {
+      "metrics": {
+        "doctor_core_inputs": {
+          "surface_gloss_continuity": {
+            "largest_gloss_component_area_ratio": 0.00473879
+          },
+          "surface_gloss_coverage": {
+            "gloss_area_ratio": 0.02460722,
+            "high_gloss_area_ratio": 0.00098222
+          },
+          "surface_gloss_intensity": {
+            "p50_gloss_intensity": 0.437374,
+            "p90_gloss_intensity": 0.586474
+          }
+        }
+      }
+    },
+    "texture": {
+      "metrics": {
+        "medical_metrics_v2": {
+          "overall_metrics": {
+            "auxiliary_metrics": {
+              "auxiliary_statistics": {
+                "depressed_like_ratio": 0.49672,
+                "raised_like_ratio": 0.50328
+              },
+              "scope_and_burden": {
+                "p90_instance_area_px": 40.0
+              },
+              "signal_intensity": {
+                "p90_instance_intensity": 1.0
+              }
+            },
+            "core_metrics": {
+              "scope_and_burden": {
+                "depressed_like_area_ratio": 0.028984,
+                "feature_density_per_100k_skin_px": 437.6179,
+                "raised_like_area_ratio": 0.04254
+              },
+              "signal_intensity": {
+                "p90_intensity": 0.575548
+              }
+            }
+          }
+        }
+      }
+    },
+    "uv_spots": {
+      "metrics": {
+        "uv_spots": {
+          "总体指标": {
+            "核心指标": {
+              "信号强度": {
+                "P90强度（0～1）": 0.86103
+              },
+              "范围与负担": {
+                "单位面积密度（个/10万有效皮肤像素）": 245.341,
+                "特征面积占比": 0.044854
+              }
+            },
+            "辅助指标": {
+              "范围与负担": {
+                "高强度区域面积占比": 0.0
+              }
+            }
+          }
+        }
+      }
+    },
+    "vascular": {
+      "metrics": {
+        "branch_point_density_per_10k_face_px": 0.5981397852678171,
+        "network_ratio": 0.5576036866359447,
+        "p50_redness": 3.1560550928115845,
+        "p50_width_px": 1.909999966621399,
+        "p90_redness": 5.350192451477051,
+        "p90_width_px": 2.738600015640259,
+        "valid_face_pixels": 367807,
+        "vascular_area_ratio": 0.005198378497418483,
+        "vascular_count": 59,
+        "vascular_line_density_per_10k_face_px": 23.599333346021147
+      }
+    },
+    "wrinkle": {
+      "metrics": {
+        "line_width": 1,
+        "region_metrics": [
+          {
+            "density_per_10k": 338.72,
+            "max_segment_length": 126,
+            "mean_segment_length": 48.25,
+            "relative_score": 100.0,
+            "share_pct": 31.66
+          },
+          {
+            "density_per_10k": 104.59,
+            "max_segment_length": 30,
+            "mean_segment_length": 19.75,
+            "relative_score": 35.37,
+            "share_pct": 12.82
+          },
+          {
+            "density_per_10k": 169.04,
+            "max_segment_length": 64,
+            "mean_segment_length": 64.0,
+            "relative_score": 30.63,
+            "share_pct": 10.39
+          },
+          {
+            "density_per_10k": 99.31,
+            "max_segment_length": 36,
+            "mean_segment_length": 18.33,
+            "relative_score": 26.43,
+            "share_pct": 8.93
+          }
+        ],
+        "stage1_center_ratio": 0.002532958984375,
+        "stage1_raw_ratio": 0.015239715576171875,
+        "stage1_recommended_ratio": 0.012581825256347656,
+        "stage2_center_ratio": 0.00058746337890625,
+        "stage2_raw_ratio": 0.004069328308105469,
+        "stage2_recommended_ratio": 0.0030260086059570312
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "dermavision_contest_source_integration_v1",
+  "assembled_at": "2026-09-20",
+  "format": "uncompressed_directory",
+  "v2_remote": "http://10.3.2.158/aisia/dermavision.git",
+  "v2_branch": "dev",
+  "v2_commit": "787a500d35223aebcb3bcf42eb98ee82fecac73c",
+  "v2_contract_commit": "9a0b9265d4622ac60c4d73fcc71219f230b05f78",
+  "water_remote": "http://10.3.2.158/aisia/shuiguang-test.git",
+  "water_branch": "dev",
+  "water_commit": "d7c84c18b859be60967a3172266aedcac36f9db1",
+  "components": {
+    "v2": "01_V2单双输入十二项稳定版",
+    "water_three_items": "02_水光三项三视图服务",
+    "target_detection_and_auto_capture": "03_目标检测与自动拍照"
+  },
+  "excluded_from_copy": [".git", ".venv", "runtime", "__pycache__", ".pytest_cache"],
+  "source_manifests": [
+    "PACKAGE_MANIFEST.json",
+    "01_V2单双输入十二项稳定版/SOURCE_SNAPSHOT.json",
+    "01_V2单双输入十二项稳定版/QA_RECEIPT.json",
+    "02_水光三项三视图服务/PACKAGE_MANIFEST.json",
+    "02_水光三项三视图服务/QA_RECEIPT.json",
+    "03_目标检测与自动拍照/PACKAGE_MANIFEST.json",
+    "03_目标检测与自动拍照/QA_RECEIPT.json"
+  ]
+}

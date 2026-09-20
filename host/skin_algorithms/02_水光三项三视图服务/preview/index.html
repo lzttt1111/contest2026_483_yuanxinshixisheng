@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>水光三项检测 · JSON结果预览</title><link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/layout_fix.css"></head>
+<body><main>
+<header><div><h1>水光三项检测</h1><p>图片与 JSON 结果预览</p></div><a id="download" href="/download/triplet">下载当前 JSON</a></header>
+<section class="source"><p id="description"></p></section>
+<nav aria-label="检测项目"><button data-module="pores" class="active">毛孔</button><button data-module="spots">可见色斑</button><button data-module="surface_gloss">表面油光</button></nav>
+<section class="score-card" aria-label="正面整体评分"><div><span>正面整体评分</span><strong id="score">—</strong><span id="unit">分</span></div><div><span id="grade" class="grade">待补充</span><p>V3评分：分数越高，状态越好</p></div></section>
+<section id="gallery" class="gallery" aria-label="三视图检测结果"></section>
+<p class="caption">左侧、正面、右侧均为当前项目的检测结果图，随检测项切换。点击可放大。</p>
+<div class="tables">
+<section><div class="section-title"><h2>三视图分区数量</h2><span>本人解剖区域</span></div><p class="hint">每列独立计数，主观察参考不是三图合计。</p><div id="counts"></div></section>
+<section><div class="section-title"><h2>正面区域评分</h2><span>V3原生分区</span></div><p class="hint">沿用V3原生范围；评分区域中的左右以画面为准。</p><div id="regional"></div></section>
+</div>
+<details><summary>查看原始 JSON</summary><pre id="json"></pre></details>
+<p id="status" role="status"></p><footer>本页只读取已有结果用于联调预览，不上传照片、不运行检测。</footer>
+</main><dialog id="zoom"><button id="close">关闭</button><img id="zoom-image" alt="输入照片放大预览"></dialog><script src="/assets/app.js"></script></body></html>
