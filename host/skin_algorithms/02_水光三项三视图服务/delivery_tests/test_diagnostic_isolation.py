@@ -5,11 +5,11 @@ from cloud_three.service_scores import execute_scores
 def request():
  return {'task_id':'gate_test','images':[{'image_id':str(i),'path':f'{i}.jpg'} for i in range(3)],'mirrored':False}
 
-def test_formal_request_refused_before_file_or_model_work(monkeypatch):
+def test_formal_request_validates_inputs_with_fallback_disabled(monkeypatch):
  monkeypatch.setenv('SHUIGUANG_PREPROCESS_MODE','bisenet_rgb_diagnostic_v1')
  monkeypatch.setenv('SHUIGUANG_LEGACY_SCORE_FALLBACK','0')
  result=execute_scores(request())
- assert result['error']['code']=='SCORING_REFERENCE_NOT_READY'
+ assert result['error']['code']=='INVALID_INPUT'
 
 def test_unconfigured_worker_defaults_to_bisenet_not_legacy(monkeypatch):
  monkeypatch.delenv('SHUIGUANG_PREPROCESS_MODE',raising=False)

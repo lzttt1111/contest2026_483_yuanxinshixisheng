@@ -36,7 +36,7 @@ async function api(path,options={}){
 }
 function clearResult(){latest=null; angles.clear();rawDisplayAt=-Infinity;$('raw-pose').textContent='等待原始角度';$('progress').value=0;$('region-status').textContent='等待最新人脸结果';}
 function renderPhotos(photos={}){
- for(const side of ['left','right']){
+ for(const side of ['left','front','right']){
    const p=photos[side], im=$(side+'-image'), a=$(side+'-download'); im.hidden=!p; $(side+'-empty').hidden=!!p;
    document.querySelector(`[data-retake="${side}"]`).disabled=!p;
    a.setAttribute('aria-disabled',String(!p));

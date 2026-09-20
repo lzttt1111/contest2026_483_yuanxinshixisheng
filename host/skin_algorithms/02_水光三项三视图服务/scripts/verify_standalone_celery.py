@@ -38,12 +38,13 @@ def main():
    again=app.send_task('shuiguang.analyze_three_views_diagnostic',args=[request],queue='shuiguang_diagnostic').get(timeout=30,interval=1);assert again==r
    formal=app.send_task('shuiguang.analyze_three_views_scores',args=[request],queue='shuiguang_scores').get(timeout=300,interval=1)
    formal_contract=ScoreResponse.model_validate(formal)
-   assert all(item.score is not None and item.severity is not None for item in formal_contract.surface_gloss.regions)
-   rec={'sample':sample,'elapsed_including_queue':time.monotonic()-start,'timing':timing,'structure_contract_verified':True,'latest_bisenet_scores_used':True,'legacy_fallback_non_null':True,'default_mode_is_bisenet':True,'package_model_sha_verified':True,'idempotent':True,'formal_legacy_fallback_enabled':True};checks.append(rec);print(json.dumps(rec),flush=True)
+   assert formal==r['scores']
+   assert trace['legacy_fallback_used']==[]
+   rec={'sample':sample,'elapsed_including_queue':time.monotonic()-start,'timing':timing,'structure_contract_verified':True,'latest_bisenet_scores_used':True,'sample_fallback_disabled':True,'default_mode_is_bisenet':True,'package_model_sha_verified':True,'idempotent':True};checks.append(rec);print(json.dumps(rec),flush=True)
   # The formal fallback call is intentionally also a real three-item score;
   # therefore the resident counter is at least two after two diagnostic calls.
   assert checks[1]['timing']['resident_reuse_index']>=2
-  artifact={'stage':'three_item_legacy_score_fallback','runtime_relative_path':RUNTIME.relative_to(ROOT).as_posix(),'business_code_root':'vendor/v3','model_relative_path':'vendor/v3/models/face_parsing_resnet18.onnx','python_environment_external_permitted':True,'transport':'filesystem_test_only','checks':checks}
+  artifact={'stage':'current_image_evidence_only','runtime_relative_path':RUNTIME.relative_to(ROOT).as_posix(),'business_code_root':'vendor/v3','model_relative_path':'vendor/v3/models/face_parsing_resnet18.onnx','python_environment_external_permitted':True,'transport':'filesystem_test_only','checks':checks}
   (RUNTIME/'verification.json').write_text(json.dumps(artifact,indent=2)+'\n')
   (ROOT/'STANDALONE_DIAGNOSTIC_ACCEPTANCE.json').write_text(json.dumps(artifact,indent=2)+'\n')
   (ROOT/'LATEST_CLOUD_RUN_ONE.json').write_text(json.dumps(latest_results['one'],ensure_ascii=False,indent=2)+'\n')

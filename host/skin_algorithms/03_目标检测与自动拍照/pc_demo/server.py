@@ -87,7 +87,7 @@ def create_app(backend=None, capture_root=None):
 
     @app.post('/v1/session/{sid}/reset')
     async def reset(sid: str, side: str = 'all'):
-        if side not in ('all', 'left', 'right'):
+        if side not in ('all', 'front', 'left', 'right'):
             raise HTTPException(400, 'invalid side')
         if guard.locked():
             raise HTTPException(409, '推理忙，请稍后重试')

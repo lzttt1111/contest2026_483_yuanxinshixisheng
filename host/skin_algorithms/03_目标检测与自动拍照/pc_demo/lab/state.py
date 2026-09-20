@@ -62,6 +62,21 @@ class FaceLock:
 
 
 class CaptureGate:
+    SLOTS = ('front', 'left', 'right')
+
+    def classify(self, pose):
+        if not pose or not pose.get('valid'):
+            return None
+        if any(not isinstance(pose.get(k),(int,float)) or not math.isfinite(pose[k]) for k in ('yaw','pitch','roll')):
+            return None
+        c=self.config
+        if abs(pose['pitch'])>c['pitch_limit'] or abs(pose['roll'])>c['roll_limit']:
+            return None
+        if abs(pose['yaw'])<=c['yaw_tolerance']:
+            return 'front'
+        if abs(abs(pose['yaw'])-c['yaw_target'])<=c['yaw_tolerance']:
+            return 'left' if pose['yaw']*c['left_yaw_sign']>0 else 'right'
+        return None
     def __init__(self, config):
         self.config = config
         self.done = set()
@@ -91,13 +106,16 @@ class CaptureGate:
         if reason:
             self.clear()
             return {'progress': 0, 'reason': reason, 'trigger': None}
-        side = 'left' if pose['yaw']*c['left_yaw_sign'] > 0 else 'right'
-        if abs(abs(pose['yaw'])-c['yaw_target']) > c['yaw_tolerance']:
+        side = self.classify(pose)
+        if side is None:
             self.clear()
-            return {'progress': 0, 'reason': f'请调整至左右{c["yaw_target"]:g}°附近（±{c["yaw_tolerance"]:g}°）', 'trigger': None}
+            return {'progress': 0, 'reason': f'请调整至正面0°或左右{c["yaw_target"]:g}°（±{c["yaw_tolerance"]:g}°）', 'trigger': None}
+        if raw_pose is not None and self.classify(raw_pose)!=side:
+            self.clear()
+            return {'progress':0,'reason':'当前原始角度未达标，请重新保持稳定','trigger':None}
         if side in self.done:
             self.clear()
-            return {'progress': 0, 'reason': '本侧已完成，请拍另一侧' if len(self.done)<2 else '左右照片已完成', 'trigger': None}
+            return {'progress': 0, 'reason': '本视角已完成，请拍其余视角' if len(self.done)<3 else '三视图已完成', 'trigger': None}
         if (self.start is None or self.side != side or now_ms-self.last > c['max_gap_ms']
                 or now_ms <= self.last or abs(pose['yaw']-self.anchor) > c['yaw_jitter']):
             self.start = now_ms
@@ -107,14 +125,9 @@ class CaptureGate:
         self.samples += 1
         progress = min(1, (now_ms-self.start)/c['stable_ms'])
         trigger = side if progress >= 1 and self.samples >= 3 else None
-        if trigger and raw_pose is not None:
-            raw_side='left' if raw_pose['yaw']*c['left_yaw_sign']>0 else 'right'
-            if (not raw_pose.get('valid') or not all(math.isfinite(raw_pose[k]) for k in ('yaw','pitch','roll'))
-                or raw_side!=side or abs(abs(raw_pose['yaw'])-c['yaw_target'])>c['yaw_tolerance']
-                or abs(raw_pose['pitch'])>c['pitch_limit'] or abs(raw_pose['roll'])>c['roll_limit']):
-                return {'progress':progress,'reason':'稳定角度已达标，等待当前原始帧也达标','trigger':None}
         return {'progress': progress, 'reason': '保持稳定' if not trigger else '已拍摄', 'trigger': trigger}
 
     def commit(self, side):
+        if side not in self.SLOTS:raise ValueError('invalid capture slot')
         self.done.add(side)
         self.clear()

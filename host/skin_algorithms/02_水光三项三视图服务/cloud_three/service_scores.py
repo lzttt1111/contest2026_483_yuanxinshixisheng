@@ -10,21 +10,18 @@ from .public_scores import public_from_v3_extract
 from .service import RequestError,safe_inputs,locked,atomic_json,failure
 from .settings import ROOT,RUNTIME,bootstrap,device,preprocessing_mode
 
-VERSION="bisenet-independent-three-diagnostic-20260915-6"
+VERSION="current-image-evidence-only-20260920-1"
 def execute_scores(payload,progress=None,*,diagnostic=False):
     progress=progress or (lambda *a,**k:None)
     request=AnalyzeRequest.model_validate(payload)
     mode=preprocessing_mode()
-    # 立即上线兼容策略：新预处理的量化仍照常运行；缺失区域由
-    # vendor/legacy_score_fallback.json 中已验收的旧分数补齐。这样不必
-    # 重跑1000例，同时在内部 trace/receipt 中保留“旧参考回退”标记。
-    fallback_enabled=os.environ.get('SHUIGUANG_LEGACY_SCORE_FALLBACK','1')=='1'
-    if mode!='legacy' and not diagnostic and not fallback_enabled:
-        return failure(request.task_id,'SCORING_REFERENCE_NOT_READY','新预处理尚无匹配正式参考，已关闭旧参考回退')
+    # Old reference parameters may score current measurements; fixed sample
+    # result values never participate. Missing evidence remains unavailable.
+    fallback_enabled=False
     if diagnostic and mode!='bisenet_rgb_diagnostic_v1':
         return failure(request.task_id,'DIAGNOSTIC_MODE_REQUIRED','诊断worker必须明确使用BiSeNet预处理')
     model_sha=None
-    if diagnostic:
+    if mode!='legacy':
         model=Path(os.environ.get('SHUIGUANG_FACE_PARSER_MODEL',str(ROOT/'vendor/v3/models/face_parsing_resnet18.onnx'))).resolve()
         if not model.is_relative_to(ROOT.resolve()) or not model.is_file():
             return failure(request.task_id,'MODEL_ASSET_INVALID','模型必须存在于当前独立沙箱内')

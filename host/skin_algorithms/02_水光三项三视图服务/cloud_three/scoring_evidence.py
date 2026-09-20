@@ -3,20 +3,9 @@ import hashlib,json
 from pathlib import Path
 from .settings import VENDOR
 
-LEGACY_FALLBACK=VENDOR/'legacy_score_fallback.json'
-
 def apply_legacy_fallback(scores):
-    fallback=json.loads(LEGACY_FALLBACK.read_text(encoding='utf-8'))
-    used=[]
-    for project,item in scores.items():
-        old=fallback.get(project,{})
-        if item.get('score') is None and isinstance(old.get('score'),(int,float)):
-            item['score']=old['score'];item['severity']=old.get('severity');item['score_status']='available';item['score_reason']='legacy_reference_fallback';used.append(project+':overall')
-        for region in item.get('regional_scores',{}).get('items',[]):
-            previous=next((x for x in old.get('regions',[]) if x.get('region')==region.get('region')),None)
-            if region.get('score') is None and previous and isinstance(previous.get('score'),(int,float)):
-                region['score']=previous['score'];region['severity']=previous.get('severity');region['score_status']='available';region['score_reason']='legacy_reference_fallback';used.append(project+':'+region['region'])
-    return used
+    """Compatibility shim: sample scores must never fill another input's gaps."""
+    return []
 
 def score_saved(source,sample):
     from src.doctor_v3.stage1_pipeline import collect_evidence,analyze
@@ -40,5 +29,4 @@ def score_saved(source,sample):
     if len(files)!=1:raise ValueError('Independent spot evidence is missing or ambiguous')
     reference_path=VENDOR/'independent_spots_reference.json'
     scores['spots'],trace=score_spots(json.loads(files[0].read_text()),json.loads(reference_path.read_text()))
-    fallback_used=apply_legacy_fallback(scores)
-    return scores,{'doctor_pipeline_projects':list(selected),'independent_spots_measurements':trace,'aligned_rgb_sha256':identity,'independent_spots_reference_sha256':hashlib.sha256(reference_path.read_bytes()).hexdigest(),'legacy_fallback_reference_sha256':hashlib.sha256(LEGACY_FALLBACK.read_bytes()).hexdigest(),'legacy_fallback_used':fallback_used}
+    return scores,{'doctor_pipeline_projects':list(selected),'independent_spots_measurements':trace,'aligned_rgb_sha256':identity,'independent_spots_reference_sha256':hashlib.sha256(reference_path.read_bytes()).hexdigest(),'legacy_fallback_used':[], 'scoring_policy':'current_image_evidence_only_v1'}

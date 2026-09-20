@@ -21,6 +21,32 @@ class FakeFace:
     def crop_box(self,*args):return (10,10,160,160)
 
 class ApiTests(unittest.TestCase):
+    def test_three_slots_exact_jpeg_and_front_retake(self):
+        pose={'valid':True,'yaw':0.,'pitch':0.,'roll':0.}
+        model=SimpleNamespace(face=FakeFace(),pose=SimpleNamespace(infer_bgr=lambda _:SimpleNamespace(to_dict=lambda:dict(pose))))
+        with tempfile.TemporaryDirectory() as tmp, TestClient(create_app(model,tmp)) as client, patch('server.cv2.Laplacian',return_value=SimpleNamespace(var=lambda:100.)):
+            sid=client.post('/v1/session').json()['session_id']
+            buf=io.BytesIO();Image.new('RGB',(320,240),'gray').save(buf,format='JPEG');payload=buf.getvalue()
+            fid=0
+            def send():
+                nonlocal fid
+                r=client.post('/v1/stream/frame',content=payload,headers={'X-Session-Id':sid,'X-Frame-Id':str(fid),'X-Capture-Ms':str(fid*100)})
+                fid+=1;self.assertEqual(r.status_code,200,r.text);return r.json()
+            for slot,yaw in [('front',0),('left',-45),('right',45)]:
+                pose['yaw']=yaw
+                for _ in range(20):value=send()
+                self.assertIn(slot,value['photos'])
+                saved=value['photos'][slot]
+                self.assertEqual(client.get(saved['image_url']).content,payload)
+                self.assertEqual(saved['frame_sha256'],hashlib.sha256(payload).hexdigest())
+            self.assertEqual(set(value['photos']),{'front','left','right'})
+            old=dict(value['photos'])
+            self.assertEqual(client.post(f'/v1/session/{sid}/reset?side=front').status_code,200)
+            pose['yaw']=0
+            for _ in range(20):value=send()
+            self.assertNotEqual(value['photos']['front']['frame_id'],old['front']['frame_id'])
+            self.assertEqual(value['photos']['left'],old['left']);self.assertEqual(value['photos']['right'],old['right'])
+
     def test_exact_photo_once_retake_reset_and_old_session(self):
         model=SimpleNamespace(face=FakeFace(),pose=SimpleNamespace(infer_bgr=lambda _:SimpleNamespace(to_dict=lambda:{'valid':True,'yaw':-45.,'pitch':0.,'roll':0.})))
         with tempfile.TemporaryDirectory() as tmp, TestClient(create_app(model,tmp)) as client, patch('server.cv2.Laplacian',return_value=SimpleNamespace(var=lambda:100.)):

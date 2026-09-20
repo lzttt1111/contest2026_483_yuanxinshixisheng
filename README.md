@@ -1,6 +1,6 @@
 # VelaVision
 
-2026-09-20 皮肤算法补充：V2十二项/四光源、水光三项云服务、PC目标检测与拍照源码见 [皮肤算法提交说明](contest_submission/skin-algorithms.md)，包含视觉Skill和 lzttt1111 的真实AI日志。水光固定样例分数回退存在未修复问题，详见该说明的发布复核。
+2026-09-20 皮肤算法补充：V2十二项/四光源、水光三项云服务、PC目标检测与拍照源码见 [皮肤算法提交说明](contest_submission/skin-algorithms.md)，包含视觉Skill和 lzttt1111 的真实AI日志。最新修复已禁用固定样例分数回退并补齐正面采集槽位，剩余评分参考和实拍边界见说明。
 
 统一开发入口：`E:\openvela\VelaVision`。原生 openvela/NuttX、RK3576 BSP、视觉、无线、语音候选、前端与 AI 日志均在本仓库组织。
 

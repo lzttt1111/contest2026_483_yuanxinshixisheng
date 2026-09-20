@@ -11,7 +11,7 @@ from .settings import preprocessing_mode
 
 app=FastAPI(title="水光三项JSON服务",version="1.1")
 def legacy_score_fallback_enabled():
-    return os.environ.get("SHUIGUANG_LEGACY_SCORE_FALLBACK","1").strip().lower() not in {"0","false","no"}
+    return False
 @app.post('/api/diagnostic-jobs',status_code=202)
 def diagnostic_submit(request:AnalyzeRequest):
     queued=analyze_three_views_diagnostic.delay(request.model_dump())
@@ -27,11 +27,9 @@ def health():
 
 @app.post("/api/score-jobs",status_code=202)
 def score_submit(request:AnalyzeRequest):
-    if preprocessing_mode()!='legacy' and not legacy_score_fallback_enabled():
-        raise HTTPException(409,detail={'code':'SCORING_REFERENCE_NOT_READY','message':'新预处理尚无匹配参考，且已关闭旧评分回退'})
     queued=analyze_three_views_scores.delay(request.model_dump())
     return {"task_id":request.task_id,"queue_id":queued.id,"status":"queued",
-            "score_source":"bisenet_with_legacy_fallback" if preprocessing_mode()!='legacy' else "legacy"}
+            "score_source":"current_image_evidence_old_reference"}
 
 @app.get("/api/score-jobs/{queue_id}")
 def score_status(queue_id:str):

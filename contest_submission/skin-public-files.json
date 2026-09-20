@@ -3442,8 +3442,8 @@
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/cloud_three/api.py",
-      "size": 3451,
-      "sha256": "82228554b9ff4e608a2c1541e65058bb98d52c58c3a6ceffdd21b28e199e54de"
+      "size": 3090,
+      "sha256": "5a657fbb6fc59e2c18a0b1e049330a213defdd0186194cb42473e6dc58641365"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/cloud_three/compose_v2.py",
@@ -3487,8 +3487,8 @@
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/cloud_three/scoring_evidence.py",
-      "size": 3398,
-      "sha256": "cc2b8886c332a3fa757acd7d5903b173080b662db07dfb64f1dd977b55b24496"
+      "size": 2387,
+      "sha256": "0819f23056eb13efb932d00dd4c96c4ae95d00204241f217145af366401f5815"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/cloud_three/service.py",
@@ -3497,8 +3497,8 @@
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/cloud_three/service_scores.py",
-      "size": 6113,
-      "sha256": "0458f72fdc869bf137ce6719010b5c21b60a5b8168cbae660f8a52768509a309"
+      "size": 5739,
+      "sha256": "178e3e34076c04fc0f09e1a8e46c22218942d8e86f928e5bc4e539c87d13c34b"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/cloud_three/settings.py",
@@ -3532,8 +3532,8 @@
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/delivery_tests/test_diagnostic_isolation.py",
-      "size": 1797,
-      "sha256": "097a69e5e24a5317c77e5e279305dbc63dfa111e548adca864741c2822d02886"
+      "size": 1789,
+      "sha256": "89bac1ae398beface650e8a2b121a9835bec45b655f0799d97983b3718d80467"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/delivery_tests/test_hair_preprocess_candidate.py",
@@ -3544,6 +3544,11 @@
       "path": "host/skin_algorithms/02_水光三项三视图服务/delivery_tests/test_independent_spots.py",
       "size": 2884,
       "sha256": "4e963a0a64d5ae78fd485627a389ccbb001eaa5932c00a5efe2db3975c04bfe8"
+    },
+    {
+      "path": "host/skin_algorithms/02_水光三项三视图服务/delivery_tests/test_no_sample_fallback.py",
+      "size": 1072,
+      "sha256": "6d7b4dd7c5dca58f4955ed7f2f9e964b662a6139c7f4787bb162c8a4cc8f25b0"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/deploy/README.md",
@@ -3682,8 +3687,8 @@
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/README.md",
-      "size": 3323,
-      "sha256": "65939545bbc172a5f0ab2d1eb98acd82fcfd03adbab824b296d4ff61e0b46e45"
+      "size": 3304,
+      "sha256": "f384f10aa4204225ce74510ead289e808655299ddca5c189a125b8907aba7476"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/request_scores_example.json",
@@ -3742,8 +3747,8 @@
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/scripts/verify_standalone_celery.py",
-      "size": 4790,
-      "sha256": "bc33195f61c9c0b684cd8650fead86400e12c86f9ab7a39546de20e8d18118c1"
+      "size": 4703,
+      "sha256": "352151e06e12f6f76af85d98e7dc5479a73ec1f31383ce0381df5170fa040b61"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/serve_bisenet_trial.py",
@@ -6172,8 +6177,8 @@
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/水光三项检测技术与部署说明_20260915.md",
-      "size": 15370,
-      "sha256": "c4755a7a5ae85dd6ef936c2782ae8d47fd864ba89e55604275b6b018da7be181"
+      "size": 15351,
+      "sha256": "6f897a98ca47cce1bf35cc63aecb47392ee0cdc136742a3fb7a1a44dc81176ae"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/目标补充_预处理修复与分层验收_20260915.md",
@@ -6272,8 +6277,8 @@
     },
     {
       "path": "host/skin_algorithms/03_目标检测与自动拍照/pc_demo/lab/state.py",
-      "size": 5707,
-      "sha256": "2c0ba8e9837498db41ccd8104a223dd23bacda5e6e635f72fef8dddebaf73862"
+      "size": 6001,
+      "sha256": "14e579a6c0086d377a89eef2892f76902fe2348d379e26ace473444d60ec8a4e"
     },
     {
       "path": "host/skin_algorithms/03_目标检测与自动拍照/pc_demo/models/contact/manifest.json",
@@ -6327,8 +6332,8 @@
     },
     {
       "path": "host/skin_algorithms/03_目标检测与自动拍照/pc_demo/server.py",
-      "size": 11097,
-      "sha256": "2e308653b54f8b342d3a511e6b55f59d597ab04a4bd2e14fc3be58964c21f846"
+      "size": 11106,
+      "sha256": "a30b73723889b6316486a90b2a0323d5b3470560c32dca9a76eefe1edf2c1ba4"
     },
     {
       "path": "host/skin_algorithms/03_目标检测与自动拍照/pc_demo/tests/test_angle_display.mjs",
@@ -6337,8 +6342,8 @@
     },
     {
       "path": "host/skin_algorithms/03_目标检测与自动拍照/pc_demo/tests/test_api.py",
-      "size": 3147,
-      "sha256": "fa05bd4440fda8d473aab35d0464bbf001beba85ba3821caf2a6eb77fe1851ee"
+      "size": 4958,
+      "sha256": "adf2326d0f61cb66e3170cc146f44c4f8c0d63cd26a5343369a50db2a1d51997"
     },
     {
       "path": "host/skin_algorithms/03_目标检测与自动拍照/pc_demo/tests/test_regions.py",
@@ -6349,6 +6354,11 @@
       "path": "host/skin_algorithms/03_目标检测与自动拍照/pc_demo/tests/test_state.py",
       "size": 3522,
       "sha256": "8af9991432def54d2efc8d8dd094b19da4a5b691bb496452e76b8a4341a6886b"
+    },
+    {
+      "path": "host/skin_algorithms/03_目标检测与自动拍照/pc_demo/tests/test_three_slots.py",
+      "size": 1686,
+      "sha256": "4e5e465460f24637c9ef7aca2c5603af5d1d057e44a2dcfce774ceea95ed7e83"
     },
     {
       "path": "host/skin_algorithms/03_目标检测与自动拍照/pc_demo/tools/smoke.py",
@@ -6427,18 +6437,18 @@
     },
     {
       "path": "host/skin_algorithms/03_目标检测与自动拍照/pc_demo/web/app.js",
-      "size": 12195,
-      "sha256": "f59fd9bcc79e115c475c0ab47f5583eccbe5d8aa5f500cc5dffdf87500b7e15c"
+      "size": 12203,
+      "sha256": "9faedebce9c6aa83658678aea13814faf1545fee056cb9e8fe34958c4221dee0"
     },
     {
       "path": "host/skin_algorithms/03_目标检测与自动拍照/pc_demo/web/index.html",
-      "size": 5254,
-      "sha256": "d98a55ab1bcc04e7a663e19466ef7588ebc71488c8dbd1b4702812038d642ee9"
+      "size": 5585,
+      "sha256": "f9fcf39da965dfa09d704fdfccb71b1a391f75957592162d48aaff5647ec59fb"
     },
     {
       "path": "host/skin_algorithms/03_目标检测与自动拍照/pc_demo/web/style.css",
-      "size": 5134,
-      "sha256": "e0cb83d0e3ad570d2e57a3cece9506da03451b50a3a6b3bdc67508134c3dc438"
+      "size": 5176,
+      "sha256": "6e89e8c42a21f230612e3e10f2b72898f6da4a47026317764c0d49bc9969d94f"
     },
     {
       "path": "host/skin_algorithms/03_目标检测与自动拍照/pyproject.toml",
@@ -6452,8 +6462,8 @@
     },
     {
       "path": "host/skin_algorithms/03_目标检测与自动拍照/README.md",
-      "size": 1744,
-      "sha256": "b2f5289beb0701fa05d80392bc2af26955aa6186235ced024a2667c76e095a9e"
+      "size": 1725,
+      "sha256": "cbe8442d54af02bab15e9f28dd0f40860843ff751f371c936e6709f7254f44c1"
     },
     {
       "path": "host/skin_algorithms/03_目标检测与自动拍照/requirements-common.txt",
@@ -6747,8 +6757,8 @@
     },
     {
       "path": "host/skin_algorithms/03_目标检测与自动拍照/目标检测与自动拍照技术及部署说明_20260915.md",
-      "size": 19588,
-      "sha256": "527c9cb814074070ce139172d7bfe9d056d2d3fb37770f519fa8ea7ffddcf7ad"
+      "size": 19569,
+      "sha256": "f4541e345a87f458365b1d64ca0f2f7075c88ab64bf95a606518ef78f28297b2"
     },
     {
       "path": "host/skin_algorithms/PACKAGE_MANIFEST.json",
@@ -6789,6 +6799,16 @@
       "path": "host/skin_algorithms/verify_all.py",
       "size": 1216,
       "sha256": "acb11273fa81f98e36902b0cc8586e0f1ebe01d60460e5e5ac885a8295dc8c68"
+    },
+    {
+      "path": "host/skin_algorithms/修复说明_20260920.md",
+      "size": 2248,
+      "sha256": "588637029d88db52280b7c9583b7bd8426d3b588ab020210dcc207be23281c39"
+    },
+    {
+      "path": "host/skin_algorithms/修复验收回执_20260920.json",
+      "size": 1662,
+      "sha256": "27794018dff051a4b558f6e0af0900d9aff3fd551f82a3d81bb1df392d12894f"
     },
     {
       "path": "skills/skin-vision-toolkit/evaluation/cases-v1.json",
@@ -7856,5 +7876,5 @@
       "sha256": "c84852540a6da66b583b9adb4c07d841d44f161397510c75a8ddd6acf5aca280"
     }
   ],
-  "validation": "File integrity only; known score defects remain documented"
+  "validation": "Current public source hashes; scoring missing-reference and live-camera limits documented."
 }

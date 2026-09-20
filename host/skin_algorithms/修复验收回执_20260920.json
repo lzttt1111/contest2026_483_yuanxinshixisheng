@@ -1,0 +1,61 @@
+{
+  "detector_runs": 0,
+  "cohort_reruns": 0,
+  "samples": [
+    {
+      "sample": "one",
+      "scores": {
+        "pores": 57.0,
+        "spots": 10.0,
+        "surface_gloss": 73.0
+      },
+      "unavailable": {
+        "pores": [],
+        "spots": [],
+        "surface_gloss": [
+          {
+            "region": "left_cheek",
+            "reason": "该区域未检出目标，无法计算目标大小或强度分布"
+          },
+          {
+            "region": "right_cheek",
+            "reason": "该区域未检出目标，无法计算目标大小或强度分布"
+          },
+          {
+            "region": "chin",
+            "reason": "该区域未检出目标，无法计算目标大小或强度分布"
+          }
+        ]
+      },
+      "legacy_fallback_used": []
+    },
+    {
+      "sample": "two",
+      "scores": {
+        "pores": 51.0,
+        "spots": 82.0,
+        "surface_gloss": 54.0
+      },
+      "unavailable": {
+        "pores": [],
+        "spots": [],
+        "surface_gloss": [
+          {
+            "region": "left_cheek",
+            "reason": "该指标在本分区及本图源下的同定义参考区间尚未建立"
+          },
+          {
+            "region": "right_cheek",
+            "reason": "该指标在本分区及本图源下的同定义参考区间尚未建立"
+          }
+        ]
+      },
+      "legacy_fallback_used": []
+    }
+  ],
+  "capture_tests_passed": 17,
+  "scoring_tests_passed": 13,
+  "real_model_blank_smoke": "CPU_PASS",
+  "real_camera_three_view_test": "not_run",
+  "rollback_tag": "backup/pre-score-capture-fix-20260920"
+}
