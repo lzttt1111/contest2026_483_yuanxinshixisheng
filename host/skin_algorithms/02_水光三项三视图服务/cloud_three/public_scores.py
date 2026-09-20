@@ -5,7 +5,7 @@ Severity=Literal["未见明显","轻度","中度","较明显","显著"]
 class Strict(BaseModel):
     model_config=ConfigDict(extra="forbid",allow_inf_nan=False)
 class Score(Strict):
-    score:float|None=Field(ge=0,le=100,description="0至100状态分，高分状态更好；缺测为null。色斑为独立面积密度口径，毛孔/油光沿用V3")
+    score:float|None=Field(ge=0,le=100,description="0至100状态分，高分状态更好；缺测为null，证据完整的零目标为100。毛孔沿用V3；色斑为独立面积密度；油光为同区域面积/高强度面积25:20组合")
     severity:Severity|None=Field(description="程度等级；缺测为null")
     @model_validator(mode="after")
     def paired(self):

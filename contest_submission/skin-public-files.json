@@ -3417,8 +3417,8 @@
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/BiSeNet_Celery诊断部署与字段说明.md",
-      "size": 14741,
-      "sha256": "bda5525c9542daef3166f9b3e0e24c74ee3c7581a857996d3ca3fc1a6e3b5897"
+      "size": 14353,
+      "sha256": "efb05a9007040343faed4dfd9b24a2a714ee7cc4dbac359b927570f7ab7172d8"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/BiSeNet本机试运行说明_20260915.md",
@@ -3461,6 +3461,11 @@
       "sha256": "8a998db92161bf4c6b65a0813505ac19c558c14cef5dd00255f344036bf158bd"
     },
     {
+      "path": "host/skin_algorithms/02_水光三项三视图服务/cloud_three/independent_gloss.py",
+      "size": 2973,
+      "sha256": "55323d31601b7580dea1e2880fa6863d9a69452c17bd538c2ce9d71b361fe844"
+    },
+    {
       "path": "host/skin_algorithms/02_水光三项三视图服务/cloud_three/independent_spots.py",
       "size": 6919,
       "sha256": "d7b455a32a458d8c2bccc0d615ef1e22760179f2ea5e5431218d752bf6d771ec"
@@ -3471,9 +3476,14 @@
       "sha256": "633e74fb241251d6b5f4c93ff360b6d057d41679a02cf179191792ce0df96a9e"
     },
     {
+      "path": "host/skin_algorithms/02_水光三项三视图服务/cloud_three/observed_zero.py",
+      "size": 3277,
+      "sha256": "25c88b4e1a37809283564b97f045dc14e87b4ba7ad0bd0bff032be00611f6952"
+    },
+    {
       "path": "host/skin_algorithms/02_水光三项三视图服务/cloud_three/public_scores.py",
-      "size": 2294,
-      "sha256": "a0a7ec398c64f297388492ef2d43d2aa8c61e49d69ae0cf99d25a5114d1ed9a1"
+      "size": 2368,
+      "sha256": "e8181b2c645e9f343316f969ea66459e7458a05a27cba25ae03904913c1650e4"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/cloud_three/resident_scoring.py",
@@ -3487,8 +3497,8 @@
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/cloud_three/scoring_evidence.py",
-      "size": 2387,
-      "sha256": "0819f23056eb13efb932d00dd4c96c4ae95d00204241f217145af366401f5815"
+      "size": 2639,
+      "sha256": "607f1c3c8ed059e9b46bfcb3190ae9fca8b72ee147860a7d062dcff52c20ee99"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/cloud_three/service.py",
@@ -3497,8 +3507,8 @@
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/cloud_three/service_scores.py",
-      "size": 5739,
-      "sha256": "178e3e34076c04fc0f09e1a8e46c22218942d8e86f928e5bc4e539c87d13c34b"
+      "size": 5745,
+      "sha256": "f9309903ad7f4f1f5250b7f9090efc8214bd90030f9ffba375e95f5f5aa1f427"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/cloud_three/settings.py",
@@ -3541,6 +3551,11 @@
       "sha256": "f9b14ace1b50bfa6563a665695ca33db5c5269b73c24ebafea5be0d853b2d1bf"
     },
     {
+      "path": "host/skin_algorithms/02_水光三项三视图服务/delivery_tests/test_independent_gloss.py",
+      "size": 1565,
+      "sha256": "4d47336e43b8f177dd9e013974e4a3d3e7d183a0a11835b4a7eefd574734819d"
+    },
+    {
       "path": "host/skin_algorithms/02_水光三项三视图服务/delivery_tests/test_independent_spots.py",
       "size": 2884,
       "sha256": "4e963a0a64d5ae78fd485627a389ccbb001eaa5932c00a5efe2db3975c04bfe8"
@@ -3549,6 +3564,11 @@
       "path": "host/skin_algorithms/02_水光三项三视图服务/delivery_tests/test_no_sample_fallback.py",
       "size": 1072,
       "sha256": "6d7b4dd7c5dca58f4955ed7f2f9e964b662a6139c7f4787bb162c8a4cc8f25b0"
+    },
+    {
+      "path": "host/skin_algorithms/02_水光三项三视图服务/delivery_tests/test_observed_zero.py",
+      "size": 3915,
+      "sha256": "1a7ff292eade61253719596e4a1e1190a1626a872470f5d135af21779b4c8359"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/deploy/README.md",
@@ -3687,8 +3707,8 @@
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/README.md",
-      "size": 3304,
-      "sha256": "f384f10aa4204225ce74510ead289e808655299ddca5c189a125b8907aba7476"
+      "size": 3518,
+      "sha256": "e6b8719ead265dcabad00bdd14a31282d66480d005638283cdf3dcf6c9dd8857"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/request_scores_example.json",
@@ -6161,9 +6181,14 @@
       "sha256": "f437913048b2acb82c63d0324e1bcefe913e3fd678db37f7c5be4b7ce52a425c"
     },
     {
+      "path": "host/skin_algorithms/02_水光三项三视图服务/完整评分验收_20260920.json",
+      "size": 1255,
+      "sha256": "6b52e116d680477ca7d5b6d7ff4617159a60fdef4c27ecb6a3fdd97200e50dc1"
+    },
+    {
       "path": "host/skin_algorithms/02_水光三项三视图服务/接口字段与JSON说明_20260915.md",
-      "size": 1337,
-      "sha256": "6b7044baab4a358af4ecbfa40d3cd568c1947e9908eda2ce4fbf7b2b8bcb736b"
+      "size": 1286,
+      "sha256": "7a2047310ebe27278c3fae932dcab7526ec4cc83704c800f36e51a8310d7713c"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/本机常驻诊断服务入口.md",
@@ -6177,13 +6202,18 @@
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/水光三项检测技术与部署说明_20260915.md",
-      "size": 15351,
-      "sha256": "6f897a98ca47cce1bf35cc63aecb47392ee0cdc136742a3fb7a1a44dc81176ae"
+      "size": 15565,
+      "sha256": "87728f70ee4e8964c3efc3e6120b351cd21de5f5918308438556dde34e0f22b1"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/目标补充_预处理修复与分层验收_20260915.md",
       "size": 2360,
       "sha256": "a44beb19c3232e2c1e4434992b24bcafba41108eac12c9020b6a6bcb2331c701"
+    },
+    {
+      "path": "host/skin_algorithms/02_水光三项三视图服务/评分系统更新_20260920.md",
+      "size": 2519,
+      "sha256": "b01df0603c74de55d2483016b73d98c1fec64f2a8e137b0ece139604b5bf4a30"
     },
     {
       "path": "host/skin_algorithms/02_水光三项三视图服务/预处理五十图方案选择结论_20260915.md",
@@ -7876,5 +7906,5 @@
       "sha256": "c84852540a6da66b583b9adb4c07d841d44f161397510c75a8ddd6acf5aca280"
     }
   ],
-  "validation": "Current public source hashes; scoring missing-reference and live-camera limits documented."
+  "validation": "current source hashes; new ten real images 270 scores and old ten saved replay complete; existing reference population retained"
 }

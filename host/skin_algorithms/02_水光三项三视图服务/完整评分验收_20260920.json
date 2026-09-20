@@ -1,0 +1,61 @@
+{
+  "scoring_version": "current-image-zero-gloss-coverage-20260920-3",
+  "gloss_version": "water-gloss-area-high-area-20260920-1",
+  "new_images": 10,
+  "old_images_overlap": 0,
+  "new_real_detector_results": 30,
+  "new_overall_scores": 30,
+  "new_regional_scores": 240,
+  "missing_scores": 0,
+  "old_ten_saved_evidence_replay": [
+    {
+      "id": "probe_01",
+      "missing": 0
+    },
+    {
+      "id": "probe_02",
+      "missing": 0
+    },
+    {
+      "id": "probe_03",
+      "missing": 0
+    },
+    {
+      "id": "probe_04",
+      "missing": 0
+    },
+    {
+      "id": "probe_05",
+      "missing": 0
+    },
+    {
+      "id": "probe_06",
+      "missing": 0
+    },
+    {
+      "id": "probe_07",
+      "missing": 0
+    },
+    {
+      "id": "probe_08",
+      "missing": 0
+    },
+    {
+      "id": "probe_09",
+      "missing": 0
+    },
+    {
+      "id": "probe_10",
+      "missing": 0
+    }
+  ],
+  "old_detector_reruns": 0,
+  "cohort_1000_reruns": 0,
+  "reference_fit_runs": 0,
+  "zero_target_policy": "current_region_explicit_zero_with_valid_domain",
+  "gloss_weights": {
+    "area": 0.5555555555555556,
+    "high_area": 0.4444444444444444
+  },
+  "reference_scope": "existing matched-region V3 RGB references; not a newly calibrated BiSeNet population"
+}

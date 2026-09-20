@@ -10,7 +10,7 @@ from .public_scores import public_from_v3_extract
 from .service import RequestError,safe_inputs,locked,atomic_json,failure
 from .settings import ROOT,RUNTIME,bootstrap,device,preprocessing_mode
 
-VERSION="current-image-evidence-only-20260920-1"
+VERSION="current-image-zero-gloss-coverage-20260920-3"
 def execute_scores(payload,progress=None,*,diagnostic=False):
     progress=progress or (lambda *a,**k:None)
     request=AnalyzeRequest.model_validate(payload)

@@ -29,4 +29,8 @@ def score_saved(source,sample):
     if len(files)!=1:raise ValueError('Independent spot evidence is missing or ambiguous')
     reference_path=VENDOR/'independent_spots_reference.json'
     scores['spots'],trace=score_spots(json.loads(files[0].read_text()),json.loads(reference_path.read_text()))
-    return scores,{'doctor_pipeline_projects':list(selected),'independent_spots_measurements':trace,'aligned_rgb_sha256':identity,'independent_spots_reference_sha256':hashlib.sha256(reference_path.read_bytes()).hexdigest(),'legacy_fallback_used':[], 'scoring_policy':'current_image_evidence_only_v1'}
+    from .observed_zero import apply_observed_zero
+    zero_trace=apply_observed_zero(scores,payload)
+    from .independent_gloss import score_gloss
+    gloss_trace=score_gloss(scores,payload)
+    return scores,{'doctor_pipeline_projects':list(selected),'independent_spots_measurements':trace,'aligned_rgb_sha256':identity,'independent_spots_reference_sha256':hashlib.sha256(reference_path.read_bytes()).hexdigest(),'legacy_fallback_used':[], 'scoring_policy':'current_image_evidence_only_v3','observed_zero':zero_trace,'independent_gloss':gloss_trace}
